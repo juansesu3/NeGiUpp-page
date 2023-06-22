@@ -6,7 +6,7 @@ const StyledHeader = styled.header`
   background-color: #0f0f0f;
 `;
 
-const LogoLink = styled(Link)`
+const LogoLink = styled(Link)` 
   color: #fff;
   text-decoration: none;
   display: flex;
@@ -20,7 +20,7 @@ const Logo = styled.img`
 
 const Wrapper = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 20px 0;
 `;
 
