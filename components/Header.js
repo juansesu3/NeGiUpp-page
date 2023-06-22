@@ -9,30 +9,73 @@ const StyledHeader = styled.header`
 const LogoLink = styled(Link)`
   color: #fff;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 70px;
 `;
 
 const Logo = styled.img`
-  width: 50px;
+  width: 100%;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+`;
+
+const StyledNav = styled.nav`
+  display: flex;
+  align-items: center;
+  gap: 40px;
+`;
+
+const NavLink = styled(Link)`
+  color: #676767;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+  &:hover {
+    color: #ffffff;
+  }
+`;
+
+const LetsTalk = styled(Link)`
+  display: flex;
+  color: #ffffff;
+  text-decoration: none;
+  align-items: center;
+  background-color: #323232;
+  padding: 12px 36px;
+  border-radius: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+  &:hover {
+    background-color: #ffffff;
+    color: #0f0f0f;
+  }
 `;
 
 const Header = () => {
   return (
     <StyledHeader>
       <Center>
-        <LogoLink href={"/"}>
-          <Logo
-            src="https://my-page-negiupp.s3.amazonaws.com/1687424109024.png"
-            alt="logo-image"
-          />
-        </LogoLink>
-        <nav>
-          <Link href={"/"}>Home</Link>
-          <Link href={"/about"}>About</Link>
-          <Link href={"/proyects"}>Proyects</Link>
-          <Link href={"/blog"}>Blog</Link>
-          <Link href={"/contact"}>Contact</Link>
-        </nav>
-        <Link href={"/contact"}> Let&apos;s talk</Link>
+        <Wrapper>
+          <LogoLink href={"/"}>
+            <Logo
+              src="https://my-page-negiupp.s3.amazonaws.com/1687424109024.png"
+              alt="logo-image"
+            />
+          </LogoLink>
+          <StyledNav>
+            <NavLink href={"/"}>Home</NavLink>
+            <NavLink href={"/about"}>About</NavLink>
+            <NavLink href={"/proyects"}>Proyects</NavLink>
+            <NavLink href={"/blog"}>Blog</NavLink>
+            <NavLink href={"/contact"}>Contact</NavLink>
+          </StyledNav>
+          <LetsTalk href={"/contact"}> Let&apos;s talk</LetsTalk>
+        </Wrapper>
       </Center>
     </StyledHeader>
   );
