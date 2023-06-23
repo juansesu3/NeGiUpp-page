@@ -5,6 +5,7 @@ const Bg = styled.div`
   background-color: #0f0f0f;
   color: #ffff;
   padding: 50px 0;
+  height: 100%;
 `;
 
 //Started First Section
@@ -98,8 +99,8 @@ const ArticleImage = styled.img`
 `;
 
 const ArticleCardContent = styled.div`
-padding: .5rem 1.2rem;
-`
+  padding: 0.5rem 1.2rem;
+`;
 
 const ArticleTitle = styled.h2``;
 
@@ -109,10 +110,11 @@ const Home = () => {
   return (
     <Bg>
       <Center>
-        <div>
-          <SectionContainer>
+        
+        <div> 
+          <SectionContainer> 
             <SectionInfo>
-              <Title>
+              <Title> 
                 Let&apos;s build the future <span>together</span>
               </Title>
               <Intro>
@@ -138,43 +140,62 @@ const Home = () => {
               />
             </ArticleImageConatiner>
             <ArticleCardContent>
-            <h2>Article Title</h2>
-            <span>
-              <date>01/20/2023</date>
-            </span>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <span></span>
+              <h2>Article Title</h2>
+              <span>
+                <date>01/20/2023</date>
+              </span>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <span></span>
             </ArticleCardContent>
           </ArticleCard>
-          <div>
-            <h2>Latest articles</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
-          <div>
-            <h2>Latest articles</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
+
+          <ArticleCard>
+            <ArticleImageConatiner>
+              <ArticleImage
+                src="https://my-page-negiupp.s3.amazonaws.com/1686946855136.png"
+                alt="article-image"
+              />
+            </ArticleImageConatiner>
+            <ArticleCardContent>
+              <h2>Article Title</h2>
+              <span>
+                <date>01/20/2023</date>
+              </span>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <span></span>
+            </ArticleCardContent>
+          </ArticleCard>
+          <ArticleCard>
+            <ArticleImageConatiner>
+              <ArticleImage
+                src="https://my-page-negiupp.s3.amazonaws.com/1686946855136.png"
+                alt="article-image"
+              />
+            </ArticleImageConatiner>
+            <ArticleCardContent>
+              <h2>Article Title</h2>
+              <span>
+                <date>01/20/2023</date>
+              </span>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <span></span>
+            </ArticleCardContent>
+          </ArticleCard>
         </AsideArticles>
 
         <div>

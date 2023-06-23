@@ -30,7 +30,7 @@ const StyledNav = styled.nav`
   gap: 40px;
 `;
 
-const NavLink = styled(Link)`
+const NavLink = styled(Link)` 
   color: #676767; 
   text-decoration: none;
   font-size: 16px;
@@ -76,9 +76,9 @@ const Header = () => {
           </StyledNav>
           <LetsTalk href={"/contact"}> Let&apos;s talk</LetsTalk>
         </Wrapper>
-      </Center>
-    </StyledHeader>
-  );
+      </Center> 
+    </StyledHeader> 
+  ); 
 };
 
 export default Header;
