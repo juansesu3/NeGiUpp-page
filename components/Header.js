@@ -6,7 +6,7 @@ const StyledHeader = styled.header`
   background-color: #0f0f0f;
 `;
 
-const LogoLink = styled(Link)` 
+const LogoLink = styled(Link)`
   color: #fff;
   text-decoration: none;
   display: flex;
@@ -31,7 +31,7 @@ const StyledNav = styled.nav`
 `;
 
 const NavLink = styled(Link)`
-  color: #676767;
+  color: #676767; 
   text-decoration: none;
   font-size: 16px;
   transition: 0.3s;

@@ -7,12 +7,19 @@ const Bg = styled.div`
   padding: 50px 0;
 `;
 
+//Started First Section
 const SectionContainer = styled.section`
   display: flex;
   margin-bottom: 100px;
 `;
 
-const Title = styled.h4`
+const SectionInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const Title = styled.h1`
   margin: 0;
   font-size: 30px;
   line-height: 40px;
@@ -37,6 +44,27 @@ const FirstImageInfo = styled.img`
   width: 100%;
 `;
 
+//Finished first section
+
+//started other sections
+const SecondSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+`;
+
+const SubTitle = styled.h2`
+  margin: 0;
+  font-size: 30px;
+  line-height: 40px;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 12px;
+  span {
+    color: #4d61fc;
+  }
+`;
+
 const AsideArticles = styled.aside`
   width: 30%;
   padding-left: 15px;
@@ -44,13 +72,46 @@ const AsideArticles = styled.aside`
   float: right;
 `;
 
+const ArticleCard = styled.div`
+  border-radius: 8px;
+
+  margin-bottom: 2rem;
+  background: linear-gradient(
+    50deg,
+    rgb(78 78 78 / 15%),
+    rgba(255, 255, 255, 0)
+  );
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+`;
+const ArticleImageConatiner = styled.div`
+  max-width: 100%;
+  margin: 0 auto;
+`;
+const ArticleImage = styled.img`
+  border-radius: 8px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 100%;
+`;
+
+const ArticleCardContent = styled.div`
+padding: .5rem 1.2rem;
+`
+
+const ArticleTitle = styled.h2``;
+
+const ArticleSummary = styled.p``;
+
 const Home = () => {
   return (
     <Bg>
       <Center>
         <div>
           <SectionContainer>
-            <div>
+            <SectionInfo>
               <Title>
                 Let&apos;s build the future <span>together</span>
               </Title>
@@ -60,7 +121,7 @@ const Home = () => {
                 your goals with us. Let&apos;s build the success of your
                 business in less time than you can imagine!
               </Intro>
-            </div>
+            </SectionInfo>
             <ImgContainer>
               <FirstImageInfo src="https://my-page-negiupp.s3.amazonaws.com/1687442391096.png" />
             </ImgContainer>
@@ -68,50 +129,58 @@ const Home = () => {
         </div>
 
         <AsideArticles>
+          <h1>Latest Articles</h1>
+          <ArticleCard>
+            <ArticleImageConatiner>
+              <ArticleImage
+                src="https://my-page-negiupp.s3.amazonaws.com/1686946855136.png"
+                alt="article-image"
+              />
+            </ArticleImageConatiner>
+            <ArticleCardContent>
+            <h2>Article Title</h2>
+            <span>
+              <date>01/20/2023</date>
+            </span>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <span></span>
+            </ArticleCardContent>
+          </ArticleCard>
           <div>
-          <h2>Latest articles</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-            
-          </p>
+            <h2>Latest articles</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
           </div>
           <div>
-          <h2>Latest articles</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-            
-          </p>
-          </div>
-          <div>
-          <h2>Latest articles</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-            
-          </p>
+            <h2>Latest articles</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
           </div>
         </AsideArticles>
+
         <div>
-          <div> 
-            <h2>How can we help you?</h2>
-            <p>
+          <SecondSection>
+            <SubTitle>How can we help you?</SubTitle>
+            <Intro>
               At NeGiUpp digital consulting, we have created an exclusive
               membership model to provide you with tailored full stack web
               development services. We are here to drive your online business
@@ -129,8 +198,8 @@ const Home = () => {
               your business to the next level. Contact us today and let us be
               your trusted digital partner. Together, we will achieve the online
               success you desire.
-            </p>
-          </div>
+            </Intro>
+          </SecondSection>
           <hr />
           <div>
             <h2>Accelerate Transformation: Unlock Your Digital Potential </h2>
