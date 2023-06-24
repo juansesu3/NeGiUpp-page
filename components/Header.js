@@ -75,10 +75,10 @@ const Header = () => {
             <NavLink href={"/contact"}>Contact</NavLink>
           </StyledNav>
           <LetsTalk href={"/contact"}> Let&apos;s talk</LetsTalk>
-        </Wrapper>
+        </Wrapper> 
       </Center> 
-    </StyledHeader> 
-  ); 
-};
+    </StyledHeader>  
+  );   
+}; 
 
 export default Header;
