@@ -26,7 +26,7 @@ const ArticleCard = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  height: 41.8rem;
+  height: 39rem;
   overflow: hidden;
   text-overflow: ellipsis;
   border-radius: 30px;
@@ -73,7 +73,7 @@ const ArticleTitle = styled.h2`
 `;
 
 const ArticleSummary = styled.p`
-  height: 200px;
+  height: 180px;
   letter-spacing: 0.3px;
   font-size: 1rem;
   color: #bcbcbc;
@@ -87,6 +87,8 @@ const ArticleSummary = styled.p`
 `;
 
 const Slider = ({ articles }) => {
+
+
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -132,3 +134,4 @@ const Slider = ({ articles }) => {
 };
 
 export default Slider;
+

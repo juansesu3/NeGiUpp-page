@@ -321,6 +321,9 @@ const Home = ({articles}) => {
 
           <PrincipalContent>
             <AsideArtStart>
+            <TitleNews>
+                    <span> Latest Articles</span>
+                  </TitleNews>
               <ArticleCardComp articles={articles} />
               <Start>
                 <Title>
