@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Home from "@/components/Home";
 import { mongooseConnect } from "@/lib/mongoose";
@@ -9,6 +10,7 @@ const HomePage = ({ latestArticles }) => {
     <div>
       <Header />
       <Home latestArticles={latestArticles} />
+      <Footer/>
     </div>
   );
 };
