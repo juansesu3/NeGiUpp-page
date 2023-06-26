@@ -16,9 +16,10 @@ const StyledButton = styled(Link)`
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
     ${(props) =>
    
-    !props.outline &&
+    props.artbutton &&
     css`
       margin: 0 auto;
+ 
     `}
   
   ${(props) =>

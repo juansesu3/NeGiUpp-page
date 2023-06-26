@@ -3,8 +3,18 @@ import { styled } from "styled-components";
 import Button from "./Button";
 
 const SliderContainer = styled.div`
-  width: 100%;
+  width: 15rem;
   overflow: hidden;
+  border-radius: 30px;
+  background: linear-gradient(
+    100deg,
+    rgb(189 189 189 / 7%),
+    rgba(255, 255, 255, 0)
+  );
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
 `;
 
 const SliderTrack = styled.div`
@@ -14,7 +24,7 @@ const SliderTrack = styled.div`
 const ArticleCard = styled.div`
   display: flex;
   flex-direction: column;
-  border-radius: 8px;
+  justify-content: space-around;
   width: 100%;
   height: 41.8rem;
   overflow: hidden;
@@ -47,25 +57,32 @@ const ArticleCardContent = styled.div`
   padding: 0.5rem 1.2rem;
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
 `;
 
 const ArticleTitle = styled.h2`
-  max-height: 200px; /* Establece la altura máxima del contenedor */
+height: 2rem;
+ text-transform: uppercase;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* Establece el número máximo de líneas */
   overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 0 ;
 `;
 
 const ArticleSummary = styled.p`
-  height: 14rem;
+  height: 200px;
   letter-spacing: 0.3px;
   font-size: 1rem;
   color: #bcbcbc;
   opacity: 0.5;
-
-  text-transform: uppercase;
-
+ 
   overflow: hidden;
-
   text-overflow: ellipsis;
+  margin: 0;
+  margin-bottom: 1.5rem;
+  text-align: justify;
 `;
 
 const Slider = ({ articles }) => {
@@ -96,11 +113,9 @@ const Slider = ({ articles }) => {
             </ArticleImageConatiner>
             <ArticleCardContent>
               <ArticleTitle>{article.title}</ArticleTitle>
-              <span>
-                <date>06/26/2023</date>
-              </span>
+              <time>{new Date(article.updatedAt).toLocaleString("sv-SE")}</time>
               <ArticleSummary>{article.summary}</ArticleSummary>
-              <Button href={"/articles/" + article._id} read="true">
+              <Button href={"/articles/" + article._id} read="true" artbutton="true">
                 Read more
               </Button>
             </ArticleCardContent>
