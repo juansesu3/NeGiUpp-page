@@ -1,27 +1,28 @@
 import Header from "@/components/Header";
 import Home from "@/components/Home";
 import { mongooseConnect } from "@/lib/mongoose";
-import { Article } from "@/models/Articles";
-import { styled } from "styled-components";
+import { Article } from "@/models/Article";
 
 
-const HomePage = ({article}) => {
+
+const HomePage = ({articles}) => {
+  console.log(articles)
 
   return ( 
     <div>
       <Header />
-      <Home article={article} />
+      <Home articles={articles} />
     </div> 
   );
 };
 
 export const getServerSideProps = async()=>{
-  const feuturedArticle = "64997ffb602af53155296e81";
+  
   await mongooseConnect();
-  const article = await Article.findById(feuturedArticle);
+  const articles = await Article.find();
 
   return {
-    props: {article: JSON.parse(JSON.stringify(article))},
+    props: {articles: JSON.parse(JSON.stringify(articles))},
   }
 
 }
