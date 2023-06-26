@@ -4,12 +4,11 @@ import { css, styled } from "styled-components";
 const StyledButton = styled(Link)`
   text-align: center;
   width: 8rem;
-  margin: 0 auto;
   padding: 0.5rem 1rem;
   color: #4d61fc;
   text-decoration: none;
   border-color: #bcbcbc;
-  border-radius: 0.5rem; 
+  border-radius: 0.5rem;
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),

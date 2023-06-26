@@ -254,34 +254,12 @@ const SecundaryContent = styled.div`
 const SecundaryContentSection1 = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 15rem;
   cursor: pointer;
-  padding: 1.7rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  border-radius: 30px;
-  background: linear-gradient(
-    100deg,
-    rgb(189 189 189 / 7%),
-    rgba(255, 255, 255, 0)
-  );
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-`;
-const SecundaryContentSection2 = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 21rem;
-  height: 15rem;
-
   padding: 1.7rem;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -347,6 +325,23 @@ const ContainerButtons = styled.div`
   display: flex;
   gap: 1.5rem;
 `;
+
+const IconServices = styled.div`
+  display: flex;
+  gap: 3rem;
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+  svg {
+    width: 4rem;
+    margin: 0 auto;
+    transition: 0.3s;
+    &:hover {
+      color: #4d61fc;
+    }
+  }
+`;
 const Home = () => {
   return (
     <Bg>
@@ -399,7 +394,9 @@ const Home = () => {
                     are handy, if you want to run the same code over and over
                     again, each time with a different value.
                   </ArticleSummary>
-                  <Button href={"/"} read="true">Read more</Button>
+                  <Button href={"/"} read="true">
+                    Read more
+                  </Button>
                 </ArticleCardContent>
               </ArticleCard>
               <Start>
@@ -524,26 +521,60 @@ const Home = () => {
               </SecondSectionLevel2>
               <SecundaryContent>
                 <SecundaryContentSection1>
+                  <IconServices>
+                    <div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="w-4 h-4"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
+                        />
+                      </svg>
+                      Mobile dev
+                    </div>
+                    <div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="w-4 h-4"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"
+                        />
+                      </svg>
+                      Web dev
+                    </div>
+                    <div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="w-4 h-4"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"
+                        />
+                      </svg>
+                      Desktop dev
+                    </div>
+                  </IconServices>
                   <SubTitle>Services Offering</SubTitle>
-                  {/* <Intro>
-              At NeGiUpp digital consulting, we have created an exclusive
-              membership model to provide you with tailored full stack web
-              development services. We are here to drive your online business
-              and ensure you achieve the best results. Our team of expert web
-              developers will take care of all your digital needs. Whether you
-              need a website from scratch, ongoing improvements, or digital
-              marketing strategies, we are ready to work with you. By joining
-              our membership, you will gain exclusive access to highly
-              functional and visually appealing solutions. Additionally, you
-              will receive regular updates on the latest digital trends and
-              technologies. We focus on your success and are committed to
-              providing personalized service and ongoing support. No matter what
-              your goals are, we will be by your side to help you achieve them.
-              Discover how our full stack web development consultancy can take
-              your business to the next level. Contact us today and let us be
-              your trusted digital partner. Together, we will achieve the online
-              success you desire.
-            </Intro>*/}
                 </SecundaryContentSection1>
               </SecundaryContent>
             </SectionsContainer>

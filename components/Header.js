@@ -50,9 +50,14 @@ const LetsTalk = styled(Link)`
   border-radius: 16px;
   font-weight: 500;
   transition: 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   &:hover {
     background-color: #ffffff;
     color: #0f0f0f;
+    
   }
 `;
 
