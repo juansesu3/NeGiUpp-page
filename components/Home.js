@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import Center from "./Center";
+import Link from "next/link";
 
 const Bg = styled.div`
   background-color: #0f0f0f;
@@ -8,19 +9,17 @@ const Bg = styled.div`
   height: 100%;
 `;
 const OficialContent = styled.div`
-display: flex;
-flex-direction: column;
-gap: 1.5rem;
-`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+`;
 
 const PrincipalContent = styled.div`
-display: flex;
-flex-direction: row-reverse;
-align-items: flex-start;
-gap: 1.5rem;
-
-
-`
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  gap: 1.5rem;
+`;
 //Started First Section
 const SectionContainer = styled.section`
   display: flex;
@@ -82,11 +81,7 @@ const SecondSection = styled.section`
 
   white-space: nowrap;
   border-radius: 30px;
-  background: linear-gradient(
-    120deg,
-    rgba(0, 0, 0, 1),
-    rgba(255, 255, 255, 0.05)
-  );
+  background: linear-gradient(100deg, rgb(189 189 189 / 7%), rgba(255, 255, 255, 0));
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -106,47 +101,35 @@ const SubTitle = styled.h2`
     color: #4d61fc;
   }
 `;
- 
 
- 
 const AsideArticles = styled.div`
-width: 40rem;
-height: 40rem;
-padding: 1.5rem;
- border-radius: 30px;
-  background: linear-gradient(
-    120deg,
-    rgba(0, 0, 0, 1),
-    rgba(255, 255, 255, 0.05)
-  ); 
+  width: 40rem;
+  height: 40rem;
+  padding: 1.5rem;
+  border-radius: 30px;
+  background: linear-gradient(100deg, rgb(189 189 189 / 7%), rgba(255, 255, 255, 0));
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-
-
 `;
 
 const ArticleCard = styled.div`
+  display: flex;
+  flex-direction: column;
   border-radius: 8px;
-  width: 40rem;
-  height: 40.3rem; 
+  width: 100%;
+  height: 40.3rem;
 
   overflow: hidden;
   text-overflow: ellipsis;
-  
+
   border-radius: 30px;
-  background: linear-gradient(
-    120deg,
-    rgba(0, 0, 0, 1),
-    rgba(255, 255, 255, 0.05)
-  ); 
+  background: linear-gradient(100deg, rgb(189 189 189 / 7%), rgba(255, 255, 255, 0));
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-
-
 `;
 const ArticleImageConatiner = styled.div`
   max-width: 100%;
@@ -161,7 +144,6 @@ const ArticleImage = styled.img`
 
 const ArticleCardContent = styled.div`
   padding: 0.5rem 1.2rem;
-
 `;
 
 const ArticleTitle = styled.h2`
@@ -170,12 +152,11 @@ const ArticleTitle = styled.h2`
 `;
 
 const ArticleSummary = styled.p`
-  
-  height: 15rem;
-    overflow: hidden;
+  height: 16rem;
+  overflow: hidden;
   text-overflow: ellipsis;
-  `
-
+  text-align: justify;
+`;
 
 const SecondSectionLevel1 = styled.div`
   display: flex;
@@ -195,12 +176,9 @@ const SecondSection1 = styled.section`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+ 
   border-radius: 30px;
-  background: linear-gradient(
-    120deg,
-    rgba(0, 0, 0, 1),
-    rgba(255, 255, 255, 0.05)
-  );
+  background: linear-gradient(100deg, rgb(189 189 189 / 7%), rgba(255, 255, 255, 0));
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -218,11 +196,7 @@ const SecondSection2 = styled.div`
   text-overflow: ellipsis;
   white-space: nowrap;
   border-radius: 30px;
-  background: linear-gradient(
-    120deg,
-    rgba(0, 0, 0, 1),
-    rgba(255, 255, 255, 0.05)
-  );
+  background: linear-gradient(100deg, rgb(189 189 189 / 7%), rgba(255, 255, 255, 0));
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -237,14 +211,14 @@ const SectionNews = styled.div`
   height: 3rem;
 
   border-radius: 30px;
-  background: linear-gradient(
-    120deg,
-    rgba(0, 0, 0, 1),
-    rgba(255, 255, 255, 0.05)
-  );
+  background: linear-gradient(100deg, rgb(189 189 189 / 7%), rgba(255, 255, 255, 0));
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
 `;
 
 const SecondSectionLevel2 = styled.section`
@@ -252,124 +226,135 @@ const SecondSectionLevel2 = styled.section`
   gap: 1.5rem;
 `;
 
-
-
 const SecundaryContent = styled.div`
-display: flex;
-gap: 1.5rem;
-
-
-`
-const SecundaryContentSection1 = styled.div` display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-width: 100%;
-height: 15rem;
-
-padding: 1.7rem;
-overflow: hidden;
-text-overflow: ellipsis;
-white-space: nowrap;
-border-radius: 30px;
-background: linear-gradient(
-  120deg,
-  rgba(0, 0, 0, 1),
-  rgba(255, 255, 255, 0.05)
-);
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-  /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-  /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-  /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
 `;
-const SecundaryContentSection2 = styled.div` display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-width: 21rem;
-height: 15rem;
+const SecundaryContentSection1 = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 15rem;
 
-padding: 1.7rem;
-overflow: hidden;
-text-overflow: ellipsis;
-white-space: nowrap;
-border-radius: 30px;
-background: linear-gradient(
-  120deg,
-  rgba(0, 0, 0, 1),
-  rgba(255, 255, 255, 0.05)
-);
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-  /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-  /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-  /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  padding: 1.7rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-radius: 30px;
+  background: linear-gradient(100deg, rgb(189 189 189 / 7%), rgba(255, 255, 255, 0));
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+`;
+const SecundaryContentSection2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 21rem;
+  height: 15rem;
+
+  padding: 1.7rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-radius: 30px;
+  background: linear-gradient(100deg, rgb(189 189 189 / 7%), rgba(255, 255, 255, 0));
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+`;
+
+const AsideArtStart = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 30rem;
+`;
+
+const Start = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 15rem;
+  color: #4d61fc;
+  padding: 1.7rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-radius: 30px;
+  background: linear-gradient(100deg, rgb(189 189 189 / 7%), rgba(255, 255, 255, 0));
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
 `;
 const Home = () => {
   return (
     <Bg>
       <Center>
         <OficialContent>
+          <div>
+            <SectionContainer>
+              <SectionInfo>
+                <Title>
+                  Let&apos;s build the future <span>together</span>
+                </Title>
+                <Intro>
+                  We create customized and cutting-edge solutions that enhance
+                  your online presence. Stand out in the digital world and
+                  achieve your goals with us. Let&apos;s build the success of
+                  your business in less time than you can imagine!
+                </Intro>
+              </SectionInfo>
+              <ImgContainer>
+                <FirstImageInfo src="https://my-page-negiupp.s3.amazonaws.com/1687442391096.png" />
+              </ImgContainer>
+            </SectionContainer>
+          </div>
 
-        
-        <div>
+          <PrincipalContent>
 
-          <SectionContainer>
-            <SectionInfo>
+
+            <AsideArtStart>
+
+              <ArticleCard>
+                <ArticleImageConatiner>
+                  <ArticleImage
+                    src="https://my-page-negiupp.s3.amazonaws.com/1686946855136.png"
+                    alt="article-image"
+                  />
+                </ArticleImageConatiner>
+                <ArticleCardContent>
+                  <h2>Article Title</h2>
+                  <span>
+                    <date>01/20/2023</date>
+                  </span>
+                  <ArticleSummary> 
+                  Loops can execute a block of code a number of times.
+Loops are handy, if you want to run the same code over and over again, each time with a different value.
+                  </ArticleSummary>
+                  <Link href={'/'}>Read more</Link>
+                </ArticleCardContent>
+              </ArticleCard>
+              <Start>
               <Title>
-                Let&apos;s build the future <span>together</span>
-              </Title>
-              <Intro>
-                We create customized and cutting-edge solutions that enhance
-                your online presence. Stand out in the digital world and achieve
-                your goals with us. Let&apos;s build the success of your
-                business in less time than you can imagine!
-              </Intro>
-            </SectionInfo>
-            <ImgContainer>
-              <FirstImageInfo src="https://my-page-negiupp.s3.amazonaws.com/1687442391096.png" />
-            </ImgContainer>
-          </SectionContainer>
-        </div>
+                  <span>START</span>
+                </Title></Start>
+            </AsideArtStart>
 
-        <PrincipalContent>
-
-
-      
-
-       
-          <ArticleCard>
-            <ArticleImageConatiner>
-              <ArticleImage
-                src="https://my-page-negiupp.s3.amazonaws.com/1686946855136.png"
-                alt="article-image"
-              />
-            </ArticleImageConatiner>
-            <ArticleCardContent>
-              <h2>Article Title</h2>
-              <span>
-                <date>01/20/2023</date>
-              </span>
-              <ArticleSummary>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                ullamco laborisullamco laboris
-                ullamco laborisullamco laborisullamco dolore magna aliqua. Ut 
-                dolore ut labore ua. Ut
-                dolore magna aliqua. Ut
-              
-              </ArticleSummary>
-          
-            </ArticleCardContent>
-          </ArticleCard>
-       
-
-        <SectionsContainer>
-
-          <SecondSectionLevel1>
-            <SecondSection1>
-              <SubTitle>How can we help you?</SubTitle>
-              {/* <Intro>
+            <SectionsContainer>
+              <SecondSectionLevel1>
+                <SecondSection1>
+                  <SubTitle>How can we help you?</SubTitle>
+                  {/* <Intro>
               At NeGiUpp digital consulting, we have created an exclusive
               membership model to provide you with tailored full stack web
               development services. We are here to drive your online business
@@ -388,13 +373,13 @@ const Home = () => {
               your trusted digital partner. Together, we will achieve the online
               success you desire.
             </Intro>*/}
-            </SecondSection1>
+                </SecondSection1>
 
-            <SectionNewsFlex>
-              <SectionNews>news</SectionNews>
-              <SecondSection2>
-                <SubTitle>Proyects</SubTitle>
-                {/* <Intro>
+                <SectionNewsFlex>
+                  <SectionNews>news</SectionNews>
+                  <SecondSection2>
+                    <SubTitle>Proyects</SubTitle>
+                    {/* <Intro>
               At NeGiUpp digital consulting, we have created an exclusive
               membership model to provide you with tailored full stack web
               development services. We are here to drive your online business
@@ -413,16 +398,16 @@ const Home = () => {
               your trusted digital partner. Together, we will achieve the online
               success you desire.
             </Intro>*/}
-              </SecondSection2>
-            </SectionNewsFlex>
-          </SecondSectionLevel1>
+                  </SecondSection2>
+                </SectionNewsFlex>
+              </SecondSectionLevel1>
 
-          <SecondSectionLevel2>
-            <SecondSection>
-              <SubTitle>
-                Accelerate Transformation: Unlock Your Digital Potential
-              </SubTitle>
-              {/*  <Intro>
+              <SecondSectionLevel2>
+                <SecondSection>
+                  <SubTitle>
+                    Accelerate Transformation: Unlock Your Digital Potential
+                  </SubTitle>
+                  {/*  <Intro>
               At NeGiUpp digital consulting, we specialize in accelerating
               transformation through full stack web development. Our mission is
               to help businesses harness the power of digital technology to
@@ -451,13 +436,13 @@ const Home = () => {
               propel you towards a successful digital future. Contact us today
               to embark on your transformative journey.
             </Intro>*/}
-            </SecondSection>
+                </SecondSection>
 
-            <SecondSection>
-              <SubTitle>
-                Next steps to transform your idea into a reality
-              </SubTitle>
-              {/*  <Intro>
+                <SecondSection>
+                  <SubTitle>
+                    Next steps to transform your idea into a reality
+                  </SubTitle>
+                  {/*  <Intro>
               At NeGiUpp digital consulting, we believe in turning ideas into
               reality. With our unique membership model, we offer a
               comprehensive range of services to help you bring your vision to
@@ -482,15 +467,12 @@ const Home = () => {
               your idea into a digital masterpiece that leaves a lasting impact.
             </Intro>
             */}
-            </SecondSection>
-          </SecondSectionLevel2>
-        </SectionsContainer>
-
-        </PrincipalContent>
-        <SecundaryContent>
-        <SecundaryContentSection1>
-              <SubTitle>How can we help you?</SubTitle>
-              {/* <Intro>
+                </SecondSection>
+              </SecondSectionLevel2>
+              <SecundaryContent>
+                <SecundaryContentSection1>
+                  <SubTitle>How can we help you?</SubTitle>
+                  {/* <Intro>
               At NeGiUpp digital consulting, we have created an exclusive
               membership model to provide you with tailored full stack web
               development services. We are here to drive your online business
@@ -509,33 +491,11 @@ const Home = () => {
               your trusted digital partner. Together, we will achieve the online
               success you desire.
             </Intro>*/}
-            </SecundaryContentSection1>
-            <SecundaryContentSection2>
-              <SubTitle> <span>Start</span></SubTitle>
-              {/* <Intro>
-              At NeGiUpp digital consulting, we have created an exclusive
-              membership model to provide you with tailored full stack web
-              development services. We are here to drive your online business
-              and ensure you achieve the best results. Our team of expert web
-              developers will take care of all your digital needs. Whether you
-              need a website from scratch, ongoing improvements, or digital
-              marketing strategies, we are ready to work with you. By joining
-              our membership, you will gain exclusive access to highly
-              functional and visually appealing solutions. Additionally, you
-              will receive regular updates on the latest digital trends and
-              technologies. We focus on your success and are committed to
-              providing personalized service and ongoing support. No matter what
-              your goals are, we will be by your side to help you achieve them.
-              Discover how our full stack web development consultancy can take
-              your business to the next level. Contact us today and let us be
-              your trusted digital partner. Together, we will achieve the online
-              success you desire.
-            </Intro>*/}
-            </SecundaryContentSection2>
-
-        </SecundaryContent>
+                </SecundaryContentSection1>
+              </SecundaryContent>
+            </SectionsContainer>
+          </PrincipalContent>
         </OficialContent>
-
       </Center>
     </Bg>
   );

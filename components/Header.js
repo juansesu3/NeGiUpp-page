@@ -23,11 +23,11 @@ const Wrapper = styled.div`
   justify-content: space-between;
   padding: 20px 0;
 `;
-
+ 
 const StyledNav = styled.nav`
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 40px; 
 `;
 
 const NavLink = styled(Link)` 
@@ -76,7 +76,7 @@ const Header = () => {
           </StyledNav>
           <LetsTalk href={"/contact"}> Let&apos;s talk</LetsTalk>
         </Wrapper> 
-      </Center> 
+      </Center>  
     </StyledHeader>  
   );   
 }; 
