@@ -1,4 +1,3 @@
-
 const TAGS = [
   "HTML",
   "CSS",
@@ -13,9 +12,9 @@ const TAGS = [
   "animation",
   "webdev",
 ];
-const DURATION = 15000;
+const DURATION = 13000;
 const ROWS = 1;
-const TAGS_PER_ROW = 5;
+const TAGS_PER_ROW = 12;
 
 const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 const shuffle = (arr) => [...arr].sort(() => 0.5 - Math.random());
@@ -51,7 +50,7 @@ const InfiniteScrollAmimation = () => {
           key={i}
           duration={random(DURATION - 5000, DURATION + 5000)}
           reverse={i % 2}
-        >
+        > 
           {shuffle(TAGS)
             .slice(0, TAGS_PER_ROW)
             .map((tag) => (

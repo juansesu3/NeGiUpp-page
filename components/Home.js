@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import Center from "./Center";
 import Link from "next/link";
 import InfiniteScrollAmimation from "./InfiniteScrollAmimation";
+import Button from "./Button";
 
 const Bg = styled.div`
   background-color: #0f0f0f;
@@ -111,7 +112,7 @@ const ArticleCard = styled.div`
   flex-direction: column;
   border-radius: 8px;
   width: 100%;
-  height: 40.3rem;
+  height: 41.8rem;
   overflow: hidden;
   text-overflow: ellipsis;
   border-radius: 30px;
@@ -136,7 +137,6 @@ const ArticleImage = styled.img`
   border-bottom-right-radius: 0;
   width: 100%;
   height: 100%;
-  
 `;
 
 const ArticleCardContent = styled.div`
@@ -151,7 +151,7 @@ const ArticleTitle = styled.h2`
 `;
 
 const ArticleSummary = styled.p`
-  height: 13rem;
+  height: 14rem;
   letter-spacing: 0.3px;
   font-size: 1rem;
   color: #bcbcbc;
@@ -164,30 +164,8 @@ const ArticleSummary = styled.p`
   text-overflow: ellipsis;
 `;
 
-const RedMoreButton = styled(Link)`
-  text-align: center;
-  width: 8rem;
-  margin: 0 auto;
-  padding: 0.5rem 1rem;
-  color: #4d61fc;
-  text-decoration: none;
-  border-color: #bcbcbc;
-  border-radius: 10px;
-  cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-  background: linear-gradient(
-    100deg,
-    rgb(189 189 189 / 7%),
-    rgba(255, 255, 255, 0)
-  );
-`;
-
 const SecondSectionLevel1 = styled.div`
   display: flex;
-  align-items: flex-end;
   gap: 1.5rem;
   width: 100%;
 `;
@@ -197,7 +175,7 @@ const SecondSection1 = styled.section`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 300px;
+  height: 100%;
 
   padding: 1.7rem;
   overflow: hidden;
@@ -241,7 +219,7 @@ const SecondSection2 = styled.div`
 const SectionNewsFlex = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2.7rem;
+  gap: 1.5rem;
 `;
 const SectionNews = styled.div`
   height: 3rem;
@@ -249,7 +227,6 @@ const SectionNews = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  
 
   border-radius: 30px;
   background: linear-gradient(
@@ -257,7 +234,7 @@ const SectionNews = styled.div`
     rgb(189 189 189 / 7%),
     rgba(255, 255, 255, 0)
   );
-  
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -357,6 +334,19 @@ const ProyectTech = styled.div`
   display: flex;
   gap: 1.5rem;
 `;
+const TitleNews = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    color: #4d61fc;
+  }
+`;
+
+const ContainerButtons = styled.div`
+  display: flex;
+  gap: 1.5rem;
+`;
 const Home = () => {
   return (
     <Bg>
@@ -374,7 +364,16 @@ const Home = () => {
                   achieve your goals with us. Let&apos;s build the success of
                   your business in less time than you can imagine!
                 </Intro>
+                <ContainerButtons>
+                  <Button href={"/"} outline="true" read="true">
+                    Read More
+                  </Button>
+                  <Button href={"/"} primary="true" size="l">
+                    Start
+                  </Button>
+                </ContainerButtons>
               </SectionInfo>
+
               <ImgContainer>
                 <FirstImageInfo src="https://my-page-negiupp.s3.amazonaws.com/1687442391096.png" />
               </ImgContainer>
@@ -383,7 +382,7 @@ const Home = () => {
 
           <PrincipalContent>
             <AsideArtStart>
-              <ArticleCard> 
+              <ArticleCard>
                 <ArticleImageConatiner>
                   <ArticleImage
                     src="https://my-page-negiupp.s3.amazonaws.com/1686946855136.png"
@@ -400,7 +399,7 @@ const Home = () => {
                     are handy, if you want to run the same code over and over
                     again, each time with a different value.
                   </ArticleSummary>
-                  <RedMoreButton href={"/"}>Read more</RedMoreButton>
+                  <Button href={"/"} read="true">Read more</Button>
                 </ArticleCardContent>
               </ArticleCard>
               <Start>
@@ -433,10 +432,17 @@ const Home = () => {
               your trusted digital partner. Together, we will achieve the online
               success you desire.
             </Intro>*/}
-                </SecondSection1> 
+                </SecondSection1>
 
                 <SectionNewsFlex>
-                  <SectionNews><InfiniteScrollAmimation/></SectionNews>
+                  <TitleNews>
+                    <span> News</span>
+                  </TitleNews>
+
+                  <SectionNews>
+                    <InfiniteScrollAmimation />
+                  </SectionNews>
+
                   <ProyectTech>
                     <SecondSection2>
                       <SubTitle>Proyects</SubTitle>
@@ -543,7 +549,6 @@ const Home = () => {
             </SectionsContainer>
           </PrincipalContent>
         </OficialContent>
-        
       </Center>
     </Bg>
   );
