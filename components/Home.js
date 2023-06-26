@@ -306,6 +306,7 @@ const Start = styled.div`
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+
 `;
 
 const ProyectTech = styled.div`
