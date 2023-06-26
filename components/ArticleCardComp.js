@@ -86,30 +86,30 @@ const ArticleSummary = styled.p`
   text-align: start;
 `;
 
-const Slider = ({ articles }) => {
+const Slider = ({latestArticles }) => {
 
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const slideInterval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % articles.length);
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % latestArticles.length);
     }, 4000);
 
     return () => {
       clearInterval(slideInterval);
     };
-  }, [articles.length]);
+  }, [latestArticles.length]);
 
   return (
     <SliderContainer>
       <SliderTrack
         style={{
-          width: `${articles.length * 100}%`,
-          transform: `translateX(-${(currentSlide / articles.length) * 100}%)`,
+          width: `${latestArticles.length * 100}%`,
+          transform: `translateX(-${(currentSlide / latestArticles.length) * 100}%)`,
         }}
       >
-        {articles.map((article) => (
+        {latestArticles.map((article) => (
           <ArticleCard key={article._id}>
             <ArticleImageConatiner>
               <ArticleImage src={article.images[0]} alt="article-image" />

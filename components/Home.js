@@ -286,7 +286,7 @@ const IconServices = styled.div`
     }
   }
 `;
-const Home = ({articles}) => {
+const Home = ({latestArticles}) => {
   return (
     <Bg>
       <Center>
@@ -324,7 +324,7 @@ const Home = ({articles}) => {
             <TitleNews>
                     <span> Latest Articles</span>
                   </TitleNews>
-              <ArticleCardComp articles={articles} />
+              <ArticleCardComp latestArticles={latestArticles} />
               <Start>
                 <Title>
                   <span>START</span>

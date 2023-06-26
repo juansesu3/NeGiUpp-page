@@ -3,28 +3,23 @@ import Home from "@/components/Home";
 import { mongooseConnect } from "@/lib/mongoose";
 import { Article } from "@/models/Article";
 
+const HomePage = ({ latestArticles }) => {
 
-
-const HomePage = ({articles}) => {
-  console.log(articles)
-
-  return ( 
+  return (
     <div>
       <Header />
-      <Home articles={articles} />
-    </div> 
+      <Home latestArticles={latestArticles} />
+    </div>
   );
 };
 
-export const getServerSideProps = async()=>{
-  
+export const getServerSideProps = async () => {
   await mongooseConnect();
-  const articles = await Article.find();
+  const latestArticles = await Article.find({}, null, { sort: { _id: -1 }, limit:5});
 
   return {
-    props: {articles: JSON.parse(JSON.stringify(articles))},
-  }
-
-}
+    props: { latestArticles: JSON.parse(JSON.stringify(latestArticles)) },
+  };
+};
 
 export default HomePage;
