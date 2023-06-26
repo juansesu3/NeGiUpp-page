@@ -31,7 +31,7 @@ const StyledNav = styled.nav`
 `;
 
 const NavLink = styled(Link)` 
-  color: #676767; 
+  color: #676767;  
   text-decoration: none;
   font-size: 16px;
   transition: 0.3s;

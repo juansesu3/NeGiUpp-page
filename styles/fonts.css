@@ -13,3 +13,51 @@ body {
   background-color: #0f0f0f;
   font-family: 'Inter', sans-serif;
 }
+
+.tag-list {
+  width: 100%;
+  max-width: 90vw;
+  display: flex;
+  flex-shrink: 0;
+
+  gap: 1rem 0;
+  position: absolute;
+  padding: 1.5rem 0;
+  overflow: hidden;
+}
+
+.loop-slider {
+  .inner {
+    display: flex;
+    width: fit-content;
+    animation-name: loop;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: var(--direction);
+    animation-duration: var(--duration);
+  }
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 0 0.2rem;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  margin-right: 1rem;
+
+  span {
+    font-size: 1.2rem;
+    color: #64748b;
+  }
+}
+
+@keyframes loop {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}

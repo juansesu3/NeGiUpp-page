@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import Center from "./Center";
 import Link from "next/link";
+import InfiniteScrollAmimation from "./InfiniteScrollAmimation";
 
 const Bg = styled.div`
   background-color: #0f0f0f;
@@ -76,12 +77,15 @@ const SecondSection = styled.section`
   justify-content: center;
   width: 100%;
   height: 20rem;
-
   padding: 1.5rem;
-
   white-space: nowrap;
   border-radius: 30px;
-  background: linear-gradient(100deg, rgb(189 189 189 / 7%), rgba(255, 255, 255, 0));
+  cursor: pointer;
+  background: linear-gradient(
+    100deg,
+    rgb(189 189 189 / 7%),
+    rgba(255, 255, 255, 0)
+  );
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -102,30 +106,20 @@ const SubTitle = styled.h2`
   }
 `;
 
-const AsideArticles = styled.div`
-  width: 40rem;
-  height: 40rem;
-  padding: 1.5rem;
-  border-radius: 30px;
-  background: linear-gradient(100deg, rgb(189 189 189 / 7%), rgba(255, 255, 255, 0));
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-`;
-
 const ArticleCard = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 8px;
   width: 100%;
   height: 40.3rem;
-
   overflow: hidden;
   text-overflow: ellipsis;
-
   border-radius: 30px;
-  background: linear-gradient(100deg, rgb(189 189 189 / 7%), rgba(255, 255, 255, 0));
+  background: linear-gradient(
+    100deg,
+    rgb(189 189 189 / 7%),
+    rgba(255, 255, 255, 0)
+  );
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -133,6 +127,7 @@ const ArticleCard = styled.div`
 `;
 const ArticleImageConatiner = styled.div`
   max-width: 100%;
+  min-height: 15rem;
   margin: 0 auto;
 `;
 const ArticleImage = styled.img`
@@ -140,10 +135,14 @@ const ArticleImage = styled.img`
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   width: 100%;
+  height: 100%;
+  
 `;
 
 const ArticleCardContent = styled.div`
   padding: 0.5rem 1.2rem;
+  display: flex;
+  flex-direction: column;
 `;
 
 const ArticleTitle = styled.h2`
@@ -152,10 +151,38 @@ const ArticleTitle = styled.h2`
 `;
 
 const ArticleSummary = styled.p`
-  height: 16rem;
+  height: 13rem;
+  letter-spacing: 0.3px;
+  font-size: 1rem;
+  color: #bcbcbc;
+  opacity: 0.5;
+
+  text-transform: uppercase;
+
   overflow: hidden;
+
   text-overflow: ellipsis;
-  text-align: justify;
+`;
+
+const RedMoreButton = styled(Link)`
+  text-align: center;
+  width: 8rem;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  color: #4d61fc;
+  text-decoration: none;
+  border-color: #bcbcbc;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  background: linear-gradient(
+    100deg,
+    rgb(189 189 189 / 7%),
+    rgba(255, 255, 255, 0)
+  );
 `;
 
 const SecondSectionLevel1 = styled.div`
@@ -176,9 +203,13 @@ const SecondSection1 = styled.section`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
- 
+  cursor: pointer;
   border-radius: 30px;
-  background: linear-gradient(100deg, rgb(189 189 189 / 7%), rgba(255, 255, 255, 0));
+  background: linear-gradient(
+    100deg,
+    rgb(189 189 189 / 7%),
+    rgba(255, 255, 255, 0)
+  );
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -196,7 +227,12 @@ const SecondSection2 = styled.div`
   text-overflow: ellipsis;
   white-space: nowrap;
   border-radius: 30px;
-  background: linear-gradient(100deg, rgb(189 189 189 / 7%), rgba(255, 255, 255, 0));
+  cursor: pointer;
+  background: linear-gradient(
+    100deg,
+    rgb(189 189 189 / 7%),
+    rgba(255, 255, 255, 0)
+  );
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -209,12 +245,19 @@ const SectionNewsFlex = styled.div`
 `;
 const SectionNews = styled.div`
   height: 3rem;
-
-  border-radius: 30px;
-  background: linear-gradient(100deg, rgb(189 189 189 / 7%), rgba(255, 255, 255, 0));
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  
+
+  border-radius: 30px;
+  background: linear-gradient(
+    100deg,
+    rgb(189 189 189 / 7%),
+    rgba(255, 255, 255, 0)
+  );
+  
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -238,13 +281,17 @@ const SecundaryContentSection1 = styled.div`
   align-items: center;
   width: 100%;
   height: 15rem;
-
+  cursor: pointer;
   padding: 1.7rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   border-radius: 30px;
-  background: linear-gradient(100deg, rgb(189 189 189 / 7%), rgba(255, 255, 255, 0));
+  background: linear-gradient(
+    100deg,
+    rgb(189 189 189 / 7%),
+    rgba(255, 255, 255, 0)
+  );
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -263,7 +310,11 @@ const SecundaryContentSection2 = styled.div`
   text-overflow: ellipsis;
   white-space: nowrap;
   border-radius: 30px;
-  background: linear-gradient(100deg, rgb(189 189 189 / 7%), rgba(255, 255, 255, 0));
+  background: linear-gradient(
+    100deg,
+    rgb(189 189 189 / 7%),
+    rgba(255, 255, 255, 0)
+  );
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -290,11 +341,21 @@ const Start = styled.div`
   text-overflow: ellipsis;
   white-space: nowrap;
   border-radius: 30px;
-  background: linear-gradient(100deg, rgb(189 189 189 / 7%), rgba(255, 255, 255, 0));
+  cursor: pointer;
+  background: linear-gradient(
+    100deg,
+    rgb(189 189 189 / 7%),
+    rgba(255, 255, 255, 0)
+  );
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+`;
+
+const ProyectTech = styled.div`
+  display: flex;
+  gap: 1.5rem;
 `;
 const Home = () => {
   return (
@@ -321,11 +382,8 @@ const Home = () => {
           </div>
 
           <PrincipalContent>
-
-
             <AsideArtStart>
-
-              <ArticleCard>
+              <ArticleCard> 
                 <ArticleImageConatiner>
                   <ArticleImage
                     src="https://my-page-negiupp.s3.amazonaws.com/1686946855136.png"
@@ -333,21 +391,23 @@ const Home = () => {
                   />
                 </ArticleImageConatiner>
                 <ArticleCardContent>
-                  <h2>Article Title</h2>
+                  <h2>For cicle</h2>
                   <span>
-                    <date>01/20/2023</date>
+                    <date>06/26/2023</date>
                   </span>
-                  <ArticleSummary> 
-                  Loops can execute a block of code a number of times.
-Loops are handy, if you want to run the same code over and over again, each time with a different value.
+                  <ArticleSummary>
+                    Loops can execute a block of code a number of times. Loops
+                    are handy, if you want to run the same code over and over
+                    again, each time with a different value.
                   </ArticleSummary>
-                  <Link href={'/'}>Read more</Link>
+                  <RedMoreButton href={"/"}>Read more</RedMoreButton>
                 </ArticleCardContent>
               </ArticleCard>
               <Start>
-              <Title>
+                <Title>
                   <span>START</span>
-                </Title></Start>
+                </Title>
+              </Start>
             </AsideArtStart>
 
             <SectionsContainer>
@@ -373,39 +433,25 @@ Loops are handy, if you want to run the same code over and over again, each time
               your trusted digital partner. Together, we will achieve the online
               success you desire.
             </Intro>*/}
-                </SecondSection1>
+                </SecondSection1> 
 
                 <SectionNewsFlex>
-                  <SectionNews>news</SectionNews>
-                  <SecondSection2>
-                    <SubTitle>Proyects</SubTitle>
-                    {/* <Intro>
-              At NeGiUpp digital consulting, we have created an exclusive
-              membership model to provide you with tailored full stack web
-              development services. We are here to drive your online business
-              and ensure you achieve the best results. Our team of expert web
-              developers will take care of all your digital needs. Whether you
-              need a website from scratch, ongoing improvements, or digital
-              marketing strategies, we are ready to work with you. By joining
-              our membership, you will gain exclusive access to highly
-              functional and visually appealing solutions. Additionally, you
-              will receive regular updates on the latest digital trends and
-              technologies. We focus on your success and are committed to
-              providing personalized service and ongoing support. No matter what
-              your goals are, we will be by your side to help you achieve them.
-              Discover how our full stack web development consultancy can take
-              your business to the next level. Contact us today and let us be
-              your trusted digital partner. Together, we will achieve the online
-              success you desire.
-            </Intro>*/}
-                  </SecondSection2>
+                  <SectionNews><InfiniteScrollAmimation/></SectionNews>
+                  <ProyectTech>
+                    <SecondSection2>
+                      <SubTitle>Proyects</SubTitle>
+                    </SecondSection2>
+                    <SecondSection2>
+                      <SubTitle>Technologies</SubTitle>
+                    </SecondSection2>
+                  </ProyectTech>
                 </SectionNewsFlex>
               </SecondSectionLevel1>
-
               <SecondSectionLevel2>
                 <SecondSection>
                   <SubTitle>
-                    Accelerate Transformation: Unlock Your Digital Potential
+                    Accelerate Transformation: Unlock Your{" "}
+                    <span>Digital Potential</span>
                   </SubTitle>
                   {/*  <Intro>
               At NeGiUpp digital consulting, we specialize in accelerating
@@ -440,7 +486,8 @@ Loops are handy, if you want to run the same code over and over again, each time
 
                 <SecondSection>
                   <SubTitle>
-                    Next steps to transform your idea into a reality
+                    Next steps to transform your <span>idea</span> into a
+                    reality
                   </SubTitle>
                   {/*  <Intro>
               At NeGiUpp digital consulting, we believe in turning ideas into
@@ -471,7 +518,7 @@ Loops are handy, if you want to run the same code over and over again, each time
               </SecondSectionLevel2>
               <SecundaryContent>
                 <SecundaryContentSection1>
-                  <SubTitle>How can we help you?</SubTitle>
+                  <SubTitle>Services Offering</SubTitle>
                   {/* <Intro>
               At NeGiUpp digital consulting, we have created an exclusive
               membership model to provide you with tailored full stack web
@@ -496,6 +543,7 @@ Loops are handy, if you want to run the same code over and over again, each time
             </SectionsContainer>
           </PrincipalContent>
         </OficialContent>
+        
       </Center>
     </Bg>
   );
