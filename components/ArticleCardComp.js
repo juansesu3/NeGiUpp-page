@@ -24,7 +24,7 @@ const SliderTrack = styled.div`
 const ArticleCard = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
   height: 41.8rem;
   overflow: hidden;
@@ -61,14 +61,15 @@ const ArticleCardContent = styled.div`
 `;
 
 const ArticleTitle = styled.h2`
-height: 2rem;
- text-transform: uppercase;
+  height: 3.5rem;
+  text-transform: uppercase;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2; /* Establece el número máximo de líneas */
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-top: 0 ;
+  margin-top: 0;
+  text-align: start;
 `;
 
 const ArticleSummary = styled.p`
@@ -77,12 +78,12 @@ const ArticleSummary = styled.p`
   font-size: 1rem;
   color: #bcbcbc;
   opacity: 0.5;
- 
+
   overflow: hidden;
   text-overflow: ellipsis;
   margin: 0;
   margin-bottom: 1.5rem;
-  text-align: justify;
+  text-align: start;
 `;
 
 const Slider = ({ articles }) => {
@@ -115,7 +116,11 @@ const Slider = ({ articles }) => {
               <ArticleTitle>{article.title}</ArticleTitle>
               <time>{new Date(article.updatedAt).toLocaleString("sv-SE")}</time>
               <ArticleSummary>{article.summary}</ArticleSummary>
-              <Button href={"/articles/" + article._id} read="true" artbutton="true">
+              <Button
+                href={"/articles/" + article._id}
+                read="true"
+                artbutton="true"
+              >
                 Read more
               </Button>
             </ArticleCardContent>
