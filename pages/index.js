@@ -5,22 +5,28 @@ import { mongooseConnect } from "@/lib/mongoose";
 import { Article } from "@/models/Article";
 
 const HomePage = ({ latestArticles }) => {
-
   return (
     <div>
       <Header />
       <Home latestArticles={latestArticles} />
-      <Footer/>
+      <Footer />
     </div>
   );
 };
 
 export const getServerSideProps = async () => {
   await mongooseConnect();
-  const latestArticles = await Article.find({}, null, { sort: { _id: -1 }, limit:5});
+  const latestArticles = await Article.find({}, null, {
+    sort: { _id: -1 },
+    limit: 5,
+  });
+ 
 
   return {
-    props: { latestArticles: JSON.parse(JSON.stringify(latestArticles)) },
+    props: {
+      latestArticles: JSON.parse(JSON.stringify(latestArticles))
+     
+    },
   };
 };
 

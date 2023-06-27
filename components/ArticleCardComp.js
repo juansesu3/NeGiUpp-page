@@ -86,9 +86,7 @@ const ArticleSummary = styled.p`
   text-align: start;
 `;
 
-const Slider = ({latestArticles }) => {
-
-
+const Slider = ({ latestArticles }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -106,7 +104,9 @@ const Slider = ({latestArticles }) => {
       <SliderTrack
         style={{
           width: `${latestArticles.length * 100}%`,
-          transform: `translateX(-${(currentSlide / latestArticles.length) * 100}%)`,
+          transform: `translateX(-${
+            (currentSlide / latestArticles.length) * 100
+          }%)`,
         }}
       >
         {latestArticles.map((article) => (
@@ -134,4 +134,3 @@ const Slider = ({latestArticles }) => {
 };
 
 export default Slider;
-
