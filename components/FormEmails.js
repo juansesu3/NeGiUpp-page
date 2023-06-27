@@ -1,4 +1,5 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { styled } from "styled-components";
 
 const Conatiner = styled.div`
@@ -79,17 +80,52 @@ const FormContainer = styled.form`
 `;
 
 const FormEmails = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (ev) => {
+    ev.preventDefault();
+    const data = {
+      name,
+      email,
+      subject,
+      message,
+    };
+    await axios.post("/api/emails", data);
+  };
+
   return (
     <Conatiner>
       <h1>
         Let&apos;s work <span>together.</span>
       </h1>
-      <FormContainer>
-        <input type="text" placeholder="Name *" />
-        <input type="mail" placeholder="Email *" />
-        <input type="text" placeholder="Your Subject *" />
-        <textarea placeholder="Your Menssage*"></textarea>
-        <button>Send Message</button>
+      <FormContainer onSubmit={handleSubmit}>
+        <input
+          value={name}
+          onChange={(ev) => setName(ev.target.value)}
+          type="text"
+          placeholder="Name *"
+        />
+        <input
+          value={email}
+          onChange={(ev) => setEmail(ev.target.value)}
+          type="mail"
+          placeholder="Email *"
+        />
+        <input
+          value={subject}
+          onChange={(ev) => setSubject(ev.target.value)}
+          type="text"
+          placeholder="Your Subject *"
+        />
+        <textarea
+          value={message}
+          onChange={(ev) => setMessage(ev.target.value)}
+          placeholder="Your Menssage*"
+        ></textarea>
+        <button type="submit">Send Message</button>
       </FormContainer>
     </Conatiner>
   );

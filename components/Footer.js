@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React from "react";
 import { styled } from "styled-components";
-import Center from "./Center";
 
 const BckGro = styled.div`
   margin: 0 auto;
