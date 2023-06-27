@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { styled } from "styled-components";
+import { withSwal } from "react-sweetalert2";
 
 const Conatiner = styled.div`
   width: 35rem;
@@ -79,7 +80,7 @@ const FormContainer = styled.form`
   }
 `;
 
-const FormEmails = () => {
+const FormEmails = ({ swal }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -87,6 +88,12 @@ const FormEmails = () => {
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
+    swal.fire({
+      title: "The message was sended ",
+      text: `We will be in touch soon!`,
+      timer: "2500",
+    });
+
     const data = {
       name,
       email,
@@ -131,4 +138,4 @@ const FormEmails = () => {
   );
 };
 
-export default FormEmails;
+export default withSwal(({ swal }, ref) => <FormEmails swal={swal} />);
