@@ -119,7 +119,7 @@ const Slider = ({ latestArticles }) => {
               <time>{new Date(article.updatedAt).toLocaleString("sv-SE")}</time>
               <ArticleSummary>{article.summary}</ArticleSummary>
               <Button
-                href={"/articles/" + article._id}
+                href={"/article/" + article._id}
                 read="true"
                 artbutton="true"
               >

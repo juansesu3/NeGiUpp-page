@@ -100,7 +100,7 @@ const BlogArticleCard = ({ articles }) => {
                   <ArticleSummary>{article.summary}</ArticleSummary>
                 </ContainerSummary>
                 <Button
-                  href={"/articles/" + article._id}
+                  href={"/article/" + article._id}
                   read="true"
                   artbutton="true"
                 >
