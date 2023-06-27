@@ -33,7 +33,7 @@ const StyledNav = styled.nav`
 const NavLink = styled(Link)`
   color: #676767;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 1.3rem;
   transition: 0.3s;
   &:hover {
     color: #ffffff;
