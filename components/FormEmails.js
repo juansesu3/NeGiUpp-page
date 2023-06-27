@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from "styled-components";
 
 const Conatiner = styled.div`
-  width: 40rem;
+  width: 35rem;
   border-radius: 3rem;
   padding: 3rem;
   color: white;

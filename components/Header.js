@@ -22,16 +22,16 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 20px 0;
-`; 
- 
+`;
+
 const StyledNav = styled.nav`
   display: flex;
   align-items: center;
-  gap: 40px; 
+  gap: 40px;
 `;
 
-const NavLink = styled(Link)` 
-  color: #676767;  
+const NavLink = styled(Link)`
+  color: #676767;
   text-decoration: none;
   font-size: 16px;
   transition: 0.3s;
@@ -57,7 +57,6 @@ const LetsTalk = styled(Link)`
   &:hover {
     background-color: #ffffff;
     color: #0f0f0f;
-    
   }
 `;
 
@@ -80,10 +79,10 @@ const Header = () => {
             <NavLink href={"/contact"}>Contact</NavLink>
           </StyledNav>
           <LetsTalk href={"/contact"}> Let&apos;s talk</LetsTalk>
-        </Wrapper> 
-      </Center>  
-    </StyledHeader>  
-  );   
-}; 
+        </Wrapper>
+      </Center>
+    </StyledHeader>
+  );
+};
 
 export default Header;

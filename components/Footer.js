@@ -5,6 +5,7 @@ import Center from "./Center";
 
 const BckGro = styled.div`
   margin: 0 auto;
+  
   background-color: #0f0f0f;
   color: #fff;
   height: 100%;
@@ -20,12 +21,15 @@ const BckGro = styled.div`
 `;
 
 const First = styled.div`
+  max-width: 1100px;
+  margin: 0 auto;
+
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: first baseline;
-  justify-content: space-around;
+  justify-content: space-between;
 `;
 const Second = styled.div`
   width: 100%;
@@ -44,6 +48,7 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin: 0 2rem;
 `;
 const LinkFooter = styled(Link)`
   text-decoration: none;
@@ -73,7 +78,7 @@ const Lang = styled.div`
   display: flex;
 
   .selelect {
-    width: 8.5rem;
+    width: 100%;
     margin: 0 auto;
     border: 0;
     height: 1.5rem;
