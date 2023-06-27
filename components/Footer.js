@@ -4,8 +4,7 @@ import { styled } from "styled-components";
 import Center from "./Center";
 
 const BckGro = styled.div`
-
-margin: 0 auto;
+  margin: 0 auto;
   background-color: #0f0f0f;
   color: #fff;
   height: 100%;
@@ -36,6 +35,9 @@ const Second = styled.div`
   padding-top: 3rem;
 
   color: gray;
+  span {
+    color: #4d61fc;
+  }
 `;
 
 const Section = styled.section`
@@ -83,9 +85,7 @@ const Lang = styled.div`
 
 const Footer = () => {
   return (
-  
     <BckGro>
-    
       <First>
         <Section>
           <h4>About NeGiUpp</h4>
@@ -121,14 +121,13 @@ const Footer = () => {
           </LangLog>
         </Section>
       </First>
-   
+
       <Second>
-        <h5>© 2023 NeGiUpp | All rigth reserved</h5>
+        <h5>
+          © 2023 <span>NeGiUpp</span> | All rigth reserved
+        </h5>
       </Second>
-    
-     
     </BckGro>
-   
   );
 };
 

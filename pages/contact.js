@@ -1,4 +1,5 @@
 import Center from "@/components/Center";
+import FormEmails from "@/components/FormEmails";
 import Header from "@/components/Header";
 import React from "react";
 
@@ -41,18 +42,7 @@ const ContacPage = () => {
               <div>Instagram</div>
             </div>
           </div>
-
-          <div>
-            <h1>Lets work together</h1>
-            <form>
-              <input type="text" placeholder="Name *" />
-              <input type="mail" placeholder="Email *" />
-              <input type="text" placeholder="Your Subject *" />
-              <textarea placeholder="Your Menssage*"></textarea>
-              <button>Send Message</button>
-            </form>
-            Form Email
-          </div>
+          <FormEmails />
         </div>
       </Center>
     </>
