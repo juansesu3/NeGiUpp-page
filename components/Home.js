@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 import Center from "./Center";
 import Link from "next/link";
 import InfiniteScrollAmimation from "./InfiniteScrollAmimation";
@@ -286,7 +286,23 @@ const IconServices = styled.div`
     }
   }
 `;
-const Home = ({latestArticles}) => {
+
+const StyledLink = styled(Link)`
+  ${(props) =>
+    props.proyect &&
+    css`
+      margin: 0;
+      font-size: 1.5rem;
+      line-height: 40px;
+      color: #fff;
+      font-weight: 500;
+      white-space: normal;
+      text-align: center;
+    `}
+  text-decoration: none;
+`;
+
+const Home = ({ latestArticles }) => {
   return (
     <Bg>
       <Center>
@@ -321,9 +337,9 @@ const Home = ({latestArticles}) => {
 
           <PrincipalContent>
             <AsideArtStart>
-            <TitleNews>
-                    <span> Latest Articles</span>
-                  </TitleNews>
+              <TitleNews>
+                <span> Latest Articles</span>
+              </TitleNews>
               <ArticleCardComp latestArticles={latestArticles} />
               <Start>
                 <Title>
@@ -368,7 +384,11 @@ const Home = ({latestArticles}) => {
 
                   <ProyectTech>
                     <SecondSection2>
-                      <SubTitle>Proyects</SubTitle>
+                      <SubTitle>
+                        <StyledLink proyect="true" href={"/proyects"}>
+                          Proyects
+                        </StyledLink>
+                      </SubTitle>
                     </SecondSection2>
                     <SecondSection2>
                       <SubTitle>Technologies</SubTitle>
