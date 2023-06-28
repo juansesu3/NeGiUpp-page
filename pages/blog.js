@@ -7,7 +7,7 @@ import BlogArticleCard from "@/components/BlogArticleCard";
 import { styled } from "styled-components";
 
 const BlogContainer = styled.div`
-margin-top: 5rem;
+  margin-top: 5rem;
   h1 {
     color: #ffff;
     text-align: center;
