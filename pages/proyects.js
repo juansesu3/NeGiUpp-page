@@ -13,14 +13,13 @@ const ProyectsPage = () => {
       setProyects(response.data);
     });
   }, []);
-  console.log(proyects);
 
   return (
     <div>
       <Header />
       <Center>
         <h1>Proyect page</h1>
-        <ProyectCard proyects={proyects}/>
+        <ProyectCard proyects={proyects} />
       </Center>
       <Footer />
     </div>

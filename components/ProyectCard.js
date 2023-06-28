@@ -1,11 +1,17 @@
-import React from 'react'
+import React from "react";
 
-const ProyectCard = ({proyects}) => {
+const ProyectCard = ({ proyects }) => {
   return (
     <div>
-        ProyectCard
+      {proyects.length > 0 &&
+        proyects.map((proyect) => (
+          <div key={proyect._id}>
+            <h1>{proyect.title}</h1>
+          </div>
+        ))}
+      ProyectCard
     </div>
-  )
-}
+  );
+};
 
-export default ProyectCard
+export default ProyectCard;
