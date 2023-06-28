@@ -18,7 +18,7 @@ const ProyectsPage = () => {
     <div>
       <Header />
       <Center>
-        <h1>Proyect page</h1>
+        <h1 style={{color:"#ffff"}}>Proyects</h1>
         <ProyectCard proyects={proyects} />
       </Center>
       <Footer />
