@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 import Center from "./Center";
+import { useRouter } from "next/router";
 
 const StyledHeader = styled.header`
   background-color: #0f0f0f;
@@ -35,6 +36,12 @@ const NavLink = styled(Link)`
   text-decoration: none;
   font-size: 1.3rem;
   transition: 0.3s;
+  ${(props) =>
+    props.active === true &&
+    css`
+      color: #ffff;
+      text-decoration: underline;
+    `}
   &:hover {
     color: #ffffff;
   }
@@ -61,6 +68,9 @@ const LetsTalk = styled(Link)`
 `;
 
 const Header = () => {
+  const router = useRouter();
+  const { pathname } = router;
+
   return (
     <StyledHeader>
       <Center>
@@ -72,11 +82,33 @@ const Header = () => {
             />
           </LogoLink>
           <StyledNav>
-            <NavLink href={"/"}>Home</NavLink>
-            <NavLink href={"/about"}>About</NavLink>
-            <NavLink href={"/proyects"}>Proyects</NavLink>
-            <NavLink href={"/blog"}>Blog</NavLink>
-            <NavLink href={"/contact"}>Contact</NavLink>
+            <NavLink active={pathname === "/" ? true : false} href={"/"}>
+              Home
+            </NavLink>
+            <NavLink
+              active={pathname === "/about" ? true : false}
+              href={"/about"}
+            >
+              About
+            </NavLink>
+            <NavLink
+              active={pathname === "/proyects" ? true : false}
+              href={"/proyects"}
+            >
+              Proyects
+            </NavLink>
+            <NavLink
+              active={pathname === "/blog" ? true : false}
+              href={"/blog"}
+            >
+              Blog
+            </NavLink>
+            <NavLink
+              active={pathname === "/contact" ? true : false}
+              href={"/contact"}
+            >
+              Contact
+            </NavLink>
           </StyledNav>
           <LetsTalk href={"/contact"}> Let&apos;s talk</LetsTalk>
         </Wrapper>
