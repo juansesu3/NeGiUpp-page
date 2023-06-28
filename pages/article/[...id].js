@@ -5,6 +5,47 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
+import ReactQuill from "react-quill";
+
+const Title = styled.h1`
+  color: #ffff;
+  opacity: 0.9;
+  font-size: 3.5rem;
+  font-weight: bold;
+`;
+const SectionOne = styled.div`
+  display: flex;
+  gap: 1.5rem;
+  img {
+    width: 40rem;
+  }
+`;
+const Summary = styled.p`
+  color: #ffff;
+  opacity: 0.7;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+`;
+
+const AuthorContainer = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  img {
+    width: 3rem;
+    border-radius: 1.5rem;
+  }
+  h2 {
+    color: #ffff;
+    font-weight: 400;
+    font-size: 1.2rem;
+  }
+`;
+
+const Content = styled.div`
+  color: #ffff;
+`;
 
 const ArticlePage = () => {
   const [article, setArticle] = useState({});
@@ -20,15 +61,9 @@ const ArticlePage = () => {
     });
   }, [id]);
 
-  const Title = styled.h1`
-    color: #ffff;
-  `;
-  const Summary = styled.p`
-    color: #ffff;
-  `;
-  const Content = styled.p`
-    color: #ffff;
-  `;
+  const ArticleContent = ({ htmlContent }) => {
+    return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
+  };
 
   return (
     <>
@@ -36,25 +71,30 @@ const ArticlePage = () => {
       <Center>
         {article && (
           <div>
-            <Title>{article.title}</Title>
-            <div>
-              <img src={article?.images} alt="article-image" />
-            </div>
-            <div>
-              <Summary>{article.summary}</Summary>
-            </div>
-
-            <div>
+            <SectionOne>
               <div>
-                <h2>{article.author}</h2>
+                <Title>{article.title}</Title>
+                <Summary>{article.summary}</Summary>
               </div>
+              <div>
+                <img src={article?.images} alt="article-image" />
+              </div>
+            </SectionOne>
+            <hr />
+
+            <AuthorContainer>
               <div>
                 <img src={article?.imgAuthor} alt="author-image" />
               </div>
-            </div>
+              <div>
+                <h2>{article.author}</h2>
+              </div>
+            </AuthorContainer>
 
             <div>
-              <Content>{article.content}</Content>
+              <Content>
+                <ArticleContent htmlContent={article.content} />
+              </Content>
             </div>
           </div>
         )}
@@ -65,10 +105,3 @@ const ArticlePage = () => {
 };
 
 export default ArticlePage;
-
-/*
- {article.length > 0 &&
-          article[0].map((art) => (
-          <div key={art._id}>
-            {art.title}</div>)
-          )} */
