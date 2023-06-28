@@ -3,6 +3,7 @@ import Button from "./Button";
 
 const ContainerArticles = styled.div`
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   flex-direction: row;
   gap: 1.5rem;
