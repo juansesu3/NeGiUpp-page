@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import axios from "axios";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 
 const LandindPageConatiner = styled.div`
@@ -11,16 +11,16 @@ const LandindPageConatiner = styled.div`
   flex-direction: column;
   gap: 1.5rem;
 `;
-const AboutContainer = styled.div`
+const ContainerSect = styled.div`
   display: flex;
   padding: 1.5rem;
   gap: 1.5rem;
-  
+
   border-radius: 30px;
   background: linear-gradient(
     100deg,
     rgb(189 189 189 / 7%),
-    rgba(255, 255, 255, 0)
+    rgba(20, 20, 20, 100%)
   );
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
@@ -31,29 +31,54 @@ const Technologies = styled.div`
   padding: 1.5rem;
   width: 50%;
   border-radius: 30px;
+  color: #ffff;
   background: linear-gradient(
     100deg,
     rgb(189 189 189 / 7%),
     rgba(255, 255, 255, 0)
   );
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
 `;
 const AboutInfo = styled.div`
   padding: 1.5rem;
   border-radius: 30px;
   width: 50%;
+  color: #ffff;
+
+  h3 {
+    opacity: 0.5;
+  }
+  p {
+    opacity: 0.8;
+    letter-spacing: 0.5px;
+    line-height: 1.56;
+  }
   background: linear-gradient(
     100deg,
     rgb(189 189 189 / 7%),
     rgba(255, 255, 255, 0)
   );
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+`;
+
+const ImageContainer = styled.div`
+  max-width: 70rem;
+
+  img {
+    width: 100%;
+    max-height: 40rem;
+  }
+`;
+const DescriptionConatiner = styled.div`
+  padding: 1.5rem;
+  width: 90%;
+  color: #ffff;
+  h3 {
+    opacity: 0.5;
+  }
+  p {
+    opacity: 0.8;
+    letter-spacing: 0.5px;
+    line-height: 1.56;
+  }
 `;
 
 const ProyectPage = () => {
@@ -80,20 +105,20 @@ const ProyectPage = () => {
         {!!proyect && (
           <>
             <LandindPageConatiner>
-              <div>
+              <ImageContainer>
                 <img src={proyect?.images} alt="image-proyect" />
-              </div>
+              </ImageContainer>
 
-              <AboutContainer>
+              <ContainerSect>
                 <Technologies>Stack of technologies</Technologies>
                 <AboutInfo>
                   <h3>About</h3>
                   <p>{proyect.about}</p>
                 </AboutInfo>
-              </AboutContainer>
-              <div>
+              </ContainerSect>
+              <ImageContainer>
                 <img src={proyect?.images} alt="image-proyect" />
-              </div>
+              </ImageContainer>
 
               <div>
                 <div>1</div>
@@ -102,8 +127,8 @@ const ProyectPage = () => {
                 <div>4</div>
               </div>
 
-              <div>
-                <div>
+              <ContainerSect>
+                <Technologies>
                   <div>
                     <p>Realese Date</p>
                     <h4>{proyect.releaseDate}</h4>
@@ -120,15 +145,15 @@ const ProyectPage = () => {
                     <p>Proyect type</p>
                     <h4>{proyect.proyectType}</h4>
                   </div>
-                </div>
-                <div>
+                </Technologies>
+                <DescriptionConatiner>
                   <h3>Description</h3>
                   <p>{proyect.description}</p>
-                </div>
-              </div>
-              <div>
+                </DescriptionConatiner>
+              </ContainerSect>
+              <ImageContainer>
                 <img src={proyect?.images} alt="image-proyect" />
-              </div>
+              </ImageContainer>
               <div>
                 <button>Next Proyect</button>
               </div>

@@ -44,21 +44,20 @@ const AuthorContainer = styled.div`
 `;
 
 const Content = styled.div`
- color: #ffff;
+  color: #ffff;
   opacity: 0.7;
   font-size: 1.2rem;
   letter-spacing: 0.5px;
-  pre{
-    background-color:#2b2b2b;
+  pre {
+    background-color: #2b2b2b;
     color: white;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     padding: 1rem;
     font-size: 1.2rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-
+      /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+      /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+      /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   }
 `;
 
