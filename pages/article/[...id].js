@@ -63,7 +63,7 @@ const Content = styled.div`
 `;
 
 const ArticlePage = () => {
-  const [article, setArticle] = useState({});
+  const [article, setArticle] = useState([]);
   const router = useRouter();
   const { id } = router.query;
 

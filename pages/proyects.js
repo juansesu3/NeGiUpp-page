@@ -96,7 +96,7 @@ const ProyectsPage = () => {
             {FirstProyects.length > 0 &&
               FirstProyects.map((proyect) => (
                 <ContainerPro key={proyect._id}>
-                  <ContainerProyectL href={"/"}>
+                  <ContainerProyectL href={"/proyect/" + proyect._id}>
                     <ImageContainer>
                       <img src={proyect.images[0]} alt="proyect image" />
                     </ImageContainer>
@@ -144,7 +144,7 @@ const ProyectsPage = () => {
               {SecondProyects.length > 0 &&
                 SecondProyects.map((proyect) => (
                   <ContainerPro key={proyect._id}>
-                    <ContainerProyectL href={"/"}>
+                    <ContainerProyectL href={"/proyect/" + proyect._id}>
                       <ImageContainer>
                         <img src={proyect.images[0]} alt="proyect image" />
                       </ImageContainer>
