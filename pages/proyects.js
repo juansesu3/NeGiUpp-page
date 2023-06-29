@@ -28,6 +28,10 @@ const SecondProyectsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
 `;
 
 const ContainerPro = styled.div`
@@ -46,7 +50,9 @@ const ContainerPro = styled.div`
 `;
 
 const ImageContainer = styled.div`
+  height: 15rem;
   img {
+    height: 100%;
     width: 100%;
     border-radius: 1.5rem;
   }
@@ -58,6 +64,7 @@ const TitleBox = styled.div`
   margin: 0 auto;
 
   h1 {
+    font-size: 2.95rem;
     color: white;
     text-transform: uppercase;
   }
