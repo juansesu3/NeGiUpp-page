@@ -6,6 +6,21 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 
+
+const Intro = styled.div`
+p{
+  color:#BCBCBC;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+h1{
+  color: white;
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 600;
+}
+`
+
 const LandindPageConatiner = styled.div`
   display: flex;
   flex-direction: column;
@@ -46,8 +61,11 @@ const AboutInfo = styled.div`
 
   h3 {
     opacity: 0.5;
+    margin-top: 0;
+    font-weight: 400;
   }
   p {
+    color: #fff;
     opacity: 0.8;
     letter-spacing: 0.5px;
     line-height: 1.56;
@@ -68,16 +86,46 @@ const ImageContainer = styled.div`
   }
 `;
 const DescriptionConatiner = styled.div`
-  padding: 1.5rem;
   width: 90%;
-  color: #ffff;
+  color: #bcbcbc;
   h3 {
     opacity: 0.5;
+    margin-top: 0;
+    font-weight: 400;
   }
   p {
+    color: #fff;
     opacity: 0.8;
     letter-spacing: 0.5px;
     line-height: 1.56;
+  }
+`;
+const MoreDetail = styled.div`
+  padding: 1rem 3rem;
+  width: 50%;
+  border-radius: 30px;
+  color: #ffff;
+  background: linear-gradient(
+    100deg,
+    rgb(189 189 189 / 7%),
+    rgba(255, 255, 255, 0)
+  );
+  div {
+    padding: 1rem 0;
+  }
+
+  p {
+    color: #bcbcbc;
+    opacity: 0.6;
+    text-transform: capitalize;
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+  }
+  h4 {
+    margin: 0;
+    color: #ffff;
+    opacity: 0.9;
+    font-size: 1.1rem;
   }
 `;
 
@@ -100,8 +148,10 @@ const ProyectPage = () => {
     <>
       <Header />
       <Center>
+        <Intro>
         <p>Branding - E-commerce</p>
         <h1>AESTHETIC DESIGN FOR BRAND NEW STARTUP</h1>
+        </Intro>
         {!!proyect && (
           <>
             <LandindPageConatiner>
@@ -128,7 +178,7 @@ const ProyectPage = () => {
               </div>
 
               <ContainerSect>
-                <Technologies>
+                <MoreDetail>
                   <div>
                     <p>Realese Date</p>
                     <h4>{proyect.releaseDate}</h4>
@@ -145,7 +195,7 @@ const ProyectPage = () => {
                     <p>Proyect type</p>
                     <h4>{proyect.proyectType}</h4>
                   </div>
-                </Technologies>
+                </MoreDetail>
                 <DescriptionConatiner>
                   <h3>Description</h3>
                   <p>{proyect.description}</p>
