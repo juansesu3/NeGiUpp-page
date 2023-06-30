@@ -5,21 +5,169 @@ import React from "react";
 import { styled } from "styled-components";
 
 const AboutContainer = styled.div`
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
-`;
-
-const AllImgcontainer = styled.div`
-  display: flex;
-  flex-direction: row;
+  gap: 1.5rem;
 `;
 
 const ImageContainer = styled.div`
   width: 30rem;
   margin: 0 auto;
-
+  padding: 2rem;
+  border-radius: 30px;
+  background: linear-gradient(
+    100deg,
+    rgb(189 189 189 / 7%),
+    rgba(20, 20, 20, 100%)
+  );
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   img {
     width: 100%;
+    border-radius: 30px;
+  }
+`;
+
+const ContainerSec = styled.div`
+  display: flex;
+  gap: 1.5rem;
+  color: #ffff;
+`;
+const Title = styled.span`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+  h1 {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 3rem;
+  }
+  span {
+    width: 2rem;
+  }
+  img {
+    width: 100%;
+  }
+`;
+
+const InfoAboutContainer = styled.div`
+  padding: 2rem;
+  border-radius: 30px;
+  background: linear-gradient(
+    100deg,
+    rgb(189 189 189 / 7%),
+    rgba(20, 20, 20, 100%)
+  );
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+
+  p {
+    color: #ffff;
+    opacity: 0.8;
+    line-height: 1.6rem;
+    letter-spacing: 0.03rem;
+  }
+`;
+
+const CeoContainer = styled.div`
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 15rem;
+  padding: 2rem;
+  border-radius: 30px;
+  background: linear-gradient(
+    100deg,
+    rgb(189 189 189 / 7%),
+    rgba(20, 20, 20, 100%)
+  );
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+
+  p {
+    color: #ffff;
+    opacity: 0.8;
+    line-height: 1.6rem;
+    letter-spacing: 0.03rem;
+  }
+`;
+const WorkTogetheContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  width: 40%;
+  height: 15rem;
+  padding: 2rem;
+  border-radius: 30px;
+  background: linear-gradient(
+    100deg,
+    rgb(189 189 189 / 7%),
+    rgba(20, 20, 20, 100%)
+  );
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+
+  p {
+    color: #ffff;
+    opacity: 0.8;
+    line-height: 1.6rem;
+    letter-spacing: 0.03rem;
+  }
+  span {
+    color: #4d61fc;
+  }
+  svg {
+    width: 3rem;
+    color: gray;
+  }
+  &:hover {
+    svg {
+      color: #ffff;
+    }
+  }
+`;
+const StartContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: #4d61fc;
+  width: 30%;
+  height: 15rem;
+  padding: 2rem;
+  border-radius: 30px;
+  background: linear-gradient(
+    100deg,
+    rgb(189 189 189 / 7%),
+    rgba(20, 20, 20, 100%)
+  );
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+
+  p {
+    color: #ffff;
+    opacity: 0.8;
+    line-height: 1.6rem;
+    letter-spacing: 0.03rem;
   }
 `;
 
@@ -28,7 +176,93 @@ const AboutPage = () => {
     <div>
       <Header />
       <Center>
-        <AboutContainer></AboutContainer>
+        <AboutContainer>
+          {/*First section */}
+          <ContainerSec>
+            <div>
+              <ImageContainer>
+                <img
+                  src="https://my-page-negiupp.s3.amazonaws.com/1687962628674.png"
+                  alt="about-image"
+                />
+              </ImageContainer>
+            </div>
+            <div>
+              <Title>
+                <span>
+                  <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+                </span>
+
+                <h1>About us</h1>
+
+                <span>
+                  <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+                </span>
+              </Title>
+
+              <InfoAboutContainer>
+                <h2>NeGiUpp</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+              </InfoAboutContainer>
+            </div>
+          </ContainerSec>
+          {/*Second section */}
+          <ContainerSec>
+            <InfoAboutContainer>
+              <h2>Hitos</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </InfoAboutContainer>
+            <InfoAboutContainer>
+              <h2>Our culture</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </InfoAboutContainer>
+          </ContainerSec>
+          {/*Third section */}
+          <ContainerSec>
+            <CeoContainer>
+              <h1>
+                CEO
+                <br /> &<br /> Founders
+              </h1>
+            </CeoContainer>
+            <WorkTogetheContainer>
+              <h1>
+                Let&apos;s
+                <br /> work <span>together</span>
+              </h1>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-4 h-4"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
+                />
+              </svg>
+            </WorkTogetheContainer>
+            <StartContainer>Start</StartContainer>
+          </ContainerSec>
+        </AboutContainer>
       </Center>
       <Footer />
     </div>

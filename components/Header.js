@@ -34,7 +34,7 @@ const StyledNav = styled.nav`
 const NavLink = styled(Link)`
   color: #676767;
   text-decoration: none;
-  font-size: 1.3rem;
+  font-size: 1rem;
   transition: 0.3s;
   ${(props) =>
     props.active === true &&
