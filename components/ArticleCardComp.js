@@ -26,7 +26,7 @@ const ArticleCard = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  height: 39rem;
+
   overflow: hidden;
   text-overflow: ellipsis;
   border-radius: 30px;
@@ -69,6 +69,7 @@ const ArticleTitle = styled.h2`
   overflow: hidden;
   text-overflow: ellipsis;
   margin-top: 0;
+  margin-bottom: 0;
   text-align: start;
 `;
 
@@ -116,15 +117,6 @@ const Slider = ({ latestArticles }) => {
             </ArticleImageConatiner>
             <ArticleCardContent>
               <ArticleTitle>{article.title}</ArticleTitle>
-              <time>{new Date(article.updatedAt).toLocaleString("sv-SE")}</time>
-              <ArticleSummary>{article.summary}</ArticleSummary>
-              <Button
-                href={"/article/" + article._id}
-                read="true"
-                artbutton="true"
-              >
-                Read more
-              </Button>
             </ArticleCardContent>
           </ArticleCard>
         ))}

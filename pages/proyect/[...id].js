@@ -6,20 +6,19 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 
-
 const Intro = styled.div`
-p{
-  color:#BCBCBC;
-  text-transform: uppercase;
-  opacity: 0.7;
-}
-h1{
-  color: white;
-  text-transform: uppercase;
-  font-size: 3rem;
-  font-weight: 600;
-}
-`
+  p {
+    color: #bcbcbc;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+  h1 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 600;
+  }
+`;
 
 const LandindPageConatiner = styled.div`
   display: flex;
@@ -131,6 +130,38 @@ const MoreDetail = styled.div`
   }
 `;
 
+const ContainerButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  
+  button {
+    border: 0;
+    padding: 2rem 3rem;
+    border-radius: 15px;
+    cursor: pointer;
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.05)
+    );
+    color: #ffff;
+    opacity: 0.9;
+    font-size: 2.5rem;
+    font-weight: 500;
+    transition: 0.4s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+`;
+
 const ProyectPage = () => {
   const [proyect, setProyect] = useState([]);
   const router = useRouter();
@@ -151,8 +182,8 @@ const ProyectPage = () => {
       <Header />
       <Center>
         <Intro>
-        <p>Branding - E-commerce</p>
-        <h1>AESTHETIC DESIGN FOR BRAND NEW STARTUP</h1>
+          <p>Branding - E-commerce</p>
+          <h1>AESTHETIC DESIGN FOR BRAND NEW STARTUP</h1>
         </Intro>
         {!!proyect && (
           <>
@@ -206,9 +237,9 @@ const ProyectPage = () => {
               <ImageContainer>
                 <img src={proyect?.images} alt="image-proyect" />
               </ImageContainer>
-              <div>
+              <ContainerButton>
                 <button>Next Proyect</button>
-              </div>
+              </ContainerButton>
             </LandindPageConatiner>
           </>
         )}
