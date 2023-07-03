@@ -10,10 +10,7 @@ const StyledButton = styled(Link)`
   border-color: #bcbcbc;
   border-radius: 0.5rem;
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+ 
     ${(props) =>
    
     props.artbutton &&

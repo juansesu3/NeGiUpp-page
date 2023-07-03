@@ -26,7 +26,17 @@ const PrincipalContent = styled.div`
 //Started First Section
 const SectionContainer = styled.section`
   display: flex;
-  margin-bottom: 100px;
+  padding: 1.5rem;
+  border-radius: 30px;
+  background: linear-gradient(
+    100deg,
+    rgb(189 189 189 / 7%),
+    rgba(20, 20, 20, 100%)
+  );
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
 `;
 
 const SectionInfo = styled.div`
@@ -78,7 +88,7 @@ const SecondSection = styled.section`
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  height: 20rem;
+  
   padding: 1.5rem;
   white-space: nowrap;
   border-radius: 30px;
