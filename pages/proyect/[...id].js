@@ -126,6 +126,8 @@ const MoreDetail = styled.div`
     color: #ffff;
     opacity: 0.9;
     font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
   }
 `;
 

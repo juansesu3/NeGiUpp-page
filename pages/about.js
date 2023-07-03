@@ -1,6 +1,7 @@
 import Center from "@/components/Center";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Link from "next/link";
 import React from "react";
 import { styled } from "styled-components";
 
@@ -10,9 +11,16 @@ const AboutContainer = styled.div`
   flex-direction: column;
   gap: 1.5rem;
 `;
+const AboutCont = styled.div`
+  width: 60%;
+`;
+
+const ImgCont = styled.div`
+  width: 40%;
+`;
 
 const ImageContainer = styled.div`
-  width: 30rem;
+  width: 100%;
   margin: 0 auto;
   padding: 2rem;
   border-radius: 30px;
@@ -76,8 +84,10 @@ const InfoAboutContainer = styled.div`
   }
 `;
 
-const CeoContainer = styled.div`
+const CeoContainer = styled(Link)`
   text-align: center;
+  text-decoration: none;
+  color: #ffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -102,8 +112,13 @@ const CeoContainer = styled.div`
     line-height: 1.6rem;
     letter-spacing: 0.03rem;
   }
+  span {
+    color: #4d61fc;
+  }
 `;
-const WorkTogetheContainer = styled.div`
+const WorkTogetheContainer = styled(Link)`
+  text-decoration: none;
+  color: #ffff;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -142,7 +157,8 @@ const WorkTogetheContainer = styled.div`
     }
   }
 `;
-const StartContainer = styled.div`
+const StartContainer = styled(Link)`
+  text-decoration: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -170,6 +186,40 @@ const StartContainer = styled.div`
     letter-spacing: 0.03rem;
   }
 `;
+const InfoCultureHitosContainer = styled.div`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-radius: 30px;
+  background: linear-gradient(
+    100deg,
+    rgb(189 189 189 / 7%),
+    rgba(20, 20, 20, 100%)
+  );
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  h2 {
+    margin: 0;
+  }
+
+  p {
+    color: #ffff;
+    opacity: 0.6;
+    line-height: 1.6rem;
+    letter-spacing: 0.03rem;
+    margin: 0;
+    font-weight: 400;
+  }
+  h3 {
+    margin: 0;
+    color: #ffff;
+    opacity: 0.9;
+  }
+`;
 
 const AboutPage = () => {
   return (
@@ -179,15 +229,15 @@ const AboutPage = () => {
         <AboutContainer>
           {/*First section */}
           <ContainerSec>
-            <div>
+            <ImgCont>
               <ImageContainer>
                 <img
-                  src="https://my-page-negiupp.s3.amazonaws.com/1687962628674.png"
+                  src="https://my-page-negiupp.s3.amazonaws.com/1687953985230.png"
                   alt="about-image"
                 />
               </ImageContainer>
-            </div>
-            <div>
+            </ImgCont>
+            <AboutCont>
               <Title>
                 <span>
                   <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
@@ -209,20 +259,24 @@ const AboutPage = () => {
                   laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
               </InfoAboutContainer>
-            </div>
+            </AboutCont>
           </ContainerSec>
           {/*Second section */}
           <ContainerSec>
-            <InfoAboutContainer>
+            <InfoCultureHitosContainer>
               <h2>Hitos</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
-            </InfoAboutContainer>
-            <InfoAboutContainer>
+              <div>
+                <p>06/23/2023</p>
+                <h3>Founded</h3>
+                <p>NeGiUpp</p>
+              </div>
+              <div>
+                <p>06/23/2023</p>
+                <h3>Our first client</h3>
+                <p>La pettite sophie</p>
+              </div>
+            </InfoCultureHitosContainer>
+            <InfoCultureHitosContainer>
               <h2>Our culture</h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -230,17 +284,18 @@ const AboutPage = () => {
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat.
               </p>
-            </InfoAboutContainer>
+            </InfoCultureHitosContainer>
           </ContainerSec>
           {/*Third section */}
           <ContainerSec>
-            <CeoContainer>
+            <CeoContainer href={"/founders"}>
               <h1>
                 CEO
-                <br /> &<br /> Founders
+                <br /> <span>&</span>
+                <br /> Founders
               </h1>
             </CeoContainer>
-            <WorkTogetheContainer>
+            <WorkTogetheContainer href={"/worktogether"}>
               <h1>
                 Let&apos;s
                 <br /> work <span>together</span>
@@ -260,7 +315,7 @@ const AboutPage = () => {
                 />
               </svg>
             </WorkTogetheContainer>
-            <StartContainer>Start</StartContainer>
+            <StartContainer href={"/start"}>Start</StartContainer>
           </ContainerSec>
         </AboutContainer>
       </Center>
