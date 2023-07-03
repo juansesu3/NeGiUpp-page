@@ -7,17 +7,30 @@ import BlogArticleCard from "@/components/BlogArticleCard";
 import { styled } from "styled-components";
 
 const BlogContainer = styled.div`
-  margin-top: 5rem;
-  h1 {
-    color: #ffff;
-    text-align: center;
-  }
+  display: flex;
+  gap: 1.5rem;
 `;
 
-const Introduction = styled.p`
-  color: #ffff;
-  font-size: 1.5rem;
-  opacity: 0.5;
+const ContainerDesign = styled.div`
+  h1 {
+    color: #ffff;
+  }
+`;
+const ContainerFirst = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const ConatinerPrincipal = styled.div`
+  display: flex;
+  gap: 1.5rem;
+`;
+const Title = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  gap: 1.5rem;
 `;
 
 const BlogPage = () => {
@@ -32,17 +45,27 @@ const BlogPage = () => {
     <>
       <Header />
       <Center>
-        <BlogContainer>
-          <h1>Blog</h1>
-          <Introduction>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </Introduction>
+        <ConatinerPrincipal>
+          <ContainerFirst>
+            <BlogArticleCard articles={articles.slice(0, 2)} />
+          </ContainerFirst>
 
-          <BlogArticleCard articles={articles} />
-        </BlogContainer>
+          <BlogContainer>
+            <ContainerDesign>
+              <Title>
+                {" "}
+                <span>
+                  <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+                </span>
+                <h1>Blog</h1>{" "}
+                <span>
+                  <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+                </span>
+              </Title>
+              <BlogArticleCard articles={articles.slice(2)} />
+            </ContainerDesign>
+          </BlogContainer>
+        </ConatinerPrincipal>
       </Center>
 
       <Footer />

@@ -1,23 +1,25 @@
 import { styled } from "styled-components";
 import Button from "./Button";
+import Link from "next/link";
 
 const ContainerArticles = styled.div`
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   flex-direction: row;
   gap: 1.5rem;
-  margin-top: 5rem;
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 const ArticleCard = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 20rem;
-  height: 39rem;
+  flex-wrap: wrap;
+  width: 19rem;
   overflow: hidden;
-  text-overflow: ellipsis;
+
   border-radius: 30px;
   background: linear-gradient(
     100deg,
@@ -30,41 +32,33 @@ const ArticleCard = styled.div`
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
 `;
 const ArticleImageConatiner = styled.div`
-  width: 20rem;
-  min-height: 15rem;
+  width: 19rem;
+  height: 23rem;
   margin: 0 auto;
+  padding: 1.5rem;
 `;
 const ArticleImage = styled.img`
-  border-radius: 8px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-radius: 30px;
+  object-fit: none;
+
   width: 100%;
-  height: 15rem;
+  height: 12rem;
 `;
 
 const ArticleCardContent = styled.div`
-  padding: 0.5rem 1.2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
   time {
     color: #ffff;
     opacity: 0.2;
   }
 `;
 
-const ArticleTitle = styled.h2`
-  height: 3.5rem;
-  text-transform: uppercase;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2; /* Establece el número máximo de líneas */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-top: 0;
-  text-align: start;
+const ArticleTitle = styled.div`
+  display: flex;
+  margin-bottom: 0;
   color: #ffff;
+  svg {
+    width: 1.5rem;
+  }
 `;
 const ContainerSummary = styled.div`
   height: 180px; /* Establece la altura máxima del contenedor */
@@ -88,27 +82,18 @@ const BlogArticleCard = ({ articles }) => {
       <ContainerArticles>
         {articles.length > 0 &&
           articles.map((article) => (
-            <ArticleCard key={article._id}>
-              <ArticleImageConatiner>
-                <ArticleImage src={article.images[0]} alt="article-image" />
-              </ArticleImageConatiner>
-              <ArticleCardContent>
-                <ArticleTitle>{article.title}</ArticleTitle>
-                <time>
-                  {new Date(article.updatedAt).toLocaleString("sv-SE")}
-                </time>
-                <ContainerSummary>
-                  <ArticleSummary>{article.summary}</ArticleSummary>
-                </ContainerSummary>
-                <Button
-                  href={"/article/" + article._id}
-                  read="true"
-                  artbutton="true"
-                >
-                  Read more
-                </Button>
-              </ArticleCardContent>
-            </ArticleCard>
+            <Link key={article._id} href={"/article/" + article._id}>
+              <ArticleCard>
+                <ArticleImageConatiner>
+                  <ArticleImage src={article.images[0]} alt="article-image" />
+                  <ArticleCardContent>
+                    <ArticleTitle>
+                      <h1>{article.title}</h1>
+                    </ArticleTitle>
+                  </ArticleCardContent>
+                </ArticleImageConatiner>
+              </ArticleCard>
+            </Link>
           ))}
       </ContainerArticles>
     </>
