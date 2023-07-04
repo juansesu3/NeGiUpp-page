@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
 import axios from "axios";
+import { RevealWrapper } from "next-reveal";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { styled } from "styled-components";
@@ -97,8 +98,9 @@ const ProyectsPage = () => {
         <ContainerAllProyects>
           <FirstProyectsContainer>
             {FirstProyects.length > 0 &&
-              FirstProyects.map((proyect) => (
-                <ContainerPro key={proyect._id}>
+              FirstProyects.map((proyect, index) => ( 
+                <RevealWrapper  key={proyect._id} delay={index*50}>
+                <ContainerPro>
                   <ContainerProyectL href={"/proyect/" + proyect._id}>
                     <ImageContainer>
                       <img src={proyect.images[0]} alt="proyect image" />
@@ -108,6 +110,7 @@ const ProyectsPage = () => {
                     </div>
                   </ContainerProyectL>
                 </ContainerPro>
+                </RevealWrapper>
               ))}
           </FirstProyectsContainer>
           <div>
@@ -123,8 +126,9 @@ const ProyectsPage = () => {
 
             <SecondProyectsContainer>
               {SecondProyects.length > 0 &&
-                SecondProyects.map((proyect) => (
-                  <ContainerPro key={proyect._id}>
+                SecondProyects.map((proyect, index) => (
+                  <RevealWrapper key={proyect._id} delay={index*50}>
+                  <ContainerPro >
                     <ContainerProyectL href={"/proyect/" + proyect._id}>
                       <ImageContainer>
                         <img src={proyect.images[0]} alt="proyect image" />
@@ -135,6 +139,7 @@ const ProyectsPage = () => {
                       </div>
                     </ContainerProyectL>
                   </ContainerPro>
+                  </RevealWrapper>
                 ))}
             </SecondProyectsContainer>
           </div>

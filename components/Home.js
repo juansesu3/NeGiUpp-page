@@ -4,6 +4,7 @@ import Link from "next/link";
 import InfiniteScrollAmimation from "./InfiniteScrollAmimation";
 import Button from "./Button";
 import ArticleCardComp from "./ArticleCardComp";
+import { RevealWrapper } from "next-reveal";
 
 const Bg = styled.div`
   background-color: #0f0f0f;
@@ -88,7 +89,7 @@ const SecondSection = styled.section`
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  
+
   padding: 1.5rem;
   white-space: nowrap;
   border-radius: 30px;
@@ -319,33 +320,38 @@ const Home = ({ latestArticles }) => {
         <OficialContent>
           <div>
             <SectionContainer>
-              <SectionInfo>
-                <Title>
-                  Let&apos;s build the future <span>together</span>
-                </Title>
-                <Intro>
-                  We create customized and cutting-edge solutions that enhance
-                  your online presence. Stand out in the digital world and
-                  achieve your goals with us. Let&apos;s build the success of
-                  your business in less time than you can imagine!
-                </Intro>
-                <ContainerButtons>
-                  <Button href={"/"} outline="true" read="true">
-                    Read More
-                  </Button>
-                  <Button href={"/"} primary="true" size="l">
-                    Start
-                  </Button>
-                </ContainerButtons>
-              </SectionInfo>
+              <RevealWrapper origin={"left"}>
+                <SectionInfo>
+                  <Title>
+                    Let&apos;s build the future <span>together</span>
+                  </Title>
+                  <Intro>
+                    We create customized and cutting-edge solutions that enhance
+                    your online presence. Stand out in the digital world and
+                    achieve your goals with us. Let&apos;s build the success of
+                    your business in less time than you can imagine!
+                  </Intro>
 
+                  <ContainerButtons>
+                    <Button href={"/"} outline="true" read="true">
+                      Read More
+                    </Button>
+                    <Button href={"/"} primary="true" size="l">
+                      Start
+                    </Button>
+                  </ContainerButtons>
+                </SectionInfo>
+              </RevealWrapper>
               <ImgContainer>
-                <FirstImageInfo src="https://my-page-negiupp.s3.amazonaws.com/1687442391096.png" />
+                <RevealWrapper>
+                  <FirstImageInfo src="https://my-page-negiupp.s3.amazonaws.com/1687442391096.png" />
+                </RevealWrapper>
               </ImgContainer>
             </SectionContainer>
           </div>
-
+          <RevealWrapper>
           <PrincipalContent>
+            
             <AsideArtStart>
               <TitleNews>
                 <span> Latest Articles</span>
@@ -535,6 +541,7 @@ const Home = ({ latestArticles }) => {
               </SecundaryContent>
             </SectionsContainer>
           </PrincipalContent>
+          </RevealWrapper>
         </OficialContent>
       </Center>
     </Bg>

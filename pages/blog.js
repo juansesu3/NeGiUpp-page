@@ -6,6 +6,7 @@ import axios from "axios";
 import BlogArticleCard from "@/components/BlogArticleCard";
 import { styled } from "styled-components";
 import Link from "next/link";
+import { RevealWrapper } from "next-reveal";
 
 const BlogContainer = styled.div`
   display: flex;
@@ -94,17 +95,19 @@ const BlogPage = () => {
         <BlogContainer>
           <FirstArticles firstArticles={firstArticles}>
             {articles.length > 0 &&
-              firstArticles.map((firstArticle) => (
-                <Link key={firstArticle._id} href={"/article/"+ firstArticle._id}>
-                  <ArticleCard>
-                    <ImageContainer>
-                      <img src={firstArticle.images} alt="article image" />
-                    </ImageContainer>
-                    <div>
-                      <h1>{firstArticle.title}</h1>
-                    </div>
-                  </ArticleCard>
-                </Link>
+              firstArticles.map((firstArticle, index) => (
+                <RevealWrapper delay={index * 50} key={firstArticle._id}>
+                  <Link href={"/article/" + firstArticle._id}>
+                    <ArticleCard>
+                      <ImageContainer>
+                        <img src={firstArticle.images} alt="article image" />
+                      </ImageContainer>
+                      <div>
+                        <h1>{firstArticle.title}</h1>
+                      </div>
+                    </ArticleCard>
+                  </Link>
+                </RevealWrapper>
               ))}
           </FirstArticles>
 
@@ -116,17 +119,19 @@ const BlogPage = () => {
             </TitlePage>
             <SecondArticles secondArticles={secondArticles}>
               {articles.length > 0 &&
-                secondArticles.map((secondArticle) => (
-                  <Link key={secondArticle._id} href={"/article/"+ secondArticle._id}>
-                    <ArticleCard>
-                      <ImageContainer>
-                        <img src={secondArticle.images} alt="article image" />
-                      </ImageContainer>
-                      <div>
-                        <h1>{secondArticle.title}</h1>
-                      </div>
-                    </ArticleCard>
-                  </Link>
+                secondArticles.map((secondArticle, index) => (
+                  <RevealWrapper delay={index * 50} key={secondArticle._id}>
+                    <Link href={"/article/" + secondArticle._id}>
+                      <ArticleCard>
+                        <ImageContainer>
+                          <img src={secondArticle.images} alt="article image" />
+                        </ImageContainer>
+                        <div>
+                          <h1>{secondArticle.title}</h1>
+                        </div>
+                      </ArticleCard>
+                    </Link>
+                  </RevealWrapper>
                 ))}
             </SecondArticles>
           </div>

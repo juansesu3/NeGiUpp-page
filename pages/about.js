@@ -1,6 +1,7 @@
 import Center from "@/components/Center";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { RevealWrapper } from "next-reveal";
 import Link from "next/link";
 import React from "react";
 import { styled } from "styled-components";
@@ -228,95 +229,101 @@ const AboutPage = () => {
       <Center>
         <AboutContainer>
           {/*First section */}
-          <ContainerSec>
-            <ImgCont>
-              <ImageContainer>
-                <img
-                  src="https://my-page-negiupp.s3.amazonaws.com/1687953985230.png"
-                  alt="about-image"
-                />
-              </ImageContainer>
-            </ImgCont>
-            <AboutCont>
-              <Title>
-                <span>
-                  <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
-                </span>
+          <RevealWrapper delay={200}>
+            <ContainerSec>
+              <ImgCont>
+                <ImageContainer>
+                  <img
+                    src="https://my-page-negiupp.s3.amazonaws.com/1687953985230.png"
+                    alt="about-image"
+                  />
+                </ImageContainer>
+              </ImgCont>
+              <AboutCont>
+                <Title>
+                  <span>
+                    <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+                  </span>
 
-                <h1>About us</h1>
+                  <h1>About us</h1>
 
-                <span>
-                  <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
-                </span>
-              </Title>
+                  <span>
+                    <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+                  </span>
+                </Title>
 
-              <InfoAboutContainer>
-                <h2>NeGiUpp</h2>
+                <InfoAboutContainer>
+                  <h2>NeGiUpp</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                </InfoAboutContainer>
+              </AboutCont>
+            </ContainerSec>
+          </RevealWrapper>
+          {/*Second section */}
+          <RevealWrapper delay={300}>
+            <ContainerSec>
+              <InfoCultureHitosContainer>
+                <h2>Hitos</h2>
+                <div>
+                  <p>06/23/2023</p>
+                  <h3>Founded</h3>
+                  <p>NeGiUpp</p>
+                </div>
+                <div>
+                  <p>06/23/2023</p>
+                  <h3>Our first client</h3>
+                  <p>La pettite sophie</p>
+                </div>
+              </InfoCultureHitosContainer>
+              <InfoCultureHitosContainer>
+                <h2>Our culture</h2>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
-              </InfoAboutContainer>
-            </AboutCont>
-          </ContainerSec>
-          {/*Second section */}
-          <ContainerSec>
-            <InfoCultureHitosContainer>
-              <h2>Hitos</h2>
-              <div>
-                <p>06/23/2023</p>
-                <h3>Founded</h3>
-                <p>NeGiUpp</p>
-              </div>
-              <div>
-                <p>06/23/2023</p>
-                <h3>Our first client</h3>
-                <p>La pettite sophie</p>
-              </div>
-            </InfoCultureHitosContainer>
-            <InfoCultureHitosContainer>
-              <h2>Our culture</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
-            </InfoCultureHitosContainer>
-          </ContainerSec>
+              </InfoCultureHitosContainer>
+            </ContainerSec>
+          </RevealWrapper>
           {/*Third section */}
-          <ContainerSec>
-            <CeoContainer href={"/founders"}>
-              <h1>
-                CEO
-                <br /> <span>&</span>
-                <br /> Founders
-              </h1>
-            </CeoContainer>
-            <WorkTogetheContainer href={"/worktogether"}>
-              <h1>
-                Let&apos;s
-                <br /> work <span>together</span>
-              </h1>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-4 h-4"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
-                />
-              </svg>
-            </WorkTogetheContainer>
-            <StartContainer href={"/start"}>Start</StartContainer>
-          </ContainerSec>
+          <RevealWrapper delay={500}>
+            <ContainerSec>
+              <CeoContainer href={"/founders"}>
+                <h1>
+                  CEO
+                  <br /> <span>&</span>
+                  <br /> Founders
+                </h1>
+              </CeoContainer>
+              <WorkTogetheContainer href={"/worktogether"}>
+                <h1>
+                  Let&apos;s
+                  <br /> work <span>together</span>
+                </h1>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-4 h-4"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
+                  />
+                </svg>
+              </WorkTogetheContainer>
+              <StartContainer href={"/start"}>Start</StartContainer>
+            </ContainerSec>
+          </RevealWrapper>
         </AboutContainer>
       </Center>
       <Footer />
