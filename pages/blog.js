@@ -5,32 +5,75 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import BlogArticleCard from "@/components/BlogArticleCard";
 import { styled } from "styled-components";
+import Link from "next/link";
 
 const BlogContainer = styled.div`
   display: flex;
   gap: 1.5rem;
 `;
 
-const ContainerDesign = styled.div`
-  h1 {
-    color: #ffff;
-  }
-`;
-const ContainerFirst = styled.div`
+const FirstArticles = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+`;
+const SecondArticles = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+`;
+const ArticleCard = styled.div`
+  width: 20rem;
+
+  border-radius: 30px;
+  padding: 1rem;
+  background: linear-gradient(
+    100deg,
+    rgb(189 189 189 / 7%),
+    rgba(255, 255, 255, 0)
+  );
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
 `;
 
-const ConatinerPrincipal = styled.div`
-  display: flex;
-  gap: 1.5rem;
+const ImageContainer = styled.div`
+  width: 100%;
+  height: 15rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 30px;
+    object-fit: cover;
+  }
 `;
-const Title = styled.div`
+const TitlePage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 1.5rem;
+  width: 100%;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 2.95rem;
+    color: white;
+    text-transform: uppercase;
+  }
 `;
 
 const BlogPage = () => {
@@ -41,31 +84,53 @@ const BlogPage = () => {
       setArticles(response.data);
     });
   }, []);
+
+  const firstArticles = articles.slice(0, 2);
+  const secondArticles = articles.slice(2);
   return (
     <>
       <Header />
       <Center>
-        <ConatinerPrincipal>
-          <ContainerFirst>
-            <BlogArticleCard articles={articles.slice(0, 2)} />
-          </ContainerFirst>
+        <BlogContainer>
+          <FirstArticles firstArticles={firstArticles}>
+            {articles.length > 0 &&
+              firstArticles.map((firstArticle) => (
+                <Link key={firstArticle._id} href={"/article/"+ firstArticle._id}>
+                  <ArticleCard>
+                    <ImageContainer>
+                      <img src={firstArticle.images} alt="article image" />
+                    </ImageContainer>
+                    <div>
+                      <h1>{firstArticle.title}</h1>
+                    </div>
+                  </ArticleCard>
+                </Link>
+              ))}
+          </FirstArticles>
 
-          <BlogContainer>
-            <ContainerDesign>
-              <Title>
-                {" "}
-                <span>
-                  <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
-                </span>
-                <h1>Blog</h1>{" "}
-                <span>
-                  <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
-                </span>
-              </Title>
-              <BlogArticleCard articles={articles.slice(2)} />
-            </ContainerDesign>
-          </BlogContainer>
-        </ConatinerPrincipal>
+          <div>
+            <TitlePage>
+              <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+              <h1>All articles</h1>
+              <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+            </TitlePage>
+            <SecondArticles secondArticles={secondArticles}>
+              {articles.length > 0 &&
+                secondArticles.map((secondArticle) => (
+                  <Link key={secondArticle._id} href={"/article/"+ secondArticle._id}>
+                    <ArticleCard>
+                      <ImageContainer>
+                        <img src={secondArticle.images} alt="article image" />
+                      </ImageContainer>
+                      <div>
+                        <h1>{secondArticle.title}</h1>
+                      </div>
+                    </ArticleCard>
+                  </Link>
+                ))}
+            </SecondArticles>
+          </div>
+        </BlogContainer>
       </Center>
 
       <Footer />

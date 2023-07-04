@@ -4,8 +4,7 @@ import Link from "next/link";
 
 const ContainerArticles = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   gap: 1.5rem;
 
   a {

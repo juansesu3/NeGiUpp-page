@@ -152,7 +152,7 @@ const SecondSection2 = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 13rem;
+
   width: 13rem;
   padding: 1.7rem;
   overflow: hidden;
