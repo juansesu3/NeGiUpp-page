@@ -135,7 +135,7 @@ const ContainerButton = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 5rem;
-  
+
   button {
     border: 0;
     padding: 2rem 3rem;
@@ -152,9 +152,9 @@ const ContainerButton = styled.div`
     font-weight: 500;
     transition: 0.4s;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+      /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+      /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+      /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
     &:hover {
       background-color: white;
       color: black;
@@ -165,17 +165,29 @@ const ContainerButton = styled.div`
 const ProyectPage = () => {
   const [proyect, setProyect] = useState([]);
   const router = useRouter();
+  const [technologies, setTechnologies] = useState([]);
   const { id } = router.query;
 
   useEffect(() => {
+    const fetchingTech = async (techIds) => {
+      let data = [];
+      for (const tectId of techIds) {
+        await axios.get("/api/technologies?id=" + tectId).then((response) => {
+          data.push(response.data);
+          setTechnologies(data);
+        });
+      }
+    };
     if (!id) {
       return;
     }
     axios.get("/api/proyects?id=" + id).then((response) => {
       setProyect(response.data);
+      fetchingTech(response.data.selectedTech);
     });
   }, [id]);
-  console.log(proyect);
+
+  console.log(technologies);
 
   return (
     <>
@@ -193,7 +205,17 @@ const ProyectPage = () => {
               </ImageContainer>
 
               <ContainerSect>
-                <Technologies>Stack of technologies</Technologies>
+                <Technologies>
+                  {technologies.length > 0 &&
+                    technologies.map((technology) => (
+                      <div key={technology._id}>
+                        <div>
+                          <img src={technology.images} />
+                        </div>
+                        <h3>{technology.name}</h3>
+                      </div>
+                    ))}
+                </Technologies>
                 <AboutInfo>
                   <h3>About</h3>
                   <p>{proyect.about}</p>

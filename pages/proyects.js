@@ -98,47 +98,46 @@ const ProyectsPage = () => {
         <ContainerAllProyects>
           <FirstProyectsContainer>
             {FirstProyects.length > 0 &&
-              FirstProyects.map((proyect, index) => ( 
-                <RevealWrapper  key={proyect._id} delay={index*50}>
-                <ContainerPro>
-                  <ContainerProyectL href={"/proyect/" + proyect._id}>
-                    <ImageContainer>
-                      <img src={proyect.images[0]} alt="proyect image" />
-                    </ImageContainer>
-                    <div>
-                      <h1>{proyect.title}</h1>
-                    </div>
-                  </ContainerProyectL>
-                </ContainerPro>
-                </RevealWrapper>
-              ))}
-          </FirstProyectsContainer>
-          <div>
-            <TitleBox>
-            <span>
-                  <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
-                </span>
-                <h1>All Proyects</h1>{" "}
-                <span>
-                  <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
-                </span>
-            </TitleBox>
-
-            <SecondProyectsContainer>
-              {SecondProyects.length > 0 &&
-                SecondProyects.map((proyect, index) => (
-                  <RevealWrapper key={proyect._id} delay={index*50}>
-                  <ContainerPro >
+              FirstProyects.map((proyect, index) => (
+                <RevealWrapper key={proyect._id} delay={index * 50}>
+                  <ContainerPro>
                     <ContainerProyectL href={"/proyect/" + proyect._id}>
                       <ImageContainer>
                         <img src={proyect.images[0]} alt="proyect image" />
                       </ImageContainer>
                       <div>
                         <h1>{proyect.title}</h1>
-                        
                       </div>
                     </ContainerProyectL>
                   </ContainerPro>
+                </RevealWrapper>
+              ))}
+          </FirstProyectsContainer>
+          <div>
+            <TitleBox>
+              <span>
+                <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+              </span>
+              <h1>All Proyects</h1>{" "}
+              <span>
+                <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+              </span>
+            </TitleBox>
+
+            <SecondProyectsContainer>
+              {SecondProyects.length > 0 &&
+                SecondProyects.map((proyect, index) => (
+                  <RevealWrapper key={proyect._id} delay={index * 50}>
+                    <ContainerPro>
+                      <ContainerProyectL href={"/proyect/" + proyect._id}>
+                        <ImageContainer>
+                          <img src={proyect.images[0]} alt="proyect image" />
+                        </ImageContainer>
+                        <div>
+                          <h1>{proyect.title}</h1>
+                        </div>
+                      </ContainerProyectL>
+                    </ContainerPro>
                   </RevealWrapper>
                 ))}
             </SecondProyectsContainer>

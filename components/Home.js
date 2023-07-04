@@ -154,7 +154,6 @@ const SecondSection2 = styled.div`
   justify-content: center;
   align-items: center;
 
-  width: 13rem;
   padding: 1.7rem;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -350,25 +349,24 @@ const Home = ({ latestArticles }) => {
             </SectionContainer>
           </div>
           <RevealWrapper>
-          <PrincipalContent>
-            
-            <AsideArtStart>
-              <TitleNews>
-                <span> Latest Articles</span>
-              </TitleNews>
-              <ArticleCardComp latestArticles={latestArticles} />
-              <Start>
-                <Title>
-                  <span>START</span>
-                </Title>
-              </Start>
-            </AsideArtStart>
+            <PrincipalContent>
+              <AsideArtStart>
+                <TitleNews>
+                  <span> Latest Articles</span>
+                </TitleNews>
+                <ArticleCardComp latestArticles={latestArticles} />
+                <Start>
+                  <Title>
+                    <span>START</span>
+                  </Title>
+                </Start>
+              </AsideArtStart>
 
-            <SectionsContainer>
-              <SecondSectionLevel1>
-                <SecondSection1>
-                  <SubTitle>How can we help you?</SubTitle>
-                  {/* <Intro>
+              <SectionsContainer>
+                <SecondSectionLevel1>
+                  <SecondSection1>
+                    <SubTitle>How can we help you?</SubTitle>
+                    {/* <Intro>
               At NeGiUpp digital consulting, we have created an exclusive
               membership model to provide you with tailored full stack web
               development services. We are here to drive your online business
@@ -387,38 +385,38 @@ const Home = ({ latestArticles }) => {
               your trusted digital partner. Together, we will achieve the online
               success you desire.
             </Intro>*/}
-                </SecondSection1>
+                  </SecondSection1>
 
-                <SectionNewsFlex>
-                  <TitleNews>
-                    <span> News</span>
-                  </TitleNews>
+                  <SectionNewsFlex>
+                    <TitleNews>
+                      <span> News</span>
+                    </TitleNews>
 
-                  <SectionNews>
-                    <InfiniteScrollAmimation />
-                  </SectionNews>
+                    <SectionNews>
+                      <InfiniteScrollAmimation />
+                    </SectionNews>
 
-                  <ProyectTech>
-                    <SecondSection2>
-                      <SubTitle>
-                        <StyledLink proyect="true" href={"/proyects"}>
-                          Proyects
-                        </StyledLink>
-                      </SubTitle>
-                    </SecondSection2>
-                    <SecondSection2>
-                      <SubTitle>Technologies</SubTitle>
-                    </SecondSection2>
-                  </ProyectTech>
-                </SectionNewsFlex>
-              </SecondSectionLevel1>
-              <SecondSectionLevel2>
-                <SecondSection>
-                  <SubTitle>
-                    Accelerate Transformation: Unlock Your{" "}
-                    <span>Digital Potential</span>
-                  </SubTitle>
-                  {/*  <Intro>
+                    <ProyectTech>
+                      <SecondSection2>
+                        <SubTitle>
+                          <StyledLink proyect="true" href={"/proyects"}>
+                            Proyects
+                          </StyledLink>
+                        </SubTitle>
+                      </SecondSection2>
+                      <SecondSection2>
+                        <SubTitle>Technologies</SubTitle>
+                      </SecondSection2>
+                    </ProyectTech>
+                  </SectionNewsFlex>
+                </SecondSectionLevel1>
+                <SecondSectionLevel2>
+                  <SecondSection>
+                    <SubTitle>
+                      Accelerate Transformation: Unlock Your{" "}
+                      <span>Digital Potential</span>
+                    </SubTitle>
+                    {/*  <Intro>
               At NeGiUpp digital consulting, we specialize in accelerating
               transformation through full stack web development. Our mission is
               to help businesses harness the power of digital technology to
@@ -447,14 +445,14 @@ const Home = ({ latestArticles }) => {
               propel you towards a successful digital future. Contact us today
               to embark on your transformative journey.
             </Intro>*/}
-                </SecondSection>
+                  </SecondSection>
 
-                <SecondSection>
-                  <SubTitle>
-                    Next steps to transform your <span>idea</span> into a
-                    reality
-                  </SubTitle>
-                  {/*  <Intro>
+                  <SecondSection>
+                    <SubTitle>
+                      Next steps to transform your <span>idea</span> into a
+                      reality
+                    </SubTitle>
+                    {/*  <Intro>
               At NeGiUpp digital consulting, we believe in turning ideas into
               reality. With our unique membership model, we offer a
               comprehensive range of services to help you bring your vision to
@@ -479,68 +477,68 @@ const Home = ({ latestArticles }) => {
               your idea into a digital masterpiece that leaves a lasting impact.
             </Intro>
             */}
-                </SecondSection>
-              </SecondSectionLevel2>
-              <SecundaryContent>
-                <SecundaryContentSection1>
-                  <IconServices>
-                    <div>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-4 h-4"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
-                        />
-                      </svg>
-                      Mobile dev
-                    </div>
-                    <div>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-4 h-4"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"
-                        />
-                      </svg>
-                      Web dev
-                    </div>
-                    <div>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-4 h-4"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"
-                        />
-                      </svg>
-                      Desktop dev
-                    </div>
-                  </IconServices>
-                  <SubTitle>Services Offering</SubTitle>
-                </SecundaryContentSection1>
-              </SecundaryContent>
-            </SectionsContainer>
-          </PrincipalContent>
+                  </SecondSection>
+                </SecondSectionLevel2>
+                <SecundaryContent>
+                  <SecundaryContentSection1>
+                    <IconServices>
+                      <div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="w-4 h-4"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
+                          />
+                        </svg>
+                        Mobile dev
+                      </div>
+                      <div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="w-4 h-4"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"
+                          />
+                        </svg>
+                        Web dev
+                      </div>
+                      <div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="w-4 h-4"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"
+                          />
+                        </svg>
+                        Desktop dev
+                      </div>
+                    </IconServices>
+                    <SubTitle>Services Offering</SubTitle>
+                  </SecundaryContentSection1>
+                </SecundaryContent>
+              </SectionsContainer>
+            </PrincipalContent>
           </RevealWrapper>
         </OficialContent>
       </Center>
