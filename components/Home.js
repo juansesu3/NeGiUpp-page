@@ -326,22 +326,21 @@ const Home = ({ latestArticles }) => {
                     Let&apos;s build the future <span>together</span>
                   </Title>
                   <Intro>
-                    We create customized and cutting-edge solutions that enhance
+                    I create customized and cutting-edge solutions that enhance
                     your online presence. Stand out in the digital world and
-                    achieve your goals with us. Let&apos;s build the success of
+                    achieve your goals with me. Let&apos;s build the success of
                     your business in less time than you can imagine!
                   </Intro>
 
                   <ContainerButtons>
-                    <Button href={"/"} outline="true" read="true">
+                    <Button href={"/founders"} outline="true" read="true">
                       Read More
                     </Button>
-                    <Button href={"/"} primary="true" size="l">
+                    <Button href={"/notfound"} primary="true" size="l">
                       Start
                     </Button>
                   </ContainerButtons>
                 </SectionInfo>
-
               </RevealWrapper>
               <ImgContainer>
                 <RevealWrapper>
@@ -367,7 +366,7 @@ const Home = ({ latestArticles }) => {
               <SectionsContainer>
                 <SecondSectionLevel1>
                   <SecondSection1>
-                    <SubTitle>How can we help you?</SubTitle>
+                    <SubTitle>How can I help you?</SubTitle>
                     {/* <Intro>
               At NeGiUpp digital consulting, we have created an exclusive
               membership model to provide you with tailored full stack web

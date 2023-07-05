@@ -172,7 +172,8 @@ const CardCEO = () => {
           </LinksContainer>
         </RrSsConatiner>
         <Buttonconatiner>
-          <button>Contact me</button>
+         
+            <Link href={'/contact'}> <button>Contact me</button></Link>
         </Buttonconatiner>
       </CardContainer>
     </>
