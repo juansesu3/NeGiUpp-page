@@ -15,6 +15,7 @@ const Container = styled.div`
 const ContacInfo = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 3rem;
   justify-content: space-between;
   h3 {
     font-size: 1.5rem;

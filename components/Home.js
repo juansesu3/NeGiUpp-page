@@ -27,6 +27,7 @@ const PrincipalContent = styled.div`
 //Started First Section
 const SectionContainer = styled.section`
   display: flex;
+  align-items: center;
   padding: 1.5rem;
   border-radius: 30px;
   background: linear-gradient(
@@ -340,6 +341,7 @@ const Home = ({ latestArticles }) => {
                     </Button>
                   </ContainerButtons>
                 </SectionInfo>
+
               </RevealWrapper>
               <ImgContainer>
                 <RevealWrapper>

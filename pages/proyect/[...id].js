@@ -42,15 +42,15 @@ const ContainerSect = styled.div`
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
 `;
 const Technologies = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
   padding: 1.5rem;
-  width: 50%;
+
   border-radius: 30px;
   color: #ffff;
-  background: linear-gradient(
-    100deg,
-    rgb(189 189 189 / 7%),
-    rgba(255, 255, 255, 0)
-  );
 `;
 const AboutInfo = styled.div`
   padding: 1.5rem;
@@ -161,23 +161,52 @@ const ContainerButton = styled.div`
     }
   }
 `;
+const IconsTech = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+const ImageIconTechContainer = styled.div`
+  width: 4rem;
+  img {
+    width: 100%;
+  }
+`;
+const ContainerTech = styled.div`
+display: flex;
+flex-direction: column;
+gap: 1rem;
+  border-radius: 30px;
+  color: #ffff;
+  padding: 1.5rem;
+  width: 50%;
+  background: linear-gradient(
+    100deg,
+    rgb(189 189 189 / 7%),
+    rgba(255, 255, 255, 0)
+  );
+  h3 {
+    opacity: 0.5;
+    margin-top: 0;
+    font-weight: 400;
+  }
+`;
 
 const ProyectPage = () => {
   const [proyect, setProyect] = useState([]);
   const router = useRouter();
   const [technologies, setTechnologies] = useState([]);
   const { id } = router.query;
+  const fetchingTech = async (techIds) => {
+    let data = [];
+    for (const tectId of techIds) {
+      await axios.get("/api/technologies?id=" + tectId).then((response) => {
+        data.push(response.data);
+      });
+      setTechnologies(data);
+    }
+  };
 
   useEffect(() => {
-    const fetchingTech = async (techIds) => {
-      let data = [];
-      for (const tectId of techIds) {
-        await axios.get("/api/technologies?id=" + tectId).then((response) => {
-          data.push(response.data);
-          setTechnologies(data);
-        });
-      }
-    };
     if (!id) {
       return;
     }
@@ -193,29 +222,31 @@ const ProyectPage = () => {
     <>
       <Header />
       <Center>
-        <Intro>
-          <p>Branding - E-commerce</p>
-          <h1>AESTHETIC DESIGN FOR BRAND NEW STARTUP</h1>
-        </Intro>
         {!!proyect && (
           <>
+            <Intro>
+              <p>Branding - {proyect.title}</p>
+              <h1>AESTHETIC DESIGN FOR BRAND NEW STARTUP</h1>
+            </Intro>
             <LandindPageConatiner>
               <ImageContainer>
                 <img src={proyect?.images} alt="image-proyect" />
               </ImageContainer>
 
               <ContainerSect>
-                <Technologies>
-                  {technologies.length > 0 &&
-                    technologies.map((technology) => (
-                      <div key={technology._id}>
-                        <div>
-                          <img src={technology.images} />
-                        </div>
-                        <h3>{technology.name}</h3>
-                      </div>
-                    ))}
-                </Technologies>
+                <ContainerTech>
+                  <h3>Technologies Stack</h3>
+                  <Technologies>
+                    {technologies.length > 0 &&
+                      technologies.map((technology) => (
+                        <IconsTech key={technology._id}>
+                          <ImageIconTechContainer>
+                            <img src={technology.images} />
+                          </ImageIconTechContainer>
+                        </IconsTech>
+                      ))}
+                  </Technologies>
+                </ContainerTech>
                 <AboutInfo>
                   <h3>About</h3>
                   <p>{proyect.about}</p>
