@@ -162,10 +162,9 @@ const StartContainer = styled(Link)`
   text-decoration: none;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 3rem;
-  color: #4d61fc;
+  justify-content: end;
+
+  color: #ffff;
   width: 30%;
   height: 15rem;
   padding: 2rem;
@@ -184,7 +183,13 @@ const StartContainer = styled(Link)`
     color: #ffff;
     opacity: 0.8;
     line-height: 1.6rem;
-    letter-spacing: 0.03rem;
+    font-size: 0.8rem;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  h2 {
+    margin: 0;
+    font-weight: 500;
   }
 `;
 const InfoCultureHitosContainer = styled.div`
@@ -234,7 +239,7 @@ const AboutPage = () => {
               <ImgCont>
                 <ImageContainer>
                   <img
-                    src="https://my-page-negiupp.s3.amazonaws.com/1687953985230.png"
+                    src="https://my-page-negiupp.s3.amazonaws.com/1688550234499.jpg"
                     alt="about-image"
                   />
                 </ImageContainer>
@@ -245,7 +250,7 @@ const AboutPage = () => {
                     <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
                   </span>
 
-                  <h1>About us</h1>
+                  <h1>Self summary</h1>
 
                   <span>
                     <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
@@ -253,7 +258,7 @@ const AboutPage = () => {
                 </Title>
 
                 <InfoAboutContainer>
-                  <h2>NeGiUpp</h2>
+                  <h2>Juan Sebastian Suarez Ramirez</h2>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
@@ -268,7 +273,7 @@ const AboutPage = () => {
           <RevealWrapper delay={300}>
             <ContainerSec>
               <InfoCultureHitosContainer>
-                <h2>Hitos</h2>
+                <h2>Experiences</h2>
                 <div>
                   <p>06/23/2023</p>
                   <h3>Founded</h3>
@@ -281,27 +286,27 @@ const AboutPage = () => {
                 </div>
               </InfoCultureHitosContainer>
               <InfoCultureHitosContainer>
-                <h2>Our culture</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
+                <h2>Education</h2>
+                <div>
+                  <p>06/23/2023</p>
+                  <h3>Python developer</h3>
+                  <p>Edutim</p>
+                </div>
+                <div>
+                  <p>06/23/2023</p>
+                  <h3>Data structure & algoritms</h3>
+                  <p>FreeCodeCamp</p>
+                </div>
               </InfoCultureHitosContainer>
             </ContainerSec>
           </RevealWrapper>
           {/*Third section */}
-          <RevealWrapper delay={500}>
+          <RevealWrapper delay={300}>
             <ContainerSec>
-              <CeoContainer href={"/founders"}>
-                <h1>
-                  CEO
-                  <br /> <span>&</span>
-                  <br /> Founders
-                </h1>
+              <CeoContainer href={"/contact"}>
+                <h1>Profiles</h1>
               </CeoContainer>
-              <WorkTogetheContainer href={"/worktogether"}>
+              <WorkTogetheContainer href={"/contact"}>
                 <h1>
                   Let&apos;s
                   <br /> work <span>together</span>
@@ -321,7 +326,10 @@ const AboutPage = () => {
                   />
                 </svg>
               </WorkTogetheContainer>
-              <StartContainer href={"/start"}>Start</StartContainer>
+              <StartContainer href={"/founders"}>
+                <p>more about me</p>
+                <h2>Credentials</h2>
+              </StartContainer>
             </ContainerSec>
           </RevealWrapper>
         </AboutContainer>
