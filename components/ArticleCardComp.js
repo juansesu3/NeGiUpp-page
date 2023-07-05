@@ -4,6 +4,7 @@ import Button from "./Button";
 
 const SliderContainer = styled.div`
   width: 15rem;
+  height: 17rem;
   overflow: hidden;
   border-radius: 30px;
   background: linear-gradient(
@@ -24,12 +25,12 @@ const SliderTrack = styled.div`
 const ArticleCard = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   width: 100%;
-
+  padding: 1rem;
   overflow: hidden;
   text-overflow: ellipsis;
   border-radius: 30px;
+  height: 17em;
   background: linear-gradient(
     100deg,
     rgb(189 189 189 / 7%),
@@ -41,50 +42,26 @@ const ArticleCard = styled.div`
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
 `;
 const ArticleImageConatiner = styled.div`
-  max-width: 100%;
-  min-height: 15rem;
+  object-fit: cover;
+  max-height: 16rem;
+
   margin: 0 auto;
 `;
 const ArticleImage = styled.img`
-  border-radius: 8px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  width: 100%;
-  height: 100%;
-`;
+  border-radius: 30px;
 
-const ArticleCardContent = styled.div`
-  padding: 0.5rem 1.2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  width: 100%;
+  height: 12rem;
 `;
 
 const ArticleTitle = styled.h2`
-  height: 3.5rem;
-  text-transform: uppercase;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2; /* Establece el número máximo de líneas */
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-top: 0;
+  margin-top: 0.5rem;
   margin-bottom: 0;
-  text-align: start;
-`;
-
-const ArticleSummary = styled.p`
-  height: 180px;
-  letter-spacing: 0.3px;
-  font-size: 1rem;
-  color: #bcbcbc;
-  opacity: 0.5;
-
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 0;
-  margin-bottom: 1.5rem;
-  text-align: start;
 `;
 
 const Slider = ({ latestArticles }) => {
@@ -115,9 +92,8 @@ const Slider = ({ latestArticles }) => {
             <ArticleImageConatiner>
               <ArticleImage src={article.images[0]} alt="article-image" />
             </ArticleImageConatiner>
-            <ArticleCardContent>
-              <ArticleTitle>{article.title}</ArticleTitle>
-            </ArticleCardContent>
+
+            <ArticleTitle>{article.title}</ArticleTitle>
           </ArticleCard>
         ))}
       </SliderTrack>

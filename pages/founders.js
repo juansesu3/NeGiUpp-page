@@ -12,20 +12,20 @@ const ContainerFounders = styled.div`
   gap: 5rem;
   margin-top: 5rem;
   color: white;
-  height: 40rem; 
+  height: 40rem;
 `;
 const AboutMe = styled.div`
-flex: 1;
-overflow-y: scroll;
- scrollbar-width: thin; /* Oculta la barra de desplazamiento en navegadores que lo soporten */
+  flex: 1;
+  overflow-y: scroll;
+  scrollbar-width: thin; /* Oculta la barra de desplazamiento en navegadores que lo soporten */
   -ms-overflow-style: none; /* Oculta la barra de desplazamiento en Internet Explorer y Microsoft Edge */
-  
+
   /* Estilos específicos para la barra de desplazamiento en navegadores WebKit (Chrome, Safari) */
   &::-webkit-scrollbar {
     width: 8px; /* Ajusta el ancho según tus preferencias */
     background-color: transparent; /* Oculta el fondo de la barra de desplazamiento */
   }
-  
+
   &::-webkit-scrollbar-thumb {
     background-color: #888; /* Color de la barra de desplazamiento */
     border-radius: 4px; /* Ajusta el radio de borde según tus preferencias */

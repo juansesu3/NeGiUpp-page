@@ -389,10 +389,6 @@ const Home = ({ latestArticles }) => {
                   </SecondSection1>
 
                   <SectionNewsFlex>
-                    <TitleNews>
-                      <span> News</span>
-                    </TitleNews>
-
                     <SectionNews>
                       <InfiniteScrollAmimation />
                     </SectionNews>
