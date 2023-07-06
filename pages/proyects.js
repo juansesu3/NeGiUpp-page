@@ -29,6 +29,7 @@ const SecondProyectsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
+  justify-content: space-around;
   h1 {
     font-size: 1.5rem;
     font-weight: 500;

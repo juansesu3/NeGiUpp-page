@@ -120,8 +120,8 @@ const Footer = () => {
       <First>
         <Section>
           <h4>About NeGiUpp</h4>
-          <LinkFooter href={"/"}>who we are?</LinkFooter>
-          <LinkFooter href={"/"}>Our values and culture</LinkFooter>
+          <LinkFooter href={"/"}>who I am?</LinkFooter>
+          <LinkFooter href={"/"}>My values and culture</LinkFooter>
           <LinkFooter href={"/"}>work together</LinkFooter>
           <LinkFooter href={"/"}>Let&apos;s talk</LinkFooter>
         </Section>

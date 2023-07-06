@@ -191,6 +191,9 @@ const StartContainer = styled(Link)`
     margin: 0;
     font-weight: 500;
   }
+  img{
+    margin-bottom: .5rem;
+  }
 `;
 const InfoCultureHitosContainer = styled.div`
   width: 50%;
@@ -327,6 +330,8 @@ const AboutPage = () => {
                 </svg>
               </WorkTogetheContainer>
               <StartContainer href={"/founders"}>
+                <img src="https://my-page-negiupp.s3.amazonaws.com/1688631092905.png" />
+              
                 <p>more about me</p>
                 <h2>Credentials</h2>
               </StartContainer>

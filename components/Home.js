@@ -149,12 +149,12 @@ const SecondSection1 = styled.section`
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
 `;
-const SecondSection2 = styled.div`
+const SecondSection2 = styled(Link)`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  text-decoration: none;
   padding: 1.7rem;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -238,7 +238,8 @@ const AsideArtStart = styled.div`
   width: 30rem;
 `;
 
-const Start = styled.div`
+const Start = styled(Link)`
+  text-decoration: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -356,7 +357,8 @@ const Home = ({ latestArticles }) => {
                   <span> Latest Articles</span>
                 </TitleNews>
                 <ArticleCardComp latestArticles={latestArticles} />
-                <Start>
+
+                <Start href={"/notfound"}>
                   <Title>
                     <span>START</span>
                   </Title>
@@ -394,14 +396,10 @@ const Home = ({ latestArticles }) => {
                     </SectionNews>
 
                     <ProyectTech>
-                      <SecondSection2>
-                        <SubTitle>
-                          <StyledLink proyect="true" href={"/proyects"}>
-                            Proyects
-                          </StyledLink>
-                        </SubTitle>
+                      <SecondSection2 href={"/proyects"}>
+                        <SubTitle>Proyects</SubTitle>
                       </SecondSection2>
-                      <SecondSection2>
+                      <SecondSection2 href={"/technologiesStack"}>
                         <SubTitle>Technologies</SubTitle>
                       </SecondSection2>
                     </ProyectTech>

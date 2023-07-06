@@ -63,7 +63,20 @@ const FoundersPage = () => {
               our membership, you will gain exclusive access to highly
               functional and visually appealing solutions.
             </p>
-            <h2>About me</h2>
+            <h2>Experiences</h2>
+            <p>
+              NeGiUpp digital consulting, we have created an exclusive
+             
+            </p>
+            <p>
+              NeGiUpp digital consulting, we have created an exclusive
+             
+            </p>
+            <p>
+              NeGiUpp digital consulting, we have created an exclusive
+             
+            </p>
+            <h2>Education|</h2>
             <p>
               NeGiUpp digital consulting, we have created an exclusive
               membership model to provide you with tailored full stack web
@@ -75,7 +88,7 @@ const FoundersPage = () => {
               our membership, you will gain exclusive access to highly
               functional and visually appealing solutions.
             </p>
-            <h2>About me</h2>
+            <h2>Skills</h2>
             <p>
               NeGiUpp digital consulting, we have created an exclusive
               membership model to provide you with tailored full stack web
@@ -87,30 +100,7 @@ const FoundersPage = () => {
               our membership, you will gain exclusive access to highly
               functional and visually appealing solutions.
             </p>
-            <h2>About me</h2>
-            <p>
-              NeGiUpp digital consulting, we have created an exclusive
-              membership model to provide you with tailored full stack web
-              development services. We are here to drive your online business
-              and ensure you achieve the best results. Our team of expert web
-              developers will take care of all your digital needs. Whether you
-              need a website from scratch, ongoing improvements, or digital
-              marketing strategies, we are ready to work with you. By joining
-              our membership, you will gain exclusive access to highly
-              functional and visually appealing solutions.
-            </p>
-            <h2>About me</h2>
-            <p>
-              NeGiUpp digital consulting, we have created an exclusive
-              membership model to provide you with tailored full stack web
-              development services. We are here to drive your online business
-              and ensure you achieve the best results. Our team of expert web
-              developers will take care of all your digital needs. Whether you
-              need a website from scratch, ongoing improvements, or digital
-              marketing strategies, we are ready to work with you. By joining
-              our membership, you will gain exclusive access to highly
-              functional and visually appealing solutions.
-            </p>
+           
           </AboutMe>
         </ContainerFounders>
       </Center>
