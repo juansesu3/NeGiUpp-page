@@ -191,8 +191,8 @@ const StartContainer = styled(Link)`
     margin: 0;
     font-weight: 500;
   }
-  img{
-    margin-bottom: .5rem;
+  img {
+    margin-bottom: 0.5rem;
   }
 `;
 const InfoCultureHitosContainer = styled.div`
@@ -261,13 +261,15 @@ const AboutPage = () => {
                 </Title>
 
                 <InfoAboutContainer>
-                  <h2>Juan Sebastian Suarez Ramirez</h2>
+                  <h2> Hi there!</h2>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    I&apos;m Juan Sebastian Suarez Ramirez, a passionate full stack
+                    web developer with over two years of experience in creating
+                    high-quality, functional web applications. I thrive on
+                    building innovative solutions and collaborating with diverse
+                    teams to achieve common goals.
                   </p>
+          
                 </InfoAboutContainer>
               </AboutCont>
             </ContainerSec>
@@ -278,14 +280,19 @@ const AboutPage = () => {
               <InfoCultureHitosContainer>
                 <h2>Experiences</h2>
                 <div>
-                  <p>06/23/2023</p>
-                  <h3>Founded</h3>
-                  <p>NeGiUpp</p>
+                  <p>06/23/2021</p>
+                  <h3>BootCamp</h3>
+                  <p>Start in the IT</p>
                 </div>
                 <div>
-                  <p>06/23/2023</p>
-                  <h3>Our first client</h3>
-                  <p>La pettite sophie</p>
+                  <p>06/23/2022</p>
+                  <h3>Talent.com</h3>
+                  <p>Web Scrapper</p>
+                </div>
+                <div>
+                  <p>06/23/2022</p>
+                  <h3>Freelancer</h3>
+                  <p>FullStack web developer</p>
                 </div>
               </InfoCultureHitosContainer>
               <InfoCultureHitosContainer>
@@ -331,7 +338,7 @@ const AboutPage = () => {
               </WorkTogetheContainer>
               <StartContainer href={"/founders"}>
                 <img src="https://my-page-negiupp.s3.amazonaws.com/1688631092905.png" />
-              
+
                 <p>more about me</p>
                 <h2>Credentials</h2>
               </StartContainer>

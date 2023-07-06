@@ -26,6 +26,7 @@ const SecondArticles = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
+  justify-content: space-around;
   a {
     text-decoration: none;
     color: white;
@@ -61,11 +62,8 @@ const ImageContainer = styled.div`
 `;
 const TitlePage = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
-  display: flex;
   justify-content: center;
-  align-items: center;
   gap: 1.5rem;
   width: 100%;
   margin: 0 auto;
@@ -76,6 +74,9 @@ const TitlePage = styled.div`
     text-transform: uppercase;
   }
 `;
+const SeconConatiner = styled.div`
+width: 100%;
+`
 
 const BlogPage = () => {
   const [articles, setArticles] = useState([]);
@@ -111,7 +112,7 @@ const BlogPage = () => {
               ))}
           </FirstArticles>
 
-          <div>
+          <SeconConatiner>
             <TitlePage>
               <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
               <h1>All articles</h1>
@@ -134,7 +135,7 @@ const BlogPage = () => {
                   </RevealWrapper>
                 ))}
             </SecondArticles>
-          </div>
+          </SeconConatiner>
         </BlogContainer>
       </Center>
 
