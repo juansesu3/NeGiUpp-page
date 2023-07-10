@@ -275,7 +275,7 @@ const AboutPage = () => {
             </ContainerSec>
           </RevealWrapper>
           {/*Second section */}
-          <RevealWrapper delay={300}>
+          <RevealWrapper delay={100}>
             <ContainerSec>
               <InfoCultureHitosContainer>
                 <h2>Experiences</h2>
@@ -304,14 +304,14 @@ const AboutPage = () => {
                 </div>
                 <div>
                   <p>06/23/2023</p>
-                  <h3>Data structure & algoritms</h3>
+                  <h3>JavaScript algoritms & Data structure </h3>
                   <p>FreeCodeCamp</p>
                 </div>
               </InfoCultureHitosContainer>
             </ContainerSec>
           </RevealWrapper>
           {/*Third section */}
-          <RevealWrapper delay={300}>
+          <RevealWrapper delay={100}>
             <ContainerSec>
               <CeoContainer href={"/contact"}>
                 <h1>Profiles</h1>
