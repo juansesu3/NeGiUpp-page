@@ -2,9 +2,10 @@ import CardCEO from "@/components/CardCEO";
 import Center from "@/components/Center";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Link from "next/link";
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
+import moment from "moment";
 
 const ContainerFounders = styled.div`
   display: flex;
@@ -43,87 +44,91 @@ const AboutMe = styled.div`
 `;
 
 const FoundersPage = () => {
+  const [profile, setProfile] = useState({});
+  useEffect(() => {
+    axios.get("/api/profile").then((response) => {
+      setProfile(response.data);
+    });
+  }, []);
+  console.log(profile);
+
   return (
     <>
       <Header />
       <Center>
-        <ContainerFounders>
-          <CardCEO />
+        {profile.length > 0 &&
+          profile.map((pro) => (
+            <ContainerFounders key={pro._id}>
+              <CardCEO />
 
-          <AboutMe>
-            <h2>About me</h2>
-            <div>
-              <p>
-                Throughout my professional journey, I&apos;ve worked on challenging
-                projects that have allowed me to gain a solid understanding of a
-                wide range of technologies and tools.
-              </p>
-              <p>
-                {" "}
-                My expertise spans from client-side development using HTML, CSS,
-                and JavaScript to server-side implementation of business logic
-                and databases using technologies like Node.js and both
-                relational and non-relational databases.
-              </p>
-              <p>
-                {" "}
-                I&apos;m a strong advocate for best development practices, focusing
-                on writing clean, modular, and highly maintainable code.
-              </p>
-              <p>
-                I have experience with popular frameworks and libraries such as
-                React.js, Next.js, Express, Django, as well as integrating
-                third-party APIs and cloud services. What truly drives me is the
-                ability to tackle new challenges and continuously learn.
-              </p>
-            </div>
-            <div>
-              <h2>Language</h2>
-              <p>Spanis</p>
-              <p>English</p>
-              <p>French</p>
-            </div>
-            <div>
-              <h2>Experiences</h2>
-              <div>
-                <p>06/23/2021</p>
-                <h3>BootCamp</h3>
-                <p>Start in the IT</p>
-              </div>
-              <div>
-                <p>06/23/2022</p>
-                <h3>Talent.com</h3>
-                <p>Web Scrapper</p>
-              </div>
-              <div>
-                <p>06/23/2022</p>
-                <h3>Freelancer</h3>
-                <p>FullStack web developer</p>
-              </div>
-            </div>
-            <div>
-              <h2>Education</h2>
-              <div>
-                <p>06/23/2023</p>
-                <h3>Python developer</h3>
-                <p>Edutim</p>
-              </div>
-              <div>
-                <p>06/23/2023</p>
-                <h3>Data structure & algoritms</h3>
-                <p>FreeCodeCamp</p>
-              </div>
-            </div>
-            <div>
-              <h2>Skills</h2>
-              <div>
-                <h3>JavaScript</h3>
-                <h3>JavaScript</h3>
-                <h3>JavaScript</h3>
-              </div>
-            </div>
-          </AboutMe>
-        </ContainerFounders>
+              <AboutMe>
+                <h2>About me</h2>
+                <div>
+                  <p>{pro.introYourSelf}</p>
+                  {/* <p>
+                    Throughout my professional journey, I&apos;ve worked on
+                    challenging projects that have allowed me to gain a solid
+                    understanding of a wide range of technologies and tools.
+                  </p>
+                  <p>
+                    {" "}
+                    My expertise spans from client-side development using HTML,
+                    CSS, and JavaScript to server-side implementation of
+                    business logic and databases using technologies like Node.js
+                    and both relational and non-relational databases.
+                  </p>
+                  <p>
+                    {" "}
+                    I&apos;m a strong advocate for best development practices,
+                    focusing on writing clean, modular, and highly maintainable
+                    code.
+                  </p>
+                  <p>
+                    I have experience with popular frameworks and libraries such
+                    as React.js, Next.js, Express, Django, as well as
+                    integrating third-party APIs and cloud services. What truly
+                    drives me is the ability to tackle new challenges and
+                    continuously learn.
+          </p>*/}
+                </div>
+                <div>
+                  <h2>Language</h2>
+                  {pro.languages.length > 0 &&
+                    pro.languages.map((lang) => (
+                      <p key={lang}>
+                        {lang.language.replace(/^\w/, (c) => c.toUpperCase())}
+                      </p>
+                    ))}
+                </div>
+                <div>
+                  <h2>Experiences</h2>
+                  {pro.experinces.length > 0 &&
+                    pro.experinces.map((exp) => (
+                      <div key={exp.startDateExp}>
+                        {`${moment(exp.startDateExp)
+                          .utc()
+                          .format("MM/DD/YYYY")} - 
+                        
+                              ${moment(exp.endDateExp)
+                                .utc()
+                                .format("MM/DD/YYYY")}`}
+                        <h3>{exp.position}</h3>
+                        <p>{exp.company}</p>
+                      </div>
+                    ))}
+                </div>
+                <div>
+                  <h2>Skills</h2>
+                  <div>
+                    {pro.skills.length > 0 &&
+                      pro.skills.map((skill) => (
+                        <h3 key={skill.skill}>{skill.skill}</h3>
+                      ))}
+                  </div>
+                </div>
+              </AboutMe>
+            </ContainerFounders>
+          ))}
       </Center>
       <Footer />
     </>
