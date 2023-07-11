@@ -75,6 +75,35 @@ const ContainerExpEdu = styled.div`
 const Cont = styled.div`
   margin-top: 2.5rem;
 `;
+const ContainerSkills = styled.div`
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 1.5rem;
+
+
+`
+const ContSkil = styled.div`
+width: 50%;
+span{
+  color:#BCBCBC;
+  opacity: .6;
+  font-weight: 500;
+ font-size: .9rem;
+
+}
+h3{
+  color: #ffff;
+  opacity: .9;
+  font-weight: 500;
+  margin-bottom: 0;
+  margin-top: .5rem;
+}
+p{
+  color:#BCBCBC;
+  opacity: .6;
+  margin: 0;
+}
+`
 
 const FoundersPage = () => {
   const [profile, setProfile] = useState({});
@@ -97,32 +126,21 @@ const FoundersPage = () => {
               <AboutMe>
                 <h2>About me</h2>
                 <div>
-                  <p>{pro.introYourSelf}</p>
-                  {/* <p>
-                    Throughout my professional journey, I&apos;ve worked on
-                    challenging projects that have allowed me to gain a solid
-                    understanding of a wide range of technologies and tools.
-                  </p>
+                  <p>{pro.introYourSelf.split("tools.").shift() + " tools."}</p>
+                  <p>{`${(
+                    pro.introYourSelf.split("databases.").shift() +
+                    " databases."
+                  )
+                    .split("tools.")
+                    .pop()}`}</p>
                   <p>
-                    {" "}
-                    My expertise spans from client-side development using HTML,
-                    CSS, and JavaScript to server-side implementation of
-                    business logic and databases using technologies like Node.js
-                    and both relational and non-relational databases.
+                    {pro.introYourSelf
+                      .split("databases.")
+                      .pop()
+                      .split("code.")
+                      .shift() + " code."}
                   </p>
-                  <p>
-                    {" "}
-                    I&apos;m a strong advocate for best development practices,
-                    focusing on writing clean, modular, and highly maintainable
-                    code.
-                  </p>
-                  <p>
-                    I have experience with popular frameworks and libraries such
-                    as React.js, Next.js, Express, Django, as well as
-                    integrating third-party APIs and cloud services. What truly
-                    drives me is the ability to tackle new challenges and
-                    continuously learn.
-          </p>*/}
+                  <p>{pro.introYourSelf.split("code.").pop()}</p>
                 </div>
                 <div>
                   <h2>Language</h2>
@@ -154,36 +172,40 @@ const FoundersPage = () => {
                       </Cont>
                     ))}
                 </ContainerExpEdu>
+                <h2>Education</h2>
                 <ContainerExpEdu>
-                  <h2>Education</h2>
+                 
                   {pro.education.length > 0 &&
                     pro.education.map((edu) => (
                       <Cont key={edu.gotDate}>
                         <h4>
-                          {`${moment(edu.gotDate)
-                            .utc()
-                            .format("MM/DD/YYYY")}`}
+                          {`${moment(edu.gotDate).utc().format("MM/DD/YYYY")}`}
                         </h4>
                         <h3>{edu.certificationName}</h3>
                         <h5>{edu.institutionName}</h5>
                         <div>
-                          <img src="/" alt="image certification"/>
+                          <img src="/" alt="image certification" />
                         </div>
-                       
                       </Cont>
                     ))}
                 </ContainerExpEdu>
 
-                <div>
-                  <h2>Skills</h2>
-                  <div>
+                <h2>Skills</h2>
+                <ContainerSkills>
+                 
+                  
                     {pro.skills.length > 0 &&
                       pro.skills.map((skill) => (
-                        <h3 key={skill.skill}>{skill.skill}</h3>
-                        
+                        <ContSkil key={skill.skill}>
+                        <span>100%</span>
+                        <h3 >{skill.skill}</h3>
+                        <p>
+                          Non enim praeesent
+                        </p>
+                        </ContSkil>
                       ))}
-                  </div>
-                </div>
+                  </ContainerSkills>
+                
               </AboutMe>
             </ContainerFounders>
           ))}

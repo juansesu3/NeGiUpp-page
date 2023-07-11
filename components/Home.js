@@ -345,7 +345,7 @@ const Home = ({ latestArticles }) => {
               </RevealWrapper>
               <ImgContainer>
                 <RevealWrapper>
-                  <FirstImageInfo src="https://my-page-negiupp.s3.amazonaws.com/1687442391096.png" />
+                  <FirstImageInfo src="https://my-page-negiupp.s3.amazonaws.com/1689091977005.png" />
                 </RevealWrapper>
               </ImgContainer>
             </SectionContainer>
