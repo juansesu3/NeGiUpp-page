@@ -42,6 +42,39 @@ const AboutMe = styled.div`
     line-height: 1.56;
   }
 `;
+const ContainerExpEdu = styled.div`
+  margin-top: 2.5rem;
+  h2 {
+    margin: 0;
+  }
+  h3 {
+    color: #4d61fc;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+  }
+  h4 {
+    color: #bcbcbc;
+    opacity: 0.6;
+    font-weight: 500;
+    margin: 0.5rem 0;
+    letter-spacing: 0.01rem;
+  }
+  h5 {
+    color: #bcbcbc;
+    opacity: 0.6;
+    font-weight: 400;
+    font-size: 0.9;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  p {
+    margin: 0;
+  }
+`;
+const Cont = styled.div`
+  margin-top: 2.5rem;
+`;
 
 const FoundersPage = () => {
   const [profile, setProfile] = useState({});
@@ -100,29 +133,54 @@ const FoundersPage = () => {
                       </p>
                     ))}
                 </div>
-                <div>
+                <ContainerExpEdu>
                   <h2>Experiences</h2>
                   {pro.experinces.length > 0 &&
                     pro.experinces.map((exp) => (
-                      <div key={exp.startDateExp}>
-                        {`${moment(exp.startDateExp)
-                          .utc()
-                          .format("MM/DD/YYYY")} - 
+                      <Cont key={exp.startDateExp}>
+                        <h4>
+                          {`${moment(exp.startDateExp)
+                            .utc()
+                            .format("MM/DD/YYYY")} - 
                         
                               ${moment(exp.endDateExp)
                                 .utc()
                                 .format("MM/DD/YYYY")}`}
+                        </h4>
+
                         <h3>{exp.position}</h3>
-                        <p>{exp.company}</p>
-                      </div>
+                        <h5>{exp.company}</h5>
+                        <p>{exp.roldescription}</p>
+                      </Cont>
                     ))}
-                </div>
+                </ContainerExpEdu>
+                <ContainerExpEdu>
+                  <h2>Education</h2>
+                  {pro.education.length > 0 &&
+                    pro.education.map((edu) => (
+                      <Cont key={edu.gotDate}>
+                        <h4>
+                          {`${moment(edu.gotDate)
+                            .utc()
+                            .format("MM/DD/YYYY")}`}
+                        </h4>
+                        <h3>{edu.certificationName}</h3>
+                        <h5>{edu.institutionName}</h5>
+                        <div>
+                          <img src="/" alt="image certification"/>
+                        </div>
+                       
+                      </Cont>
+                    ))}
+                </ContainerExpEdu>
+
                 <div>
                   <h2>Skills</h2>
                   <div>
                     {pro.skills.length > 0 &&
                       pro.skills.map((skill) => (
                         <h3 key={skill.skill}>{skill.skill}</h3>
+                        
                       ))}
                   </div>
                 </div>
