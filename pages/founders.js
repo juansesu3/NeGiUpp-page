@@ -6,11 +6,12 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import moment from "moment";
+import Link from "next/link";
 
 const ContainerFounders = styled.div`
   display: flex;
   justify-content: center;
-  gap: 5rem;
+  gap: 4rem;
   margin-top: 5rem;
   color: white;
   height: 40rem;
@@ -35,7 +36,7 @@ const AboutMe = styled.div`
     color: #ffff;
     font-weight: 500;
     text-transform: uppercase;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
   p {
     opacity: 0.8;
@@ -43,9 +44,10 @@ const AboutMe = styled.div`
   }
 `;
 const ContainerExpEdu = styled.div`
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   h2 {
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 1rem;
   }
   h3 {
     color: #4d61fc;
@@ -73,37 +75,59 @@ const ContainerExpEdu = styled.div`
   }
 `;
 const Cont = styled.div`
-  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+  a {
+    text-decoration: none;
+  }
 `;
 const ContainerSkills = styled.div`
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 1.5rem;
-
-
-`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+`;
 const ContSkil = styled.div`
-width: 50%;
-span{
-  color:#BCBCBC;
-  opacity: .6;
-  font-weight: 500;
- font-size: .9rem;
+  width: 50%;
+  span {
+    color: #bcbcbc;
+    opacity: 0.6;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+  h3 {
+    color: #ffff;
+    opacity: 0.9;
+    font-weight: 500;
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+  }
+  p {
+    color: #bcbcbc;
+    opacity: 0.6;
+    margin: 0;
+  }
+`;
 
-}
-h3{
-  color: #ffff;
-  opacity: .9;
-  font-weight: 500;
-  margin-bottom: 0;
-  margin-top: .5rem;
-}
-p{
-  color:#BCBCBC;
-  opacity: .6;
-  margin: 0;
-}
-`
+const ContainerLenguages = styled.div`
+  margin-top: 2rem;
+  h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+`;
+const ContainerLanguge = styled.div`
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  h3 {
+    margin: 0;
+    font-weight: 500;
+  }
+  p {
+    color: #bcbcbc;
+    opacity: 0.6;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+`;
 
 const FoundersPage = () => {
   const [profile, setProfile] = useState({});
@@ -142,15 +166,18 @@ const FoundersPage = () => {
                   </p>
                   <p>{pro.introYourSelf.split("code.").pop()}</p>
                 </div>
-                <div>
+                <ContainerLenguages>
                   <h2>Language</h2>
                   {pro.languages.length > 0 &&
                     pro.languages.map((lang) => (
-                      <p key={lang}>
-                        {lang.language.replace(/^\w/, (c) => c.toUpperCase())}
-                      </p>
+                      <ContainerLanguge key={lang}>
+                        <h3>
+                          {lang.language.replace(/^\w/, (c) => c.toUpperCase())}
+                        </h3>
+                        <p>Level B2</p>
+                      </ContainerLanguge>
                     ))}
-                </div>
+                </ContainerLenguages>
                 <ContainerExpEdu>
                   <h2>Experiences</h2>
                   {pro.experinces.length > 0 &&
@@ -172,40 +199,38 @@ const FoundersPage = () => {
                       </Cont>
                     ))}
                 </ContainerExpEdu>
-                <h2>Education</h2>
+
                 <ContainerExpEdu>
-                 
+                  <h2>Education</h2>
                   {pro.education.length > 0 &&
                     pro.education.map((edu) => (
                       <Cont key={edu.gotDate}>
                         <h4>
                           {`${moment(edu.gotDate).utc().format("MM/DD/YYYY")}`}
                         </h4>
-                        <h3>{edu.certificationName}</h3>
-                        <h5>{edu.institutionName}</h5>
-                        <div>
-                          <img src="/" alt="image certification" />
-                        </div>
+                        <Link href={"/"}>
+                          {" "}
+                          <h3>{edu.certificationName} </h3>
+                        </Link>
+                        <Link href={"/"}>
+                          {" "}
+                          <h5>{edu.institutionName}</h5>
+                        </Link>
                       </Cont>
                     ))}
                 </ContainerExpEdu>
 
                 <h2>Skills</h2>
                 <ContainerSkills>
-                 
-                  
-                    {pro.skills.length > 0 &&
-                      pro.skills.map((skill) => (
-                        <ContSkil key={skill.skill}>
-                        <span>100%</span>
-                        <h3 >{skill.skill}</h3>
-                        <p>
-                          Non enim praeesent
-                        </p>
-                        </ContSkil>
-                      ))}
-                  </ContainerSkills>
-                
+                  {pro.skills.length > 0 &&
+                    pro.skills.map((skill) => (
+                      <ContSkil key={skill.skill}>
+                        <span>{skill.progress}%</span>
+                        <h3>{skill.skill}</h3>
+                        <p>Non enim praeesent</p>
+                      </ContSkil>
+                    ))}
+                </ContainerSkills>
               </AboutMe>
             </ContainerFounders>
           ))}
