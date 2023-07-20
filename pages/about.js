@@ -8,17 +8,28 @@ import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import moment from "moment";
 const AboutContainer = styled.div`
-  margin-top: 3rem;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  @media screen and (max-width: 768px) {
+    font-size: 30px;
+  }
 `;
 const AboutCont = styled.div`
-  width: 60%;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: 60%;
+  }
 `;
 
 const ImgCont = styled.div`
-  width: 40%;
+  margin: 0 auto;
+  width: 70%;
+  @media screen and (min-width: 768px) {
+    width: 40%;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -43,11 +54,15 @@ const ImageContainer = styled.div`
 
 const ContainerSec = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 1.5rem;
   color: #ffff;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 const Title = styled.span`
-  display: flex;
+  display: none;
   align-items: center;
   gap: 1rem;
   justify-content: center;
@@ -63,11 +78,38 @@ const Title = styled.span`
   img {
     width: 100%;
   }
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+`;
+const TitleMobile = styled.span`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+
+  h1 {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 3rem;
+  }
+  span {
+    width: 2rem;
+  }
+  img {
+    width: 100%;
+  }
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const InfoAboutContainer = styled.div`
   padding: 2rem;
   border-radius: 30px;
+  height: 24rem;
+
+  margin: auto 0;
   background: linear-gradient(
     100deg,
     rgb(189 189 189 / 7%),
@@ -77,12 +119,27 @@ const InfoAboutContainer = styled.div`
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-
+  h2 {
+    margin: 0;
+  }
   p {
     color: #ffff;
     opacity: 0.8;
-    line-height: 1.6rem;
-    letter-spacing: 0.03rem;
+    line-height: 2.8rem;
+    letter-spacing: 0.07rem;
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+  @media screen and (min-width: 768px) {
+    height: 20.5rem;
+    p {
+      line-height: 1.8rem;
+      letter-spacing: 0.02rem;
+      font-size: 1rem;
+    }
+    h2 {
+      margin: 1rem 0;
+    }
   }
 `;
 
@@ -197,10 +254,10 @@ const StartContainer = styled(Link)`
   }
 `;
 const InfoCultureHitosContainer = styled.div`
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 3rem;
   padding: 2rem;
   border-radius: 30px;
   background: linear-gradient(
@@ -219,15 +276,46 @@ const InfoCultureHitosContainer = styled.div`
   p {
     color: #ffff;
     opacity: 0.6;
-    line-height: 1.6rem;
-    letter-spacing: 0.03rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.07rem;
     margin: 0;
-    font-weight: 400;
   }
   h3 {
     margin: 0;
     color: #ffff;
     opacity: 0.9;
+    font-size: 3rem;
+  }
+  @media screen and (min-width: 768px) {
+    width: 50%;
+    gap: 1.5rem;
+    h2 {
+      margin: 0;
+    }
+
+    p {
+      color: #ffff;
+      opacity: 0.6;
+      line-height: 1.6rem;
+      letter-spacing: 0.03rem;
+      margin: 0;
+    }
+    h3 {
+      margin: 0;
+      color: #ffff;
+      opacity: 0.9;
+      font-size: 1.5rem;
+    }
+  }
+`;
+const ContainerThirdSec = styled.div`
+margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  @media screen and (min-width: 768px){
+     gap: 1.5rem;
+
+    
   }
 `;
 
@@ -242,8 +330,8 @@ const AboutPage = () => {
 
   return (
     <div>
-      <Header />
       <Center>
+        <Header />
         {profile.length > 0 &&
           profile.map((prof) => (
             <>
@@ -251,6 +339,17 @@ const AboutPage = () => {
                 {/*First section */}
                 <RevealWrapper delay={200}>
                   <ContainerSec>
+                    <TitleMobile>
+                      <span>
+                        <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+                      </span>
+
+                      <h1>Self summary</h1>
+
+                      <span>
+                        <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+                      </span>
+                    </TitleMobile>
                     <ImgCont>
                       <ImageContainer>
                         <img
@@ -315,10 +414,7 @@ const AboutPage = () => {
                         ))}
                     </InfoCultureHitosContainer>
                   </ContainerSec>
-                </RevealWrapper>
-                {/*Third section */}
-                <RevealWrapper delay={100}>
-                  <ContainerSec>
+                  <ContainerThirdSec>
                     <CeoContainer href={"/contact"}>
                       <h1>Profiles</h1>
                     </CeoContainer>
@@ -348,13 +444,17 @@ const AboutPage = () => {
                       <p>more about me</p>
                       <h2>Credentials</h2>
                     </StartContainer>
-                  </ContainerSec>
+                  </ContainerThirdSec>
                 </RevealWrapper>
+                {/*Third section */}
+               
+                  
+              
               </AboutContainer>
             </>
           ))}
+        <Footer />
       </Center>
-      <Footer />
     </div>
   );
 };
