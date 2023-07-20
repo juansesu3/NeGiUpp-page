@@ -2,6 +2,8 @@ import Link from "next/link";
 import { css, styled } from "styled-components";
 import Center from "./Center";
 import { useRouter } from "next/router";
+import Bars from "./icons/Bars";
+import { useState } from "react";
 
 const StyledHeader = styled.header`
   background-color: #0f0f0f;
@@ -17,6 +19,8 @@ const LogoLink = styled(Link)`
 
 const Logo = styled.img`
   width: 100%;
+  position: relative;
+  z-index: 20;
 `;
 
 const Wrapper = styled.div`
@@ -26,16 +30,44 @@ const Wrapper = styled.div`
 `;
 
 const StyledNav = styled.nav`
-  display: flex;
+  ${(props) =>
+    props.mobileNavActive
+      ? `
+      display: block;
+      text-align: center;
+`
+      : `
+      display: none;
+`}
+  transition: 1s;
   align-items: center;
   gap: 40px;
+  position: fixed;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 80px 25px 25px;
+
+  background-color: #0f0f0f;
+  z-index: 10;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    position: static;
+    padding: 0;
+  }
 `;
 
 const NavLink = styled(Link)`
+  display: block;
   color: #676767;
   text-decoration: none;
   font-size: 1rem;
   transition: 0.3s;
+  padding: 10px 0;
+  @media screen and (min-width: 768px) {
+    padding: 0;
+  }
   ${(props) =>
     props.active === true &&
     css`
@@ -66,10 +98,26 @@ const LetsTalk = styled(Link)`
     color: #0f0f0f;
   }
 `;
+const NavButton = styled.button`
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  position: relative;
+  z-index: 20;
+  cursor: pointer;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+`;
 
 const Header = () => {
   const router = useRouter();
   const { pathname } = router;
+  const [mobileNavActive, setMobileNavActive] = useState(false);
 
   return (
     <StyledHeader>
@@ -81,7 +129,7 @@ const Header = () => {
               alt="logo-image"
             />
           </LogoLink>
-          <StyledNav>
+          <StyledNav mobileNavActive={mobileNavActive}>
             <NavLink active={pathname === "/" ? true : false} href={"/"}>
               Home
             </NavLink>
@@ -111,6 +159,10 @@ const Header = () => {
             </NavLink>
           </StyledNav>
           <LetsTalk href={"/contact"}> Let&apos;s talk</LetsTalk>
+
+          <NavButton onClick={() => setMobileNavActive((prev) => !prev)}>
+            <Bars />
+          </NavButton>
         </Wrapper>
       </Center>
     </StyledHeader>

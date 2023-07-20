@@ -34,11 +34,14 @@ const AboutMe = styled.div`
   }
   h2 {
     color: #ffff;
+    font-size: 1.2rem;
     font-weight: 500;
     text-transform: uppercase;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
   }
   p {
+    font-size: 16px;
+    color: #fff;
     opacity: 0.8;
     line-height: 1.56;
   }
@@ -66,7 +69,7 @@ const ContainerExpEdu = styled.div`
     color: #bcbcbc;
     opacity: 0.6;
     font-weight: 400;
-    font-size: 0.9;
+    font-size: .95rem;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }
@@ -174,7 +177,7 @@ const FoundersPage = () => {
                         <h3>
                           {lang.language.replace(/^\w/, (c) => c.toUpperCase())}
                         </h3>
-                        <p>Level B2</p>
+                        <p>Level - {lang.levelLang}</p>
                       </ContainerLanguge>
                     ))}
                 </ContainerLenguages>
