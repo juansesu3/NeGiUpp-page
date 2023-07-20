@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { css, styled } from "styled-components";
-import Center from "./Center";
+
 import { useRouter } from "next/router";
 import Bars from "./icons/Bars";
 import { useState } from "react";
@@ -10,10 +10,9 @@ const StyledHeader = styled.header`
   max-width: 1100px;
   width: 100%;
   margin: 0 auto;
-  padding-right:.5rem; 
+  padding-right: 0.5rem;
   height: 100%;
   position: relative;
-     
 `;
 
 const LogoLink = styled(Link)`
@@ -22,6 +21,14 @@ const LogoLink = styled(Link)`
   display: flex;
   align-items: center;
   width: 70px;
+  ${(props) =>
+    props.route === "/about" &&
+    css`
+      width: 8rem;
+       @media screen and (min-width: 768px) {
+        width: 70px;
+      }
+    `}
 `;
 
 const Logo = styled.img`
@@ -50,7 +57,7 @@ const StyledNav = styled.nav`
   align-items: center;
   gap: 40px;
   position: fixed;
-  top: 0px;
+  top: 50px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -70,6 +77,14 @@ const NavLink = styled(Link)`
   color: #676767;
   text-decoration: none;
   font-size: 1rem;
+  ${(props) =>
+    props.route === "/about" &&
+    css`
+      font-size: 4rem;
+      @media screen and (min-width: 768px) {
+        font-size: 1rem;
+      }
+    `}
   transition: 0.3s;
   padding: 10px 0;
   @media screen and (min-width: 768px) {
@@ -87,7 +102,6 @@ const NavLink = styled(Link)`
 `;
 
 const LetsTalk = styled(Link)`
-  display: flex;
   color: #ffffff;
   text-decoration: none;
   align-items: center;
@@ -95,6 +109,7 @@ const LetsTalk = styled(Link)`
   padding: 12px 36px;
   border-radius: 16px;
   font-weight: 500;
+  display: none;
   transition: 0.3s;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
@@ -104,15 +119,24 @@ const LetsTalk = styled(Link)`
     background-color: #ffffff;
     color: #0f0f0f;
   }
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
 `;
 const NavButton = styled.button`
-  background-color: transparent;
   width: 40px;
   height: 40px;
+  ${(props) =>
+    props.route === "/about" &&
+    css`
+      height: 4.5rem;
+      width: 4.5rem;
+    `}
+  background-color: transparent;
   border: 0;
   color: white;
   border: 1px solid white;
-  border-radius: 5px;
+  border-radius: 10px;
   position: relative;
   z-index: 20;
   cursor: pointer;
@@ -121,57 +145,66 @@ const NavButton = styled.button`
   }
 `;
 
-const Header = () => {
+const Header = ({ route }) => {
   const router = useRouter();
   const { pathname } = router;
   const [mobileNavActive, setMobileNavActive] = useState(false);
 
   return (
     <StyledHeader>
-      
-        <Wrapper>
-          <LogoLink href={"/"}>
-            <Logo
-              src="https://my-page-negiupp.s3.amazonaws.com/1687424109024.png"
-              alt="logo-image"
-            />
-          </LogoLink>
-          <StyledNav mobileNavActive={mobileNavActive}>
-            <NavLink active={pathname === "/" ? true : false} href={"/"}>
-              Home
-            </NavLink>
-            <NavLink
-              active={pathname === "/about" ? true : false}
-              href={"/about"}
-            >
-              About
-            </NavLink>
-            <NavLink
-              active={pathname === "/proyects" ? true : false}
-              href={"/proyects"}
-            >
-              Proyects
-            </NavLink>
-            <NavLink
-              active={pathname === "/blog" ? true : false}
-              href={"/blog"}
-            >
-              Blog
-            </NavLink>
-            <NavLink
-              active={pathname === "/contact" ? true : false}
-              href={"/contact"}
-            >
-              Contact
-            </NavLink>
-          </StyledNav>
-          <LetsTalk href={"/contact"}> Let&apos;s talk</LetsTalk>
+      <Wrapper>
+        <LogoLink route={route} href={"/"}>
+          <Logo
+            src="https://my-page-negiupp.s3.amazonaws.com/1687424109024.png"
+            alt="logo-image"
+          />
+        </LogoLink>
+        <StyledNav mobileNavActive={mobileNavActive}>
+          <NavLink
+            route={route}
+            active={pathname === "/" ? true : false}
+            href={"/"}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            route={route}
+            active={pathname === "/about" ? true : false}
+            href={"/about"}
+          >
+            About
+          </NavLink>
+          <NavLink
+            route={route}
+            active={pathname === "/proyects" ? true : false}
+            href={"/proyects"}
+          >
+            Proyects
+          </NavLink>
+          <NavLink
+            route={route}
+            active={pathname === "/blog" ? true : false}
+            href={"/blog"}
+          >
+            Blog
+          </NavLink>
+          <NavLink
+            route={route}
+            active={pathname === "/contact" ? true : false}
+            href={"/contact"}
+          >
+            Contact
+          </NavLink>
+        </StyledNav>
+        <LetsTalk href={"/contact"}> Let&apos;s talk</LetsTalk>
 
-          <NavButton onClick={() => setMobileNavActive((prev) => !prev)}>
-            <Bars />
-          </NavButton>
-        </Wrapper>
-     
+        <NavButton
+          route={route}
+          onClick={() => setMobileNavActive((prev) => !prev)}
+        >
+          <Bars />
+        </NavButton>
+      </Wrapper>
     </StyledHeader>
   );
 };

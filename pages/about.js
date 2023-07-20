@@ -7,6 +7,17 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import moment from "moment";
+import { useRouter } from "next/router";
+
+const AboutFirstConatiner = styled.div`
+  position: absolute;
+
+  @media screen and (min-width: 1100px) {
+    left: 50%; /* Centra horizontalmente en la mitad del contenedor padre */
+    transform: translateX(-50%);
+  }
+`;
+
 const AboutContainer = styled.div`
   padding: 0 20px;
   display: flex;
@@ -309,17 +320,19 @@ const InfoCultureHitosContainer = styled.div`
   }
 `;
 const ContainerThirdSec = styled.div`
-margin-top: 1.5rem;
+  margin-top: 1.5rem;
   display: flex;
   gap: 1rem;
-  @media screen and (min-width: 768px){
-     gap: 1.5rem;
-
-    
+  @media screen and (min-width: 768px) {
+    gap: 1.5rem;
   }
 `;
 
 const AboutPage = () => {
+  const router = useRouter();
+  const { pathname } = router;
+  const { route } = router;
+
   const [profile, setProfile] = useState({});
   useEffect(() => {
     axios.get("/api/profile").then((response) => {
@@ -331,7 +344,7 @@ const AboutPage = () => {
   return (
     <div>
       <Center>
-        <Header />
+        <Header route={route} />
         {profile.length > 0 &&
           profile.map((prof) => (
             <>
@@ -379,7 +392,7 @@ const AboutPage = () => {
                   </ContainerSec>
                 </RevealWrapper>
                 {/*Second section */}
-                <RevealWrapper delay={100}>
+                <RevealWrapper delay={10}>
                   <ContainerSec>
                     <InfoCultureHitosContainer>
                       <h2>Experiences</h2>
@@ -447,9 +460,6 @@ const AboutPage = () => {
                   </ContainerThirdSec>
                 </RevealWrapper>
                 {/*Third section */}
-               
-                  
-              
               </AboutContainer>
             </>
           ))}
