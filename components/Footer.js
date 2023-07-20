@@ -3,8 +3,8 @@ import React from "react";
 import { styled } from "styled-components";
 
 const BckGro = styled.div`
-  margin: 0 auto;
 
+  margin: 0 auto;
   background-color: #0f0f0f;
   color: #fff;
   height: 100%;
@@ -13,16 +13,15 @@ const BckGro = styled.div`
   align-items: first baseline;
   justify-content: space-around;
   border-top: 1px solid #24242463;
-  margin-top: 5rem;
-  padding-top: 5rem;
-  padding-bottom: 3rem;
+  margin-top: 4rem;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 `;
 
 const First = styled.div`
   max-width: 1100px;
   margin: 0 auto;
-
   height: 100%;
   width: 100%;
   display: flex;

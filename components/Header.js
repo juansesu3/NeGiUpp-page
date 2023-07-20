@@ -7,6 +7,13 @@ import { useState } from "react";
 
 const StyledHeader = styled.header`
   background-color: #0f0f0f;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 100%;
+  position: relative;
+     
 `;
 
 const LogoLink = styled(Link)`
@@ -121,7 +128,7 @@ const Header = () => {
 
   return (
     <StyledHeader>
-      <Center>
+      
         <Wrapper>
           <LogoLink href={"/"}>
             <Logo
@@ -164,7 +171,7 @@ const Header = () => {
             <Bars />
           </NavButton>
         </Wrapper>
-      </Center>
+     
     </StyledHeader>
   );
 };

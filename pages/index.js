@@ -3,14 +3,25 @@ import Header from "@/components/Header";
 import Home from "@/components/Home";
 import { mongooseConnect } from "@/lib/mongoose";
 import { Article } from "@/models/Article";
+import { styled } from "styled-components";
+
+const HomeConatiner = styled.div`
+position: absolute;
+
+  @media screen and (min-width: 1100px){
+    left: 50%; /* Centra horizontalmente en la mitad del contenedor padre */
+  transform: translateX(-50%);
+  }
+
+`
 
 const HomePage = ({ latestArticles }) => {
   return (
-    <div>
-      <Header />
+    <HomeConatiner>
+      <Header  />
       <Home latestArticles={latestArticles} />
       <Footer />
-    </div>
+    </HomeConatiner>
   );
 };
 

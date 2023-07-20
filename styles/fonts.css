@@ -3,10 +3,12 @@
 * {
   box-sizing: border-box;
   height: auto;
+  
+  
+ 
 }
 
 body {
-
   padding: 0;
   height: 100%;
   margin: 0;
@@ -16,7 +18,7 @@ body {
 
 .tag-list {
   width: 100%;
-  max-width: 90vw;
+ 
   display: flex;
   flex-shrink: 0;
 

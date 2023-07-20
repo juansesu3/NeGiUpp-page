@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import Button from "./Button";
 
 const SliderContainer = styled.div`
-  width: 15rem;
+  width: 16.5rem;
   height: 17rem;
   overflow: hidden;
   border-radius: 30px;
@@ -43,7 +43,7 @@ const ArticleCard = styled.div`
 `;
 const ArticleImageConatiner = styled.div`
   object-fit: cover;
-  max-height: 16rem;
+  max-height: 16.5rem;
 
   margin: 0 auto;
 `;

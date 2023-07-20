@@ -9,7 +9,7 @@ import { RevealWrapper } from "next-reveal";
 const Bg = styled.div`
   background-color: #0f0f0f;
   color: #ffff;
-  padding: 50px 0;
+  padding: 0;
   height: 100%;
 `;
 const OficialContent = styled.div`
@@ -20,13 +20,17 @@ const OficialContent = styled.div`
 
 const PrincipalContent = styled.div`
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   align-items: flex-start;
   gap: 1.5rem;
+  @media screen and (min-width: 910px) {
+    flex-direction: row-reverse;
+  }
 `;
 //Started First Section
 const SectionContainer = styled.section`
   display: flex;
+  flex-direction: column-reverse;
   align-items: center;
   padding: 1.5rem;
   border-radius: 30px;
@@ -39,6 +43,9 @@ const SectionContainer = styled.section`
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 const SectionInfo = styled.div`
@@ -68,7 +75,10 @@ const Intro = styled.p`
 `;
 
 const ImgContainer = styled.div`
-  width: 5000px;
+  width: 25rem;
+  @media screen and (min-width: 768px) {
+    width: 150rem;
+  }
 `;
 const FirstImageInfo = styled.img`
   width: 100%;
@@ -89,7 +99,7 @@ const SecondSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
+  min-height: 10.5rem;
 
   padding: 1.5rem;
   white-space: nowrap;
@@ -114,6 +124,7 @@ const SubTitle = styled.h2`
   font-weight: 500;
   white-space: normal;
   text-align: center;
+  width: 100%;
 
   span {
     color: #4d61fc;
@@ -122,8 +133,12 @@ const SubTitle = styled.h2`
 
 const SecondSectionLevel1 = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 1.5rem;
   width: 100%;
+  @media screen and (min-width: 610px) {
+    flex-direction: row;
+  }
 `;
 const SecondSection1 = styled.section`
   display: flex;
@@ -198,7 +213,11 @@ const SectionNews = styled.div`
 
 const SecondSectionLevel2 = styled.section`
   display: flex;
+  flex-direction: column;
   gap: 1.5rem;
+  @media screen and (min-width: 500px) {
+    flex-direction: row;
+  }
 `;
 
 const SecundaryContent = styled.div`
@@ -233,9 +252,17 @@ const SecundaryContentSection1 = styled.div`
 
 const AsideArtStart = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-around;
   gap: 1.5rem;
-  width: 30rem;
+  //
+  width: 100%;
+  @media screen and (min-width: 910px) {
+    flex-direction: column;
+    width: 30rem;
+    gap: 1.5rem;
+  }
+  
 `;
 
 const Start = styled(Link)`
@@ -244,8 +271,8 @@ const Start = styled(Link)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 15rem;
-  height: 15rem;
+  height: 16.85rem;
+  width: 16rem;
   color: #4d61fc;
   padding: 1.7rem;
   overflow: hidden;
@@ -262,10 +289,16 @@ const Start = styled(Link)`
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  @media screen and (min-width: 910px) {
+ height: 15rem;
+ width: 100%;
+  }
+
 `;
 
 const ProyectTech = styled.div`
   display: flex;
+  justify-content: space-around;
   gap: 1.5rem;
 `;
 const TitleNews = styled.div`
@@ -298,6 +331,18 @@ const IconServices = styled.div`
     }
   }
 `;
+const ArtCont = styled.div`
+  display: flex;
+ width: 16.5rem;
+  flex-direction: column;
+  gap: 1.5rem;
+`;
+
+const StrCont = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+`;
 
 const StyledLink = styled(Link)`
   ${(props) =>
@@ -320,8 +365,8 @@ const Home = ({ latestArticles }) => {
       <Center>
         <OficialContent>
           <div>
-            <SectionContainer>
-              <RevealWrapper origin={"left"}>
+            <RevealWrapper origin={"left"}>
+              <SectionContainer>
                 <SectionInfo>
                   <Title>
                     Let&apos;s build the future <span>together</span>
@@ -342,27 +387,34 @@ const Home = ({ latestArticles }) => {
                     </Button>
                   </ContainerButtons>
                 </SectionInfo>
-              </RevealWrapper>
-              <ImgContainer>
-                <RevealWrapper>
+
+                <ImgContainer>
                   <FirstImageInfo src="https://my-page-negiupp.s3.amazonaws.com/1689091977005.png" />
-                </RevealWrapper>
-              </ImgContainer>
-            </SectionContainer>
+                </ImgContainer>
+              </SectionContainer>
+            </RevealWrapper>
           </div>
           <RevealWrapper>
             <PrincipalContent>
               <AsideArtStart>
-                <TitleNews>
-                  <span> Latest Articles</span>
-                </TitleNews>
-                <ArticleCardComp latestArticles={latestArticles} />
+                <ArtCont>
+                  <TitleNews>
+                    <span> Latest Articles</span>
+                  </TitleNews>
+                  <ArticleCardComp latestArticles={latestArticles} />
+                </ArtCont>
 
-                <Start href={"/notfound"}>
-                  <Title>
-                    <span>START</span>
-                  </Title>
-                </Start>
+                <StrCont>
+                  <TitleNews>
+                    <span> Into Reality</span>
+                  </TitleNews>
+                  <Start href={"/notfound"}>
+                    <Title>
+                      <span>Tutorials</span>
+                    </Title>
+                  </Start>
+                </StrCont>
+                
               </AsideArtStart>
 
               <SectionsContainer>
