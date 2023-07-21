@@ -4,32 +4,21 @@ import Header from "@/components/Header";
 import axios from "axios";
 import { RevealWrapper } from "next-reveal";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import moment from "moment";
-import { useRouter } from "next/router";
-
-const AboutFirstConatiner = styled.div`
-  position: absolute;
-
-  @media screen and (min-width: 1100px) {
-    left: 50%; /* Centra horizontalmente en la mitad del contenedor padre */
-    transform: translateX(-50%);
-  }
-`;
 
 const AboutContainer = styled.div`
-  padding: 0 20px;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   @media screen and (max-width: 768px) {
-    font-size: 30px;
   }
 `;
+
 const AboutCont = styled.div`
   width: 100%;
-
   @media screen and (min-width: 768px) {
     width: 60%;
   }
@@ -37,7 +26,7 @@ const AboutCont = styled.div`
 
 const ImgCont = styled.div`
   margin: 0 auto;
-  width: 70%;
+  
   @media screen and (min-width: 768px) {
     width: 40%;
   }
@@ -78,6 +67,7 @@ const Title = styled.span`
   gap: 1rem;
   justify-content: center;
   margin-bottom: 1rem;
+  white-space: nowrap;
   h1 {
     margin: 0;
     text-transform: uppercase;
@@ -98,11 +88,13 @@ const TitleMobile = styled.span`
   align-items: center;
   gap: 1rem;
   justify-content: center;
+  white-space: nowrap;
+
 
   h1 {
     margin: 0;
     text-transform: uppercase;
-    font-size: 3rem;
+    font-size: 2rem;
   }
   span {
     width: 2rem;
@@ -112,14 +104,16 @@ const TitleMobile = styled.span`
   }
   @media screen and (min-width: 768px) {
     display: none;
+    h1{
+      font-size: 3rem;
+     
+    }
   }
 `;
 
 const InfoAboutContainer = styled.div`
   padding: 2rem;
   border-radius: 30px;
-  height: 24rem;
-
   margin: auto 0;
   background: linear-gradient(
     100deg,
@@ -136,13 +130,11 @@ const InfoAboutContainer = styled.div`
   p {
     color: #ffff;
     opacity: 0.8;
-    line-height: 2.8rem;
-    letter-spacing: 0.07rem;
-    font-size: 2rem;
+    line-height: 2rem;
     margin-bottom: 0;
   }
   @media screen and (min-width: 768px) {
-    height: 20.5rem;
+
     p {
       line-height: 1.8rem;
       letter-spacing: 0.02rem;
@@ -162,8 +154,7 @@ const CeoContainer = styled(Link)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 30%;
-  height: 15rem;
+
   padding: 2rem;
   border-radius: 30px;
   background: linear-gradient(
@@ -185,17 +176,22 @@ const CeoContainer = styled(Link)`
   span {
     color: #4d61fc;
   }
+  @media screen and (min-width: 768px) {
+    width: 30%;
+  }
+  &:hover {
+    color: #4d61fc;
+  }
 `;
 const WorkTogetheContainer = styled(Link)`
   text-decoration: none;
   color: #ffff;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 1.5rem;
-  width: 40%;
-  height: 15rem;
+
   padding: 2rem;
   border-radius: 30px;
   background: linear-gradient(
@@ -226,16 +222,16 @@ const WorkTogetheContainer = styled(Link)`
       color: #ffff;
     }
   }
+  @media screen and (min-width: 768px) {
+    width: 40%;
+  }
 `;
 const StartContainer = styled(Link)`
   text-decoration: none;
   display: flex;
   flex-direction: column;
-  justify-content: end;
-
+  align-items: center;
   color: #ffff;
-  width: 30%;
-  height: 15rem;
   padding: 2rem;
   border-radius: 30px;
   background: linear-gradient(
@@ -252,23 +248,36 @@ const StartContainer = styled(Link)`
     color: #ffff;
     opacity: 0.8;
     line-height: 1.6rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin: 0;
     text-transform: uppercase;
   }
   h2 {
     margin: 0;
     font-weight: 500;
+    font-size: 2rem;
+    color: #4d61fc;
   }
+  &:hover {
+    background-color: #4d61fc;
+    h2 {
+      color: white;
+    }
+  }
+
   img {
     margin-bottom: 0.5rem;
   }
+
+  @media screen and (min-width: 768px) {
+
+    width: 30%;
+  }
 `;
 const InfoCultureHitosContainer = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1rem;
   padding: 2rem;
   border-radius: 30px;
   background: linear-gradient(
@@ -295,14 +304,10 @@ const InfoCultureHitosContainer = styled.div`
     margin: 0;
     color: #ffff;
     opacity: 0.9;
-    font-size: 3rem;
   }
   @media screen and (min-width: 768px) {
     width: 50%;
-    gap: 1.5rem;
-    h2 {
-      margin: 0;
-    }
+    gap: 1rem;
 
     p {
       color: #ffff;
@@ -315,24 +320,27 @@ const InfoCultureHitosContainer = styled.div`
       margin: 0;
       color: #ffff;
       opacity: 0.9;
-      font-size: 1.5rem;
     }
+  }
+`;
+const Credential = styled.div`
+  width: 15rem;
+  img {
+    width: 100%;
   }
 `;
 const ContainerThirdSec = styled.div`
   margin-top: 1.5rem;
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 1.5rem;
   @media screen and (min-width: 768px) {
-    gap: 1.5rem;
+    flex-direction: row;
   }
 `;
 
 const AboutPage = () => {
   const router = useRouter();
-  const { pathname } = router;
-  const { route } = router;
-
   const [profile, setProfile] = useState({});
   useEffect(() => {
     axios.get("/api/profile").then((response) => {
@@ -342,8 +350,8 @@ const AboutPage = () => {
 
   return (
     <div>
-      <Center route={route}>
-        <Header route={route} />
+      <Center>
+        <Header />
         {profile.length > 0 &&
           profile.map((prof) => (
             <AboutContainer key={prof._id}>
@@ -383,8 +391,10 @@ const AboutPage = () => {
                     </Title>
 
                     <InfoAboutContainer>
+                      <div>
                       <h2>{prof.greeting}</h2>
                       <p>{prof.shortIntro}</p>
+                      </div>
                     </InfoAboutContainer>
                   </AboutCont>
                 </ContainerSec>
@@ -450,8 +460,9 @@ const AboutPage = () => {
                     </svg>
                   </WorkTogetheContainer>
                   <StartContainer href={"/founders"}>
-                    <img src="https://my-page-negiupp.s3.amazonaws.com/1688631092905.png" />
-
+                    <Credential>
+                      <img src="https://my-page-negiupp.s3.amazonaws.com/1688631092905.png" />
+                    </Credential>
                     <p>more about me</p>
                     <h2>Credentials</h2>
                   </StartContainer>
