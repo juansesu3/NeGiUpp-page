@@ -5,7 +5,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
-import ReactQuill from "react-quill";
+
 
 const Title = styled.h1`
   color: #ffff;
@@ -80,9 +80,9 @@ const ArticlePage = () => {
   };
 
   return (
-    <>
-      <Header />
+  
       <Center>
+      <Header />
         {article && (
           <div>
             <SectionOne>
@@ -112,9 +112,10 @@ const ArticlePage = () => {
             </div>
           </div>
         )}
-      </Center>
+      x
       <Footer />
-    </>
+      </Center>
+  
   );
 };
 

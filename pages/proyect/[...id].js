@@ -18,6 +18,9 @@ const Intro = styled.div`
     font-size: 3rem;
     font-weight: 600;
   }
+  span{
+    color: #4d61fc;
+  }
 `;
 
 const LandindPageConatiner = styled.div`
@@ -29,7 +32,7 @@ const ContainerSect = styled.div`
   display: flex;
   padding: 1.5rem;
   gap: 1.5rem;
-
+  flex-direction: column;
   border-radius: 30px;
   background: linear-gradient(
     100deg,
@@ -40,22 +43,27 @@ const ContainerSect = styled.div`
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 const Technologies = styled.div`
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
   padding: 1.5rem;
-
+  width: 100%;
   border-radius: 30px;
   color: #ffff;
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
 `;
 const AboutInfo = styled.div`
   padding: 1.5rem;
   border-radius: 30px;
-  width: 50%;
+  width: 100%;
   color: #ffff;
 
   h3 {
@@ -74,6 +82,9 @@ const AboutInfo = styled.div`
     rgb(189 189 189 / 7%),
     rgba(255, 255, 255, 0)
   );
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -172,13 +183,13 @@ const ImageIconTechContainer = styled.div`
   }
 `;
 const ContainerTech = styled.div`
-display: flex;
-flex-direction: column;
-gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   border-radius: 30px;
   color: #ffff;
   padding: 1.5rem;
-  width: 50%;
+  width: 100%;
   background: linear-gradient(
     100deg,
     rgb(189 189 189 / 7%),
@@ -188,6 +199,9 @@ gap: 1rem;
     opacity: 0.5;
     margin-top: 0;
     font-weight: 400;
+  }
+  @media screen and (min-width: 768px) {
+    width: 50%;
   }
 `;
 
@@ -201,6 +215,7 @@ const ProyectPage = () => {
     for (const tectId of techIds) {
       await axios.get("/api/technologies?id=" + tectId).then((response) => {
         data.push(response.data);
+        
       });
       setTechnologies(data);
     }
@@ -226,7 +241,7 @@ const ProyectPage = () => {
           <>
             <Intro>
               <p>Branding - {proyect.title}</p>
-              <h1>AESTHETIC DESIGN FOR BRAND NEW STARTUP</h1>
+              <h1>AESTHETIC DESIGN FOR <span>{proyect.title}</span> App</h1>
             </Intro>
             <LandindPageConatiner>
               <ImageContainer>
