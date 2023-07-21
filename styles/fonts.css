@@ -34,10 +34,8 @@ body {
 
 .tag-list {
   width: 100%;
-
   display: flex;
   flex-shrink: 0;
-
   gap: 1rem 0;
   position: absolute;
   padding: 1.5rem 0;

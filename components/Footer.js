@@ -3,10 +3,8 @@ import React from "react";
 import { styled } from "styled-components";
 
 const BckGro = styled.div`
-  margin: 0 auto;
   background-color: #0f0f0f;
   color: #fff;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: first baseline;
@@ -21,7 +19,6 @@ const BckGro = styled.div`
 const First = styled.div`
   max-width: 1100px;
   margin: 0 auto;
-  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -37,8 +34,7 @@ const Second = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 3rem;
-
+  padding-top: 1.5rem;
   color: gray;
   span {
     color: #4d61fc;
@@ -50,6 +46,9 @@ const Section = styled.section`
   flex-direction: column;
   gap: 1rem;
   margin: 0 2rem;
+  h4 {
+    margin: 0;
+  }
 `;
 const LinkFooter = styled(Link)`
   text-decoration: none;
@@ -68,7 +67,6 @@ const LangLog = styled.div`
 const LogoLink = styled(Link)`
   color: #fff;
   text-decoration: none;
-
   width: 10rem;
 `;
 
@@ -215,7 +213,7 @@ const Footer = () => {
 
       <Second>
         <h5>
-          © 2023 <span>NeGiUpp</span> | All rigth reserved
+          © 2023 <span>negiupp.com</span> | All rigth reserved
         </h5>
       </Second>
     </BckGro>

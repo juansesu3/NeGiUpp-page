@@ -9,7 +9,6 @@ const OficialContent = styled.div`
   background-color: #0f0f0f;
   color: #ffff;
   padding: 0;
-  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -18,7 +17,6 @@ const OficialContent = styled.div`
 const PrincipalContent = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 1.5rem;
   @media screen and (min-width: 910px) {
     flex-direction: row-reverse;
@@ -70,7 +68,7 @@ const Intro = styled.p`
 `;
 
 const ImgContainer = styled.div`
-  width: 25rem;
+  width: 17em;
   height: auto;
   @media screen and (min-width: 768px) {
     width: 150rem;
@@ -87,7 +85,6 @@ const FirstImageInfo = styled.img`
 const SectionsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-
   gap: 1.5rem;
 `;
 
@@ -95,7 +92,6 @@ const SecondSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   padding: 1.5rem;
   white-space: nowrap;
   border-radius: 30px;
@@ -119,8 +115,6 @@ const SubTitle = styled.h2`
   font-weight: 500;
   white-space: normal;
   text-align: center;
-  width: 100%;
-
   span {
     color: #4d61fc;
   }
@@ -141,10 +135,7 @@ const SecondSection1 = styled.section`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
-
   padding: 1.7rem;
-
   white-space: nowrap;
   cursor: pointer;
   border-radius: 30px;
@@ -165,7 +156,6 @@ const SecondSection2 = styled(Link)`
   align-items: center;
   text-decoration: none;
   padding: 1.7rem;
-
   white-space: nowrap;
   border-radius: 30px;
   cursor: pointer;
@@ -183,25 +173,6 @@ const SectionNewsFlex = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-`;
-const SectionNews = styled.div`
-  height: 3rem;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 30px;
-  background: linear-gradient(
-    100deg,
-    rgb(189 189 189 / 7%),
-    rgba(20, 20, 20, 100%)
-  );
-
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
 `;
 
 const SecondSectionLevel2 = styled.section`
@@ -241,19 +212,6 @@ const SecundaryContentSection1 = styled.div`
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
 `;
 
-const AsideArtStart = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  gap: 1.5rem;
-  width: 100%;
-  @media screen and (min-width: 910px) {
-    flex-direction: column;
-    width: 30rem;
-    gap: 1.5rem;
-  }
-`;
-
 const ProyectTech = styled.div`
   display: flex;
   flex-direction: column;
@@ -261,14 +219,6 @@ const ProyectTech = styled.div`
   gap: 1.5rem;
   @media screen and (min-width: 610px) {
     flex-direction: row;
-  }
-`;
-const TitleNews = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  span {
-    color: #4d61fc;
   }
 `;
 
@@ -279,46 +229,26 @@ const ContainerButtons = styled.div`
 
 const IconServices = styled.div`
   display: flex;
-  gap: 3rem;
+  gap: 1.5rem;
+ 
+  @media screen and (min-width: 500px) {
+    gap: 3rem;
+  }
   div {
     display: flex;
     flex-direction: column;
   }
   svg {
-    width: 4rem;
-    margin: 0 auto;
+    width: 3em;
+    margin: .5rem auto;
     transition: 0.3s;
+    @media screen and (min-width: 500px) {
+      width: 4em;
+    }
     &:hover {
       color: #4d61fc;
     }
   }
-`;
-const ArtCont = styled.div`
-  display: flex;
-  width: 16.5rem;
-  flex-direction: column;
-  gap: 1.5rem;
-`;
-
-const StrCont = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-`;
-
-const StyledLink = styled(Link)`
-  ${(props) =>
-    props.proyect &&
-    css`
-      margin: 0;
-      font-size: 1.5rem;
-      line-height: 40px;
-      color: #fff;
-      font-weight: 500;
-      white-space: normal;
-      text-align: center;
-    `}
-  text-decoration: none;
 `;
 
 const Home = () => {
@@ -455,42 +385,3 @@ const Home = () => {
 };
 
 export default Home;
-
-/*
-<AsideArticles>
-<h2>Latest articles</h2>
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-  ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-  aliquip ex ea commodo consequat. Duis aute irure dolor in
-  reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-  culpa qui officia deserunt mollit anim id est laborum.
-</p>
-</AsideArticles>
-*/
-
-/* <SecondSection1>
-            <SubTitle>latest work and featured</SubTitle>
-            {/* <Intro>
-              At NeGiUpp digital consulting, we have created an exclusive
-              membership model to provide you with tailored full stack web
-              development services. We are here to drive your online business
-              and ensure you achieve the best results. Our team of expert web
-              developers will take care of all your digital needs. Whether you
-              need a website from scratch, ongoing improvements, or digital
-              marketing strategies, we are ready to work with you. By joining
-              our membership, you will gain exclusive access to highly
-              functional and visually appealing solutions. Additionally, you
-              will receive regular updates on the latest digital trends and
-              technologies. We focus on your success and are committed to
-              providing personalized service and ongoing support. No matter what
-              your goals are, we will be by your side to help you achieve them.
-              Discover how our full stack web development consultancy can take
-              your business to the next level. Contact us today and let us be
-              your trusted digital partner. Together, we will achieve the online
-              success you desire.
-            </Intro>/}
-            </SecondSection1>
-            */
