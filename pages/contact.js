@@ -9,9 +9,13 @@ import { styled } from "styled-components";
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column-reverse;
   justify-content: space-between;
   gap: 1.5rem;
-  margin: 5rem 0;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 const ContacInfo = styled.div`
   display: flex;
@@ -50,11 +54,11 @@ const Content = styled.div`
 `;
 const IconContainer = styled.div`
   width: 5rem;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-
+  padding: 1rem;
   background: linear-gradient(
     100deg,
     rgb(189 189 189 / 7%),
@@ -65,7 +69,7 @@ const IconContainer = styled.div`
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1);
   svg {
-    width: 2.5rem;
+    width: 100%;
   }
 `;
 const SocialInfo = styled.div`
@@ -105,6 +109,21 @@ const Info = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.3rem;
+  justify-content: center;
+  h4 {
+    font-size: 0.9rem;
+  }
+  span {
+    font-size: 1rem;
+  }
+  @media screen and (min-width: 450px) {
+    h4 {
+      font-size: 1.3rem;
+    }
+      span {
+    font-size: 1.3rem;
+  }
+  }
 `;
 
 const ContacPage = () => {
@@ -113,8 +132,9 @@ const ContacPage = () => {
   };
   return (
     <>
-      <Header />
       <Center>
+        <Header />
+
         <Container>
           <RevealWrapper delay={100}>
             <ContacInfo>
@@ -283,8 +303,9 @@ const ContacPage = () => {
             <FormEmails />
           </RevealWrapper>
         </Container>
+
+        <Footer />
       </Center>
-      <Footer />
     </>
   );
 };

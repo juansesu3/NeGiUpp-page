@@ -19,7 +19,7 @@ const ArticleCard = styled.div`
   width: 19rem;
   overflow: hidden;
 
-  border-radius: 30px;
+  border-radius: 1rem;
   background: linear-gradient(
     100deg,
     rgb(189 189 189 / 7%),
@@ -37,7 +37,7 @@ const ArticleImageConatiner = styled.div`
   padding: 1.5rem;
 `;
 const ArticleImage = styled.img`
-  border-radius: 30px;
+  border-radius: 1rem;
   object-fit: none;
 
   width: 100%;

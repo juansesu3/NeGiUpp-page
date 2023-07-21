@@ -4,12 +4,13 @@ import { styled } from "styled-components";
 import { withSwal } from "react-sweetalert2";
 
 const Conatiner = styled.div`
-  width: 35rem;
-  border-radius: 3rem;
-  padding: 3rem;
+  width: 100%;
+  border-radius: 1rem;
+  padding: 2rem;
   color: white;
   h1 {
     font-size: 3rem;
+    margin-top: 0;
     span {
       color: #4d61fc;
     }
@@ -23,6 +24,9 @@ const Conatiner = styled.div`
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  @media screen and (min-width: 768px) {
+    padding: 3rem;
+  }
 `;
 const FormContainer = styled.form`
   width: 100%;

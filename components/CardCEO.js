@@ -11,7 +11,7 @@ const CardContainer = styled.div`
   padding: 1.5rem;
   gap: 1.5rem;
 
-  border-radius: 30px;
+  border-radius: 1rem;
   background: linear-gradient(
     100deg,
     rgb(189 189 189 / 7%),
@@ -27,7 +27,7 @@ const ImageCOntainer = styled.div`
   width: 20rem;
   img {
     width: 100%;
-    border-radius: 30px;
+    border-radius: 1rem;
   }
 `;
 const NameUserContainer = styled.div`

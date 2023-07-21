@@ -88,7 +88,7 @@ const LetsTalk = styled(Link)`
   align-items: center;
   background-color: #323232;
   padding: 12px 36px;
-  border-radius: 16px;
+  border-radius: .6rem;
   font-weight: 500;
   display: none;
   transition: 0.3s;
@@ -107,7 +107,7 @@ const LetsTalk = styled(Link)`
 const NavButton = styled.button`
   width: 40px;
   height: 40px;
-  border-radius: 10px;
+  border-radius: .4rem;
   background-color: transparent;
   border: 0;
   color: white;

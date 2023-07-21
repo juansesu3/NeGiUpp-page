@@ -28,7 +28,7 @@ const SectionContainer = styled.section`
   flex-direction: column-reverse;
   align-items: center;
   padding: 1.5rem;
-  border-radius: 30px;
+  border-radius: 1rem;
   background: linear-gradient(
     100deg,
     rgb(189 189 189 / 7%),
@@ -94,7 +94,7 @@ const SecondSection = styled.section`
   justify-content: center;
   padding: 1.5rem;
   white-space: nowrap;
-  border-radius: 30px;
+  border-radius: 1rem;
   cursor: pointer;
   background: linear-gradient(
     100deg,
@@ -138,7 +138,7 @@ const SecondSection1 = styled.section`
   padding: 1.7rem;
   white-space: nowrap;
   cursor: pointer;
-  border-radius: 30px;
+  border-radius: 1rem;
   background: linear-gradient(
     100deg,
     rgb(189 189 189 / 7%),
@@ -157,7 +157,7 @@ const SecondSection2 = styled(Link)`
   text-decoration: none;
   padding: 1.7rem;
   white-space: nowrap;
-  border-radius: 30px;
+  border-radius: 1rem;
   cursor: pointer;
   background: linear-gradient(
     100deg,
@@ -200,7 +200,7 @@ const SecundaryContentSection1 = styled.div`
   cursor: pointer;
   padding: 1.7rem;
   white-space: nowrap;
-  border-radius: 30px;
+  border-radius: 1rem;
   background: linear-gradient(
     100deg,
     rgb(189 189 189 / 7%),

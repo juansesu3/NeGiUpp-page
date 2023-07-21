@@ -47,7 +47,7 @@ const SecondArticles = styled.div`
 const ArticleCard = styled.div`
   width: 20rem;
 
-  border-radius: 30px;
+  border-radius: 1rem;
   padding: 1rem;
   background: linear-gradient(
     100deg,
@@ -68,7 +68,7 @@ const ImageContainer = styled.div`
     width: 100%;
     height: 100%;
 
-    border-radius: 30px;
+    border-radius: 1rem;
     object-fit: cover;
   }
 `;

@@ -36,7 +36,7 @@ const ImageContainer = styled.div`
   width: 100%;
   margin: 0 auto;
   padding: 2rem;
-  border-radius: 30px;
+  border-radius: 1rem;
   background: linear-gradient(
     100deg,
     rgb(189 189 189 / 7%),
@@ -48,7 +48,7 @@ const ImageContainer = styled.div`
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   img {
     width: 100%;
-    border-radius: 30px;
+    border-radius: 1rem;
   }
 `;
 
@@ -111,7 +111,7 @@ const TitleMobile = styled.span`
 
 const InfoAboutContainer = styled.div`
   padding: 2rem;
-  border-radius: 30px;
+  border-radius: 1rem;
   margin: auto 0;
   background: linear-gradient(
     100deg,
@@ -153,7 +153,7 @@ const CeoContainer = styled(Link)`
   align-items: center;
 
   padding: 2rem;
-  border-radius: 30px;
+  border-radius: 1rem;
   background: linear-gradient(
     100deg,
     rgb(189 189 189 / 7%),
@@ -190,7 +190,7 @@ const WorkTogetheContainer = styled(Link)`
   gap: 1.5rem;
 
   padding: 2rem;
-  border-radius: 30px;
+  border-radius: 1rem;
   background: linear-gradient(
     100deg,
     rgb(189 189 189 / 7%),
@@ -230,7 +230,7 @@ const StartContainer = styled(Link)`
   align-items: center;
   color: #ffff;
   padding: 2rem;
-  border-radius: 30px;
+  border-radius: 1rem;
   background: linear-gradient(
     100deg,
     rgb(189 189 189 / 7%),
@@ -275,7 +275,7 @@ const InfoCultureHitosContainer = styled.div`
   flex-direction: column;
   gap: 1rem;
   padding: 2rem;
-  border-radius: 30px;
+  border-radius: 1rem;
   background: linear-gradient(
     100deg,
     rgb(189 189 189 / 7%),

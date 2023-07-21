@@ -6,7 +6,7 @@ const SliderContainer = styled.div`
   width: 16.5rem;
   height: 17rem;
   overflow: hidden;
-  border-radius: 30px;
+  border-radius: 1rem;
   background: linear-gradient(
     100deg,
     rgb(189 189 189 / 7%),
@@ -29,7 +29,7 @@ const ArticleCard = styled.div`
   padding: 1rem;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  border-radius: 1rem;
   height: 17em;
   background: linear-gradient(
     100deg,
@@ -48,7 +48,7 @@ const ArticleImageConatiner = styled.div`
   margin: 0 auto;
 `;
 const ArticleImage = styled.img`
-  border-radius: 30px;
+  border-radius: 1rem;
 
   width: 100%;
   height: 12rem;
