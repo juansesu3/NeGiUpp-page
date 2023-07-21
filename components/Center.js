@@ -1,15 +1,13 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 
 const StyledDiv = styled.div`
-  width: fit-content;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 20px;
-  height: 100%;
+  padding: 0 10px;
 `;
 
-const Center = ({ children }) => {
-  return <StyledDiv>{children}</StyledDiv>;
+const Center = ({ children, route }) => {
+  return <StyledDiv route={route}>{children}</StyledDiv>;
 };
 
 export default Center;

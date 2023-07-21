@@ -4,15 +4,21 @@ import { css, styled } from "styled-components";
 import { useRouter } from "next/router";
 import Bars from "./icons/Bars";
 import { useState } from "react";
+import Center from "./Center";
 
 const StyledHeader = styled.header`
-  background-color: #0f0f0f;
+  /*  background-color: #0f0f0f;
   max-width: 1100px;
   width: 100%;
   margin: 0 auto;
   padding-right: 0.5rem;
   height: 100%;
-  position: relative;
+  position: relative;*/
+  background-color: #0f0f0f;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding-right: 0.5rem;
 `;
 
 const LogoLink = styled(Link)`
@@ -21,14 +27,6 @@ const LogoLink = styled(Link)`
   display: flex;
   align-items: center;
   width: 70px;
-  ${(props) =>
-    props.route === "/about" &&
-    css`
-      width: 8rem;
-       @media screen and (min-width: 768px) {
-        width: 70px;
-      }
-    `}
 `;
 
 const Logo = styled.img`
@@ -57,7 +55,7 @@ const StyledNav = styled.nav`
   align-items: center;
   gap: 40px;
   position: fixed;
-  top: 50px;
+  top: 0px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -76,15 +74,8 @@ const NavLink = styled(Link)`
   display: block;
   color: #676767;
   text-decoration: none;
-  font-size: 1rem;
-  ${(props) =>
-    props.route === "/about" &&
-    css`
-      font-size: 4rem;
-      @media screen and (min-width: 768px) {
-        font-size: 1rem;
-      }
-    `}
+  font-size: 1.5rem;
+
   transition: 0.3s;
   padding: 10px 0;
   @media screen and (min-width: 768px) {
@@ -126,17 +117,19 @@ const LetsTalk = styled(Link)`
 const NavButton = styled.button`
   width: 40px;
   height: 40px;
+  border-radius: 10px;
   ${(props) =>
     props.route === "/about" &&
     css`
       height: 4.5rem;
       width: 4.5rem;
+      border-radius: 20px;
     `}
   background-color: transparent;
   border: 0;
   color: white;
   border: 1px solid white;
-  border-radius: 10px;
+
   position: relative;
   z-index: 20;
   cursor: pointer;
@@ -152,14 +145,15 @@ const Header = ({ route }) => {
 
   return (
     <StyledHeader>
-      <Wrapper>
+      <Center>
+      <Wrapper route={route}>
         <LogoLink route={route} href={"/"}>
           <Logo
             src="https://my-page-negiupp.s3.amazonaws.com/1687424109024.png"
             alt="logo-image"
           />
         </LogoLink>
-        <StyledNav mobileNavActive={mobileNavActive}>
+        <StyledNav route={route} mobileNavActive={mobileNavActive}>
           <NavLink
             route={route}
             active={pathname === "/" ? true : false}
@@ -205,6 +199,7 @@ const Header = ({ route }) => {
           <Bars />
         </NavButton>
       </Wrapper>
+      </Center>
     </StyledHeader>
   );
 };

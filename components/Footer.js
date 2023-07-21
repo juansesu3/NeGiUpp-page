@@ -3,7 +3,6 @@ import React from "react";
 import { styled } from "styled-components";
 
 const BckGro = styled.div`
-
   margin: 0 auto;
   background-color: #0f0f0f;
   color: #fff;
@@ -25,9 +24,13 @@ const First = styled.div`
   height: 100%;
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  gap: 1.5rem;
   align-items: first baseline;
   justify-content: space-between;
+  @media screen and (min-width: 550px) {
+    flex-direction: row;
+  }
 `;
 const Second = styled.div`
   width: 100%;

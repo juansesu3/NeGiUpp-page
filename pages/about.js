@@ -339,20 +339,38 @@ const AboutPage = () => {
       setProfile(response.data);
     });
   }, []);
-  console.log(profile);
 
   return (
     <div>
-      <Center>
+      <Center route={route}>
         <Header route={route} />
         {profile.length > 0 &&
           profile.map((prof) => (
-            <>
-              <AboutContainer>
-                {/*First section */}
-                <RevealWrapper delay={200}>
-                  <ContainerSec>
-                    <TitleMobile>
+            <AboutContainer key={prof._id}>
+              {/*First section */}
+              <RevealWrapper delay={200}>
+                <ContainerSec>
+                  <TitleMobile>
+                    <span>
+                      <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+                    </span>
+
+                    <h1>Self summary</h1>
+
+                    <span>
+                      <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+                    </span>
+                  </TitleMobile>
+                  <ImgCont>
+                    <ImageContainer>
+                      <img
+                        src="https://my-page-negiupp.s3.amazonaws.com/1688550234499.jpg"
+                        alt="about-image"
+                      />
+                    </ImageContainer>
+                  </ImgCont>
+                  <AboutCont>
+                    <Title>
                       <span>
                         <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
                       </span>
@@ -362,106 +380,85 @@ const AboutPage = () => {
                       <span>
                         <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
                       </span>
-                    </TitleMobile>
-                    <ImgCont>
-                      <ImageContainer>
-                        <img
-                          src="https://my-page-negiupp.s3.amazonaws.com/1688550234499.jpg"
-                          alt="about-image"
-                        />
-                      </ImageContainer>
-                    </ImgCont>
-                    <AboutCont>
-                      <Title>
-                        <span>
-                          <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
-                        </span>
+                    </Title>
 
-                        <h1>Self summary</h1>
-
-                        <span>
-                          <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
-                        </span>
-                      </Title>
-
-                      <InfoAboutContainer>
-                        <h2>{prof.greeting}</h2>
-                        <p>{prof.shortIntro}</p>
-                      </InfoAboutContainer>
-                    </AboutCont>
-                  </ContainerSec>
-                </RevealWrapper>
-                {/*Second section */}
-                <RevealWrapper delay={10}>
-                  <ContainerSec>
-                    <InfoCultureHitosContainer>
-                      <h2>Experiences</h2>
-                      {prof.experinces.length > 0 &&
-                        prof.experinces.map((exp, indexExp) => (
-                          <div key={indexExp}>
-                            <p>
-                              {`${moment(exp.startDateExp)
-                                .utc()
-                                .format("MM/DD/YYYY")} - 
+                    <InfoAboutContainer>
+                      <h2>{prof.greeting}</h2>
+                      <p>{prof.shortIntro}</p>
+                    </InfoAboutContainer>
+                  </AboutCont>
+                </ContainerSec>
+              </RevealWrapper>
+              {/*Second section */}
+              <RevealWrapper delay={10}>
+                <ContainerSec>
+                  <InfoCultureHitosContainer>
+                    <h2>Experiences</h2>
+                    {prof.experinces.length > 0 &&
+                      prof.experinces.map((exp, indexExp) => (
+                        <div key={indexExp}>
+                          <p>
+                            {`${moment(exp.startDateExp)
+                              .utc()
+                              .format("MM/DD/YYYY")} - 
                         
                               ${moment(exp.endDateExp)
                                 .utc()
                                 .format("MM/DD/YYYY")}`}
-                            </p>
-                            <h3>{exp.position}</h3>
-                            <p>{exp.company}</p>
-                          </div>
-                        ))}
-                    </InfoCultureHitosContainer>
-                    <InfoCultureHitosContainer>
-                      <h2>Education</h2>
-                      {prof.education.length > 0 &&
-                        prof.education.map((edu, indexEdu) => (
-                          <div key={indexEdu}>
-                            <p>
-                              {moment(edu.gotDate).utc().format("MM/DD/YYYY")}
-                            </p>
-                            <h3>{edu.certificationName}</h3>
-                            <p>{edu.institutionName}</p>
-                          </div>
-                        ))}
-                    </InfoCultureHitosContainer>
-                  </ContainerSec>
-                  <ContainerThirdSec>
-                    <CeoContainer href={"/contact"}>
-                      <h1>Profiles</h1>
-                    </CeoContainer>
-                    <WorkTogetheContainer href={"/contact"}>
-                      <h1>
-                        Let&apos;s
-                        <br /> work <span>together</span>
-                      </h1>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-4 h-4"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
-                        />
-                      </svg>
-                    </WorkTogetheContainer>
-                    <StartContainer href={"/founders"}>
-                      <img src="https://my-page-negiupp.s3.amazonaws.com/1688631092905.png" />
+                          </p>
+                          <h3>{exp.position}</h3>
+                          <p>{exp.company}</p>
+                        </div>
+                      ))}
+                  </InfoCultureHitosContainer>
+                  <InfoCultureHitosContainer>
+                    <h2>Education</h2>
+                    {prof.education.length > 0 &&
+                      prof.education.map((edu, indexEdu) => (
+                        <div key={indexEdu}>
+                          <p>
+                            {moment(edu.gotDate).utc().format("MM/DD/YYYY")}
+                          </p>
+                          <h3>{edu.certificationName}</h3>
+                          <p>{edu.institutionName}</p>
+                        </div>
+                      ))}
+                  </InfoCultureHitosContainer>
+                </ContainerSec>
+                <ContainerThirdSec>
+                  <CeoContainer href={"/contact"}>
+                    <h1>Profiles</h1>
+                  </CeoContainer>
+                  <WorkTogetheContainer href={"/contact"}>
+                    <h1>
+                      Let&apos;s
+                      <br /> work <span>together</span>
+                    </h1>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-4 h-4"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
+                      />
+                    </svg>
+                  </WorkTogetheContainer>
+                  <StartContainer href={"/founders"}>
+                    <img src="https://my-page-negiupp.s3.amazonaws.com/1688631092905.png" />
 
-                      <p>more about me</p>
-                      <h2>Credentials</h2>
-                    </StartContainer>
-                  </ContainerThirdSec>
-                </RevealWrapper>
-                {/*Third section */}
-              </AboutContainer>
-            </>
+                    <p>more about me</p>
+                    <h2>Credentials</h2>
+                  </StartContainer>
+                </ContainerThirdSec>
+              </RevealWrapper>
+              {/*Third section */}
+            </AboutContainer>
           ))}
         <Footer />
       </Center>

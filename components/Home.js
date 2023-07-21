@@ -76,6 +76,7 @@ const Intro = styled.p`
 
 const ImgContainer = styled.div`
   width: 25rem;
+  height: auto;
   @media screen and (min-width: 768px) {
     width: 150rem;
   }
@@ -99,7 +100,6 @@ const SecondSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 10.5rem;
 
   padding: 1.5rem;
   white-space: nowrap;
@@ -262,7 +262,6 @@ const AsideArtStart = styled.div`
     width: 30rem;
     gap: 1.5rem;
   }
-  
 `;
 
 const Start = styled(Link)`
@@ -290,10 +289,9 @@ const Start = styled(Link)`
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   @media screen and (min-width: 910px) {
- height: 15rem;
- width: 100%;
+    height: 15rem;
+    width: 100%;
   }
-
 `;
 
 const ProyectTech = styled.div`
@@ -333,7 +331,7 @@ const IconServices = styled.div`
 `;
 const ArtCont = styled.div`
   display: flex;
- width: 16.5rem;
+  width: 16.5rem;
   flex-direction: column;
   gap: 1.5rem;
 `;
@@ -396,7 +394,7 @@ const Home = ({ latestArticles }) => {
           </div>
           <RevealWrapper>
             <PrincipalContent>
-              <AsideArtStart>
+              {/*<AsideArtStart>
                 <ArtCont>
                   <TitleNews>
                     <span> Latest Articles</span>
@@ -416,7 +414,7 @@ const Home = ({ latestArticles }) => {
                 </StrCont>
                 
               </AsideArtStart>
-
+*/}
               <SectionsContainer>
                 <SecondSectionLevel1>
                   <SecondSection1>
