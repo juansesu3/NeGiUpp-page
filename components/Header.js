@@ -54,6 +54,7 @@ const StyledNav = styled.nav`
 
   background-color: #0f0f0f;
   z-index: 10;
+  gap: 4rem;
   @media screen and (min-width: 768px) {
     display: flex;
     position: static;
@@ -65,7 +66,7 @@ const NavLink = styled(Link)`
   display: block;
   color: #676767;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   transition: 0.3s;
   padding: 10px 0;
   @media screen and (min-width: 768px) {
@@ -76,6 +77,8 @@ const NavLink = styled(Link)`
     css`
       color: #ffff;
       text-decoration: underline;
+      margin-bottom: 0.5rem;
+      text-decoration-thickness: 0.15rem;
     `}
   &:hover {
     color: #ffffff;
@@ -88,7 +91,7 @@ const LetsTalk = styled(Link)`
   align-items: center;
   background-color: #323232;
   padding: 12px 36px;
-  border-radius: .6rem;
+  border-radius: 0.6rem;
   font-weight: 500;
   display: none;
   transition: 0.3s;
@@ -107,7 +110,7 @@ const LetsTalk = styled(Link)`
 const NavButton = styled.button`
   width: 40px;
   height: 40px;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
   background-color: transparent;
   border: 0;
   color: white;

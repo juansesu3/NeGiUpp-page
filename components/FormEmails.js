@@ -6,7 +6,7 @@ import { withSwal } from "react-sweetalert2";
 const Conatiner = styled.div`
   width: 100%;
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 1.5rem;
   color: white;
   h1 {
     font-size: 3rem;
@@ -36,8 +36,11 @@ const FormContainer = styled.form`
   input {
     font-size: 1.5rem;
     border: 0;
-    border-radius: 1rem;
-    padding: 1.5rem 1.5rem;
+    border-radius: .6rem;
+    padding: .8rem;
+    @media screen and (min-width: 768px ){
+      padding: 1.5rem;
+    }
     color: #fff;
     background: linear-gradient(
       100deg,
@@ -56,7 +59,7 @@ const FormContainer = styled.form`
     font-size: 1.5rem;
     font-family: "Inter", sans-serif;
     border: 0;
-    border-radius: 1rem;
+    border-radius: .6rem;
     padding: 1.5rem 1.5rem;
     background: linear-gradient(
       100deg,
@@ -71,7 +74,7 @@ const FormContainer = styled.form`
   button {
     padding: 1rem;
     border: 0;
-    border-radius: 1rem;
+    border-radius: .5rem;
     background-color: #323232;
     color: #fff;
     font-size: 1.5rem;
