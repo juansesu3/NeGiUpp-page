@@ -1,19 +1,10 @@
 import Link from "next/link";
 import { css, styled } from "styled-components";
-
 import { useRouter } from "next/router";
 import Bars from "./icons/Bars";
 import { useState } from "react";
-import Center from "./Center";
 
 const StyledHeader = styled.header`
-  /*  background-color: #0f0f0f;
-  max-width: 1100px;
-  width: 100%;
-  margin: 0 auto;
-  padding-right: 0.5rem;
-  height: 100%;
-  position: relative;*/
   background-color: #0f0f0f;
   position: sticky;
   top: 0;
@@ -75,7 +66,6 @@ const NavLink = styled(Link)`
   color: #676767;
   text-decoration: none;
   font-size: 1.5rem;
-
   transition: 0.3s;
   padding: 10px 0;
   @media screen and (min-width: 768px) {
@@ -118,20 +108,10 @@ const NavButton = styled.button`
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  ${(props) =>
-    props.route === "/about" &&
-    css`
-      height: 4.5rem;
-      width: 4.5rem;
-      border-radius: 20px;
-    `}
   background-color: transparent;
   border: 0;
   color: white;
   border: 1px solid white;
-
-  position: relative;
-  z-index: 20;
   cursor: pointer;
   @media screen and (min-width: 768px) {
     display: none;
@@ -145,7 +125,6 @@ const Header = ({ route }) => {
 
   return (
     <StyledHeader>
-      <Center>
       <Wrapper route={route}>
         <LogoLink route={route} href={"/"}>
           <Logo
@@ -191,7 +170,6 @@ const Header = ({ route }) => {
           </NavLink>
         </StyledNav>
         <LetsTalk href={"/contact"}> Let&apos;s talk</LetsTalk>
-
         <NavButton
           route={route}
           onClick={() => setMobileNavActive((prev) => !prev)}
@@ -199,7 +177,6 @@ const Header = ({ route }) => {
           <Bars />
         </NavButton>
       </Wrapper>
-      </Center>
     </StyledHeader>
   );
 };

@@ -75,8 +75,8 @@ const TitlePage = styled.div`
   }
 `;
 const SeconConatiner = styled.div`
-width: 100%;
-`
+  width: 100%;
+`;
 
 const BlogPage = () => {
   const [articles, setArticles] = useState([]);
@@ -91,8 +91,9 @@ const BlogPage = () => {
   const secondArticles = articles.slice(2);
   return (
     <>
-      <Header />
       <Center>
+        <Header />
+
         <BlogContainer>
           <FirstArticles firstArticles={firstArticles}>
             {articles.length > 0 &&
@@ -137,9 +138,9 @@ const BlogPage = () => {
             </SecondArticles>
           </SeconConatiner>
         </BlogContainer>
-      </Center>
 
-      <Footer />
+        <Footer />
+      </Center>
     </>
   );
 };

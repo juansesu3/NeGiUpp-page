@@ -5,16 +5,15 @@ import Home from "@/components/Home";
 import { mongooseConnect } from "@/lib/mongoose";
 import { Article } from "@/models/Article";
 
-
 const HomePage = ({ latestArticles }) => {
   return (
-    <div>
-      
+    <>
+      <Center>
         <Header />
         <Home latestArticles={latestArticles} />
         <Footer />
-     
-    </div>
+      </Center>
+    </>
   );
 };
 

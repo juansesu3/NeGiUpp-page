@@ -44,6 +44,7 @@ const Tag = ({ text }) => (
 
 const InfiniteScrollAmimation = () => {
   return (
+    <div className="scroll-news">
     <div className="tag-list">
       {[...new Array(ROWS)].map((_, i) => (
         <InfiniteLoopSlider
@@ -59,6 +60,7 @@ const InfiniteScrollAmimation = () => {
         </InfiniteLoopSlider>
       ))}
       <div className="fade" />
+    </div>
     </div>
   );
 };

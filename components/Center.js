@@ -1,13 +1,14 @@
 import { css, styled } from "styled-components";
 
 const StyledDiv = styled.div`
-  max-width: 1100px;
+  max-width: 70em;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 0.5em;
+  position: relative;
 `;
 
 const Center = ({ children, route }) => {
-  return <StyledDiv route={route}>{children}</StyledDiv>;
+  return (<StyledDiv>{children}</StyledDiv>);
 };
 
 export default Center;
