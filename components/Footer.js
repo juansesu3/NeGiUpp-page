@@ -12,7 +12,7 @@ const BckGro = styled.div`
   border-top: 1px solid #24242463;
   margin-top: 4rem;
   padding-top: 3rem;
-  padding-bottom: 1rem;
+ 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 `;
 

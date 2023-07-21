@@ -26,7 +26,7 @@ const AboutCont = styled.div`
 
 const ImgCont = styled.div`
   margin: 0 auto;
-  
+
   @media screen and (min-width: 768px) {
     width: 40%;
   }
@@ -90,7 +90,6 @@ const TitleMobile = styled.span`
   justify-content: center;
   white-space: nowrap;
 
-
   h1 {
     margin: 0;
     text-transform: uppercase;
@@ -104,9 +103,8 @@ const TitleMobile = styled.span`
   }
   @media screen and (min-width: 768px) {
     display: none;
-    h1{
+    h1 {
       font-size: 3rem;
-     
     }
   }
 `;
@@ -134,7 +132,6 @@ const InfoAboutContainer = styled.div`
     margin-bottom: 0;
   }
   @media screen and (min-width: 768px) {
-
     p {
       line-height: 1.8rem;
       letter-spacing: 0.02rem;
@@ -270,7 +267,6 @@ const StartContainer = styled(Link)`
   }
 
   @media screen and (min-width: 768px) {
-
     width: 30%;
   }
 `;
@@ -356,15 +352,13 @@ const AboutPage = () => {
           profile.map((prof) => (
             <AboutContainer key={prof._id}>
               {/*First section */}
-              <RevealWrapper delay={200}>
+              <RevealWrapper delay={100}>
                 <ContainerSec>
                   <TitleMobile>
                     <span>
                       <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
                     </span>
-
                     <h1>Self summary</h1>
-
                     <span>
                       <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
                     </span>
@@ -392,8 +386,8 @@ const AboutPage = () => {
 
                     <InfoAboutContainer>
                       <div>
-                      <h2>{prof.greeting}</h2>
-                      <p>{prof.shortIntro}</p>
+                        <h2>{prof.greeting}</h2>
+                        <p>{prof.shortIntro}</p>
                       </div>
                     </InfoAboutContainer>
                   </AboutCont>
