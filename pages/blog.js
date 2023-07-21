@@ -10,13 +10,25 @@ import { RevealWrapper } from "next-reveal";
 
 const BlogContainer = styled.div`
   display: flex;
-  gap: 1.5rem;
-`;
-
-const FirstArticles = styled.div`
-  display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  @media screen and (min-width: 768px){
+    flex-direction: row;
+    
+  }
+`;
+
+
+const FirstArticles = styled.div`
+   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  @media screen and (min-width: 768px){
+    flex-direction: column;
+    justify-content: start;
+   
+  }
   a {
     text-decoration: none;
     color: white;
@@ -61,7 +73,11 @@ const ImageContainer = styled.div`
   }
 `;
 const TitlePage = styled.div`
-  display: flex;
+  display: none;
+  @media screen and (min-width: 768px){
+    display: flex;
+    
+  }
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
@@ -72,6 +88,34 @@ const TitlePage = styled.div`
     font-size: 2.95rem;
     color: white;
     text-transform: uppercase;
+  }
+`;
+const TitlePageMobile = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 1.6rem;
+    color: white;
+    text-transform: uppercase;
+  }
+  svg {
+    width: 1rem;
+    color: white;
+  }
+  @media screen and (min-width: 768px){
+    display: none;
+    h1{
+      font-size: 2.95rem;
+    }
+    svg{
+      width: 3rem;
+    }
+    
   }
 `;
 const SeconConatiner = styled.div`
@@ -95,6 +139,11 @@ const BlogPage = () => {
         <Header />
 
         <BlogContainer>
+        <TitlePageMobile>
+              <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+              <h1>All articles</h1>
+              <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+            </TitlePageMobile>
           <FirstArticles firstArticles={firstArticles}>
             {articles.length > 0 &&
               firstArticles.map((firstArticle, index) => (
