@@ -37,6 +37,11 @@ const StyledButton = styled(Link)`
       background-color: transparent;
       color: white;
       border: 1px solid #4d61fc;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      &:hover{
+        background-color: #4d61fc;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      }
     `}
   ${(props) =>
     props.primary &&

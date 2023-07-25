@@ -148,6 +148,9 @@ const SecondSection1 = styled.section`
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  @media screen and (min-width: 768px) {
+    width: 65%;
+  }
 `;
 const SecondSection2 = styled(Link)`
   display: flex;
@@ -158,6 +161,8 @@ const SecondSection2 = styled(Link)`
   padding: 1.7rem;
   white-space: nowrap;
   border-radius: 1rem;
+  width: 100%;
+
   cursor: pointer;
   background: linear-gradient(
     100deg,
@@ -173,6 +178,10 @@ const SectionNewsFlex = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    width: 30%;
+  }
 `;
 
 const SecondSectionLevel2 = styled.section`
@@ -217,6 +226,7 @@ const ProyectTech = styled.div`
   flex-direction: column;
   justify-content: space-around;
   gap: 1.5rem;
+  width: 100%;
   @media screen and (min-width: 610px) {
     flex-direction: row;
   }
@@ -230,7 +240,7 @@ const ContainerButtons = styled.div`
 const IconServices = styled.div`
   display: flex;
   gap: 1.5rem;
- 
+
   @media screen and (min-width: 500px) {
     gap: 3rem;
   }
@@ -240,7 +250,7 @@ const IconServices = styled.div`
   }
   svg {
     width: 3em;
-    margin: .5rem auto;
+    margin: 0.5rem auto;
     transition: 0.3s;
     @media screen and (min-width: 500px) {
       width: 4em;
@@ -262,16 +272,15 @@ const Home = () => {
                 Let&apos;s build the future <span>together</span>
               </Title>
               <Intro>
-                I create customized and cutting-edge solutions that enhance your
-                online presence. Stand out in the digital world and achieve your
-                goals with me. Let&apos;s build the success of your business in
-                less time than you can imagine!
+                I create custom, cutting-edge solutions that improve your
+                development processes. Get your goals with me. Let&apos;s build the
+                success of your business in less time than you can imagine!
               </Intro>
               <ContainerButtons>
                 <Button href={"/founders"} outline="true" read="true">
                   Read More
                 </Button>
-                <Button href={"/notfound"} primary="true" size="l">
+                <Button href={"/notfound"} outline="true" read="true">
                   Start
                 </Button>
               </ContainerButtons>
@@ -288,17 +297,15 @@ const Home = () => {
             <SectionsContainer>
               <SecondSectionLevel1>
                 <SecondSection1>
-                  <SubTitle>How can I help you?</SubTitle>
+                  <SubTitle>
+                    How can I <span>help</span> you?
+                  </SubTitle>
                 </SecondSection1>
-
                 <SectionNewsFlex>
                   <InfiniteScrollAmimation />
                   <ProyectTech>
                     <SecondSection2 href={"/proyects"}>
-                      <SubTitle>Proyects</SubTitle>
-                    </SecondSection2>
-                    <SecondSection2 href={"/technologiesStack"}>
-                      <SubTitle>Technologies</SubTitle>
+                      <SubTitle pro={true}>Proyects</SubTitle>
                     </SecondSection2>
                   </ProyectTech>
                 </SectionNewsFlex>
@@ -321,6 +328,7 @@ const Home = () => {
               <SecundaryContent>
                 <SecundaryContentSection1>
                   <IconServices>
+                    {/**/}{" "}
                     <div>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -336,7 +344,7 @@ const Home = () => {
                           d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
                         />
                       </svg>
-                      Mobile dev
+                      Responsive
                     </div>
                     <div>
                       <svg

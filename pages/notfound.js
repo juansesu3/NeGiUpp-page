@@ -15,6 +15,7 @@ const ConatinerNotFound = styled.div`
   }
   h1 {
     color: white;
+    text-align: center;
   }
   span {
     color: #4d61fc;

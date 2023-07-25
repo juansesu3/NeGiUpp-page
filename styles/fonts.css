@@ -18,7 +18,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 30px;
+  border-radius:.9rem;
   background: linear-gradient(100deg,
       rgb(189 189 189 / 7%),
       rgba(20, 20, 20, 100%));

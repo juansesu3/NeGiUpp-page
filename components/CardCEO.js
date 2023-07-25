@@ -4,13 +4,14 @@ import { styled } from "styled-components";
 
 const CardContainer = styled.div`
   display: flex;
-  margin-top: 0;
+  margin: 0 auto;
   flex-direction: column;
-  justify-content: center;
+ 
   height: 38.5rem;
   align-items: center;
   padding: 1.5rem;
   gap: 1.5rem;
+  width: 20.8rem;
 
   border-radius: 1rem;
   background: linear-gradient(
@@ -29,7 +30,7 @@ const CardContainer = styled.div`
 `;
 
 const ImageCOntainer = styled.div`
-  width: 20rem;
+  width: 17.5rem;
   img {
     width: 100%;
     border-radius: 1rem;

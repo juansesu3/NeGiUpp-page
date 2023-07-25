@@ -5,12 +5,16 @@ const TAGS = [
   "Typescript",
   "Tailwind",
   "React",
+  "Responsive",
   "Next.js",
   "Gatsby",
   "UI/UX",
   "SVG",
   "animation",
+  "Redux",
   "webdev",
+  "Express.js",
+  "MongoDB",
 ];
 const DURATION = 13000;
 const ROWS = 1;

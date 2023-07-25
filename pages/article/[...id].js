@@ -6,18 +6,23 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
 
-
 const Title = styled.h1`
   color: #ffff;
   opacity: 0.9;
   font-size: 3.5rem;
   font-weight: bold;
+  margin: 0;
 `;
 const SectionOne = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 1.5rem;
+
   img {
     width: 40rem;
+  }
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
   }
 `;
 const Summary = styled.p`
@@ -25,6 +30,9 @@ const Summary = styled.p`
   opacity: 0.7;
   font-size: 1.2rem;
   letter-spacing: 0.5px;
+  p{
+    margin: 0;
+    }
 `;
 
 const AuthorContainer = styled.div`
@@ -60,6 +68,23 @@ const Content = styled.div`
       /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   }
 `;
+const Mobile = styled.div`
+@media screen and (min-width: 768px){
+  display: none;
+  
+}
+`;
+
+const DesktopDesign = styled.div`
+display: none;
+@media screen and (min-width: 768px) {
+  display: flex;
+}
+`;
+const DeskDes = styled.div`
+display: flex;
+flex-direction: column;
+`
 
 const ArticlePage = () => {
   const [article, setArticle] = useState([]);
@@ -80,42 +105,49 @@ const ArticlePage = () => {
   };
 
   return (
-  
-      <Center>
+    <Center>
       <Header />
-        {article && (
-          <div>
-            <SectionOne>
+      {article && (
+        <div>
+          <SectionOne>
+          <DeskDes>
               <div>
                 <Title>{article.title}</Title>
-                <Summary>{article.summary}</Summary>
               </div>
+              <DesktopDesign>
+                <Summary>{article.summary}</Summary>
+              </DesktopDesign>
+              <AuthorContainer>
+            <div>
+              <img src={article?.imgAuthor} alt="author-image" />
+            </div>
+            <div>
+              <h2>{article.author}</h2>
+            </div>
+          </AuthorContainer>
+            </DeskDes>
               <div>
                 <img src={article?.images} alt="article-image" />
               </div>
-            </SectionOne>
-            <hr />
+              <Mobile>
+                <Summary>{article.summary}</Summary>
+              </Mobile>
+        
+          </SectionOne>
+         
 
-            <AuthorContainer>
-              <div>
-                <img src={article?.imgAuthor} alt="author-image" />
-              </div>
-              <div>
-                <h2>{article.author}</h2>
-              </div>
-            </AuthorContainer>
+        
 
-            <div>
-              <Content>
-                <ArticleContent htmlContent={article.content} />
-              </Content>
-            </div>
+          <div>
+            <Content>
+              <ArticleContent htmlContent={article.content} />
+            </Content>
           </div>
-        )}
+        </div>
+      )}
       x
       <Footer />
-      </Center>
-  
+    </Center>
   );
 };
 

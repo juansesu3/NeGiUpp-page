@@ -36,9 +36,9 @@ const FormContainer = styled.form`
   input {
     font-size: 1.5rem;
     border: 0;
-    border-radius: .6rem;
-    padding: .8rem;
-    @media screen and (min-width: 768px ){
+    border-radius: 0.6rem;
+    padding: 0.8rem;
+    @media screen and (min-width: 768px) {
       padding: 1.5rem;
     }
     color: #fff;
@@ -59,8 +59,8 @@ const FormContainer = styled.form`
     font-size: 1.5rem;
     font-family: "Inter", sans-serif;
     border: 0;
-    border-radius: .6rem;
-    padding: 1.5rem 1.5rem;
+    border-radius: 0.6rem;
+    padding: 0.8rem 0.8rem;
     background: linear-gradient(
       100deg,
       rgb(189 189 189 / 7%),
@@ -74,7 +74,7 @@ const FormContainer = styled.form`
   button {
     padding: 1rem;
     border: 0;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     background-color: #323232;
     color: #fff;
     font-size: 1.5rem;

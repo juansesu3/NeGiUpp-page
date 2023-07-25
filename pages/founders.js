@@ -14,6 +14,7 @@ const ContainerFounders = styled.div`
   justify-content: center;
   gap: 4rem;
   color: white;
+  padding: .5rem;
   @media screen and (min-width: 768px) {
     flex-direction: row;
     height: 40rem;
