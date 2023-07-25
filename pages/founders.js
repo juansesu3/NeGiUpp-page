@@ -10,11 +10,14 @@ import Link from "next/link";
 
 const ContainerFounders = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: 4rem;
-  margin-top: 5rem;
   color: white;
-  height: 40rem;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    height: 40rem;
+  }
 `;
 const AboutMe = styled.div`
   flex: 1;
@@ -69,7 +72,7 @@ const ContainerExpEdu = styled.div`
     color: #bcbcbc;
     opacity: 0.6;
     font-weight: 400;
-    font-size: .95rem;
+    font-size: 0.95rem;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }
@@ -143,8 +146,8 @@ const FoundersPage = () => {
 
   return (
     <>
-      <Header />
       <Center>
+        <Header />
         {profile.length > 0 &&
           profile.map((pro) => (
             <ContainerFounders key={pro._id}>
@@ -237,8 +240,8 @@ const FoundersPage = () => {
               </AboutMe>
             </ContainerFounders>
           ))}
+        <Footer />
       </Center>
-      <Footer />
     </>
   );
 };

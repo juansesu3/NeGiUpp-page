@@ -4,6 +4,7 @@ import { styled } from "styled-components";
 
 const CardContainer = styled.div`
   display: flex;
+  margin-top: 0;
   flex-direction: column;
   justify-content: center;
   height: 38.5rem;
@@ -21,6 +22,10 @@ const CardContainer = styled.div`
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+@media screen and (min-width: 768px){
+  margin-top: 3rem;
+  
+}
 `;
 
 const ImageCOntainer = styled.div`

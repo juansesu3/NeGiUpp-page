@@ -112,7 +112,7 @@ const DescriptionConatiner = styled.div`
 `;
 const MoreDetail = styled.div`
   padding: 1rem 3rem;
-  width: 50%;
+  width: 100%;
   border-radius: 30px;
   color: #ffff;
   background: linear-gradient(
@@ -138,6 +138,10 @@ const MoreDetail = styled.div`
     font-size: 1.1rem;
     font-weight: 500;
     text-transform: capitalize;
+  }
+  @media screen and (min-width: 768px){
+    width: 50%;
+    
   }
 `;
 
