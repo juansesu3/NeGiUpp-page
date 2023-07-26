@@ -18,11 +18,10 @@ const SectionOne = styled.div`
   flex-direction: column;
   gap: 1.5rem;
 
-  img {
-    width: 40rem;
-  }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width:768px) {
     flex-direction: row;
+    justify-content: space-between;
+    gap: 0rem;
   }
 `;
 const Summary = styled.p`
@@ -30,12 +29,30 @@ const Summary = styled.p`
   opacity: 0.7;
   font-size: 1.2rem;
   letter-spacing: 0.5px;
-  p{
+  p {
     margin: 0;
-    }
+  }
 `;
 
-const AuthorContainer = styled.div`
+const AuthorContainerDesktop = styled.div`
+  display: none;
+  gap: 0.5rem;
+  align-items: center;
+
+  img {
+    width: 3rem;
+    border-radius: 1.5rem;
+  }
+  h2 {
+    color: #ffff;
+    font-weight: 400;
+    font-size: 1.2rem;
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+`;
+const AuthorContainerMobile = styled.div`
   display: flex;
   gap: 0.5rem;
   align-items: center;
@@ -48,6 +65,9 @@ const AuthorContainer = styled.div`
     color: #ffff;
     font-weight: 400;
     font-size: 1.2rem;
+  }
+  @media screen and (min-width: 768px) {
+    display: none;
   }
 `;
 
@@ -69,22 +89,40 @@ const Content = styled.div`
   }
 `;
 const Mobile = styled.div`
-@media screen and (min-width: 768px){
-  display: none;
-  
-}
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const DesktopDesign = styled.div`
-display: none;
-@media screen and (min-width: 768px) {
-  display: flex;
-}
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
 `;
 const DeskDes = styled.div`
-display: flex;
-flex-direction: column;
-`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    width: 50%;
+    
+  }
+`;
+const ImgArticleContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    max-width: 100%;
+  }
+  @media screen and (min-width: 768px) {
+    width: 500px;
+    justify-content: flex-end;
+   
+  }
+`;
 
 const ArticlePage = () => {
   const [article, setArticle] = useState([]);
@@ -110,33 +148,40 @@ const ArticlePage = () => {
       {article && (
         <div>
           <SectionOne>
-          <DeskDes>
+            <DeskDes>
               <div>
                 <Title>{article.title}</Title>
               </div>
               <DesktopDesign>
                 <Summary>{article.summary}</Summary>
               </DesktopDesign>
-              <AuthorContainer>
-            <div>
-              <img src={article?.imgAuthor} alt="author-image" />
-            </div>
-            <div>
-              <h2>{article.author}</h2>
-            </div>
-          </AuthorContainer>
+              <AuthorContainerDesktop>
+                <div>
+                  <img src={article?.imgAuthor} alt="author-image" />
+                </div>
+                <div>
+                  <h2>{article.author}</h2>
+                </div>
+              </AuthorContainerDesktop>
             </DeskDes>
-              <div>
-                <img src={article?.images} alt="article-image" />
-              </div>
-              <Mobile>
-                <Summary>{article.summary}</Summary>
-              </Mobile>
-        
-          </SectionOne>
-         
 
-        
+            <ImgArticleContainer>
+              <img src={article?.images} alt="article-image" />
+            </ImgArticleContainer>
+            <div>
+            <AuthorContainerMobile>
+              <div>
+                <img src={article?.imgAuthor} alt="author-image" />
+              </div>
+              <div>
+                <h2>{article.author}</h2>
+              </div>
+            </AuthorContainerMobile>
+            <Mobile>
+              <Summary>{article.summary}</Summary>
+            </Mobile>
+            </div>
+          </SectionOne>
 
           <div>
             <Content>
@@ -145,7 +190,7 @@ const ArticlePage = () => {
           </div>
         </div>
       )}
-      x
+      
       <Footer />
     </Center>
   );

@@ -12,19 +12,17 @@ const BckGro = styled.div`
   border-top: 1px solid #24242463;
   margin-top: 4rem;
   padding-top: 3rem;
- 
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 `;
 
 const First = styled.div`
-  max-width: 1100px;
   margin: 0 auto;
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  align-items: first baseline;
-  justify-content: space-between;
+  justify-content: space-around;
   @media screen and (min-width: 550px) {
     flex-direction: row;
   }
@@ -119,13 +117,13 @@ const Footer = () => {
     <BckGro>
       <First>
         <Section>
-          <h4>About NeGiUpp</h4>
-          <LinkFooter href={"/"}>who I am?</LinkFooter>
-          <LinkFooter href={"/"}>My values and culture</LinkFooter>
-          <LinkFooter href={"/"}>work together</LinkFooter>
-          <LinkFooter href={"/"}>Let&apos;s talk</LinkFooter>
+          <h4>About me</h4>
+          <LinkFooter href={"/founders"}>who I am?</LinkFooter>
+          <LinkFooter href={"/"}>what is NeGiUpp?</LinkFooter>
+          <LinkFooter href={"/"}>work together!</LinkFooter>
+         
         </Section>
-
+        {/* 
         <Section>
           <h4>Learn about</h4>
           <LinkFooter href={"/"}>HTML</LinkFooter>
@@ -134,15 +132,17 @@ const Footer = () => {
           <LinkFooter href={"/"}>JavaScript</LinkFooter>
           <LinkFooter href={"/"}>React.js</LinkFooter>
         </Section>
+        */}
         <Section>
           <LangLog>
-            <Lang>
+            {/* <Lang>
               <select className="selelect">
                 <option>Spanish</option>
                 <option>English</option>
                 <option>French</option>
               </select>
             </Lang>
+             */}
             <LogoLink href={"/"}>
               <Logo
                 src="https://my-page-negiupp.s3.amazonaws.com/1687424109024.png"

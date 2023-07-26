@@ -49,11 +49,7 @@ const ArticleCard = styled.div`
 
   border-radius: 1rem;
   padding: 1rem;
-  background: linear-gradient(
-    100deg,
-    rgb(189 189 189 / 7%),
-    rgba(255, 255, 255, 0)
-  );
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),

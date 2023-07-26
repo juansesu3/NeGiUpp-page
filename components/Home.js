@@ -29,11 +29,7 @@ const SectionContainer = styled.section`
   align-items: center;
   padding: 1.5rem;
   border-radius: 1rem;
-  background: linear-gradient(
-    100deg,
-    rgb(189 189 189 / 7%),
-    rgba(20, 20, 20, 100%)
-  );
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -96,11 +92,7 @@ const SecondSection = styled.section`
   white-space: nowrap;
   border-radius: 1rem;
   cursor: pointer;
-  background: linear-gradient(
-    100deg,
-    rgb(189 189 189 / 7%),
-    rgba(20, 20, 20, 100%)
-  );
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -139,11 +131,7 @@ const SecondSection1 = styled.section`
   white-space: nowrap;
   cursor: pointer;
   border-radius: 1rem;
-  background: linear-gradient(
-    100deg,
-    rgb(189 189 189 / 7%),
-    rgba(20, 20, 20, 100%)
-  );
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -164,11 +152,7 @@ const SecondSection2 = styled(Link)`
   width: 100%;
 
   cursor: pointer;
-  background: linear-gradient(
-    100deg,
-    rgb(189 189 189 / 7%),
-    rgba(20, 20, 20, 100%)
-  );
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -210,11 +194,7 @@ const SecundaryContentSection1 = styled.div`
   padding: 1.7rem;
   white-space: nowrap;
   border-radius: 1rem;
-  background: linear-gradient(
-    100deg,
-    rgb(189 189 189 / 7%),
-    rgba(20, 20, 20, 100%)
-  );
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),

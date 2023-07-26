@@ -6,7 +6,7 @@ import { RevealWrapper } from "next-reveal";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { styled } from "styled-components";
+import { styled, keyframes } from "styled-components";
 import moment from "moment";
 
 const AboutContainer = styled.div`
@@ -37,11 +37,7 @@ const ImageContainer = styled.div`
   margin: 0 auto;
   padding: 2rem;
   border-radius: 1rem;
-  background: linear-gradient(
-    100deg,
-    rgb(189 189 189 / 7%),
-    rgba(20, 20, 20, 100%)
-  );
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -113,11 +109,7 @@ const InfoAboutContainer = styled.div`
   padding: 2rem;
   border-radius: 1rem;
   margin: auto 0;
-  background: linear-gradient(
-    100deg,
-    rgb(189 189 189 / 7%),
-    rgba(20, 20, 20, 100%)
-  );
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -154,11 +146,7 @@ const CeoContainer = styled(Link)`
 
   padding: 2rem;
   border-radius: 1rem;
-  background: linear-gradient(
-    100deg,
-    rgb(189 189 189 / 7%),
-    rgba(20, 20, 20, 100%)
-  );
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -191,11 +179,7 @@ const WorkTogetheContainer = styled(Link)`
 
   padding: 2rem;
   border-radius: 1rem;
-  background: linear-gradient(
-    100deg,
-    rgb(189 189 189 / 7%),
-    rgba(20, 20, 20, 100%)
-  );
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -223,6 +207,21 @@ const WorkTogetheContainer = styled(Link)`
     width: 40%;
   }
 `;
+
+const pulseAnimation = keyframes`
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.02);
+  }
+  50% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
+  }
+`;
 const StartContainer = styled(Link)`
   text-decoration: none;
   display: flex;
@@ -231,16 +230,8 @@ const StartContainer = styled(Link)`
   color: #ffff;
   padding: 2rem;
   border-radius: 1rem;
-  background: linear-gradient(
-    100deg,
-    rgb(189 189 189 / 7%),
-    rgba(20, 20, 20, 100%)
-  );
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-
+  animation: ${pulseAnimation} 2s infinite;
+  transform-origin: center;
   p {
     color: #ffff;
     opacity: 0.8;
@@ -276,11 +267,7 @@ const InfoCultureHitosContainer = styled.div`
   gap: 1rem;
   padding: 2rem;
   border-radius: 1rem;
-  background: linear-gradient(
-    100deg,
-    rgb(189 189 189 / 7%),
-    rgba(20, 20, 20, 100%)
-  );
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -472,35 +459,3 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
-/*
- <ImageContainer>
-              <img
-                src="https://my-page-negiupp.s3.amazonaws.com/1687962628674.png"
-                alt="about-image"
-              />
-            </ImageContainer> */
-
-/*  <img
-                src="https://my-page-negiupp.s3.amazonaws.com/1687953985230.png"
-                alt="about-image"
-              />
-              
-                <img
-                  src="https://my-page-negiupp.s3.amazonaws.com/1687962653621.png"
-                  alt="about-image"
-                />
-              
-
-                 <img
-                src="https://my-page-negiupp.s3.amazonaws.com/1687962641400.png"
-                alt="about-image"
-              />
-              
-
-
-
-               <img
-                src="https://my-page-negiupp.s3.amazonaws.com/1687962620230.png"
-                alt="about-image"
-              />
-              */

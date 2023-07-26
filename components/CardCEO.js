@@ -6,19 +6,14 @@ const CardContainer = styled.div`
   display: flex;
   margin: 0 auto;
   flex-direction: column;
- 
-  height: 38.5rem;
+  height: auto;
   align-items: center;
   padding: 1.5rem;
   gap: 1.5rem;
-  width: 20.8rem;
+  width: 20.3rem;
 
   border-radius: 1rem;
-  background: linear-gradient(
-    100deg,
-    rgb(189 189 189 / 7%),
-    rgba(20, 20, 20, 100%)
-  );
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
