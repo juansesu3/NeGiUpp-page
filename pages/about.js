@@ -285,7 +285,7 @@ const InfoCultureHitosContainer = styled.div`
   }
   h3 {
     margin: 0;
-    color: #ffff;
+    color: #4d61fc;
     opacity: 0.9;
   }
   @media screen and (min-width: 768px) {
@@ -301,7 +301,7 @@ const InfoCultureHitosContainer = styled.div`
     }
     h3 {
       margin: 0;
-      color: #ffff;
+      color: #4d61fc;
       opacity: 0.9;
     }
   }
@@ -398,7 +398,7 @@ const AboutPage = () => {
                                 .format("MM/DD/YYYY")}`}
                           </p>
                           <h3>{exp.position}</h3>
-                          <p>{exp.company}</p>
+                          <span className="company">{exp.company}</span>
                         </div>
                       ))}
                   </InfoCultureHitosContainer>
@@ -411,7 +411,7 @@ const AboutPage = () => {
                             {moment(edu.gotDate).utc().format("MM/DD/YYYY")}
                           </p>
                           <h3>{edu.certificationName}</h3>
-                          <p>{edu.institutionName}</p>
+                          <span>{edu.institutionName}</span>
                         </div>
                       ))}
                   </InfoCultureHitosContainer>
