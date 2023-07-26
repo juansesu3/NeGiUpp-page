@@ -6,7 +6,7 @@ const ProyectSchema = new Schema({
   selectedTech: { type: [mongoose.Types.ObjectId], ref: "Technology" },
   linkCode: { type: String, require: true },
   linkDeploy: { type: String, require: true },
-  images: [{ type: [String], require: true }],
+  images: [{ type: String, require: true }],
 },{
     timestamps:true,
   });

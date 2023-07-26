@@ -12,9 +12,8 @@ const ContainerAllProyects = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     flex-direction: row;
-    
   }
 `;
 
@@ -29,10 +28,9 @@ const FirstProyectsContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     flex-direction: column;
     justify-content: start;
-   
   }
 `;
 
@@ -89,9 +87,8 @@ const TitleBox = styled.div`
     width: 3rem;
     color: white;
   }
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     display: flex;
-    
   }
 `;
 const TitleBoxMobile = styled.div`
@@ -102,7 +99,7 @@ const TitleBoxMobile = styled.div`
   width: 100%;
   margin: 0 auto;
   white-space: nowrap;
-  
+
   h1 {
     font-size: 1.6rem;
     color: white;
@@ -112,15 +109,14 @@ const TitleBoxMobile = styled.div`
     width: 1rem;
     color: white;
   }
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     display: none;
-    h1{
+    h1 {
       font-size: 2.95rem;
     }
-    svg{
+    svg {
       width: 3rem;
     }
-    
   }
 `;
 
@@ -132,6 +128,7 @@ const ProyectsPage = () => {
       setProyects(response.data);
     });
   }, []);
+  console.log(proyects);
 
   const FirstProyects = proyects.slice(0, 2);
 
@@ -141,15 +138,15 @@ const ProyectsPage = () => {
     <Center>
       <Header />
       <ContainerAllProyects>
-      <TitleBoxMobile>
-            <span>
-              <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
-            </span>
-            <h1>All Proyects</h1>{" "}
-            <span>
-              <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
-            </span>
-          </TitleBoxMobile>
+        <TitleBoxMobile>
+          <span>
+            <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+          </span>
+          <h1>All Proyects</h1>{" "}
+          <span>
+            <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+          </span>
+        </TitleBoxMobile>
         <FirstProyectsContainer>
           {FirstProyects.length > 0 &&
             FirstProyects.map((proyect, index) => (
@@ -157,7 +154,7 @@ const ProyectsPage = () => {
                 <ContainerPro>
                   <ContainerProyectL href={"/proyect/" + proyect._id}>
                     <ImageContainer>
-                      <img src={proyect.images[0]} alt="proyect image" />
+                      <img src={proyect.images[0]} />
                     </ImageContainer>
                     <div>
                       <h1>{proyect.title}</h1>
@@ -185,7 +182,7 @@ const ProyectsPage = () => {
                   <ContainerPro>
                     <ContainerProyectL href={"/proyect/" + proyect._id}>
                       <ImageContainer>
-                        <img src={proyect.images[0]} alt="proyect image" />
+                        <img src={proyect.images[0]} />
                       </ImageContainer>
                       <div>
                         <h1>{proyect.title}</h1>

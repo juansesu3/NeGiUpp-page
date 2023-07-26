@@ -18,7 +18,7 @@ const Intro = styled.div`
     font-size: 3rem;
     font-weight: 600;
   }
-  span{
+  span {
     color: #4d61fc;
   }
 `;
@@ -53,11 +53,10 @@ const Technologies = styled.div`
   align-items: center;
   gap: 1.5rem;
   padding: 1.5rem;
-  width: 100%;
   border-radius: 30px;
   color: #ffff;
   @media screen and (min-width: 768px) {
-    width: 50%;
+    width: 100%;
   }
 `;
 const AboutInfo = styled.div`
@@ -93,6 +92,7 @@ const ImageContainer = styled.div`
   img {
     width: 100%;
     max-height: 40rem;
+    object-fit: cover;
   }
 `;
 const DescriptionConatiner = styled.div`
@@ -139,9 +139,8 @@ const MoreDetail = styled.div`
     font-weight: 500;
     text-transform: capitalize;
   }
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     width: 50%;
-    
   }
 `;
 
@@ -208,22 +207,30 @@ const ContainerTech = styled.div`
     width: 50%;
   }
 `;
+const ImagesProyectsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
+const ContImgPro = styled.div`
+  width: 49.9%;
+  @media screen and (min-width: 600px) {
+    width: 49.8%;
+  }
+
+  img {
+    width: 98.5%;
+    @media screen and (min-width: 600px) {
+      width: 100%;
+    }
+  }
+`;
 
 const ProyectPage = () => {
-  const [proyect, setProyect] = useState([]);
+  const [proyect, setProyect] = useState(null);
   const router = useRouter();
   const [technologies, setTechnologies] = useState([]);
   const { id } = router.query;
-  const fetchingTech = async (techIds) => {
-    let data = [];
-    for (const tectId of techIds) {
-      await axios.get("/api/technologies?id=" + tectId).then((response) => {
-        data.push(response.data);
-        
-      });
-      setTechnologies(data);
-    }
-  };
 
   useEffect(() => {
     if (!id) {
@@ -231,36 +238,48 @@ const ProyectPage = () => {
     }
     axios.get("/api/proyects?id=" + id).then((response) => {
       setProyect(response.data);
-      fetchingTech(response.data.selectedTech);
+      if (response.data.selectedTech.length > 0) {
+        fetchingTech(response.data.selectedTech);
+      }
     });
   }, [id]);
 
-  console.log(technologies);
+  const fetchingTech = async (techIds) => {
+    let data = [];
+    for (const tectId of techIds) {
+      await axios.get("/api/technologies?id=" + tectId).then((response) => {
+        data.push(response.data);
+      });
+      setTechnologies(data);
+    }
+  };
 
   return (
     <>
-      <Header />
       <Center>
+        <Header />
         {!!proyect && (
           <>
             <Intro>
               <p>Branding - {proyect.title}</p>
-              <h1>AESTHETIC DESIGN FOR <span>{proyect.title}</span> App</h1>
+              <h1>
+                AESTHETIC DESIGN FOR <span>{proyect.title}</span> App
+              </h1>
             </Intro>
             <LandindPageConatiner>
               <ImageContainer>
-                <img src={proyect?.images} alt="image-proyect" />
+                <img src={proyect?.images[0]} alt="image-proyect" />
               </ImageContainer>
-
               <ContainerSect>
                 <ContainerTech>
                   <h3>Technologies Stack</h3>
                   <Technologies>
                     {technologies.length > 0 &&
                       technologies.map((technology) => (
-                        <IconsTech key={technology._id}>
+                        <IconsTech key={technology?._id}>
                           <ImageIconTechContainer>
-                            <img src={technology.images} />
+                            {console.log(technology?.images)}
+                            <img src={technology?.images} />
                           </ImageIconTechContainer>
                         </IconsTech>
                       ))}
@@ -272,16 +291,15 @@ const ProyectPage = () => {
                 </AboutInfo>
               </ContainerSect>
               <ImageContainer>
-                <img src={proyect?.images} alt="image-proyect" />
+                <img src={proyect?.images[0]} alt="image-proyect" />
               </ImageContainer>
-
-              <div>
-                <div>1</div>
-                <div>2</div>
-                <div>2</div>
-                <div>4</div>
-              </div>
-
+              <ImagesProyectsContainer>
+                {proyect.images.slice(1).map((link) => (
+                  <ContImgPro className="" key={link}>
+                    <img src={link} alt="proyect-images" />
+                  </ContImgPro>
+                ))}
+              </ImagesProyectsContainer>
               <ContainerSect>
                 <MoreDetail>
                   <div>
@@ -307,16 +325,19 @@ const ProyectPage = () => {
                 </DescriptionConatiner>
               </ContainerSect>
               <ImageContainer>
-                <img src={proyect?.images} alt="image-proyect" />
+                <img src={proyect?.images[0]} alt="image-proyect" />
               </ImageContainer>
+              <ContainerButton>
+                <button>Hire me</button>
+              </ContainerButton>
               <ContainerButton>
                 <button>Next Proyect</button>
               </ContainerButton>
             </LandindPageConatiner>
           </>
         )}
+        <Footer />
       </Center>
-      <Footer />
     </>
   );
 };

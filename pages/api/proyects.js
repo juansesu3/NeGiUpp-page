@@ -6,6 +6,7 @@ const handle = async (req, res) => {
   await mongooseConnect();
 
   if (method === "GET") {
+   
     if (req.query?.id) {
       res.json(await Proyect.findOne({ _id: req.query.id }));
     } else {
