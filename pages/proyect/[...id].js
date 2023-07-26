@@ -233,20 +233,17 @@ const ProyectPage = () => {
   const { id } = router.query;
   const [proyects, setProyects] = useState([]);
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0); // Nuevo estado para el índice del proyecto actual
-  useEffect(() => {
-    if (id) {
-      axios.get("/api/proyects").then((response) => {
-        setProyects(response.data);
-        // Ahora podemos seleccionar el proyecto actual
-      });
-    } else {
-      axios.get("/api/proyects?id=" + id).then((response) => {
-        setProyect(response.data);
-        fetchingTech(response.data?.selectedTech);
-      });
-    }
 
-    // Solo necesitamos obtener todos los proyectos una vez
+  useEffect(() => {
+    //get proyects from ID
+    axios.get("/api/proyects?id=" + id).then((response) => {
+      setProyect(response.data);
+      fetchingTech(response.data?.selectedTech);
+    });
+    //get proyects for pagination
+    axios.get("/api/proyects").then((response) => {
+      setProyects(response.data);
+    });
   }, [id]);
 
   const fetchingTech = async (techIds) => {
@@ -258,20 +255,17 @@ const ProyectPage = () => {
     }
     setTechnologies(data);
   };
-  const handleNextProject = (_id) => {
+
+  const handleNextProject = () => {
     setCurrentProjectIndex((prevIndex) => (prevIndex + 1) % proyects.length);
-    router.push("/proyect/" + _id);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-  useEffect(() => {
-    // Cuando cambia el índice del proyecto actual, actualizamos el proyecto a mostrar
     if (proyects.length > 0) {
       setProyect(proyects[currentProjectIndex]);
-      if (proyect?.selectedTech.length > 0) {
-        fetchingTech(proyect?.selectedTech);
+      if (proyects[currentProjectIndex].selectedTech.length > 0) {
+        fetchingTech(proyects[currentProjectIndex].selectedTech);
       }
     }
-  }, [currentProjectIndex, proyects]);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const handlehire = () => {
     router.push("/contact");
@@ -301,7 +295,6 @@ const ProyectPage = () => {
                       technologies.map((technology) => (
                         <IconsTech key={technology?._id}>
                           <ImageIconTechContainer>
-                            {console.log(technology?.images)}
                             <img src={technology?.images} />
                           </ImageIconTechContainer>
                         </IconsTech>
@@ -352,9 +345,7 @@ const ProyectPage = () => {
               </ImageContainer>
 
               <ContainerButton>
-                <button onClick={() => handleNextProject(proyect._id)}>
-                  Next Proyect
-                </button>
+                <button onClick={handleNextProject}>Next Proyect</button>
               </ContainerButton>
               <ContainerButton>
                 <button onClick={handlehire}>Hire me</button>
