@@ -49,6 +49,7 @@ const ContainerSect = styled.div`
 `;
 const Technologies = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
@@ -148,11 +149,10 @@ const ContainerButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 5rem;
 
   button {
     border: 0;
-    padding: 2rem 3rem;
+    padding: 1rem 2rem;
     border-radius: 15px;
     cursor: pointer;
     background: linear-gradient(
@@ -231,17 +231,22 @@ const ProyectPage = () => {
   const router = useRouter();
   const [technologies, setTechnologies] = useState([]);
   const { id } = router.query;
-
+  const [proyects, setProyects] = useState([]);
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(0); // Nuevo estado para el índice del proyecto actual
   useEffect(() => {
-    if (!id) {
-      return;
+    if (id) {
+      axios.get("/api/proyects").then((response) => {
+        setProyects(response.data);
+        // Ahora podemos seleccionar el proyecto actual
+      });
+    } else {
+      axios.get("/api/proyects?id=" + id).then((response) => {
+        setProyect(response.data);
+        fetchingTech(response.data?.selectedTech);
+      });
     }
-    axios.get("/api/proyects?id=" + id).then((response) => {
-      setProyect(response.data);
-      if (response.data.selectedTech.length > 0) {
-        fetchingTech(response.data.selectedTech);
-      }
-    });
+
+    // Solo necesitamos obtener todos los proyectos una vez
   }, [id]);
 
   const fetchingTech = async (techIds) => {
@@ -250,8 +255,26 @@ const ProyectPage = () => {
       await axios.get("/api/technologies?id=" + tectId).then((response) => {
         data.push(response.data);
       });
-      setTechnologies(data);
     }
+    setTechnologies(data);
+  };
+  const handleNextProject = (_id) => {
+    setCurrentProjectIndex((prevIndex) => (prevIndex + 1) % proyects.length);
+    router.push("/proyect/" + _id);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  useEffect(() => {
+    // Cuando cambia el índice del proyecto actual, actualizamos el proyecto a mostrar
+    if (proyects.length > 0) {
+      setProyect(proyects[currentProjectIndex]);
+      if (proyect?.selectedTech.length > 0) {
+        fetchingTech(proyect?.selectedTech);
+      }
+    }
+  }, [currentProjectIndex, proyects]);
+
+  const handlehire = () => {
+    router.push("/contact");
   };
 
   return (
@@ -327,11 +350,14 @@ const ProyectPage = () => {
               <ImageContainer>
                 <img src={proyect?.images[0]} alt="image-proyect" />
               </ImageContainer>
+
               <ContainerButton>
-                <button>Hire me</button>
+                <button onClick={() => handleNextProject(proyect._id)}>
+                  Next Proyect
+                </button>
               </ContainerButton>
               <ContainerButton>
-                <button>Next Proyect</button>
+                <button onClick={handlehire}>Hire me</button>
               </ContainerButton>
             </LandindPageConatiner>
           </>
