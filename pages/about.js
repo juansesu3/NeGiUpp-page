@@ -151,7 +151,6 @@ const CeoContainer = styled(Link)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   padding: 2rem;
   border-radius: 1rem;
   background-color: #121212;
@@ -172,6 +171,7 @@ const CeoContainer = styled(Link)`
   @media screen and (min-width: 768px) {
     width: 30%;
   }
+  transition:.3s;
   &:hover {
     color: #4d61fc;
   }
@@ -206,7 +206,9 @@ const WorkTogetheContainer = styled(Link)`
     width: 3rem;
     color: gray;
   }
+  transition: .3s;
   &:hover {
+    
     svg {
       color: #ffff;
     }
@@ -434,7 +436,7 @@ const AboutPage = () => {
                 </ContainerSec>
                 <ContainerThirdSec>
                   <CeoContainer href={"/contact"}>
-                    <h1>Profiles</h1>
+                    <h1>What is NeGiUpp?</h1>
                   </CeoContainer>
                   <WorkTogetheContainer href={"/contact"}>
                     <h1>
