@@ -19,6 +19,7 @@ const AboutContainer = styled.div`
 
 const AboutCont = styled.div`
   width: 100%;
+  
   @media screen and (min-width: 768px) {
     width: 60%;
   }
@@ -34,10 +35,13 @@ const ImgCont = styled.div`
 
 const ImageContainer = styled.div`
   width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
   margin: 0 auto;
   padding: 2rem;
   border-radius: 1rem;
-
+  background-color: #121212;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -106,10 +110,13 @@ const TitleMobile = styled.span`
 `;
 
 const InfoAboutContainer = styled.div`
-  padding: 2rem;
+
+ display: flex;
+ align-items: center;
+ padding: 2rem;
   border-radius: 1rem;
   margin: auto 0;
-
+  background-color: #121212;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -124,6 +131,7 @@ const InfoAboutContainer = styled.div`
     margin-bottom: 0;
   }
   @media screen and (min-width: 768px) {
+    height: 22.25rem;
     p {
       line-height: 1.8rem;
       letter-spacing: 0.02rem;
@@ -146,7 +154,7 @@ const CeoContainer = styled(Link)`
 
   padding: 2rem;
   border-radius: 1rem;
-
+  background-color: #121212;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -179,7 +187,7 @@ const WorkTogetheContainer = styled(Link)`
 
   padding: 2rem;
   border-radius: 1rem;
-
+  background-color: #121212;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -211,7 +219,10 @@ const WorkTogetheContainer = styled(Link)`
 const pulseAnimation = keyframes`
   0% {
     transform: scale(1);
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0.02);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   }
   50% {
     transform: scale(1);
@@ -219,7 +230,10 @@ const pulseAnimation = keyframes`
   }
   100% {
     transform: scale(1);
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   }
 `;
 const StartContainer = styled(Link)`
@@ -229,9 +243,11 @@ const StartContainer = styled(Link)`
   align-items: center;
   color: #ffff;
   padding: 2rem;
+    background-color: #121212;
   border-radius: 1rem;
-  animation: ${pulseAnimation} 2s infinite;
+  animation: ${pulseAnimation} 2.5s infinite;
   transform-origin: center;
+  transition: .3s;
   p {
     color: #ffff;
     opacity: 0.8;
@@ -267,7 +283,7 @@ const InfoCultureHitosContainer = styled.div`
   gap: 1rem;
   padding: 2rem;
   border-radius: 1rem;
-
+  background-color: #121212;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -286,7 +302,6 @@ const InfoCultureHitosContainer = styled.div`
   h3 {
     margin: 0;
     color: #4d61fc;
-    opacity: 0.9;
   }
   @media screen and (min-width: 768px) {
     width: 50%;
@@ -298,11 +313,12 @@ const InfoCultureHitosContainer = styled.div`
       line-height: 1.6rem;
       letter-spacing: 0.03rem;
       margin: 0;
+      font-weight: 400;
     }
     h3 {
       margin: 0;
       color: #4d61fc;
-      opacity: 0.9;
+      font-weight: 500;
     }
   }
 `;
@@ -392,7 +408,7 @@ const AboutPage = () => {
                             {`${moment(exp.startDateExp)
                               .utc()
                               .format("MM/DD/YYYY")} - 
-                        
+
                               ${moment(exp.endDateExp)
                                 .utc()
                                 .format("MM/DD/YYYY")}`}

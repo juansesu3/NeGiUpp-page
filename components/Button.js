@@ -10,15 +10,13 @@ const StyledButton = styled(Link)`
   border-color: #bcbcbc;
   border-radius: 0.5rem;
   cursor: pointer;
- 
-    ${(props) =>
-   
+
+  ${(props) =>
     props.artbutton &&
     css`
       margin: 0 auto;
- 
     `}
-  
+
   ${(props) =>
     props.read &&
     !props.outline &&
@@ -38,7 +36,7 @@ const StyledButton = styled(Link)`
       color: white;
       border: 1px solid #4d61fc;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-      &:hover{
+      &:hover {
         background-color: #4d61fc;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
       }
@@ -48,6 +46,9 @@ const StyledButton = styled(Link)`
     css`
       background-color: #4d61fc;
       color: white;
+      &:hover {
+        background-color: #4d41fc;
+      }
     `}
   ${(props) =>
     props.size === "l" &&

@@ -29,6 +29,7 @@ const SectionContainer = styled.section`
   align-items: center;
   padding: 1.5rem;
   border-radius: 1rem;
+  background-color: #121212;
 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
@@ -92,7 +93,7 @@ const SecondSection = styled.section`
   white-space: nowrap;
   border-radius: 1rem;
   cursor: pointer;
-
+  background-color: #121212;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -131,13 +132,13 @@ const SecondSection1 = styled.section`
   white-space: nowrap;
   cursor: pointer;
   border-radius: 1rem;
-
+  background-color: #121212;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   @media screen and (min-width: 768px) {
-    width: 65%;
+    width: 67.5%;
   }
 `;
 const SecondSection2 = styled(Link)`
@@ -152,7 +153,7 @@ const SecondSection2 = styled(Link)`
   width: 100%;
 
   cursor: pointer;
-
+  background-color: #121212;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -194,7 +195,7 @@ const SecundaryContentSection1 = styled.div`
   padding: 1.7rem;
   white-space: nowrap;
   border-radius: 1rem;
-
+  background-color: #121212;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -252,15 +253,21 @@ const Home = () => {
                 Let&apos;s build the future <span>together</span>
               </Title>
               <Intro>
-                I create custom, cutting-edge solutions that improve your
-                development processes. Get your goals with me. Let&apos;s build the
-                success of your business in less time than you can imagine!
+                I create custom cutting-edge solutions that improve your
+                development processes. Get your goals with me and let&apos;s
+                build the success of your business in less time than you can
+                imagine!
               </Intro>
               <ContainerButtons>
                 <Button href={"/founders"} outline="true" read="true">
                   Read More
                 </Button>
-                <Button href={"/notfound"} outline="true" read="true">
+                <Button
+                  href={"/notfound"}
+                  outline="true"
+                  read="true"
+                  primary="true"
+                >
                   Start
                 </Button>
               </ContainerButtons>
