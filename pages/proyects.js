@@ -115,6 +115,9 @@ const TitleBoxMobile = styled.div`
     }
   }
 `;
+const SeconConatiner = styled.div`
+  width: 100%;
+`;
 
 const ProyectsPage = () => {
   const [proyects, setProyects] = useState([]);
@@ -160,7 +163,7 @@ const ProyectsPage = () => {
               </RevealWrapper>
             ))}
         </FirstProyectsContainer>
-        <div>
+        <SeconConatiner>
           <TitleBox>
             <span>
               <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
@@ -188,7 +191,7 @@ const ProyectsPage = () => {
                 </RevealWrapper>
               ))}
           </SecondProyectsContainer>
-        </div>
+        </SeconConatiner>
       </ContainerAllProyects>
 
       <Footer />

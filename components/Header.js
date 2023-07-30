@@ -157,13 +157,14 @@ const Header = ({ route }) => {
           >
             Proyects
           </NavLink>
+          {/*
           <NavLink
             route={route}
             active={pathname === "/blog" ? true : false}
             href={"/blog"}
           >
             Blog
-          </NavLink>
+          </NavLink> */}
           <NavLink
             route={route}
             active={pathname === "/contact" ? true : false}

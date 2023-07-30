@@ -74,8 +74,9 @@ const ContainerExpEdu = styled.div`
     opacity: 0.6;
     font-weight: 400;
     font-size: 0.95rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: .5rem;
+    margin-bottom: .8rem;
+     
   }
   p {
     margin: 0;

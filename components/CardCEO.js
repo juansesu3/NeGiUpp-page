@@ -9,7 +9,7 @@ const CardContainer = styled.div`
   height: auto;
   align-items: center;
   padding: 1.5rem;
-  gap: 1.5rem;
+  justify-content: space-between;
   width: 20.3rem;
 
   border-radius: 1rem;
@@ -111,7 +111,7 @@ const CardCEO = () => {
         </ImageCOntainer>
         <NameUserContainer>
           <h1>Juan Suarez</h1>
-          <p>@juanse</p>
+        
         </NameUserContainer>
         <RrSsConatiner>
           <LinksContainer>
