@@ -1,9 +1,8 @@
 import { css, styled } from "styled-components";
 
 const StyledDiv = styled.div`
-  max-width: 70em;
+  max-width: 980px;
   margin: 0 auto;
-  padding: 0 0.5em;
   position: relative;
 `;
 

@@ -8,8 +8,8 @@ import { Article } from "@/models/Article";
 const HomePage = ({ latestArticles }) => {
   return (
     <>
+    <Header />
       <Center>
-        <Header />
         <Home latestArticles={latestArticles} />
         <Footer />
       </Center>

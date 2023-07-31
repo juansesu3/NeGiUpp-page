@@ -13,6 +13,9 @@ const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+
+  padding-top:1.5rem ;
+  
   @media screen and (max-width: 768px) {
   }
 `;
@@ -350,9 +353,10 @@ const AboutPage = () => {
   }, []);
 
   return (
-    <div>
-      <Center>
+    <>
         <Header />
+      <Center>
+      
         {profile.length > 0 &&
           profile.map((prof) => (
             <AboutContainer key={prof._id}>
@@ -472,7 +476,7 @@ const AboutPage = () => {
           ))}
         <Footer />
       </Center>
-    </div>
+    </>
   );
 };
 

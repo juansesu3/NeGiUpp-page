@@ -8,10 +8,11 @@ import { RevealWrapper } from "next-reveal";
 const OficialContent = styled.div`
   background-color: #0f0f0f;
   color: #ffff;
-  padding: 0;
+  padding: 1.5rem .5rem ;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+
 `;
 
 const PrincipalContent = styled.div`

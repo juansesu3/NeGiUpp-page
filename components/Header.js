@@ -2,22 +2,26 @@ import Link from "next/link";
 import { css, styled } from "styled-components";
 import { useRouter } from "next/router";
 import Bars from "./icons/Bars";
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import DowloadIcon from "./icons/DowloadIcon";
+
 
 const StyledHeader = styled.header`
-  background-color: #0f0f0f;
+   background-color: ${(props) => (props.isVisible ? "#181819" : "transparent")};
   position: sticky;
   top: 0;
   z-index: 10;
-  padding-right: 0.5rem;
 `;
 
 const LogoLink = styled(Link)`
   color: #fff;
   text-decoration: none;
-  display: flex;
+  display: none;
   align-items: center;
   width: 70px;
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
 `;
 
 const Logo = styled.img`
@@ -26,10 +30,23 @@ const Logo = styled.img`
   z-index: 20;
 `;
 
-const Wrapper = styled.div`
+const WrapperFull = styled.div`
+  background-color: ${(props) => (props.isVisible ? "#181819" : "transparent")};
+  margin: 0 auto;
+  position: relative;
+ /* Estilos para tu componente */
+ opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  height: ${(props) => (props.isVisible ? "auto" : "0")};
+  transition: opacity 0.3s ease, height 0.3s ease; /* Agregar transiciones para opacidad y altura */
+  overflow: hidden; /* Para ocultar el contenido del componente cuando está colapsado */
+`;
+const WrapperMax = styled.div`
+  max-width: 980px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  padding: 20px 0;
+  padding: 10px 0;
+  
 `;
 
 const StyledNav = styled.nav`
@@ -50,9 +67,8 @@ const StyledNav = styled.nav`
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 80px 25px 25px;
-
-  background-color: #0f0f0f;
+  padding: 40px 25px 25px;
+  background-color: #181819;
   z-index: 10;
   gap: 4rem;
   @media screen and (min-width: 768px) {
@@ -109,55 +125,136 @@ const LetsTalk = styled(Link)`
 `;
 const NavButton = styled.button`
   width: 40px;
-  height: 40px;
-  border-radius: 0.4rem;
   background-color: transparent;
   border: 0;
-  color: white;
-  border: 1px solid white;
+  color: #f5f5f7;
   cursor: pointer;
   @media screen and (min-width: 768px) {
     display: none;
   }
 `;
+const LogoMobile = styled.div`
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #f5f5f7;
+`;
+const Curriculum = styled.div`
+  z-index: 10;
+  width: 100%;
+padding: 0 .5rem;
+  background-color: #121212f5;
+  color: white;
+  ${(props) =>
+    props.mobileNavActive === true &&
+    css`
+      top: 0px;
+      
+    `}
+`;
+const CurriculumMax = styled.div`
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+`;
+
+const Dowload = styled.button`
+  background-color: #4d61fc;
+  width: 35%;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.3rem ;
+  color: white;
+ 
+  @media screen and (min-width: 768px) {
+    width: 8rem;
+  }
+`;
+const TitleCur = styled.div`
+
+  width: 65%;
+  @media screen and (min-width: 768px) {
+    width: 75%;
+  }
+  display: flex;
+  justify-content: space-between;
+  color:#e4e4e6;
+  h2{
+    margin: 0;
+    letter-spacing: inherit;
+    line-height: inherit;
+  }
+`;
 
 const Header = ({ route }) => {
+  const [scrollDirection, setScrollDirection] = useState("up");
+  const [mobileNavActive, setMobileNavActive] = useState(false);
+  console.log(scrollDirection);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > prevScrollY.current) {
+        setScrollDirection("down");
+      } else {
+        setScrollDirection("up");
+      }
+
+      prevScrollY.current = currentScrollY;
+    };
+
+    let prevScrollY = { current: window.scrollY };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const router = useRouter();
   const { pathname } = router;
-  const [mobileNavActive, setMobileNavActive] = useState(false);
+ 
 
   return (
     <StyledHeader>
-      <Wrapper route={route}>
-        <LogoLink route={route} href={"/"}>
-          <Logo
-            src="https://my-page-negiupp.s3.amazonaws.com/1687424109024.png"
-            alt="logo-image"
-          />
-        </LogoLink>
-        <StyledNav route={route} mobileNavActive={mobileNavActive}>
-          <NavLink
-            route={route}
-            active={pathname === "/" ? true : false}
-            href={"/"}
-          >
-            Home
-          </NavLink>
-          <NavLink
-            route={route}
-            active={pathname === "/about" ? true : false}
-            href={"/about"}
-          >
-            About
-          </NavLink>
-          <NavLink
-            route={route}
-            active={pathname === "/proyects" ? true : false}
-            href={"/proyects"}
-          >
-            Proyects
-          </NavLink>
-          {/*
+      <WrapperFull route={route} isVisible={scrollDirection === "up"}>
+        <WrapperMax>
+          <LogoLink route={route} href={"/"}>
+            <Logo
+              src="https://my-page-negiupp.s3.amazonaws.com/1687424109024.png"
+              alt="logo-image"
+            />
+          </LogoLink>
+          <StyledNav route={route} mobileNavActive={mobileNavActive}>
+            <NavLink
+              route={route}
+              active={pathname === "/" ? true : false}
+              href={"/"}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              route={route}
+              active={pathname === "/about" ? true : false}
+              href={"/about"}
+            >
+              About
+            </NavLink>
+            <NavLink
+              route={route}
+              active={pathname === "/proyects" ? true : false}
+              href={"/proyects"}
+            >
+              Proyects
+            </NavLink>
+            {/*
           <NavLink
             route={route}
             active={pathname === "/blog" ? true : false}
@@ -165,22 +262,33 @@ const Header = ({ route }) => {
           >
             Blog
           </NavLink> */}
-          <NavLink
+            <NavLink
+              route={route}
+              active={pathname === "/contact" ? true : false}
+              href={"/contact"}
+            >
+              Contact
+            </NavLink>
+          </StyledNav>
+          <LetsTalk href={"/contact"}> Let&apos;s talk</LetsTalk>
+          <NavButton
             route={route}
-            active={pathname === "/contact" ? true : false}
-            href={"/contact"}
+            onClick={() => setMobileNavActive((prev) => !prev)}
           >
-            Contact
-          </NavLink>
-        </StyledNav>
-        <LetsTalk href={"/contact"}> Let&apos;s talk</LetsTalk>
-        <NavButton
-          route={route}
-          onClick={() => setMobileNavActive((prev) => !prev)}
-        >
-          <Bars />
-        </NavButton>
-      </Wrapper>
+            <Bars />
+          </NavButton>
+          <LogoMobile>Negiupp.com</LogoMobile>
+        </WrapperMax>
+      </WrapperFull>
+      <Curriculum mobileNavActive={mobileNavActive}>
+        <CurriculumMax>
+          <TitleCur>
+            <h2>Curriculum</h2>
+            
+          </TitleCur>
+          <Dowload>Download CV</Dowload>
+        </CurriculumMax>
+      </Curriculum>
     </StyledHeader>
   );
 };

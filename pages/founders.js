@@ -148,8 +148,9 @@ const FoundersPage = () => {
 
   return (
     <>
+      <Header />
       <Center>
-        <Header />
+      
         {profile.length > 0 &&
           profile.map((pro) => (
             <ContainerFounders key={pro._id}>

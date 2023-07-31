@@ -12,6 +12,7 @@ const ContainerAllProyects = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  padding-top: 1.5rem;
   @media screen and (min-width: 768px) {
     flex-direction: row;
   }
@@ -134,8 +135,10 @@ const ProyectsPage = () => {
   const SecondProyects = proyects.slice(2);
 
   return (
+    <>
+     <Header />
     <Center>
-      <Header />
+     
       <ContainerAllProyects>
         <TitleBoxMobile>
           <span>
@@ -196,6 +199,7 @@ const ProyectsPage = () => {
 
       <Footer />
     </Center>
+    </>
   );
 };
 

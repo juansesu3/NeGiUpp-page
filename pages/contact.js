@@ -12,7 +12,7 @@ const Container = styled.div`
   flex-direction: column-reverse;
   justify-content: space-between;
   gap: 1.5rem;
-
+  padding-top: 1.5rem;
   @media screen and (min-width: 768px) {
     flex-direction: row;
   }
@@ -132,8 +132,9 @@ const ContacPage = () => {
   };
   return (
     <>
+     <Header />
       <Center>
-        <Header />
+       
 
         <Container>
           <RevealWrapper delay={100}>
