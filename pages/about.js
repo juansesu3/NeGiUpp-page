@@ -12,11 +12,11 @@ import moment from "moment";
 const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
 
-  padding-top:1.5rem ;
-  
-  @media screen and (max-width: 768px) {
+  padding: 1.5rem 1rem ;
+  @media screen and (min-width: 768px){
+    padding: 2.5rem .5rem ;
+    
   }
 `;
 
@@ -42,7 +42,7 @@ const ImageContainer = styled.div`
   display: flex;
   align-items: center;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 1rem;
   background-color: #121212;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
@@ -60,6 +60,7 @@ const ContainerSec = styled.div`
   flex-direction: column;
   gap: 1.5rem;
   color: #ffff;
+  padding-top: 1.5rem;
   @media screen and (min-width: 768px) {
     flex-direction: row;
   }
@@ -116,7 +117,7 @@ const InfoAboutContainer = styled.div`
 
  display: flex;
  align-items: center;
- padding: 2rem;
+ padding: 1.5rem;
   border-radius: 1rem;
   margin: auto 0;
   background-color: #121212;
@@ -286,7 +287,7 @@ const InfoCultureHitosContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 1rem;
   background-color: #121212;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
@@ -474,8 +475,9 @@ const AboutPage = () => {
               {/*Third section */}
             </AboutContainer>
           ))}
-        <Footer />
+       
       </Center>
+      <Footer />
     </>
   );
 };

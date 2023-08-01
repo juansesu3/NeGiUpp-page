@@ -11,8 +11,9 @@ const HomePage = ({ latestArticles }) => {
     <Header />
       <Center>
         <Home latestArticles={latestArticles} />
-        <Footer />
+        
       </Center>
+      <Footer />
     </>
   );
 };

@@ -7,6 +7,9 @@ import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 
 const Intro = styled.div`
+padding-top:3rem;
+margin-left: 1rem;
+margin-right: 1rem;
   p {
     color: #bcbcbc;
     text-transform: uppercase;
@@ -15,8 +18,9 @@ const Intro = styled.div`
   h1 {
     color: white;
     text-transform: uppercase;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 600;
+    margin: 0;
   }
   span {
     color: #4d61fc;
@@ -27,10 +31,11 @@ const LandindPageConatiner = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  
 `;
 const ContainerSect = styled.div`
   display: flex;
-  padding: 1.5rem;
+  padding: 1rem;
   gap: 1.5rem;
   flex-direction: column;
   border-radius: 30px;
@@ -49,7 +54,7 @@ const Technologies = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
-  padding: 1.5rem;
+ 
   border-radius: 30px;
   color: #ffff;
   @media screen and (min-width: 768px) {
@@ -90,6 +95,12 @@ const ImageContainer = styled.div`
     width: 100%;
     max-height: 40rem;
     object-fit: cover;
+    
+    padding: 0;
+    @media screen  and (min-width: 768px){
+    padding: 0.5rem;  
+      
+    }
   }
 `;
 const DescriptionConatiner = styled.div`
@@ -108,7 +119,7 @@ const DescriptionConatiner = styled.div`
   }
 `;
 const MoreDetail = styled.div`
-  padding: 1rem 3rem;
+  padding: 1rem 1.5rem;
   width: 100%;
   border-radius: 30px;
   color: #ffff;
@@ -148,8 +159,8 @@ const ContainerButton = styled.div`
 
   button {
     border: 0;
-    padding: 1rem 2rem;
-    border-radius: 15px;
+    padding: .5rem 1rem;
+    border-radius: 5px;
     cursor: pointer;
     background: linear-gradient(
       120deg,
@@ -158,7 +169,7 @@ const ContainerButton = styled.div`
     );
     color: #ffff;
     opacity: 0.9;
-    font-size: 2.5rem;
+    font-size: 1rem;
     font-weight: 500;
     transition: 0.4s;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
@@ -221,6 +232,11 @@ const ContImgPro = styled.div`
     }
   }
 `;
+const Pagination = styled.div`
+display: flex;
+justify-content: space-between;
+    padding: 0 1rem;
+`
 
 const ProyectPage = () => {
   const [proyect, setProyect] = useState(null);
@@ -269,8 +285,9 @@ const ProyectPage = () => {
 
   return (
     <>
+     <Header />
       <Center>
-        <Header />
+       
         {!!proyect && (
           <>
             <Intro>
@@ -339,13 +356,17 @@ const ProyectPage = () => {
               <ImageContainer>
                 <img src={proyect?.images[0]} alt="image-proyect" />
               </ImageContainer>
-
+<Pagination>
               <ContainerButton>
-                <button onClick={handleNextProject}>Next Proyect</button>
+                <button onClick={handleNextProject}>Back</button>
               </ContainerButton>
               <ContainerButton>
                 <button onClick={handlehire}>Hire me</button>
               </ContainerButton>
+              <ContainerButton>
+                <button onClick={handleNextProject}>Next</button>
+              </ContainerButton>
+              </Pagination>
             </LandindPageConatiner>
           </>
         )}

@@ -8,7 +8,11 @@ import { RevealWrapper } from "next-reveal";
 const OficialContent = styled.div`
   background-color: #0f0f0f;
   color: #ffff;
-  padding: 1.5rem .5rem ;
+  padding: 2.5rem 1rem ;
+  @media screen and (min-width: 768px){
+    padding: 1.5rem .5rem ;
+    
+  }
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -28,14 +32,9 @@ const SectionContainer = styled.section`
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  padding: 1.5rem;
+  
   border-radius: 1rem;
-  background-color: #121212;
-
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+ 
   @media screen and (min-width: 768px) {
     flex-direction: row;
   }

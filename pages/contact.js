@@ -12,15 +12,17 @@ const Container = styled.div`
   flex-direction: column-reverse;
   justify-content: space-between;
   gap: 1.5rem;
-  padding-top: 1.5rem;
+  padding: 1.5rem 1rem;
+  margin-top:2.5rem;
   @media screen and (min-width: 768px) {
     flex-direction: row;
+    padding: 1.5rem .5rem;
   }
 `;
 const ContacInfo = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1.5rem;
   justify-content: space-between;
   h3 {
     font-size: 1.5rem;
@@ -32,7 +34,7 @@ const ContacInfo = styled.div`
 
   h4 {
     color: #ffff;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     opacity: 0.8;
     margin: 0;
   }
@@ -73,7 +75,7 @@ const IconContainer = styled.div`
   }
 `;
 const SocialInfo = styled.div`
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -110,11 +112,18 @@ const Info = styled.div`
   flex-direction: column;
   gap: 1.3rem;
   justify-content: center;
+  color: #c1c1c3;
   h4 {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    font-weight: 400;
+    
   }
   span {
     font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    
+  
   }
   @media screen and (min-width: 450px) {
     h4 {
@@ -139,7 +148,7 @@ const ContacPage = () => {
         <Container>
           <RevealWrapper delay={100}>
             <ContacInfo>
-              <h3>Contact Info</h3>
+              <h4>Contact Info</h4>
               <Content>
                 <IconContainer>
                   <svg
@@ -158,7 +167,7 @@ const ContacPage = () => {
                   </svg>
                 </IconContainer>
                 <Info>
-                  <span>Mail us</span>
+                  <span>Mail</span>
                   <h4>juan.se.suarez.ra@gmail.com</h4>
                 </Info>
               </Content>
@@ -180,7 +189,7 @@ const ContacPage = () => {
                   </svg>
                 </IconContainer>
                 <Info>
-                  <span>Contact us</span>
+                  <span>Contact me</span>
                   <h4>+34 642 76 33 95</h4>
                 </Info>
               </Content>
@@ -305,8 +314,9 @@ const ContacPage = () => {
           </RevealWrapper>
         </Container>
 
-        <Footer />
+      
       </Center>
+      <Footer />
     </>
   );
 };

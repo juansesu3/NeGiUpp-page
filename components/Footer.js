@@ -3,37 +3,43 @@ import React from "react";
 import { styled } from "styled-components";
 
 const BckGro = styled.div`
+  width: 100%;
   background-color: #0f0f0f;
   color: #fff;
   display: flex;
   flex-direction: column;
-  align-items: first baseline;
-  justify-content: space-around;
+ 
+ 
+
   border-top: 1px solid #24242463;
-  margin-top: 4rem;
+  margin-top: 2rem;
   padding-top: 3rem;
 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 `;
 
 const First = styled.div`
-  margin: 0 auto;
-  width: 100%;
+
+
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  justify-content: space-around;
-  @media screen and (min-width: 550px) {
+  flex-direction: row;
+  justify-content: space-between;
+    gap: 5rem;
+    padding: 0 1rem;
+  @media screen and (min-width: 768px) {
     flex-direction: row;
+    gap: 24.5rem;
+  
   }
 `;
 const Second = styled.div`
-  width: 100%;
+ 
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: 1.5rem;
   color: gray;
+
   span {
     color: #4d61fc;
   }
@@ -43,7 +49,8 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin: 0 2rem;
+  padding: 0;
+
   h4 {
     margin: 0;
   }
@@ -65,7 +72,12 @@ const LangLog = styled.div`
 const LogoLink = styled(Link)`
   color: #fff;
   text-decoration: none;
-  width: 10rem;
+  width: 6rem;
+  padding-top: .2rem;
+  @media screen and (min-width: 768px){
+    width: 6rem;
+    
+  }
 `;
 
 const Logo = styled.img`
@@ -111,45 +123,37 @@ const LinksContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
 `;
-
+const ContFotter = styled.div`
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+ @media screen and (min-width: 980px){
+  width: 980px;
+ 
+  
+ }
+`;
 const Footer = () => {
   return (
     <BckGro>
+      <ContFotter>
       <First>
         <Section>
           <h4>About me</h4>
           <LinkFooter href={"/founders"}>who I am?</LinkFooter>
           <LinkFooter href={"/"}>what is NeGiUpp?</LinkFooter>
           <LinkFooter href={"/"}>work together!</LinkFooter>
-         
         </Section>
-        {/* 
-        <Section>
-          <h4>Learn about</h4>
-          <LinkFooter href={"/"}>HTML</LinkFooter>
-          <LinkFooter href={"/"}>CSS</LinkFooter>
-          <LinkFooter href={"/"}>Artificial Intelligence</LinkFooter>
-          <LinkFooter href={"/"}>JavaScript</LinkFooter>
-          <LinkFooter href={"/"}>React.js</LinkFooter>
-        </Section>
-        */}
         <Section>
           <LangLog>
-            {/* <Lang>
-              <select className="selelect">
-                <option>Spanish</option>
-                <option>English</option>
-                <option>French</option>
-              </select>
-            </Lang>
-             */}
             <LogoLink href={"/"}>
               <Logo
-                src="https://my-page-negiupp.s3.amazonaws.com/1687424109024.png"
+                src="https://my-page-negiupp.s3.amazonaws.com/1690838289355.png"
                 alt="logo-image"
               />
             </LogoLink>
-
             <LinksContainer>
               <LinkRRSS href={"/"}>
                 <svg
@@ -210,12 +214,12 @@ const Footer = () => {
           </LangLog>
         </Section>
       </First>
-
       <Second>
         <h5>
           © 2023 <span>negiupp.com</span> | All rigth reserved
         </h5>
       </Second>
+      </ContFotter>
     </BckGro>
   );
 };

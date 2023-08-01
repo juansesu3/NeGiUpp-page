@@ -5,12 +5,17 @@ import { withSwal } from "react-sweetalert2";
 
 const Conatiner = styled.div`
   width: 100%;
+
   border-radius: 1rem;
-  padding: 1.5rem;
+  padding:1rem 1rem;
   color: white;
   h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-top: 0;
+    @media screen and (min-width: 768px){
+      font-size: 3rem;
+      
+    }
     span {
       color: #4d61fc;
     }
@@ -34,12 +39,12 @@ const FormContainer = styled.form`
   flex-direction: column;
   gap: 1.5rem;
   input {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     border: 0;
     border-radius: 0.6rem;
-    padding: 0.8rem;
+    padding:1rem;
     @media screen and (min-width: 768px) {
-      padding: 1.5rem;
+      padding: 1rem;
     }
     color: #fff;
     background: linear-gradient(
@@ -56,11 +61,11 @@ const FormContainer = styled.form`
     color: #fff;
 
     height: 12rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-family: "Inter", sans-serif;
     border: 0;
     border-radius: 0.6rem;
-    padding: 0.8rem 0.8rem;
+    padding: 1rem 0.8rem;
     background: linear-gradient(
       100deg,
       rgb(189 189 189 / 7%),
@@ -72,13 +77,18 @@ const FormContainer = styled.form`
       /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   }
   button {
-    padding: 1rem;
+    padding: .5rem;
     border: 0;
     border-radius: 0.5rem;
     background-color: #323232;
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     transition: 0.3s;
+    @media screen and (min-width: 768px) {
+      font-size: 1.5rem;
+      padding: .8rem;
+      
+    }
 
     &:hover {
       background-color: #ffffff;

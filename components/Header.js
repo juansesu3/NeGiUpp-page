@@ -11,6 +11,7 @@ const StyledHeader = styled.header`
   position: sticky;
   top: 0;
   z-index: 10;
+  height: 48px;
 `;
 
 const LogoLink = styled(Link)`
@@ -18,7 +19,7 @@ const LogoLink = styled(Link)`
   text-decoration: none;
   display: none;
   align-items: center;
-  width: 70px;
+  width: 50px;
   @media screen and (min-width: 768px) {
     display: flex;
   }
@@ -31,7 +32,7 @@ const Logo = styled.img`
 `;
 
 const WrapperFull = styled.div`
-  background-color: ${(props) => (props.isVisible ? "#181819" : "transparent")};
+  background-color: ${(props) => (props.isVisible ? "#1d1d1f" : "transparent")};
   margin: 0 auto;
   position: relative;
  /* Estilos para tu componente */
@@ -45,7 +46,8 @@ const WrapperMax = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  padding: 10px 0;
+  padding: 5px .5rem;
+
   
 `;
 
@@ -68,7 +70,7 @@ const StyledNav = styled.nav`
   left: 0;
   right: 0;
   padding: 40px 25px 25px;
-  background-color: #181819;
+  background-color: #1d1d1f;
   z-index: 10;
   gap: 4rem;
   @media screen and (min-width: 768px) {
@@ -80,11 +82,11 @@ const StyledNav = styled.nav`
 
 const NavLink = styled(Link)`
   display: block;
-  color: #676767;
+  color: #c1c1c3;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1rem;
   transition: 0.3s;
-  padding: 10px 0;
+  padding: 5px 0;
   @media screen and (min-width: 768px) {
     padding: 0;
   }
@@ -93,7 +95,7 @@ const NavLink = styled(Link)`
     css`
       color: #ffff;
       text-decoration: underline;
-      margin-bottom: 0.5rem;
+     
       text-decoration-thickness: 0.15rem;
     `}
   &:hover {
@@ -106,7 +108,7 @@ const LetsTalk = styled(Link)`
   text-decoration: none;
   align-items: center;
   background-color: #323232;
-  padding: 12px 36px;
+  padding: 10px 36px;
   border-radius: 0.6rem;
   font-weight: 500;
   display: none;
@@ -124,10 +126,11 @@ const LetsTalk = styled(Link)`
   }
 `;
 const NavButton = styled.button`
-  width: 40px;
+  width: 34px;
   background-color: transparent;
   border: 0;
   color: #f5f5f7;
+  padding: 5px 5px;
   cursor: pointer;
   @media screen and (min-width: 768px) {
     display: none;
@@ -141,6 +144,7 @@ const LogoMobile = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   color: #f5f5f7;
+  padding: 0;
 `;
 const Curriculum = styled.div`
   z-index: 10;
@@ -161,14 +165,15 @@ const CurriculumMax = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  padding: 10px 7.5px;
+  
 `;
 
 const Dowload = styled.button`
   background-color: #4d61fc;
   width: 35%;
   border: none;
-  border-radius: 1rem;
+  border-radius: .9rem;
   padding: 0.3rem ;
   color: white;
  
@@ -189,6 +194,8 @@ const TitleCur = styled.div`
     margin: 0;
     letter-spacing: inherit;
     line-height: inherit;
+    font-size: 18px;
+    font-weight: 700;
   }
 `;
 
@@ -228,7 +235,7 @@ const Header = ({ route }) => {
         <WrapperMax>
           <LogoLink route={route} href={"/"}>
             <Logo
-              src="https://my-page-negiupp.s3.amazonaws.com/1687424109024.png"
+              src="https://my-page-negiupp.s3.amazonaws.com/1690838289355.png"
               alt="logo-image"
             />
           </LogoLink>
@@ -277,7 +284,7 @@ const Header = ({ route }) => {
           >
             <Bars />
           </NavButton>
-          <LogoMobile>Negiupp.com</LogoMobile>
+          <LogoMobile>negiupp.com</LogoMobile>
         </WrapperMax>
       </WrapperFull>
       <Curriculum mobileNavActive={mobileNavActive}>

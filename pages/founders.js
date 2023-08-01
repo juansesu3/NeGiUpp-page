@@ -14,10 +14,13 @@ const ContainerFounders = styled.div`
   justify-content: center;
   gap: 4rem;
   color: white;
-  padding: .5rem;
+  
+  padding: 4.5rem 1rem ;
+
   @media screen and (min-width: 768px) {
     flex-direction: row;
     height: 40rem;
+    padding: 4.5rem .5rem ;
   }
 `;
 const AboutMe = styled.div`
@@ -243,8 +246,9 @@ const FoundersPage = () => {
               </AboutMe>
             </ContainerFounders>
           ))}
-        <Footer />
+        
       </Center>
+      <Footer />
     </>
   );
 };
