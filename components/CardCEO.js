@@ -6,6 +6,7 @@ const CardContainer = styled.div`
   display: flex;
   margin: 0 auto;
   flex-direction: column;
+  gap: 1.5rem;
   height: auto;
   align-items: center;
   padding: 1.5rem;
@@ -19,7 +20,7 @@ const CardContainer = styled.div`
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
 @media screen and (min-width: 768px){
-  margin-top: 3rem;
+  margin-top: 2rem;
   
 }
 `;

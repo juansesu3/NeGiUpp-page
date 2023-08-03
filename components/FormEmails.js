@@ -2,19 +2,19 @@ import axios from "axios";
 import React, { useState } from "react";
 import { styled } from "styled-components";
 import { withSwal } from "react-sweetalert2";
+import { useRouter } from "next/router";
 
 const Conatiner = styled.div`
   width: 100%;
 
   border-radius: 1rem;
-  padding:1rem 1rem;
+  padding: 1rem 1rem;
   color: white;
   h1 {
     font-size: 2.5rem;
     margin-top: 0;
-    @media screen and (min-width: 768px){
+    @media screen and (min-width: 768px) {
       font-size: 3rem;
-      
     }
     span {
       color: #4d61fc;
@@ -42,7 +42,7 @@ const FormContainer = styled.form`
     font-size: 1.2rem;
     border: 0;
     border-radius: 0.6rem;
-    padding:1rem;
+    padding: 1rem;
     @media screen and (min-width: 768px) {
       padding: 1rem;
     }
@@ -77,7 +77,7 @@ const FormContainer = styled.form`
       /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   }
   button {
-    padding: .5rem;
+    padding: 0.8rem;
     border: 0;
     border-radius: 0.5rem;
     background-color: #323232;
@@ -86,8 +86,7 @@ const FormContainer = styled.form`
     transition: 0.3s;
     @media screen and (min-width: 768px) {
       font-size: 1.5rem;
-      padding: .8rem;
-      
+      padding: 0.8rem;
     }
 
     &:hover {
@@ -102,6 +101,7 @@ const FormEmails = ({ swal }) => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const router = useRouter();
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
@@ -118,6 +118,7 @@ const FormEmails = ({ swal }) => {
       message,
     };
     await axios.post("/api/emails", data);
+    router.push("/");
   };
 
   return (

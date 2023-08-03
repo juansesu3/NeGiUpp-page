@@ -195,7 +195,7 @@ const ImageIconTechContainer = styled.div`
 const ContainerTech = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+
   border-radius: 30px;
   color: #ffff;
   padding: 1.5rem;
@@ -207,7 +207,7 @@ const ContainerTech = styled.div`
   );
   h3 {
     opacity: 0.5;
-    margin-top: 0;
+    margin: 0;
     font-weight: 400;
   }
   @media screen and (min-width: 768px) {
@@ -237,7 +237,27 @@ display: flex;
 justify-content: space-between;
     padding: 0 1rem;
 `
+const ContainerTechOnce = styled.div` display: flex;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+gap: 1rem;
+border-radius: 30px;
+color: #ffff;
+padding: 1.5rem;
+width: 100%;
+height: 100%;
 
+h3 {
+  opacity: 0.5;
+  margin-top: 0;
+  font-weight: 400;
+}
+@media screen and (min-width: 768px) {
+
+}
+`;
 const ProyectPage = () => {
   const [proyect, setProyect] = useState(null);
   const router = useRouter();
@@ -302,7 +322,10 @@ const ProyectPage = () => {
               </ImageContainer>
               <ContainerSect>
                 <ContainerTech>
-                  <h3>Technologies Stack</h3>
+                <h3>Technologies Stack</h3>
+                <ContainerTechOnce>
+                 
+                  
                   <Technologies>
                     {technologies.length > 0 &&
                       technologies.map((technology) => (
@@ -313,6 +336,7 @@ const ProyectPage = () => {
                         </IconsTech>
                       ))}
                   </Technologies>
+                  </ContainerTechOnce>
                 </ContainerTech>
                 <AboutInfo>
                   <h3>About</h3>

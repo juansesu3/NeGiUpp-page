@@ -13,16 +13,15 @@ const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  padding: 1.5rem 1rem ;
-  @media screen and (min-width: 768px){
-    padding: 2.5rem .5rem ;
-    
+  padding: 1.5rem 1rem;
+  @media screen and (min-width: 768px) {
+    padding: 2.5rem 0.5rem;
   }
 `;
 
 const AboutCont = styled.div`
   width: 100%;
-  
+
   @media screen and (min-width: 768px) {
     width: 60%;
   }
@@ -114,10 +113,9 @@ const TitleMobile = styled.span`
 `;
 
 const InfoAboutContainer = styled.div`
-
- display: flex;
- align-items: center;
- padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
   border-radius: 1rem;
   margin: auto 0;
   background-color: #121212;
@@ -175,7 +173,7 @@ const CeoContainer = styled(Link)`
   @media screen and (min-width: 768px) {
     width: 30%;
   }
-  transition:.3s;
+  transition: 0.3s;
   &:hover {
     color: #4d61fc;
   }
@@ -210,9 +208,8 @@ const WorkTogetheContainer = styled(Link)`
     width: 3rem;
     color: gray;
   }
-  transition: .3s;
+  transition: 0.3s;
   &:hover {
-    
     svg {
       color: #ffff;
     }
@@ -249,11 +246,11 @@ const StartContainer = styled(Link)`
   align-items: center;
   color: #ffff;
   padding: 2rem;
-    background-color: #121212;
+  background-color: #121212;
   border-radius: 1rem;
   animation: ${pulseAnimation} 2.5s infinite;
   transform-origin: center;
-  transition: .3s;
+  transition: 0.3s;
   p {
     color: #ffff;
     opacity: 0.8;
@@ -301,13 +298,18 @@ const InfoCultureHitosContainer = styled.div`
   p {
     color: #ffff;
     opacity: 0.6;
-    line-height: 2.5rem;
+    line-height: 1.8rem;
     letter-spacing: 0.07rem;
     margin: 0;
   }
   h3 {
     margin: 0;
     color: #4d61fc;
+    font-weight: 600;
+  }
+  h4 {
+    margin: 0.3rem 0;
+    font-weight: 500;
   }
   @media screen and (min-width: 768px) {
     width: 50%;
@@ -320,6 +322,7 @@ const InfoCultureHitosContainer = styled.div`
       letter-spacing: 0.03rem;
       margin: 0;
       font-weight: 400;
+      font-size: inherit;
     }
     h3 {
       margin: 0;
@@ -355,9 +358,8 @@ const AboutPage = () => {
 
   return (
     <>
-        <Header />
+      <Header />
       <Center>
-      
         {profile.length > 0 &&
           profile.map((prof) => (
             <AboutContainer key={prof._id}>
@@ -421,7 +423,7 @@ const AboutPage = () => {
                                 .format("MM/DD/YYYY")}`}
                           </p>
                           <h3>{exp.position}</h3>
-                          <span className="company">{exp.company}</span>
+                          <h4 className="company">{exp.company}</h4>
                         </div>
                       ))}
                   </InfoCultureHitosContainer>
@@ -434,7 +436,7 @@ const AboutPage = () => {
                             {moment(edu.gotDate).utc().format("MM/DD/YYYY")}
                           </p>
                           <h3>{edu.certificationName}</h3>
-                          <span>{edu.institutionName}</span>
+                          <h4>{edu.institutionName}</h4>
                         </div>
                       ))}
                   </InfoCultureHitosContainer>
@@ -475,7 +477,6 @@ const AboutPage = () => {
               {/*Third section */}
             </AboutContainer>
           ))}
-       
       </Center>
       <Footer />
     </>

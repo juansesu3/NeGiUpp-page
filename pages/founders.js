@@ -12,15 +12,15 @@ const ContainerFounders = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 4rem;
+  gap: 1.5rem;
   color: white;
   
-  padding: 4.5rem 1rem ;
+  padding: 4.5rem 1rem 0rem 1rem ;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
-    height: 40rem;
-    padding: 4.5rem .5rem ;
+    height: 41rem;
+    padding: 4.5rem 1rem 0rem 1rem ;
   }
 `;
 const AboutMe = styled.div`
