@@ -8,15 +8,13 @@ import { RevealWrapper } from "next-reveal";
 const OficialContent = styled.div`
   background-color: #0f0f0f;
   color: #ffff;
-  padding: 2.5rem .5rem ;
-  @media screen and (min-width: 768px){
-    padding: 3rem .5rem ;
-    
+  padding: 2.5rem 0.5rem;
+  @media screen and (min-width: 768px) {
+    padding: 3rem 0.5rem;
   }
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-
 `;
 
 const PrincipalContent = styled.div`
@@ -34,7 +32,7 @@ const SectionContainer = styled.section`
   align-items: center;
   gap: 1.5rem;
   border-radius: 1rem;
- 
+
   @media screen and (min-width: 768px) {
     flex-direction: row;
   }
@@ -191,7 +189,7 @@ const SecundaryContentSection1 = styled.div`
   align-items: center;
   width: 100%;
   height: 15rem;
-  cursor: pointer;
+
   padding: 1.7rem;
   white-space: nowrap;
   border-radius: 1rem;
@@ -229,6 +227,13 @@ const IconServices = styled.div`
     display: flex;
     flex-direction: column;
   }
+`;
+
+const ServicesLink = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: white;
   svg {
     width: 3em;
     margin: 0.5rem auto;
@@ -316,7 +321,7 @@ const Home = () => {
                 <SecundaryContentSection1>
                   <IconServices>
                     {/**/}{" "}
-                    <div>
+                    <ServicesLink href={"/responsiveServices"}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -332,8 +337,8 @@ const Home = () => {
                         />
                       </svg>
                       Responsive
-                    </div>
-                    <div>
+                    </ServicesLink>
+                    <ServicesLink href={"/webdevservices"}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -349,8 +354,8 @@ const Home = () => {
                         />
                       </svg>
                       Web dev
-                    </div>
-                    <div>
+                    </ServicesLink>
+                    <ServicesLink href={"/desktopdevservices"}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -366,7 +371,7 @@ const Home = () => {
                         />
                       </svg>
                       Desktop dev
-                    </div>
+                    </ServicesLink>
                   </IconServices>
                   <SubTitle>Services Offering</SubTitle>
                 </SecundaryContentSection1>

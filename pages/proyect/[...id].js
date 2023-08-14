@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 
 const Intro = styled.div`
-  padding-top: 3rem;
   p {
     color: #bcbcbc;
     text-transform: uppercase;
@@ -24,10 +23,8 @@ const Intro = styled.div`
   span {
     color: #4d61fc;
   }
-  padding: 2.5rem 0.5rem;
-  @media screen and (min-width: 768px) {
-    padding: 0rem;
-  }
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 `;
 
 const LandindPageConatiner = styled.div`
@@ -167,7 +164,7 @@ const ContainerButton = styled.div`
     );
     color: #ffff;
     opacity: 0.9;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 500;
     transition: 0.4s;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
@@ -232,7 +229,9 @@ const ContImgPro = styled.div`
 const Pagination = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding-top: ${(props) => (props.up ? "3rem" : "0rem")};
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 `;
 const ContainerTechOnce = styled.div`
   display: flex;
@@ -286,13 +285,30 @@ const ProyectPage = () => {
   };
 
   const handleNextProject = () => {
-    setCurrentProjectIndex((prevIndex) => (prevIndex + 1) % proyects.length);
+    const newIndex = (currentProjectIndex + 1) % proyects.length;
+    setCurrentProjectIndex(newIndex);
+  
     if (proyects.length > 0) {
-      setProyect(proyects[currentProjectIndex]);
-      if (proyects[currentProjectIndex].selectedTech.length > 0) {
-        fetchingTech(proyects[currentProjectIndex].selectedTech);
+      setProyect(proyects[newIndex]);
+      if (proyects[newIndex].selectedTech.length > 0) {
+        fetchingTech(proyects[newIndex].selectedTech);
       }
     }
+    
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  
+  const handlePreviousProject = () => {
+    const newIndex = (currentProjectIndex - 1 + proyects.length) % proyects.length;
+    setCurrentProjectIndex(newIndex);
+  
+    if (proyects.length > 0) {
+      setProyect(proyects[newIndex]);
+      if (proyects[newIndex].selectedTech.length > 0) {
+        fetchingTech(proyects[newIndex].selectedTech);
+      }
+    }
+  
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -306,6 +322,17 @@ const ProyectPage = () => {
       <Center>
         {!!proyect && (
           <>
+            <Pagination up={true}>
+              <ContainerButton>
+                <button onClick={handlePreviousProject}>Prev</button>
+              </ContainerButton>
+              <ContainerButton>
+                <button onClick={handlehire}>Hire me</button>
+              </ContainerButton>
+              <ContainerButton>
+                <button onClick={handleNextProject}>Next</button>
+              </ContainerButton>
+            </Pagination>
             <Intro>
               <p>Branding - {proyect.title}</p>
               <h1>
@@ -392,7 +419,7 @@ const ProyectPage = () => {
               </ImageContainer>
               <Pagination>
                 <ContainerButton>
-                  <button onClick={handleNextProject}>Back</button>
+                  <button onClick={handlePreviousProject}>Prev</button>
                 </ContainerButton>
                 <ContainerButton>
                   <button onClick={handlehire}>Hire me</button>
