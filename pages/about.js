@@ -13,7 +13,7 @@ const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 0.5rem;
   @media screen and (min-width: 768px) {
     padding: 2.5rem 0.5rem;
   }
@@ -442,7 +442,7 @@ const AboutPage = () => {
                   </InfoCultureHitosContainer>
                 </ContainerSec>
                 <ContainerThirdSec>
-                  <CeoContainer href={"/contact"}>
+                  <CeoContainer href={"/negiupp"}>
                     <h1>What is NeGiUpp?</h1>
                   </CeoContainer>
                   <WorkTogetheContainer href={"/contact"}>

@@ -11,8 +11,8 @@ import { styled } from "styled-components";
 const ContainerAllProyects = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding: 4rem .5rem;
+  gap: 1rem;
+  padding: 3rem .5rem;
   @media screen and (min-width: 768px) {
     flex-direction: row;
   }
@@ -28,7 +28,11 @@ const FirstProyectsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
   @media screen and (min-width: 768px) {
     flex-direction: column;
     justify-content: start;
@@ -49,12 +53,15 @@ const SecondProyectsContainer = styled.div`
 const ContainerPro = styled.div`
   border-radius: 1rem;
   padding: 1rem;
-  width: 20rem;
+  width: auto;
 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+    @media screen and (min-width: 768px) {
+      width: 19rem;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -76,12 +83,12 @@ const TitleBox = styled.div`
   white-space: nowrap;
 
   h1 {
-    font-size: 2.95rem;
+    font-size: 2.2rem;
     color: white;
     text-transform: uppercase;
   }
   svg {
-    width: 3rem;
+    width: 2.5rem;
     color: white;
   }
   @media screen and (min-width: 768px) {

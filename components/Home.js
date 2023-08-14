@@ -8,7 +8,7 @@ import { RevealWrapper } from "next-reveal";
 const OficialContent = styled.div`
   background-color: #0f0f0f;
   color: #ffff;
-  padding: 2.5rem 1rem ;
+  padding: 2.5rem .5rem ;
   @media screen and (min-width: 768px){
     padding: 3rem .5rem ;
     

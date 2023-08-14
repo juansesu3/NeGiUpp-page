@@ -25,9 +25,8 @@ const Intro = styled.div`
     color: #4d61fc;
   }
   padding: 2.5rem 0.5rem;
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     padding: 0rem;
-    
   }
 `;
 
@@ -100,7 +99,6 @@ const ImageContainer = styled.div`
     object-fit: cover;
 
     padding: 0;
-
   }
 `;
 const DescriptionConatiner = styled.div`
@@ -216,15 +214,14 @@ const ContainerTech = styled.div`
 `;
 const ImagesProyectsContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  gap: 1rem;
+  @media screen and (min-width: 768px) {
+    flex-wrap: wrap;
+  }
 `;
 const ContImgPro = styled.div`
-  width: 49.9%;
-  @media screen and (min-width: 600px) {
-    width: 49.8%;
-  }
-
   img {
     width: 98.5%;
     @media screen and (min-width: 600px) {

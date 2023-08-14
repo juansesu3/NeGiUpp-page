@@ -47,8 +47,8 @@ const WrapperMax = styled.div`
   justify-content: space-between;
   padding: 0rem 0.5rem;
 
-  @media screen and (min-width: 768px) {
-    padding: 0.3rem 0rem;
+  @media screen and (min-width: 900px) {
+    padding: 0.3rem .5rem;
   }
 `;
 

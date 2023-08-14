@@ -5,11 +5,12 @@ import { useRouter } from "next/router";
 import { styled } from "styled-components";
 
 const ConatinerNotFound = styled.div`
-height: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 3rem .5rem;
   p {
     color: white;
     opacity: 0.5;
@@ -23,8 +24,8 @@ height: 100%;
   }
 `;
 const ContainerButton = styled.div`
-height: 100%;
-    width: 50%;
+  height: 100%;
+  width: 50%;
   button {
     border: 0;
     width: 100%;
@@ -42,8 +43,7 @@ height: 100%;
       color: black;
     }
   }
-
-`
+`;
 const NotfoundPage = () => {
   const router = useRouter();
   const handleBack = () => {

@@ -143,8 +143,8 @@ const Footer = () => {
         <Section>
           <h4>About me</h4>
           <LinkFooter href={"/founders"}>who I am?</LinkFooter>
-          <LinkFooter href={"/"}>what is NeGiUpp?</LinkFooter>
-          <LinkFooter href={"/"}>work together!</LinkFooter>
+          <LinkFooter href={"/negiupp"}>what is NeGiUpp?</LinkFooter>
+          <LinkFooter href={"/contact"}>work together!</LinkFooter>
         </Section>
         <Section>
           <LangLog>
