@@ -5,9 +5,8 @@ import Bars from "./icons/Bars";
 import { useEffect, useState, useRef } from "react";
 import DowloadIcon from "./icons/DowloadIcon";
 
-
 const StyledHeader = styled.header`
-   background-color: ${(props) => (props.isVisible ? "#181819" : "transparent")};
+  background-color: ${(props) => (props.isVisible ? "#181819" : "transparent")};
   position: sticky;
   top: 0;
   z-index: 10;
@@ -35,8 +34,8 @@ const WrapperFull = styled.div`
   background-color: ${(props) => (props.isVisible ? "#1d1d1f" : "transparent")};
   margin: 0 auto;
   position: relative;
- /* Estilos para tu componente */
- opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  /* Estilos para tu componente */
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
   height: ${(props) => (props.isVisible ? "auto" : "0")};
   transition: opacity 0.3s ease, height 0.3s ease; /* Agregar transiciones para opacidad y altura */
   overflow: hidden; /* Para ocultar el contenido del componente cuando está colapsado */
@@ -46,9 +45,11 @@ const WrapperMax = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  padding: 5px .5rem;
+  padding: 0rem 0.5rem;
 
-  
+  @media screen and (min-width: 768px) {
+    padding: 0.3rem 0rem;
+  }
 `;
 
 const StyledNav = styled.nav`
@@ -95,7 +96,7 @@ const NavLink = styled(Link)`
     css`
       color: #ffff;
       text-decoration: underline;
-     
+
       text-decoration-thickness: 0.15rem;
     `}
   &:hover {
@@ -126,11 +127,11 @@ const LetsTalk = styled(Link)`
   }
 `;
 const NavButton = styled.button`
-  width: 34px;
+  width: 25px;
   background-color: transparent;
   border: 0;
   color: #f5f5f7;
-  padding: 5px 5px;
+  padding: 5px 0px;
   cursor: pointer;
   @media screen and (min-width: 768px) {
     display: none;
@@ -149,14 +150,13 @@ const LogoMobile = styled.div`
 const Curriculum = styled.div`
   z-index: 10;
   width: 100%;
-padding: 0 .5rem;
+  padding: 0 0.5rem;
   background-color: #121212f5;
   color: white;
   ${(props) =>
     props.mobileNavActive === true &&
     css`
       top: 0px;
-      
     `}
 `;
 const CurriculumMax = styled.div`
@@ -165,32 +165,30 @@ const CurriculumMax = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 7.5px;
-  
+  padding: 0.5rem 0;
 `;
 
 const Dowload = styled.button`
   background-color: #4d61fc;
   width: 35%;
   border: none;
-  border-radius: .9rem;
-  padding: 0.3rem ;
+  border-radius: 0.9rem;
+  padding: 0.3rem;
   color: white;
- 
+
   @media screen and (min-width: 768px) {
     width: 8rem;
   }
 `;
 const TitleCur = styled.div`
-
   width: 65%;
   @media screen and (min-width: 768px) {
     width: 75%;
   }
   display: flex;
   justify-content: space-between;
-  color:#e4e4e6;
-  h2{
+  color: #e4e4e6;
+  h2 {
     margin: 0;
     letter-spacing: inherit;
     line-height: inherit;
@@ -227,7 +225,6 @@ const Header = ({ route }) => {
 
   const router = useRouter();
   const { pathname } = router;
- 
 
   return (
     <StyledHeader>
@@ -291,7 +288,6 @@ const Header = ({ route }) => {
         <CurriculumMax>
           <TitleCur>
             <h2>Curriculum</h2>
-            
           </TitleCur>
           <Dowload>Download CV</Dowload>
         </CurriculumMax>

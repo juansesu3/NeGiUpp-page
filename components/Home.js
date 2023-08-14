@@ -10,7 +10,7 @@ const OficialContent = styled.div`
   color: #ffff;
   padding: 2.5rem 1rem ;
   @media screen and (min-width: 768px){
-    padding: 1.5rem .5rem ;
+    padding: 3rem .5rem ;
     
   }
   display: flex;
@@ -32,7 +32,7 @@ const SectionContainer = styled.section`
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  
+  gap: 1.5rem;
   border-radius: 1rem;
  
   @media screen and (min-width: 768px) {
@@ -274,7 +274,7 @@ const Home = () => {
             </SectionInfo>
 
             <ImgContainer>
-              <FirstImageInfo src="https://my-page-negiupp.s3.amazonaws.com/1689091977005.png" />
+              <FirstImageInfo src="https://my-page-negiupp.s3.amazonaws.com/1691999172810.png" />
             </ImgContainer>
           </SectionContainer>
         </RevealWrapper>

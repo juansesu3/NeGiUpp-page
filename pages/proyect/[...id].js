@@ -2,14 +2,13 @@ import Center from "@/components/Center";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import axios from "axios";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 
 const Intro = styled.div`
-padding-top:3rem;
-margin-left: 1rem;
-margin-right: 1rem;
+  padding-top: 3rem;
   p {
     color: #bcbcbc;
     text-transform: uppercase;
@@ -25,20 +24,24 @@ margin-right: 1rem;
   span {
     color: #4d61fc;
   }
+  padding: 2.5rem 0.5rem;
+  @media screen and (min-width: 768px){
+    padding: 0rem;
+    
+  }
 `;
 
 const LandindPageConatiner = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  
 `;
 const ContainerSect = styled.div`
   display: flex;
   padding: 1rem;
   gap: 1.5rem;
   flex-direction: column;
-  border-radius: 30px;
+  border-radius: 1rem;
 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
@@ -54,8 +57,8 @@ const Technologies = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
- 
-  border-radius: 30px;
+
+  border-radius: 1rem;
   color: #ffff;
   @media screen and (min-width: 768px) {
     width: 100%;
@@ -63,7 +66,7 @@ const Technologies = styled.div`
 `;
 const AboutInfo = styled.div`
   padding: 1.5rem;
-  border-radius: 30px;
+  border-radius: 1rem;
   width: 100%;
   color: #ffff;
 
@@ -95,12 +98,9 @@ const ImageContainer = styled.div`
     width: 100%;
     max-height: 40rem;
     object-fit: cover;
-    
+
     padding: 0;
-    @media screen  and (min-width: 768px){
-    padding: 0.5rem;  
-      
-    }
+
   }
 `;
 const DescriptionConatiner = styled.div`
@@ -121,7 +121,7 @@ const DescriptionConatiner = styled.div`
 const MoreDetail = styled.div`
   padding: 1rem 1.5rem;
   width: 100%;
-  border-radius: 30px;
+  border-radius: 1rem;
   color: #ffff;
   background: linear-gradient(
     100deg,
@@ -159,7 +159,7 @@ const ContainerButton = styled.div`
 
   button {
     border: 0;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
     border-radius: 5px;
     cursor: pointer;
     background: linear-gradient(
@@ -196,7 +196,7 @@ const ContainerTech = styled.div`
   display: flex;
   flex-direction: column;
 
-  border-radius: 30px;
+  border-radius: 1rem;
   color: #ffff;
   padding: 1.5rem;
   width: 100%;
@@ -233,30 +233,30 @@ const ContImgPro = styled.div`
   }
 `;
 const Pagination = styled.div`
-display: flex;
-justify-content: space-between;
-    padding: 0 1rem;
-`
-const ContainerTechOnce = styled.div` display: flex;
-display: flex;
-flex-wrap: wrap;
-align-items: center;
-justify-content: center;
-gap: 1rem;
-border-radius: 30px;
-color: #ffff;
-padding: 1.5rem;
-width: 100%;
-height: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+`;
+const ContainerTechOnce = styled.div`
+  display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: 1rem;
+  color: #ffff;
+  padding: 1.5rem;
+  width: 100%;
+  height: 100%;
 
-h3 {
-  opacity: 0.5;
-  margin-top: 0;
-  font-weight: 400;
-}
-@media screen and (min-width: 768px) {
-
-}
+  h3 {
+    opacity: 0.5;
+    margin-top: 0;
+    font-weight: 400;
+  }
+  @media screen and (min-width: 768px) {
+  }
 `;
 const ProyectPage = () => {
   const [proyect, setProyect] = useState(null);
@@ -305,9 +305,8 @@ const ProyectPage = () => {
 
   return (
     <>
-     <Header />
+      <Header />
       <Center>
-       
         {!!proyect && (
           <>
             <Intro>
@@ -318,24 +317,28 @@ const ProyectPage = () => {
             </Intro>
             <LandindPageConatiner>
               <ImageContainer>
-                <img src={proyect?.images[0]} alt="image-proyect" />
+                <a
+                  href={proyect?.images[0]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={proyect?.images[0]} alt="image-proyect" />
+                </a>
               </ImageContainer>
               <ContainerSect>
                 <ContainerTech>
-                <h3>Technologies Stack</h3>
-                <ContainerTechOnce>
-                 
-                  
-                  <Technologies>
-                    {technologies.length > 0 &&
-                      technologies.map((technology) => (
-                        <IconsTech key={technology?._id}>
-                          <ImageIconTechContainer>
-                            <img src={technology?.images} />
-                          </ImageIconTechContainer>
-                        </IconsTech>
-                      ))}
-                  </Technologies>
+                  <h3>Technologies Stack</h3>
+                  <ContainerTechOnce>
+                    <Technologies>
+                      {technologies.length > 0 &&
+                        technologies.map((technology) => (
+                          <IconsTech key={technology?._id}>
+                            <ImageIconTechContainer>
+                              <img src={technology?.images} />
+                            </ImageIconTechContainer>
+                          </IconsTech>
+                        ))}
+                    </Technologies>
                   </ContainerTechOnce>
                 </ContainerTech>
                 <AboutInfo>
@@ -343,13 +346,23 @@ const ProyectPage = () => {
                   <p>{proyect.about}</p>
                 </AboutInfo>
               </ContainerSect>
+
               <ImageContainer>
-                <img src={proyect?.images[0]} alt="image-proyect" />
+                <a
+                  href={proyect?.images[1]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={proyect?.images[1]} alt="image-proyect" />
+                </a>
               </ImageContainer>
+
               <ImagesProyectsContainer>
-                {proyect.images.slice(1).map((link) => (
+                {proyect.images.slice(2).map((link) => (
                   <ContImgPro className="" key={link}>
-                    <img src={link} alt="proyect-images" />
+                    <a href={link} target="_blank" rel="noopener noreferrer">
+                      <img src={link} alt="image-proyect" />
+                    </a>
                   </ContImgPro>
                 ))}
               </ImagesProyectsContainer>
@@ -380,16 +393,16 @@ const ProyectPage = () => {
               <ImageContainer>
                 <img src={proyect?.images[0]} alt="image-proyect" />
               </ImageContainer>
-<Pagination>
-              <ContainerButton>
-                <button onClick={handleNextProject}>Back</button>
-              </ContainerButton>
-              <ContainerButton>
-                <button onClick={handlehire}>Hire me</button>
-              </ContainerButton>
-              <ContainerButton>
-                <button onClick={handleNextProject}>Next</button>
-              </ContainerButton>
+              <Pagination>
+                <ContainerButton>
+                  <button onClick={handleNextProject}>Back</button>
+                </ContainerButton>
+                <ContainerButton>
+                  <button onClick={handlehire}>Hire me</button>
+                </ContainerButton>
+                <ContainerButton>
+                  <button onClick={handleNextProject}>Next</button>
+                </ContainerButton>
               </Pagination>
             </LandindPageConatiner>
           </>

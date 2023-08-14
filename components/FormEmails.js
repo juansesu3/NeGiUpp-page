@@ -131,13 +131,13 @@ const FormEmails = ({ swal }) => {
           value={name}
           onChange={(ev) => setName(ev.target.value)}
           type="text"
-          placeholder="Name *"
+          placeholder="Your Name *"
         />
         <input
           value={email}
           onChange={(ev) => setEmail(ev.target.value)}
           type="mail"
-          placeholder="Email *"
+          placeholder="Your Email *"
         />
         <input
           value={subject}
