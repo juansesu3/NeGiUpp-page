@@ -4,6 +4,7 @@ import Link from "next/link";
 import InfiniteScrollAmimation from "./InfiniteScrollAmimation";
 import Button from "./Button";
 import { RevealWrapper } from "next-reveal";
+import Image from "next/image";
 
 const OficialContent = styled.div`
   background-color: #0f0f0f;
@@ -66,10 +67,10 @@ const ImgContainer = styled.div`
   width: 17em;
   height: auto;
   @media screen and (min-width: 768px) {
-    width: 150rem;
+    width: 120rem;
   }
 `;
-const FirstImageInfo = styled.img`
+const FirstImageInfo = styled(Image)`
   width: 100%;
 `;
 
@@ -295,7 +296,14 @@ const Home = () => {
             </SectionInfo>
 
             <ImgContainer>
-              <FirstImageInfo src="https://my-page-negiupp.s3.amazonaws.com/1691999172810.png" />
+              <FirstImageInfo
+                src={
+                  "https://my-page-negiupp.s3.amazonaws.com/1691999172810.png"
+                }
+                alt="Trello logo"
+                width={500}
+                height={100}
+              />
             </ImgContainer>
           </SectionContainer>
         </RevealWrapper>

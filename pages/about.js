@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { styled, keyframes } from "styled-components";
 import moment from "moment";
+import Image from "next/image";
 
 const AboutContainer = styled.div`
   display: flex;
@@ -368,31 +369,63 @@ const AboutPage = () => {
                 <ContainerSec>
                   <TitleMobile>
                     <span>
-                      <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+                      <Image
+                        src={
+                          "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
+                        }
+                        alt="about-image"
+                        width={500}
+                        height={100}
+                      />
                     </span>
                     <h1>Self summary</h1>
                     <span>
-                      <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+                      <Image
+                        src={
+                          "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
+                        }
+                        alt="about-image"
+                        width={500}
+                        height={100}
+                      />
                     </span>
                   </TitleMobile>
                   <ImgCont>
                     <ImageContainer>
-                      <img
-                        src="https://my-page-negiupp.s3.amazonaws.com/1688550234499.jpg"
+                      <Image
+                        src={
+                          "https://my-page-negiupp.s3.amazonaws.com/1688550234499.jpg"
+                        }
                         alt="about-image"
+                        width={500}
+                        height={100}
                       />
                     </ImageContainer>
                   </ImgCont>
                   <AboutCont>
                     <Title>
                       <span>
-                        <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+                        <Image
+                          src={
+                            "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
+                          }
+                          alt="about-image"
+                          width={500}
+                          height={100}
+                        />
                       </span>
 
                       <h1>Self summary</h1>
 
                       <span>
-                        <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+                        <Image
+                          src={
+                            "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
+                          }
+                          alt="about-image"
+                          width={500}
+                          height={100}
+                        />
                       </span>
                     </Title>
 
@@ -467,7 +500,14 @@ const AboutPage = () => {
                   </WorkTogetheContainer>
                   <StartContainer href={"/founders"}>
                     <Credential>
-                      <img src="https://my-page-negiupp.s3.amazonaws.com/1688631092905.png" />
+                      <Image
+                        src={
+                          "https://my-page-negiupp.s3.amazonaws.com/1688631092905.png"
+                        }
+                        alt="about-image"
+                        width={500}
+                        height={100}
+                      />
                     </Credential>
                     <p>more about me</p>
                     <h2>Credentials</h2>
