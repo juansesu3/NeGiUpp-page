@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { styled } from "styled-components";
@@ -19,10 +20,9 @@ const CardContainer = styled.div`
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-@media screen and (min-width: 768px){
-  margin-top: 2rem;
-  
-}
+  @media screen and (min-width: 768px) {
+    margin-top: 2rem;
+  }
 `;
 
 const ImageCOntainer = styled.div`
@@ -105,14 +105,15 @@ const CardCEO = () => {
     <>
       <CardContainer>
         <ImageCOntainer>
-          <img
+          <Image
             src="https://my-page-negiupp.s3.amazonaws.com/1688550234499.jpg"
             alt="founder profile image"
+            width={500}
+            height={500}
           />
         </ImageCOntainer>
         <NameUserContainer>
           <h1>Juan Suarez</h1>
-        
         </NameUserContainer>
         <RrSsConatiner>
           <LinksContainer>
@@ -174,8 +175,10 @@ const CardCEO = () => {
           </LinksContainer>
         </RrSsConatiner>
         <Buttonconatiner>
-         
-            <Link href={'/contact'}> <button>Contact me</button></Link>
+          <Link href={"/contact"}>
+            {" "}
+            <button>Contact me</button>
+          </Link>
         </Buttonconatiner>
       </CardContainer>
     </>

@@ -239,7 +239,7 @@ const FoundersPage = () => {
                       <ContSkil key={skill.skill}>
                         <span>{skill.progress}%</span>
                         <h3>{skill.skill}</h3>
-                        <p>Non enim praeesent</p>
+                        <p>with practice every day better</p>
                       </ContSkil>
                     ))}
                 </ContainerSkills>

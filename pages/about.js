@@ -374,7 +374,7 @@ const AboutPage = () => {
                           "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
                         }
                         alt="about-image"
-                        width={500}
+                        width={100}
                         height={100}
                       />
                     </span>
@@ -385,7 +385,7 @@ const AboutPage = () => {
                           "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
                         }
                         alt="about-image"
-                        width={500}
+                        width={100}
                         height={100}
                       />
                     </span>
@@ -397,7 +397,7 @@ const AboutPage = () => {
                           "https://my-page-negiupp.s3.amazonaws.com/1688550234499.jpg"
                         }
                         alt="about-image"
-                        width={500}
+                        width={800}
                         height={100}
                       />
                     </ImageContainer>
@@ -410,7 +410,7 @@ const AboutPage = () => {
                             "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
                           }
                           alt="about-image"
-                          width={500}
+                          width={100}
                           height={100}
                         />
                       </span>
@@ -423,7 +423,7 @@ const AboutPage = () => {
                             "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
                           }
                           alt="about-image"
-                          width={500}
+                          width={100}
                           height={100}
                         />
                       </span>
