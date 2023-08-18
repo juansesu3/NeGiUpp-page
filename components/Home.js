@@ -10,7 +10,7 @@ const OficialContent = styled.div`
   color: #ffff;
   padding: 2.5rem 0.5rem;
   @media screen and (min-width: 768px) {
-    padding: 3rem 0.5rem;
+    padding: 3rem 0rem;
   }
   display: flex;
   flex-direction: column;
@@ -97,6 +97,21 @@ const SecondSection = styled.section`
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
 `;
+const SecondSectionLink = styled(Link)`
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem;
+  white-space: nowrap;
+  border-radius: 1rem;
+  cursor: pointer;
+  background-color: #121212;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+`;
 
 const SubTitle = styled.h2`
   margin: 0;
@@ -120,7 +135,8 @@ const SecondSectionLevel1 = styled.div`
     flex-direction: row;
   }
 `;
-const SecondSection1 = styled.section`
+const SecondSection1 = styled(Link)`
+  text-decoration: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -288,9 +304,9 @@ const Home = () => {
           <PrincipalContent>
             <SectionsContainer>
               <SecondSectionLevel1>
-                <SecondSection1>
+                <SecondSection1 href={"/howcanihelpyou"}>
                   <SubTitle>
-                    How can I <span>help</span> you?
+                    How can <span>I help you</span>?
                   </SubTitle>
                 </SecondSection1>
                 <SectionNewsFlex>
@@ -303,19 +319,23 @@ const Home = () => {
                 </SectionNewsFlex>
               </SecondSectionLevel1>
               <SecondSectionLevel2>
-                <SecondSection>
+                <SecondSectionLink href={"/negiupp"}>
                   <SubTitle>
-                    Accelerate Transformation: Unlock Your{" "}
-                    <span>Digital Potential</span>
+                    What is <span>NeGiupp</span>?
                   </SubTitle>
-                </SecondSection>
+                </SecondSectionLink>
 
-                <SecondSection>
+                <SecondSectionLink href={"/intoReality"}>
                   <SubTitle>
                     Next steps to transform your <span>idea</span> into a
                     reality
                   </SubTitle>
-                </SecondSection>
+                </SecondSectionLink>
+                <SecondSectionLink href={"/negiupp"}>
+                  <SubTitle>
+                    <span>Technology</span> stack
+                  </SubTitle>
+                </SecondSectionLink>
               </SecondSectionLevel2>
               <SecundaryContent>
                 <SecundaryContentSection1>

@@ -1,3 +1,4 @@
+import Button from "@/components/Button";
 import Center from "@/components/Center";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -8,6 +9,7 @@ import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 
 const Intro = styled.div`
+  margin-top: 3rem;
   p {
     color: #bcbcbc;
     text-transform: uppercase;
@@ -254,6 +256,23 @@ const ContainerTechOnce = styled.div`
   @media screen and (min-width: 768px) {
   }
 `;
+
+const ContainerButtons = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+`;
+const LinkCodDep = styled.a`
+  text-decoration: none;
+  color: white;
+  background-color: #4d61fc;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  &:hover {
+    background-color: #2a42ff;
+  }
+`;
 const ProyectPage = () => {
   const [proyect, setProyect] = useState(null);
   const router = useRouter();
@@ -287,58 +306,56 @@ const ProyectPage = () => {
   const handleNextProject = () => {
     const newIndex = (currentProjectIndex + 1) % proyects.length;
     setCurrentProjectIndex(newIndex);
-  
+
     if (proyects.length > 0) {
       setProyect(proyects[newIndex]);
       if (proyects[newIndex].selectedTech.length > 0) {
         fetchingTech(proyects[newIndex].selectedTech);
       }
     }
-    
+
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-  
+
   const handlePreviousProject = () => {
-    const newIndex = (currentProjectIndex - 1 + proyects.length) % proyects.length;
+    const newIndex =
+      (currentProjectIndex - 1 + proyects.length) % proyects.length;
     setCurrentProjectIndex(newIndex);
-  
+
     if (proyects.length > 0) {
       setProyect(proyects[newIndex]);
       if (proyects[newIndex].selectedTech.length > 0) {
         fetchingTech(proyects[newIndex].selectedTech);
       }
     }
-  
+
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handlehire = () => {
     router.push("/contact");
   };
-
+  console.log(proyect);
   return (
     <>
       <Header />
       <Center>
         {!!proyect && (
           <>
-            <Pagination up={true}>
-              <ContainerButton>
-                <button onClick={handlePreviousProject}>Prev</button>
-              </ContainerButton>
-              <ContainerButton>
-                <button onClick={handlehire}>Hire me</button>
-              </ContainerButton>
-              <ContainerButton>
-                <button onClick={handleNextProject}>Next</button>
-              </ContainerButton>
-            </Pagination>
             <Intro>
               <p>Branding - {proyect.title}</p>
               <h1>
                 AESTHETIC DESIGN FOR <span>{proyect.title}</span> App
               </h1>
             </Intro>
+            <ContainerButtons>
+              <LinkCodDep href={proyect.linkCode} target="_blank">
+                Code
+              </LinkCodDep>
+              <LinkCodDep href={proyect.linkDeploy} target="_blank">
+                Deploy
+              </LinkCodDep>
+            </ContainerButtons>
             <LandindPageConatiner>
               <ImageContainer>
                 <a
