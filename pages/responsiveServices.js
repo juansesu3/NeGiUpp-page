@@ -9,6 +9,12 @@ const ContainerResponsiveServices = styled.div`
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   color: white;
+  h3{
+    color:#4d61fc;
+  }
+  p{
+    opacity: .5;
+  }
 `;
 
 const ResponsiveServicePage = () => {
