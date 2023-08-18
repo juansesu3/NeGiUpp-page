@@ -133,10 +133,15 @@ const NavButton = styled.button`
   color: #f5f5f7;
   padding: 5px 0px;
   cursor: pointer;
+  svg {
+    stroke: ${(props) => (props.isCross ? "#4d61fc" : "currentColor")};
+    transition: stroke 0.3s ease-in-out;
+  }
   @media screen and (min-width: 768px) {
     display: none;
   }
 `;
+
 const LogoMobile = styled.div`
   display: flex;
   align-items: center;
@@ -226,6 +231,13 @@ const Header = ({ route }) => {
   const router = useRouter();
   const { pathname } = router;
 
+  const [isCross, setIsCross] = useState(false);
+
+  const toggleCross = () => {
+    setMobileNavActive((prev) => !prev);
+    setIsCross((prevIsCross) => !prevIsCross);
+  };
+
   return (
     <StyledHeader>
       <WrapperFull route={route} isVisible={scrollDirection === "up"}>
@@ -237,6 +249,22 @@ const Header = ({ route }) => {
             />
           </LogoLink>
           <StyledNav route={route} mobileNavActive={mobileNavActive}>
+            <NavButton route={route} onClick={toggleCross} isCross={isCross}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                {isCross ? (
+                  <path d="M4.75 4.75l14.5 14.5M4.75 19.25l14.5-14.5" />
+                ) : (
+                  <path d="M3.75 9h16.5m-16.5 6.75h16.5" />
+                )}
+              </svg>
+            </NavButton>
             <NavLink
               route={route}
               active={pathname === "/" ? true : false}
@@ -275,11 +303,21 @@ const Header = ({ route }) => {
             </NavLink>
           </StyledNav>
           <LetsTalk href={"/contact"}> Let&apos;s talk</LetsTalk>
-          <NavButton
-            route={route}
-            onClick={() => setMobileNavActive((prev) => !prev)}
-          >
-            <Bars />
+          <NavButton route={route} onClick={toggleCross} isCross={isCross}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              {isCross ? (
+                <path d="M4.75 4.75l14.5 14.5M4.75 19.25l14.5-14.5" />
+              ) : (
+                <path d="M3.75 9h16.5m-16.5 6.75h16.5" />
+              )}
+            </svg>
           </NavButton>
           <LogoMobile>negiupp.com</LogoMobile>
         </WrapperMax>
