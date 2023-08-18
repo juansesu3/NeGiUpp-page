@@ -3,6 +3,7 @@ import Center from "@/components/Center";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import axios from "axios";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -363,7 +364,12 @@ const ProyectPage = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={proyect?.images[0]} alt="image-proyect" />
+                  <Image
+                    src={proyect?.images[0]}
+                    alt="image-proyect"
+                    width={1500}
+                    height={500}
+                  />
                 </a>
               </ImageContainer>
               <ContainerSect>
@@ -394,7 +400,12 @@ const ProyectPage = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={proyect?.images[1]} alt="image-proyect" />
+                  <Image
+                    src={proyect?.images[1]}
+                    alt="image-proyect"
+                    width={1500}
+                    height={500}
+                  />
                 </a>
               </ImageContainer>
 
@@ -402,7 +413,12 @@ const ProyectPage = () => {
                 {proyect.images.slice(2).map((link) => (
                   <ContImgPro className="" key={link}>
                     <a href={link} target="_blank" rel="noopener noreferrer">
-                      <img src={link} alt="image-proyect" />
+                      <Image
+                        src={link}
+                        alt="image-proyect"
+                        width={1500}
+                        height={500}
+                      />
                     </a>
                   </ContImgPro>
                 ))}
@@ -432,7 +448,12 @@ const ProyectPage = () => {
                 </DescriptionConatiner>
               </ContainerSect>
               <ImageContainer>
-                <img src={proyect?.images[0]} alt="image-proyect" />
+                <Image
+                  src={proyect?.images[0]}
+                  alt="image-proyect"
+                  width={1500}
+                  height={500}
+                />
               </ImageContainer>
               <Pagination>
                 <ContainerButton>

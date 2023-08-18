@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 
 import axios from "axios";
 import { RevealWrapper } from "next-reveal";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { styled } from "styled-components";
@@ -12,7 +13,7 @@ const ContainerAllProyects = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 3rem .5rem;
+  padding: 3rem 0.5rem;
   @media screen and (min-width: 768px) {
     flex-direction: row;
   }
@@ -59,8 +60,8 @@ const ContainerPro = styled.div`
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-    @media screen and (min-width: 768px) {
-      width: 19rem;
+  @media screen and (min-width: 768px) {
+    width: 19rem;
   }
 `;
 
@@ -143,55 +144,45 @@ const ProyectsPage = () => {
 
   return (
     <>
-     <Header />
-    <Center>
-     
-      <ContainerAllProyects>
-        <TitleBoxMobile>
-          <span>
-            <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
-          </span>
-          <h1>All Proyects</h1>{" "}
-          <span>
-            <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
-          </span>
-        </TitleBoxMobile>
-        <FirstProyectsContainer>
-          {FirstProyects.length > 0 &&
-            FirstProyects.map((proyect, index) => (
-              <RevealWrapper key={proyect._id} delay={index * 50}>
-                <ContainerPro>
-                  <ContainerProyectL href={"/proyect/" + proyect._id}>
-                    <ImageContainer>
-                      <img src={proyect.images[0]} />
-                    </ImageContainer>
-                    <div>
-                      <h1>{proyect.title}</h1>
-                    </div>
-                  </ContainerProyectL>
-                </ContainerPro>
-              </RevealWrapper>
-            ))}
-        </FirstProyectsContainer>
-        <SeconConatiner>
-          <TitleBox>
+      <Header />
+      <Center>
+        <ContainerAllProyects>
+          <TitleBoxMobile>
             <span>
-              <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+              <Image
+                src={
+                  "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
+                }
+                alt="Trello logo"
+                width={40}
+                height={40}
+              />
             </span>
             <h1>All Proyects</h1>{" "}
             <span>
-              <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+              <Image
+                src={
+                  "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
+                }
+                alt="Trello logo"
+                width={40}
+                height={40}
+              />
             </span>
-          </TitleBox>
-
-          <SecondProyectsContainer>
-            {SecondProyects.length > 0 &&
-              SecondProyects.map((proyect, index) => (
+          </TitleBoxMobile>
+          <FirstProyectsContainer>
+            {FirstProyects.length > 0 &&
+              FirstProyects.map((proyect, index) => (
                 <RevealWrapper key={proyect._id} delay={index * 50}>
                   <ContainerPro>
                     <ContainerProyectL href={"/proyect/" + proyect._id}>
                       <ImageContainer>
-                        <img src={proyect.images[0]} />
+                        <Image
+                          src={proyect.images[0]}
+                          alt="Trello logo"
+                          width={500}
+                          height={40}
+                        />
                       </ImageContainer>
                       <div>
                         <h1>{proyect.title}</h1>
@@ -200,12 +191,59 @@ const ProyectsPage = () => {
                   </ContainerPro>
                 </RevealWrapper>
               ))}
-          </SecondProyectsContainer>
-        </SeconConatiner>
-      </ContainerAllProyects>
+          </FirstProyectsContainer>
+          <SeconConatiner>
+            <TitleBox>
+              <span>
+                <Image
+                  src={
+                    "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
+                  }
+                  alt="Trello logo"
+                  width={40}
+                  height={40}
+                />
+              </span>
+              <h1>All Proyects</h1>{" "}
+              <span>
+                <Image
+                  src={
+                    "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
+                  }
+                  alt="Trello logo"
+                  width={40}
+                  height={40}
+                />
+              </span>
+            </TitleBox>
 
-      <Footer />
-    </Center>
+            <SecondProyectsContainer>
+              {SecondProyects.length > 0 &&
+                SecondProyects.map((proyect, index) => (
+                  <RevealWrapper key={proyect._id} delay={index * 50}>
+                    <ContainerPro>
+                      <ContainerProyectL href={"/proyect/" + proyect._id}>
+                        <ImageContainer>
+                          <Image
+                            src={proyect.images[0]}
+                            alt="Trello logo"
+                            width={500}
+                            height={40}
+                          />
+                        </ImageContainer>
+                        <div>
+                          <h1>{proyect.title}</h1>
+                        </div>
+                      </ContainerProyectL>
+                    </ContainerPro>
+                  </RevealWrapper>
+                ))}
+            </SecondProyectsContainer>
+          </SeconConatiner>
+        </ContainerAllProyects>
+
+        <Footer />
+      </Center>
     </>
   );
 };
