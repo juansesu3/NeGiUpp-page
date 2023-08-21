@@ -75,20 +75,18 @@ const StyledForm = styled.form`
   gap: 0.5rem;
   border-radius: 0.375rem;
   background-color: transparent;
-  p{
-   text-align: center;
+  p {
+    text-align: center;
     color: white;
-    opacity: .5;
-    margin:0;
-   
-    
+    opacity: 0.5;
+    margin: 0;
   }
-  span{
-      color: #4d61fc;
-      font-weight: 700;
-      opacity: 1;
-      text-align: center;
-    }
+  span {
+    color: #4d61fc;
+    font-weight: 700;
+    opacity: 1;
+    text-align: center;
+  }
 `;
 
 const StyledLoadingContainer = styled.div`
@@ -153,15 +151,14 @@ const StyledButtonn = styled.button`
   }
 `;
 const AIContainer = styled.div`
-display: flex;
-flex-direction: column;
-h1{
-  margin: 0;
-  color: white;
-  font-size: 20px;
- 
-}
-`
+  display: flex;
+  flex-direction: column;
+  h1 {
+    margin: 0;
+    color: white;
+    font-size: 20px;
+  }
+`;
 const Suggestion = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
@@ -189,7 +186,6 @@ const Suggestion = () => {
       message: `${inputValue} `,
     };
 
-   
     setChatLog((prevChatLog) => [
       ...prevChatLog,
       { type: "user", message: OutPrompt.message },
@@ -214,24 +210,28 @@ const Suggestion = () => {
       messages: [
         {
           role: "system",
-          content: `Respond the user as my Guesst and say "I'm here to help you!" 
-            Your behavior will be a responsible, 
+          content: `
+          -Respond the user "My name is Juli, the juan's assitent and I'm here to help you get to know Juan better!" 
+          -You are the Juan's assistant. 
+          
+          -Your behavior will be a: responsible, 
             attentive, nice  assistent woman.
             Always you help the user to hire me.
             Limit the response to 200 caracters `,
         },
         {
           role: "user",
-          content: `Hi there, provide of the following data:
+          content: `Hi there, provide of the following Professional profile data from Juan:
         proyects:{${JSON.stringify(proyects)}},
         juan profile:{${JSON.stringify(profile)}},
-        tell the user about my skills and wyh i'm the best candidate for the job .
+        -Tell the user Juan is the best candidate for the job.
 
          
           ${inputValue}`,
         },
       ],
     };
+
     setIsLoading(true);
     axios
       .post(url, data, { headers: headers })
@@ -267,16 +267,21 @@ const Suggestion = () => {
         </StyledChatContainer>
 
         <StyledForm>
-        <p>Juli is here I am Juan&apos;s assistant. </p>
+          <p>Juli is here I am Juan&apos;s assistant. </p>
           <StyledLoadingContainer>
-              <MyThreeComponent
-                containerWidth={60}
-                containerHeight={60}
-                isLoading={isLoading}
-              />
-           
+            <MyThreeComponent
+              containerWidth={60}
+              containerHeight={60}
+              isLoading={isLoading}
+            />
           </StyledLoadingContainer>
-          <div style={{ display: "flex", justifyContent: "space-between", gap:".25rem" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              gap: ".25rem",
+            }}
+          >
             <StyledInput
               type="text"
               placeholder="How can I help you?"
@@ -320,11 +325,11 @@ const Suggestion = () => {
             />
           </svg>
         ) : (
-          <AIContainer> 
-          <MyThreeComponent
-            containerWidth={containerWidth}
-            containerHeight={containerHeight}
-          />
+          <AIContainer>
+            <MyThreeComponent
+              containerWidth={containerWidth}
+              containerHeight={containerHeight}
+            />
           </AIContainer>
         )}
       </StyledButtonn>
