@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Bars from "./icons/Bars";
 import { useEffect, useState, useRef } from "react";
 import DowloadIcon from "./icons/DowloadIcon";
+import Image from "next/image";
 
 const StyledHeader = styled.header`
   background-color: ${(props) => (props.isVisible ? "#181819" : "transparent")};
@@ -19,16 +20,17 @@ const LogoLink = styled(Link)`
   display: none;
   align-items: center;
   width: 50px;
+  img {
+    width: 100%;
+    position: relative;
+    z-index: 20;
+  }
   @media screen and (min-width: 768px) {
     display: flex;
   }
 `;
 
-const Logo = styled.img`
-  width: 100%;
-  position: relative;
-  z-index: 20;
-`;
+const Logo = styled.img``;
 
 const WrapperFull = styled.div`
   background-color: ${(props) => (props.isVisible ? "#1d1d1f" : "transparent")};
@@ -243,9 +245,11 @@ const Header = ({ route }) => {
       <WrapperFull route={route} isVisible={scrollDirection === "up"}>
         <WrapperMax>
           <LogoLink route={route} href={"/"}>
-            <Logo
+            <Image
               src="https://my-page-negiupp.s3.amazonaws.com/1690838289355.png"
               alt="logo-image"
+              width={100}
+              height={100}
             />
           </LogoLink>
           <StyledNav route={route} mobileNavActive={mobileNavActive}>

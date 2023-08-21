@@ -210,10 +210,8 @@ const Suggestion = () => {
       messages: [
         {
           role: "system",
-          content: `
-          -Respond the user "My name is Juli, the juan's assitent and I'm here to help you get to know Juan better!" 
-          -You are the Juan's assistant. 
-          
+          content: `You are Juli, the Juan's assitent!
+          -Respond the user "I'm here to help you get to know Juan better!" 
           -Your behavior will be a: responsible, 
             attentive, nice  assistent woman.
             Always you help the user to hire me.
@@ -225,8 +223,6 @@ const Suggestion = () => {
         proyects:{${JSON.stringify(proyects)}},
         juan profile:{${JSON.stringify(profile)}},
         -Tell the user Juan is the best candidate for the job.
-
-         
           ${inputValue}`,
         },
       ],
@@ -267,7 +263,11 @@ const Suggestion = () => {
         </StyledChatContainer>
 
         <StyledForm>
-          <p>Juli is here I am Juan&apos;s assistant. </p>
+          <p>
+            {isLoading
+              ? "I'm thinking..."
+              : "Juli is here I am Juan's AI assistant."}
+          </p>
           <StyledLoadingContainer>
             <MyThreeComponent
               containerWidth={60}

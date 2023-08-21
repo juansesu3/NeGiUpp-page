@@ -268,7 +268,7 @@ const Home = () => {
   return (
     <Center>
       <OficialContent>
-        <RevealWrapper origin={"left"}>
+        <RevealWrapper rotate={{x:  12,y:40,z:0}} origin='left' delay={200} duration={1000} distance='500px' reset={true} viewOffset={{top:  25,  right:0,  bottom:  10,  left:5}}>
           <SectionContainer>
             <SectionInfo>
               <Title>
@@ -308,7 +308,7 @@ const Home = () => {
           </SectionContainer>
         </RevealWrapper>
 
-        <RevealWrapper>
+        <RevealWrapper rotate={{x:  12,y:40,z:0}} origin='rigth' delay={200} duration={1000} distance='500px' reset={true} viewOffset={{top:  25,  right:0,  bottom:  10,  left:5}}>
           <PrincipalContent>
             <SectionsContainer>
               <SecondSectionLevel1>

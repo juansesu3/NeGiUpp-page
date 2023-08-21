@@ -365,7 +365,7 @@ const AboutPage = () => {
           profile.map((prof) => (
             <AboutContainer key={prof._id}>
               {/*First section */}
-              <RevealWrapper delay={100}>
+              <RevealWrapper delay={500}>
                 <ContainerSec>
                   <TitleMobile>
                     <span>
@@ -439,7 +439,7 @@ const AboutPage = () => {
                 </ContainerSec>
               </RevealWrapper>
               {/*Second section */}
-              <RevealWrapper delay={10}>
+              <RevealWrapper delay={500}>
                 <ContainerSec>
                   <InfoCultureHitosContainer>
                     <h2>Experiences</h2>
