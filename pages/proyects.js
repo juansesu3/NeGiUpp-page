@@ -1,6 +1,7 @@
 import Center from "@/components/Center";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Layout from "@/components/Layout";
 
 import axios from "axios";
 import { RevealWrapper } from "next-reveal";
@@ -143,11 +144,51 @@ const ProyectsPage = () => {
   const SecondProyects = proyects.slice(2);
 
   return (
-    <>
-      <Header />
-      <Center>
-        <ContainerAllProyects>
-          <TitleBoxMobile>
+    <Layout>
+      <ContainerAllProyects>
+        <TitleBoxMobile>
+          <span>
+            <Image
+              src={"https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"}
+              alt="Trello logo"
+              width={40}
+              height={40}
+            />
+          </span>
+          <h1>All Proyects</h1>{" "}
+          <span>
+            <Image
+              src={"https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"}
+              alt="Trello logo"
+              width={40}
+              height={40}
+            />
+          </span>
+        </TitleBoxMobile>
+        <FirstProyectsContainer>
+          {FirstProyects.length > 0 &&
+            FirstProyects.map((proyect, index) => (
+              <RevealWrapper key={proyect._id} delay={index * 50}>
+                <ContainerPro>
+                  <ContainerProyectL href={"/proyect/" + proyect._id}>
+                    <ImageContainer>
+                      <Image
+                        src={proyect.images[0]}
+                        alt="Trello logo"
+                        width={500}
+                        height={40}
+                      />
+                    </ImageContainer>
+                    <div>
+                      <h1>{proyect.title}</h1>
+                    </div>
+                  </ContainerProyectL>
+                </ContainerPro>
+              </RevealWrapper>
+            ))}
+        </FirstProyectsContainer>
+        <SeconConatiner>
+          <TitleBox>
             <span>
               <Image
                 src={
@@ -169,10 +210,11 @@ const ProyectsPage = () => {
                 height={40}
               />
             </span>
-          </TitleBoxMobile>
-          <FirstProyectsContainer>
-            {FirstProyects.length > 0 &&
-              FirstProyects.map((proyect, index) => (
+          </TitleBox>
+
+          <SecondProyectsContainer>
+            {SecondProyects.length > 0 &&
+              SecondProyects.map((proyect, index) => (
                 <RevealWrapper key={proyect._id} delay={index * 50}>
                   <ContainerPro>
                     <ContainerProyectL href={"/proyect/" + proyect._id}>
@@ -191,60 +233,10 @@ const ProyectsPage = () => {
                   </ContainerPro>
                 </RevealWrapper>
               ))}
-          </FirstProyectsContainer>
-          <SeconConatiner>
-            <TitleBox>
-              <span>
-                <Image
-                  src={
-                    "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
-                  }
-                  alt="Trello logo"
-                  width={40}
-                  height={40}
-                />
-              </span>
-              <h1>All Proyects</h1>{" "}
-              <span>
-                <Image
-                  src={
-                    "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
-                  }
-                  alt="Trello logo"
-                  width={40}
-                  height={40}
-                />
-              </span>
-            </TitleBox>
-
-            <SecondProyectsContainer>
-              {SecondProyects.length > 0 &&
-                SecondProyects.map((proyect, index) => (
-                  <RevealWrapper key={proyect._id} delay={index * 50}>
-                    <ContainerPro>
-                      <ContainerProyectL href={"/proyect/" + proyect._id}>
-                        <ImageContainer>
-                          <Image
-                            src={proyect.images[0]}
-                            alt="Trello logo"
-                            width={500}
-                            height={40}
-                          />
-                        </ImageContainer>
-                        <div>
-                          <h1>{proyect.title}</h1>
-                        </div>
-                      </ContainerProyectL>
-                    </ContainerPro>
-                  </RevealWrapper>
-                ))}
-            </SecondProyectsContainer>
-          </SeconConatiner>
-        </ContainerAllProyects>
-
-        <Footer />
-      </Center>
-    </>
+          </SecondProyectsContainer>
+        </SeconConatiner>
+      </ContainerAllProyects>
+    </Layout>
   );
 };
 

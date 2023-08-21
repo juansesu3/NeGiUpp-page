@@ -2,6 +2,7 @@ import Button from "@/components/Button";
 import Center from "@/components/Center";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Layout from "@/components/Layout";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
@@ -338,9 +339,7 @@ const ProyectPage = () => {
   };
   console.log(proyect);
   return (
-    <>
-      <Header />
-      <Center>
+  <Layout>
         {!!proyect && (
           <>
             <Intro>
@@ -469,9 +468,7 @@ const ProyectPage = () => {
             </LandindPageConatiner>
           </>
         )}
-        <Footer />
-      </Center>
-    </>
+ </Layout>
   );
 };
 

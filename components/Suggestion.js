@@ -3,20 +3,193 @@ import React, { useEffect, useState } from "react";
 import MyThreeComponent from "./MyThreeComponent";
 import { css, keyframes, styled } from "styled-components";
 
+const PrincipalContainer = styled.div`
+  position: relative;
+`;
+
+const FormConatiner = styled.div`
+  position: fixed;
+  bottom: 30px;
+  right: 10px;
+  width: 16rem;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  background-color: #1d1d1f;
+  margin-bottom: 20px;
+  opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
+  transform: translateY(${({ isOpen }) => (isOpen ? "0" : "100%")});
+  transition: opacity 0.3s ease, transform 0.3s ease;
+`;
+
+const StyledChatContainer = styled.div`
+  max-height: 20rem;
+  overflow-y: auto;
+`;
+
+const StyledMessageContainer = styled.div`
+  ${({ messageType }) =>
+    messageType === "user"
+      ? css`
+          text-align: end;
+          color: white;
+
+          & + & {
+            margin-top: 0.5rem;
+          }
+
+          .message {
+            background-color: #4d61fc;
+            color: white;
+            text-align: right;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+          }
+        `
+      : css`
+          text-align: start;
+          color: #4d61fc;
+
+          & + & {
+            margin-top: 1rem;
+          }
+
+          .message {
+            background-color: white;
+            color: #4d61fc;
+            text-align: left;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+          }
+        `}
+`;
+
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 0.375rem;
+  background-color: transparent;
+  p{
+   text-align: center;
+    color: white;
+    opacity: .5;
+    margin:0;
+   
+    
+  }
+  span{
+      color: #4d61fc;
+      font-weight: 700;
+      opacity: 1;
+      text-align: center;
+    }
+`;
+
+const StyledLoadingContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+`;
+
+const StyledInput = styled.input`
+  margin: 0;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border: none;
+`;
+
+const StyledButton = styled.button`
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #4d61fc;
+  color: white;
+  border: none;
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+`;
+const rotateAnimation = keyframes`
+from {
+transform: rotate(0deg);
+}
+to {
+transform: rotate(90deg);
+}
+`;
+
+const StyledButtonn = styled.button`
+  position: fixed;
+  bottom: ${(props) => (props.isOpen ? ".5rem" : "2.5rem")};
+  right: ${(props) => (props.isOpen ? ".5rem" : "2.5rem")};
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: #00bfff;
+  cursor: pointer;
+  border: none;
+
+  ${({ isOpen }) =>
+    isOpen &&
+    css`
+      animation: ${rotateAnimation} 0.3s ease;
+    `}
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+    color: white;
+  }
+`;
+const AIContainer = styled.div`
+display: flex;
+flex-direction: column;
+h1{
+  margin: 0;
+  color: white;
+  font-size: 20px;
+ 
+}
+`
 const Suggestion = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [chatLog, setChatLog] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [proyects, setProyects] = useState([]);
+  const [profile, setProfile] = useState({});
+  const [technologies, setTecnologies] = useState([]);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    axios.get("/api/proyects").then((response) => {
+      setProyects(response.data);
+    });
+    axios.get("/api/profile").then((response) => {
+      setProfile(response.data);
+    });
+    axios.get("/api/technologies").then((response) => {
+      setTecnologies(response.data);
+    });
+  }, []);
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     const OutPrompt = {
       message: `${inputValue} `,
     };
 
-    e.preventDefault();
+   
     setChatLog((prevChatLog) => [
       ...prevChatLog,
       { type: "user", message: OutPrompt.message },
@@ -50,8 +223,8 @@ const Suggestion = () => {
         {
           role: "user",
           content: `Hi there, provide of the following data:
-          {${JSON.stringify("")}},
-        {${JSON.stringify("")}}, 
+        proyects:{${JSON.stringify(proyects)}},
+        juan profile:{${JSON.stringify(profile)}},
         tell the user about my skills and wyh i'm the best candidate for the job .
 
          
@@ -79,138 +252,6 @@ const Suggestion = () => {
   const containerWidth = 80; // Define el ancho del contenedor según tus necesidades
   const containerHeight = 80; // Define la altura del contenedor según tus necesidades
 
-  const PrincipalContainer = styled.div`
-    position: relative;
-  `;
-
-  const FormConatiner = styled.div`
-    position: fixed;
-    bottom: 30px;
-    right: 10px;
-    width: 16rem;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 1rem;
-    border-radius: 0.375rem;
-    background-color: #1d1d1f;
-    margin-bottom: 20px;
-    opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
-    transform: translateY(${({ isOpen }) => (isOpen ? "0" : "100%")});
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  `;
-
-  const StyledChatContainer = styled.div`
-    max-height: 20rem;
-    overflow-y: auto;
-  `;
-
-  const StyledMessageContainer = styled.div`
-    ${({ messageType }) =>
-      messageType === "user"
-        ? css`
-            text-align: end;
-            color: white;
-
-            & + & {
-              margin-top: 0.5rem;
-            }
-
-            .message {
-              background-color: #4d61fc;
-              color: white;
-              text-align: right;
-              padding: 0.5rem 1rem;
-              border-radius: 0.375rem;
-              box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-            }
-          `
-        : css`
-            text-align: start;
-            color: #4d61fc;
-
-            & + & {
-              margin-top: 1rem;
-            }
-
-            .message {
-              background-color: white;
-              color: #4d61fc;
-              text-align: left;
-              padding: 1rem;
-              border-radius: 0.375rem;
-              box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-            }
-          `}
-  `;
-
-  const StyledForm = styled.form`
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    border-radius: 0.375rem;
-    background-color: transparent;
-  `;
-
-  const StyledLoadingContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-  `;
-
-  const StyledInput = styled.input`
-    margin: 0;
-    padding: 0.25rem 0.5rem;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  `;
-
-  const StyledButton = styled.button`
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #4d61fc;
-    color: white;
-
-    svg {
-      width: 1rem;
-      height: 1rem;
-    }
-  `;
-  const rotateAnimation = keyframes`
-from {
-  transform: rotate(0deg);
-}
-to {
-  transform: rotate(90deg);
-}
-`;
-
-  const StyledButtonn = styled.button`
-    position: fixed;
-    bottom: ${(props) => (props.isOpen ? ".5rem" : "2.5rem")};
-    right: ${(props) => (props.isOpen ? ".5rem" : "2.5rem")};
-    width: 2.5rem;
-    height: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    background-color: #00bfff;
-    cursor: pointer;
-
-    ${({ isOpen }) =>
-      isOpen &&
-      css`
-        animation: ${rotateAnimation} 0.3s ease;
-      `}
-
-    svg {
-      width: 1rem;
-      height: 1rem;
-      color: white;
-    }
-  `;
-
   return (
     <PrincipalContainer>
       <FormConatiner isOpen={isOpen}>
@@ -226,16 +267,16 @@ to {
         </StyledChatContainer>
 
         <StyledForm>
+        <p>Juli is here I am Juan&apos;s assistant. </p>
           <StyledLoadingContainer>
-            <div>
               <MyThreeComponent
                 containerWidth={60}
                 containerHeight={60}
                 isLoading={isLoading}
               />
-            </div>
+           
           </StyledLoadingContainer>
-          <div style={{ display: "flex", gap: "0.25rem" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", gap:".25rem" }}>
             <StyledInput
               type="text"
               placeholder="How can I help you?"
@@ -279,10 +320,12 @@ to {
             />
           </svg>
         ) : (
+          <AIContainer> 
           <MyThreeComponent
             containerWidth={containerWidth}
             containerHeight={containerHeight}
           />
+          </AIContainer>
         )}
       </StyledButtonn>
     </PrincipalContainer>

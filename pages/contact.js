@@ -2,6 +2,7 @@ import Center from "@/components/Center";
 import Footer from "@/components/Footer";
 import FormEmails from "@/components/FormEmails";
 import Header from "@/components/Header";
+import Layout from "@/components/Layout";
 import { RevealWrapper } from "next-reveal";
 import Link from "next/link";
 import React from "react";
@@ -140,9 +141,7 @@ const ContacPage = () => {
     window.open(url, "_blank");
   };
   return (
-    <>
-     <Header />
-      <Center>
+<Layout>
        
 
         <Container>
@@ -314,10 +313,7 @@ const ContacPage = () => {
           </RevealWrapper>
         </Container>
 
-      
-      </Center>
-      <Footer />
-    </>
+        </Layout>
   );
 };
 
