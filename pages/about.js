@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { styled, keyframes } from "styled-components";
 import moment from "moment";
 import Image from "next/image";
+import Layout from "@/components/Layout";
 
 const AboutContainer = styled.div`
   display: flex;
@@ -359,8 +360,7 @@ const AboutPage = () => {
 
   return (
     <>
-      <Header />
-      <Center>
+      <Layout>
         {profile.length > 0 &&
           profile.map((prof) => (
             <AboutContainer key={prof._id}>
@@ -517,8 +517,7 @@ const AboutPage = () => {
               {/*Third section */}
             </AboutContainer>
           ))}
-      </Center>
-      <Footer />
+      </Layout>
     </>
   );
 };

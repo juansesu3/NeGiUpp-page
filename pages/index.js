@@ -1,19 +1,15 @@
-import Center from "@/components/Center";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import Home from "@/components/Home";
+import Layout from "@/components/Layout";
+
 import { mongooseConnect } from "@/lib/mongoose";
 import { Article } from "@/models/Article";
 
 const HomePage = ({ latestArticles }) => {
   return (
     <>
-    <Header />
-      <Center>
+      <Layout>
         <Home latestArticles={latestArticles} />
-        
-      </Center>
-      <Footer />
+      </Layout>
     </>
   );
 };
