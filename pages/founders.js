@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import moment from "moment";
 import Link from "next/link";
+import { RevealWrapper } from "next-reveal";
 
 const ContainerFounders = styled.div`
   display: flex;
@@ -14,13 +15,13 @@ const ContainerFounders = styled.div`
   justify-content: center;
   gap: 1.5rem;
   color: white;
-  
-  padding: 4.5rem 1rem 0rem 1rem ;
+
+  padding: 4.5rem 1rem 0rem 1rem;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
     height: 41rem;
-    padding: 4.5rem 1rem 0rem 1rem ;
+    padding: 4.5rem 1rem 0rem 1rem;
   }
 `;
 const AboutMe = styled.div`
@@ -77,9 +78,8 @@ const ContainerExpEdu = styled.div`
     opacity: 0.6;
     font-weight: 400;
     font-size: 0.95rem;
-    margin-top: .5rem;
-    margin-bottom: .8rem;
-     
+    margin-top: 0.5rem;
+    margin-bottom: 0.8rem;
   }
   p {
     margin: 0;
@@ -153,100 +153,108 @@ const FoundersPage = () => {
     <>
       <Header />
       <Center>
-      
         {profile.length > 0 &&
           profile.map((pro) => (
-            <ContainerFounders key={pro._id}>
-              <CardCEO />
+            <RevealWrapper key={pro._id} delay={200} duration={1000}>
+              <ContainerFounders >
+               
+                <CardCEO />
 
-              <AboutMe>
-                <h2>About me</h2>
-                <div>
-                  <p>{pro.introYourSelf.split("tools.").shift() + " tools."}</p>
-                  <p>{`${(
-                    pro.introYourSelf.split("databases.").shift() +
-                    " databases."
-                  )
-                    .split("tools.")
-                    .pop()}`}</p>
-                  <p>
-                    {pro.introYourSelf
-                      .split("databases.")
-                      .pop()
-                      .split("code.")
-                      .shift() + " code."}
-                  </p>
-                  <p>{pro.introYourSelf.split("code.").pop()}</p>
-                </div>
-                <ContainerLenguages>
-                  <h2>Language</h2>
-                  {pro.languages.length > 0 &&
-                    pro.languages.map((lang) => (
-                      <ContainerLanguge key={lang}>
-                        <h3>
-                          {lang.language.replace(/^\w/, (c) => c.toUpperCase())}
-                        </h3>
-                        <p>Level - {lang.levelLang}</p>
-                      </ContainerLanguge>
-                    ))}
-                </ContainerLenguages>
-                <ContainerExpEdu>
-                  <h2>Experiences</h2>
-                  {pro.experinces.length > 0 &&
-                    pro.experinces.map((exp) => (
-                      <Cont key={exp.startDateExp}>
-                        <h4>
-                          {`${moment(exp.startDateExp)
-                            .utc()
-                            .format("MM/DD/YYYY")} - 
+                <AboutMe>
+                  <h2>About me</h2>
+                  <div>
+                    <p>
+                      {pro.introYourSelf.split("tools.").shift() + " tools."}
+                    </p>
+                    <p>{`${(
+                      pro.introYourSelf.split("databases.").shift() +
+                      " databases."
+                    )
+                      .split("tools.")
+                      .pop()}`}</p>
+                    <p>
+                      {pro.introYourSelf
+                        .split("databases.")
+                        .pop()
+                        .split("code.")
+                        .shift() + " code."}
+                    </p>
+                    <p>{pro.introYourSelf.split("code.").pop()}</p>
+                  </div>
+                  <ContainerLenguages>
+                    <h2>Language</h2>
+                    {pro.languages.length > 0 &&
+                      pro.languages.map((lang) => (
+                        <ContainerLanguge key={lang}>
+                          <h3>
+                            {lang.language.replace(/^\w/, (c) =>
+                              c.toUpperCase()
+                            )}
+                          </h3>
+                          <p>Level - {lang.levelLang}</p>
+                        </ContainerLanguge>
+                      ))}
+                  </ContainerLenguages>
+                  <ContainerExpEdu>
+                    <h2>Experiences</h2>
+                    {pro.experinces.length > 0 &&
+                      pro.experinces.map((exp) => (
+                        <Cont key={exp.startDateExp}>
+                          <h4>
+                            {`${moment(exp.startDateExp)
+                              .utc()
+                              .format("MM/DD/YYYY")} - 
                         
                               ${moment(exp.endDateExp)
                                 .utc()
                                 .format("MM/DD/YYYY")}`}
-                        </h4>
+                          </h4>
 
-                        <h3>{exp.position}</h3>
-                        <h5>{exp.company}</h5>
-                        <p>{exp.roldescription}</p>
-                      </Cont>
-                    ))}
-                </ContainerExpEdu>
+                          <h3>{exp.position}</h3>
+                          <h5>{exp.company}</h5>
+                          <p>{exp.roldescription}</p>
+                        </Cont>
+                      ))}
+                  </ContainerExpEdu>
 
-                <ContainerExpEdu>
-                  <h2>Education</h2>
-                  {pro.education.length > 0 &&
-                    pro.education.map((edu) => (
-                      <Cont key={edu.gotDate}>
-                        <h4>
-                          {`${moment(edu.gotDate).utc().format("MM/DD/YYYY")}`}
-                        </h4>
-                        <Link href={"/"}>
-                          {" "}
-                          <h3>{edu.certificationName} </h3>
-                        </Link>
-                        <Link href={"/"}>
-                          {" "}
-                          <h5>{edu.institutionName}</h5>
-                        </Link>
-                      </Cont>
-                    ))}
-                </ContainerExpEdu>
+                  <ContainerExpEdu>
+                    <h2>Education</h2>
+                    {pro.education.length > 0 &&
+                      pro.education.map((edu) => (
+                        <Cont key={edu.gotDate}>
+                          <h4>
+                            {`${moment(edu.gotDate)
+                              .utc()
+                              .format("MM/DD/YYYY")}`}
+                          </h4>
+                          <Link href={"/"}>
+                            {" "}
+                            <h3>{edu.certificationName} </h3>
+                          </Link>
+                          <Link href={"/"}>
+                            {" "}
+                            <h5>{edu.institutionName}</h5>
+                          </Link>
+                        </Cont>
+                      ))}
+                  </ContainerExpEdu>
 
-                <h2>Skills</h2>
-                <ContainerSkills>
-                  {pro.skills.length > 0 &&
-                    pro.skills.map((skill) => (
-                      <ContSkil key={skill.skill}>
-                        <span>{skill.progress}%</span>
-                        <h3>{skill.skill}</h3>
-                        <p>with practice every day better</p>
-                      </ContSkil>
-                    ))}
-                </ContainerSkills>
-              </AboutMe>
-            </ContainerFounders>
+                  <h2>Skills</h2>
+                  <ContainerSkills>
+                    {pro.skills.length > 0 &&
+                      pro.skills.map((skill) => (
+                        <ContSkil key={skill.skill}>
+                          <span>{skill.progress}%</span>
+                          <h3>{skill.skill}</h3>
+                          <p>with practice every day better</p>
+                        </ContSkil>
+                      ))}
+                  </ContainerSkills>
+                </AboutMe>
+                
+              </ContainerFounders>
+              </RevealWrapper>
           ))}
-        
       </Center>
       <Footer />
     </>

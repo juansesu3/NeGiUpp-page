@@ -30,7 +30,6 @@ const LogoLink = styled(Link)`
   }
 `;
 
-const Logo = styled.img``;
 
 const WrapperFull = styled.div`
   background-color: ${(props) => (props.isVisible ? "#1d1d1f" : "transparent")};
@@ -50,7 +49,7 @@ const WrapperMax = styled.div`
   padding: 0rem 0.5rem;
 
   @media screen and (min-width: 900px) {
-    padding: 0.3rem 0rem;
+    padding: 0.3rem 0.5rem;
   }
 `;
 
@@ -157,7 +156,7 @@ const LogoMobile = styled.div`
 const Curriculum = styled.div`
   z-index: 10;
   width: 100%;
-  padding: 0 0.5rem;
+  padding: 0 ;
   background-color: #121212f5;
   color: white;
   ${(props) =>
@@ -172,7 +171,7 @@ const CurriculumMax = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0.5rem;
 `;
 
 const Dowload = styled.button`
@@ -207,7 +206,6 @@ const TitleCur = styled.div`
 const Header = ({ route }) => {
   const [scrollDirection, setScrollDirection] = useState("up");
   const [mobileNavActive, setMobileNavActive] = useState(false);
-  console.log(scrollDirection);
 
   useEffect(() => {
     const handleScroll = () => {

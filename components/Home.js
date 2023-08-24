@@ -11,7 +11,7 @@ const OficialContent = styled.div`
   color: #ffff;
   padding: 2.5rem 0.5rem;
   @media screen and (min-width: 768px) {
-    padding: 3rem 0rem;
+    padding: 3rem 0.5rem;
   }
   display: flex;
   flex-direction: column;
@@ -187,8 +187,9 @@ const SectionNewsFlex = styled.div`
 const SecondSectionLevel2 = styled.section`
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 1.5rem;
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 768px) {
     flex-direction: row;
   }
 `;
@@ -268,7 +269,7 @@ const Home = () => {
   return (
     <Center>
       <OficialContent>
-        <RevealWrapper rotate={{x:  12,y:40,z:0}} origin='left' delay={200} duration={1000} distance='500px' reset={true} viewOffset={{top:  25,  right:0,  bottom:  10,  left:5}}>
+        <RevealWrapper delay={200} duration={1000}>
           <SectionContainer>
             <SectionInfo>
               <Title>
@@ -308,7 +309,7 @@ const Home = () => {
           </SectionContainer>
         </RevealWrapper>
 
-        <RevealWrapper rotate={{x:  12,y:40,z:0}} origin='rigth' delay={200} duration={1000} distance='500px' reset={true} viewOffset={{top:  25,  right:0,  bottom:  10,  left:5}}>
+        <RevealWrapper delay={200} duration={1000} reset={false}>
           <PrincipalContent>
             <SectionsContainer>
               <SecondSectionLevel1>
