@@ -1,25 +1,28 @@
 import Center from "@/components/Center";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Layout from "@/components/Layout";
+import Head from "next/head";
+import Image from "next/image";
 import React from "react";
 import { styled } from "styled-components";
 
 const CaontainerHowCanIHelYou = styled.div`
   height: 100%; /* Altura total de la ventana */
-padding-top: 3rem;
+  padding-top: 3rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   h2 {
     color: #4d61fc;
   }
   span {
     color: #4d61fc;
   }
-  h3{
+  h3 {
     text-align: center;
     color: #4d61fc;
   }
@@ -49,8 +52,11 @@ const Conent = styled.div`
 const HowcanihelpyouPage = () => {
   return (
     <>
-      <Header />
-      <Center>
+    <Head>
+        <title>How can I help you?</title>
+        <meta name="description" content="..." />
+      </Head>
+      <Layout>
         <CaontainerHowCanIHelYou>
           <Title>
             <h1>
@@ -58,7 +64,7 @@ const HowcanihelpyouPage = () => {
             </h1>
           </Title>
           <ImgContainer>
-            <img src="https://my-page-negiupp.s3.amazonaws.com/1692039346694.png" />
+            <Image width={300} height={300} alt="help you" src="https://my-page-negiupp.s3.amazonaws.com/1692039346694.png" />
           </ImgContainer>
           <Conent>
             <p>
@@ -90,10 +96,14 @@ const HowcanihelpyouPage = () => {
               journey!
             </p>
           </Conent>
-          <h3><i>&quot;The man who moves mountains begins by moving small stones.&quot;</i></h3>
+          <h3>
+            <i>
+              &quot;The man who moves mountains begins by moving small
+              stones.&quot;
+            </i>
+          </h3>
         </CaontainerHowCanIHelYou>
-      </Center>
-      <Footer />
+      </Layout>
     </>
   );
 };

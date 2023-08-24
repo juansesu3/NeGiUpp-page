@@ -1,6 +1,9 @@
 import Center from "@/components/Center";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Layout from "@/components/Layout";
+import Head from "next/head";
+import Image from "next/image";
 import React from "react";
 import { styled } from "styled-components";
 
@@ -40,8 +43,11 @@ const ImgCollage = styled.div`
 const IntoRealityPage = () => {
   return (
     <>
-      <Header />
-      <Center>
+      <Head>
+        <title>Idea to Reality</title>
+        <meta name="description" content="..." />
+      </Head>
+      <Layout>
         <ContainerIntoReality>
           <h1>
             ¡From <span>Idea</span> to <span>Reality</span>!<br /> Unveiling the
@@ -49,9 +55,13 @@ const IntoRealityPage = () => {
           </h1>
           <ImgCollage>
             <ImgContainer>
-              <img src="https://my-page-negiupp.s3.amazonaws.com/1692039894453.png" />
+              <Image
+                width={300}
+                height={300}
+                alt="from idea image"
+                src="https://my-page-negiupp.s3.amazonaws.com/1692039894453.png"
+              />
             </ImgContainer>
-          
           </ImgCollage>
 
           <p>
@@ -154,8 +164,7 @@ const IntoRealityPage = () => {
             </i>
           </p>
         </ContainerIntoReality>
-      </Center>
-      <Footer />
+      </Layout>
     </>
   );
 };

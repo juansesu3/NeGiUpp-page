@@ -1,6 +1,8 @@
 import Center from "@/components/Center";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Layout from "@/components/Layout";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { styled } from "styled-components";
 
@@ -10,7 +12,7 @@ const ConatinerNotFound = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3rem .5rem 1rem;
+  padding: 3rem 0.5rem 1rem;
   @media screen and (min-width: 768px) {
     padding: 3rem 0;
   }
@@ -23,7 +25,7 @@ const ConatinerNotFound = styled.div`
     color: white;
     text-align: center;
   }
-  h3{
+  h3 {
     color: white;
     text-align: center;
   }
@@ -55,8 +57,11 @@ const Title = styled.div`
 const NegiuppPage = () => {
   return (
     <>
-      <Header />
-      <Center>
+      <Head>
+        <title>Self Branding</title>
+        <meta name="description" content="..." />
+      </Head>
+      <Layout>
         <ConatinerNotFound>
           <Title>
             <p>SelfBranding</p>
@@ -123,8 +128,7 @@ const NegiuppPage = () => {
 
           <h3>¡Never Give Up!</h3>
         </ConatinerNotFound>
-      </Center>
-      <Footer />
+      </Layout>
     </>
   );
 };

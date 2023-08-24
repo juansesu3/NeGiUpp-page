@@ -4,6 +4,7 @@ import FormEmails from "@/components/FormEmails";
 import Header from "@/components/Header";
 import Layout from "@/components/Layout";
 import { RevealWrapper } from "next-reveal";
+import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 import { styled } from "styled-components";
@@ -14,10 +15,10 @@ const Container = styled.div`
   justify-content: space-between;
   gap: 1.5rem;
   padding: 1.5rem 1rem;
-  margin-top:2.5rem;
+  margin-top: 2.5rem;
   @media screen and (min-width: 768px) {
     flex-direction: row;
-    padding: 1.5rem .5rem;
+    padding: 1.5rem 0.5rem;
   }
 `;
 const ContacInfo = styled.div`
@@ -117,22 +118,19 @@ const Info = styled.div`
   h4 {
     font-size: 1rem;
     font-weight: 400;
-    
   }
   span {
     font-size: 1rem;
     font-weight: 500;
     color: white;
-    
-  
   }
   @media screen and (min-width: 450px) {
     h4 {
       font-size: 1.3rem;
     }
-      span {
-    font-size: 1.3rem;
-  }
+    span {
+      font-size: 1.3rem;
+    }
   }
 `;
 
@@ -141,9 +139,12 @@ const ContacPage = () => {
     window.open(url, "_blank");
   };
   return (
-<Layout>
-       
-
+    <>
+          <Head>
+        <title>Contact</title>
+        <meta name="description" content="..." />
+      </Head>
+      <Layout>
         <Container>
           <RevealWrapper delay={100}>
             <ContacInfo>
@@ -312,8 +313,8 @@ const ContacPage = () => {
             <FormEmails />
           </RevealWrapper>
         </Container>
-
-        </Layout>
+      </Layout>
+    </>
   );
 };
 

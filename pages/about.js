@@ -10,6 +10,7 @@ import { styled, keyframes } from "styled-components";
 import moment from "moment";
 import Image from "next/image";
 import Layout from "@/components/Layout";
+import Head from "next/head";
 
 const AboutContainer = styled.div`
   display: flex;
@@ -360,6 +361,10 @@ const AboutPage = () => {
 
   return (
     <>
+         <Head>
+        <title>About</title>
+        <meta name="description" content="..." />
+      </Head>
       <Layout>
         {profile.length > 0 &&
           profile.map((prof) => (

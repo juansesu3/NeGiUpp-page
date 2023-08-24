@@ -1,6 +1,8 @@
 import Center from "@/components/Center";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Layout from "@/components/Layout";
+import Head from "next/head";
 import React from "react";
 import { styled } from "styled-components";
 
@@ -20,8 +22,11 @@ const ContainerResponsiveServices = styled.div`
 const ResponsiveServicePage = () => {
   return (
     <>
-      <Header />
-      <Center>
+    <Head>
+        <title>Responsive Service</title>
+        <meta name="description" content="..." />
+      </Head>
+     <Layout>
         <ContainerResponsiveServices>
           <h1>
             {" "}
@@ -105,8 +110,7 @@ const ResponsiveServicePage = () => {
             creating impactful and accessible digital experiences for everyone.
           </p>
         </ContainerResponsiveServices>
-      </Center>
-      <Footer />
+        </Layout>
     </>
   );
 };

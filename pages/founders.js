@@ -8,6 +8,7 @@ import { styled } from "styled-components";
 import moment from "moment";
 import Link from "next/link";
 import { RevealWrapper } from "next-reveal";
+import Head from "next/head";
 
 const ContainerFounders = styled.div`
   display: flex;
@@ -151,6 +152,11 @@ const FoundersPage = () => {
 
   return (
     <>
+      <Head>
+        <title>Founder</title>
+        <meta name="description" content="..." />
+      </Head>
+    
       <Header />
       <Center>
         {profile.length > 0 &&

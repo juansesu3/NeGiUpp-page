@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Layout from "@/components/Layout";
 import axios from "axios";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -339,7 +340,12 @@ const ProyectPage = () => {
   };
   console.log(proyect);
   return (
-  <Layout>
+    <>
+      <Head>
+        <title>Project {proyect?.title}</title>
+        <meta name="description" content="..." />
+      </Head>
+      <Layout>
         {!!proyect && (
           <>
             <Intro>
@@ -380,7 +386,7 @@ const ProyectPage = () => {
                         technologies.map((technology) => (
                           <IconsTech key={technology?._id}>
                             <ImageIconTechContainer>
-                              <img src={technology?.images} />
+                              <img src={technology?.images} alt="image tech" />
                             </ImageIconTechContainer>
                           </IconsTech>
                         ))}
@@ -468,7 +474,8 @@ const ProyectPage = () => {
             </LandindPageConatiner>
           </>
         )}
- </Layout>
+      </Layout>
+    </>
   );
 };
 

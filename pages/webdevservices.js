@@ -1,6 +1,8 @@
 import Center from "@/components/Center";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Layout from "@/components/Layout";
+import Head from "next/head";
 import React from "react";
 import { styled } from "styled-components";
 const ContainerResponsiveServices = styled.div`
@@ -19,18 +21,21 @@ const ContainerResponsiveServices = styled.div`
 const WebdevservicesPage = () => {
   return (
     <>
-      <Header />
-      <Center>
+    <Head>
+        <title>Web Development Service</title>
+        <meta name="description" content="..." />
+      </Head>
+      <Layout>
         <ContainerResponsiveServices>
           <h1>Web Development services</h1>
           <p>
             Crafting Seamless Online Experiences As a skilled fullstack
             developer, my commitment is to deliver digital solutions that not
             only function flawlessly but also captivate users across the vast
-            landscape of the web. A prominent service I provide is "Web
-            Development," a fundamental discipline that transforms your ideas
-            into dynamic online platforms accessible from any corner of the
-            world.
+            landscape of the web. A prominent service I provide is &quot;Web
+            Development,&quot; a fundamental discipline that transforms your
+            ideas into dynamic online platforms accessible from any corner of
+            the world.
           </p>
           <h2>The Essence of Web Development</h2>
           <p>
@@ -88,16 +93,15 @@ const WebdevservicesPage = () => {
             In an era where digital interactions reign supreme, a robust online
             presence is paramount. My web development service goes beyond
             aesthetics, ensuring your virtual footprint leaves a lasting impact
-            on visitors. Let's collaborate to shape a digital masterpiece that
-            brings your vision to life and resonates with your audience.
+            on visitors. Let&apos;s collaborate to shape a digital masterpiece
+            that brings your vision to life and resonates with your audience.
           </p>
           <p>
             Contact me today to embark on a journey of transforming your ideas
             into a captivating and functional online reality.
           </p>
         </ContainerResponsiveServices>
-      </Center>
-      <Footer />
+      </Layout>
     </>
   );
 };

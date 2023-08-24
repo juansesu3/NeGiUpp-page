@@ -1,6 +1,8 @@
 import Center from "@/components/Center";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Layout from "@/components/Layout";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { styled } from "styled-components";
 
@@ -51,8 +53,11 @@ const NotfoundPage = () => {
   };
   return (
     <>
-      <Header />
-      <Center>
+    <Head>
+        <title>Not Found! </title>
+        <meta name="description" content="..." />
+      </Head>
+      <Layout>
         <ConatinerNotFound>
           <p>This area is being developed.</p>
           <h1>
@@ -62,8 +67,7 @@ const NotfoundPage = () => {
             <button onClick={handleBack}>Back</button>
           </ContainerButton>
         </ConatinerNotFound>
-      </Center>
-      <Footer />
+      </Layout>
     </>
   );
 };

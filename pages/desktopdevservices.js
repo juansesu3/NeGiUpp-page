@@ -1,6 +1,8 @@
 import Center from "@/components/Center";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Layout from "@/components/Layout";
+import Head from "next/head";
 import React from "react";
 import { styled } from "styled-components";
 const ContainerResponsiveServices = styled.div`
@@ -19,20 +21,23 @@ const ContainerResponsiveServices = styled.div`
 const DesktopdevservicesPage = () => {
   return (
     <>
-      <Header />
-      <Center>
+           <Head>
+        <title>Desktop Application Dev</title>
+        <meta name="description" content="..." />
+      </Head>
+     <Layout>
         <ContainerResponsiveServices>
           <h1>
             Desktop Application Development: Empowering Seamless User
             Experiences
           </h1>
           <p>
-            As a dedicated fullstack developer, I'm committed to building
+            As a dedicated fullstack developer, I&apos;m committed to building
             digital solutions that transcend the virtual realm and seamlessly
             integrate into the desktop landscape. A pivotal service I offer is
-            "Desktop Application Development," a realm of expertise that
+            &quot;Desktop Application Development,&quot; a realm of expertise that
             transforms your concepts into powerful applications accessible
-            directly from users' desktops.
+            directly from users&apos; desktops.
           </p>
           <h2>Unveiling Desktop Application Development</h2>
           <p>
@@ -94,14 +99,13 @@ const DesktopdevservicesPage = () => {
             operations and user satisfaction.
           </p>
           <p>
-            Let's collaborate to forge a tailored desktop application that
+            Let&apos;s collaborate to forge a tailored desktop application that
             empowers your goals and elevates your digital landscape. Reach out
             today to embark on a journey of transforming your vision into a
             functional reality.
           </p>
         </ContainerResponsiveServices>
-      </Center>
-      <Footer />
+        </Layout>
     </>
   );
 };

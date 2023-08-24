@@ -3,10 +3,15 @@ import Layout from "@/components/Layout";
 
 import { mongooseConnect } from "@/lib/mongoose";
 import { Article } from "@/models/Article";
+import Head from "next/head";
 
 const HomePage = ({ latestArticles }) => {
   return (
     <>
+      <Head>
+        <title>Home</title>
+        <meta name="description" content="..." />
+      </Head>
       <Layout>
         <Home latestArticles={latestArticles} />
       </Layout>

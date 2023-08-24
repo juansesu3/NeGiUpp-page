@@ -7,27 +7,26 @@ import BlogArticleCard from "@/components/BlogArticleCard";
 import { styled } from "styled-components";
 import Link from "next/link";
 import { RevealWrapper } from "next-reveal";
+import Layout from "@/components/Layout";
+import Head from "next/head";
 
 const BlogContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     flex-direction: row;
-    
   }
 `;
 
-
 const FirstArticles = styled.div`
-   display: flex;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     flex-direction: column;
     justify-content: start;
-   
   }
   a {
     text-decoration: none;
@@ -70,9 +69,8 @@ const ImageContainer = styled.div`
 `;
 const TitlePage = styled.div`
   display: none;
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     display: flex;
-    
   }
   align-items: center;
   justify-content: center;
@@ -103,15 +101,14 @@ const TitlePageMobile = styled.div`
     width: 1rem;
     color: white;
   }
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     display: none;
-    h1{
+    h1 {
       font-size: 2.95rem;
     }
-    svg{
+    svg {
       width: 3rem;
     }
-    
   }
 `;
 const SeconConatiner = styled.div`
@@ -131,15 +128,17 @@ const BlogPage = () => {
   const secondArticles = articles.slice(2);
   return (
     <>
-      <Center>
-        <Header />
-
+      <Head>
+        <title>Blog</title>
+        <meta name="description" content="..." />
+      </Head>
+      <Layout>
         <BlogContainer>
-        <TitlePageMobile>
-              <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
-              <h1>All articles</h1>
-              <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
-            </TitlePageMobile>
+          <TitlePageMobile>
+            <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+            <h1>All articles</h1>
+            <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+          </TitlePageMobile>
           <FirstArticles firstArticles={firstArticles}>
             {articles.length > 0 &&
               firstArticles.map((firstArticle, index) => (
@@ -183,9 +182,7 @@ const BlogPage = () => {
             </SecondArticles>
           </SeconConatiner>
         </BlogContainer>
-
-        <Footer />
-      </Center>
+      </Layout>
     </>
   );
 };
