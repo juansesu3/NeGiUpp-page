@@ -93,6 +93,12 @@ const StyledLoadingContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  width: 70px;
+  height: 70px;
+  margin: auto;
+  img {
+    width: 100%;
+  }
 `;
 
 const StyledInput = styled.input`
@@ -101,6 +107,7 @@ const StyledInput = styled.input`
   padding: 0.25rem 0.5rem;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   border: none;
+  border-radius: 3px 0px 0px 3px;
 `;
 
 const StyledButton = styled.button`
@@ -108,6 +115,12 @@ const StyledButton = styled.button`
   background-color: #4d61fc;
   color: white;
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  margin: 0;
+  border-radius: 0px 3px 3px 0px;
 
   svg {
     width: 1rem;
@@ -125,16 +138,16 @@ transform: rotate(90deg);
 
 const StyledButtonn = styled.button`
   position: fixed;
-  bottom: ${(props) => (props.isOpen ? ".5rem" : "2.5rem")};
-  right: ${(props) => (props.isOpen ? ".5rem" : "2.5rem")};
-  width: 2.5rem;
-  height: 2.5rem;
+  bottom: ${(props) => (props.isOpen ? "-1rem" : "0rem")};
+  right: ${(props) => (props.isOpen ? "-1rem" : "0rem")};
+  width: 3.5rem;
+  height: 3.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
   border-radius: 50%;
-  background-color: #00bfff;
+  background-color: transparent;
   cursor: pointer;
   border: none;
 
@@ -153,10 +166,8 @@ const StyledButtonn = styled.button`
 const AIContainer = styled.div`
   display: flex;
   flex-direction: column;
-  h1 {
-    margin: 0;
-    color: white;
-    font-size: 20px;
+  img {
+    width: 100%;
   }
 `;
 const Suggestion = () => {
@@ -263,23 +274,15 @@ const Suggestion = () => {
         </StyledChatContainer>
 
         <StyledForm>
-          <p>
-            {isLoading
-              ? "I'm thinking..."
-              : "Juli is here I am Juan's AI assistant."}
-          </p>
+          <p>{isLoading ? "I'm thinking..." : "Don't be shy with it!"}</p>
           <StyledLoadingContainer>
-            <MyThreeComponent
-              containerWidth={60}
-              containerHeight={60}
-              isLoading={isLoading}
-            />
+            <img src="https://juan-sesu-ecommerce.s3.amazonaws.com/1693293993081.png" />
           </StyledLoadingContainer>
           <div
             style={{
               display: "flex",
               justifyContent: "space-between",
-              gap: ".25rem",
+              gap: ".2rem",
             }}
           >
             <StyledInput
@@ -326,10 +329,7 @@ const Suggestion = () => {
           </svg>
         ) : (
           <AIContainer>
-            <MyThreeComponent
-              containerWidth={containerWidth}
-              containerHeight={containerHeight}
-            />
+            <img src="https://juan-sesu-ecommerce.s3.amazonaws.com/1693293993081.png" />
           </AIContainer>
         )}
       </StyledButtonn>
