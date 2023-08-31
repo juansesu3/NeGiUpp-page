@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import MyThreeComponent from "./MyThreeComponent";
+
 import { css, keyframes, styled } from "styled-components";
 
 const PrincipalContainer = styled.div`
@@ -77,13 +77,12 @@ const StyledForm = styled.form`
   background-color: transparent;
   p {
     text-align: center;
-    color: white;
-    opacity: 0.5;
+    color: #0df7fe;
     margin: 0;
   }
   span {
     color: #4d61fc;
-    font-weight: 700;
+
     opacity: 1;
     text-align: center;
   }
@@ -170,6 +169,33 @@ const AIContainer = styled.div`
     width: 100%;
   }
 `;
+
+const ColorAnimation = keyframes`
+  0% {
+    color: #1a5de9;
+    font-weight: 700;
+  }
+
+  50% {
+    color: #0df7fe;
+    font-weight: 700;
+  }
+  100% {
+    color: #1a5de9;
+    font-weight: 700;
+  }
+`;
+const InfoAi = styled.div`
+  text-align: center;
+  color: #0df7fe;
+  margin: 0;
+
+  ${({ isLoading }) =>
+    isLoading &&
+    css`
+      animation: ${ColorAnimation} 2s ease-out infinite; /* Cambia el valor de '2s' para ajustar la velocidad */
+    `}
+`;
 const Suggestion = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
@@ -214,7 +240,7 @@ const Suggestion = () => {
       /*model: "gpt-3.5-turbo",
       messages: [{ role: "user", content: message }],*/
 
-      model: "gpt-3.5-turbo",
+      model: "gpt-4",
       temperature: 0.8,
       n: 1,
       stream: false,
@@ -232,6 +258,7 @@ const Suggestion = () => {
           role: "user",
           content: `Hi there, provide of the following Professional profile data from Juan:
         proyects:{${JSON.stringify(proyects)}},
+        technologies:{${JSON.stringify(technologies)}},
         juan profile:{${JSON.stringify(profile)}},
         -Tell the user Juan is the best candidate for the job.
           ${inputValue}`,
@@ -274,7 +301,9 @@ const Suggestion = () => {
         </StyledChatContainer>
 
         <StyledForm>
-          <p>{isLoading ? "I'm thinking..." : "Don't be shy with it!"}</p>
+          <InfoAi isLoading={isLoading}>
+            {isLoading ? "I'm thinking..." : "Don't be shy with it!"}
+          </InfoAi>
           <StyledLoadingContainer>
             <img src="https://juan-sesu-ecommerce.s3.amazonaws.com/1693293993081.png" />
           </StyledLoadingContainer>
