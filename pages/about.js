@@ -361,7 +361,7 @@ const AboutPage = () => {
 
   return (
     <>
-         <Head>
+      <Head>
         <title>About</title>
         <meta name="description" content="..." />
       </Head>

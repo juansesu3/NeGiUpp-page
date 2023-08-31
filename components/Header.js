@@ -30,7 +30,6 @@ const LogoLink = styled(Link)`
   }
 `;
 
-
 const WrapperFull = styled.div`
   background-color: ${(props) => (props.isVisible ? "#1d1d1f" : "transparent")};
   margin: 0 auto;
@@ -48,7 +47,7 @@ const WrapperMax = styled.div`
   justify-content: space-between;
   padding: 0rem 0.5rem;
 
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 768px) {
     padding: 0.3rem 0.5rem;
   }
 `;
@@ -97,7 +96,6 @@ const NavLink = styled(Link)`
     css`
       color: #ffff;
       text-decoration: underline;
-
       text-decoration-thickness: 0.15rem;
     `}
   &:hover {
@@ -156,7 +154,7 @@ const LogoMobile = styled.div`
 const Curriculum = styled.div`
   z-index: 10;
   width: 100%;
-  padding: 0 ;
+  padding: 0;
   background-color: #121212f5;
   color: white;
   ${(props) =>
@@ -171,7 +169,10 @@ const CurriculumMax = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem 0.65rem;
+  @media screen and (min-width: 768px) {
+    padding: 0.5rem 0.5rem;
+  }
 `;
 
 const Dowload = styled.button`
@@ -286,7 +287,7 @@ const Header = ({ route }) => {
               active={pathname === "/proyects" ? true : false}
               href={"/proyects"}
             >
-              Proyects
+              Projects
             </NavLink>
             {/*
           <NavLink
@@ -304,7 +305,7 @@ const Header = ({ route }) => {
               Contact
             </NavLink>
           </StyledNav>
-          <LetsTalk href={"/contact"}> Let&apos;s talk</LetsTalk>
+          <LetsTalk href={"/contact"}> Let&apos;s Talk</LetsTalk>
           <NavButton route={route} onClick={toggleCross} isCross={isCross}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
