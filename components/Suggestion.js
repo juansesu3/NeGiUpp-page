@@ -157,9 +157,10 @@ const StyledButtonn = styled.button`
     `}
 
   svg {
-    width: 1rem;
-    height: 1rem;
-    color: white;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: red;
+    font-weight: 500;
   }
 `;
 const AIContainer = styled.div`
@@ -216,6 +217,11 @@ const Suggestion = () => {
       setTecnologies(response.data);
     });
   }, []);
+  console.log("Data orivided to OpenAI >>", {
+    profile,
+    technologies,
+    proyects,
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -247,21 +253,22 @@ const Suggestion = () => {
       messages: [
         {
           role: "system",
-          content: `You are Juli, the Juan's assitent!
+          content: `You are the Juan's assitent!
           -Respond the user "I'm here to help you get to know Juan better!" 
           -Your behavior will be a: responsible, 
             attentive, nice  assistent woman.
-            Always you help the user to hire me.
-            Limit the response to 200 caracters `,
+          -Always you help the user get to know juan better
+            and them hire Juan.
+          -Limit the response to 500 caracters `,
         },
         {
           role: "user",
           content: `Hi there, provide of the following Professional profile data from Juan:
-        proyects:{${JSON.stringify(proyects)}},
-        technologies:{${JSON.stringify(technologies)}},
-        juan profile:{${JSON.stringify(profile)}},
-        -Tell the user Juan is the best candidate for the job.
-          ${inputValue}`,
+          Juan profile:{${JSON.stringify(profile)}},
+          proyects:{${JSON.stringify(proyects)}},
+          technologies:{${JSON.stringify(technologies)}},
+          -Tell the user Juan is the best candidate for the job.
+          -Here is a user question: "${inputValue}"`,
         },
       ],
     };
@@ -302,7 +309,9 @@ const Suggestion = () => {
 
         <StyledForm>
           <InfoAi isLoading={isLoading}>
-            {isLoading ? "I'm thinking..." : "Don't be shy with it!"}
+            {isLoading
+              ? "Give me a moment..."
+              : "I'm here to help you get to know Juan better!"}
           </InfoAi>
           <StyledLoadingContainer>
             <img src="https://juan-sesu-ecommerce.s3.amazonaws.com/1693293993081.png" />
@@ -316,7 +325,7 @@ const Suggestion = () => {
           >
             <StyledInput
               type="text"
-              placeholder="How can I help you?"
+              placeholder="ask me questions about juan"
               value={inputValue}
               onChange={(ev) => setInputValue(ev.target.value)}
             />
