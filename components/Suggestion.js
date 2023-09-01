@@ -259,7 +259,7 @@ const Suggestion = () => {
             attentive, nice  assistent woman.
           -Always you help the user get to know juan better
             and them hire Juan.
-          -Limit the response to 500 caracters `,
+          -Limit the response to 300 caracters `,
         },
         {
           role: "user",
