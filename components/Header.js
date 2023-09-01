@@ -5,6 +5,7 @@ import Bars from "./icons/Bars";
 import { useEffect, useState, useRef } from "react";
 import DowloadIcon from "./icons/DowloadIcon";
 import Image from "next/image";
+import axios from "axios";
 
 const StyledHeader = styled.header`
   background-color: ${(props) => (props.isVisible ? "#181819" : "transparent")};
@@ -175,16 +176,28 @@ const CurriculumMax = styled.div`
   }
 `;
 
-const Dowload = styled.button`
+const Dowload = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
   background-color: #4d61fc;
-  width: 35%;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  width: 40%;
   border: none;
   border-radius: 0.9rem;
-  padding: 0.3rem;
+  padding: 0.3rem 0rem;
   color: white;
-
+  cursor: pointer;
+  &:hover{
+    background-color: #3950ff;
+  }
   @media screen and (min-width: 768px) {
-    width: 8rem;
+    width: 8.5rem;
   }
 `;
 const TitleCur = styled.div`
@@ -330,7 +343,13 @@ const Header = ({ route }) => {
           <TitleCur>
             <h2>Curriculum</h2>
           </TitleCur>
-          <Dowload>Download CV</Dowload>
+          <Dowload
+            target="_blank"
+            href="https://my-page-negiupp.s3.amazonaws.com/1693565995611.pdf"
+          >
+            Download CV
+            <DowloadIcon />
+          </Dowload>
         </CurriculumMax>
       </Curriculum>
     </StyledHeader>
