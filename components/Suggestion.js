@@ -9,8 +9,8 @@ const PrincipalContainer = styled.div`
 
 const FormConatiner = styled.div`
   position: fixed;
-  bottom: 30px;
-  right: 10px;
+  bottom: 10px;
+  right: 5px;
   width: 16rem;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -137,8 +137,8 @@ transform: rotate(90deg);
 
 const StyledButtonn = styled.button`
   position: fixed;
-  bottom: ${(props) => (props.isOpen ? "-1rem" : "0rem")};
-  right: ${(props) => (props.isOpen ? "-1rem" : "0rem")};
+  bottom: ${(props) => (props.isOpen ? "-1rem" : ".6rem")};
+  right: ${(props) => (props.isOpen ? "-1rem" : ".2rem")};
   width: 3.5rem;
   height: 3.5rem;
   display: flex;
@@ -168,6 +168,12 @@ const AIContainer = styled.div`
   flex-direction: column;
   img {
     width: 100%;
+  }
+  p {
+    margin: 0;
+    color: white;
+    opacity: 0.6;
+    font-size: 10px;
   }
 `;
 
@@ -366,9 +372,12 @@ const Suggestion = () => {
             />
           </svg>
         ) : (
-          <AIContainer>
-            <img src="https://juan-sesu-ecommerce.s3.amazonaws.com/1693293993081.png" />
-          </AIContainer>
+          <>
+            <AIContainer>
+              <img src="https://juan-sesu-ecommerce.s3.amazonaws.com/1693293993081.png" />
+              <p>ASSISTANT</p>
+            </AIContainer>
+          </>
         )}
       </StyledButtonn>
     </PrincipalContainer>
