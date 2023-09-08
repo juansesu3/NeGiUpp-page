@@ -148,7 +148,7 @@ const FormEmails = ({ swal }) => {
         <textarea
           value={message}
           onChange={(ev) => setMessage(ev.target.value)}
-          placeholder="Your Menssage"
+          placeholder="Your Message"
         ></textarea>
         <button type="submit">Send Message</button>
       </FormContainer>
