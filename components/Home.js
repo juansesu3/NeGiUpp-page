@@ -252,6 +252,10 @@ const ServicesLink = styled(Link)`
   flex-direction: column;
   text-decoration: none;
   color: white;
+  span {
+    color: #4d61fc;
+    font-weight: 600;
+  }
   svg {
     width: 3em;
     margin: 0.5rem auto;
@@ -276,10 +280,10 @@ const Home = () => {
                 Let&apos;s build the future <span>together</span>
               </Title>
               <Intro>
-                I create custom cutting-edge solutions that improve your
-                development processes. Get your goals with me and let&apos;s
-                build the success of your business in less time than you can
-                imagine!
+                Unlock the full potential of your development projects with my
+                custom, cutting-edge solutions. I help you achieve your goals
+                and bring your business success in less time than you ever
+                imagined!
               </Intro>
               <ContainerButtons>
                 <Button href={"/founders"} outline="true" read="true">
@@ -365,7 +369,7 @@ const Home = () => {
                           d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
                         />
                       </svg>
-                      Responsive
+                      <span>Responsive</span>
                     </ServicesLink>
                     <ServicesLink href={"/webdevservices"}>
                       <svg
@@ -382,7 +386,7 @@ const Home = () => {
                           d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"
                         />
                       </svg>
-                      Web dev
+                      <span>Web dev</span>
                     </ServicesLink>
                     <ServicesLink href={"/desktopdevservices"}>
                       <svg
@@ -399,7 +403,7 @@ const Home = () => {
                           d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"
                         />
                       </svg>
-                      Desktop dev
+                      <span>Desktop dev</span>
                     </ServicesLink>
                   </IconServices>
                   <SubTitle>Services Offering</SubTitle>
