@@ -208,7 +208,7 @@ const ProyectsPage = () => {
                   height={40}
                 />
               </span>
-              <h1>All Proyects</h1>{" "}
+              <h1>All Projects</h1>{" "}
               <span>
                 <Image
                   src={
