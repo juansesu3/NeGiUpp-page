@@ -16,7 +16,7 @@ const FormConatiner = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding: 1rem;
+  padding: 0.8rem;
   border-radius: 0.375rem;
   background-color: #1d1d1f;
   margin-bottom: 20px;
@@ -45,7 +45,7 @@ const StyledMessageContainer = styled.div`
             background-color: #4d61fc;
             color: white;
             text-align: right;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 0.5rem;
             border-radius: 0.375rem;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
           }
@@ -62,7 +62,7 @@ const StyledMessageContainer = styled.div`
             background-color: white;
             color: #4d61fc;
             text-align: left;
-            padding: 1rem;
+            padding: 0.4rem;
             border-radius: 0.375rem;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
           }
@@ -265,7 +265,7 @@ const Suggestion = () => {
             attentive, nice  assistent woman.
           -Always you help the user get to know juan better
             and them hire Juan.
-          -Limit the response to 300 caracters `,
+          -Limit the response to 200 caracters `,
         },
         {
           role: "user",
@@ -273,8 +273,13 @@ const Suggestion = () => {
           Juan profile:{${JSON.stringify(profile)}},
           proyects:{${JSON.stringify(proyects)}},
           technologies:{${JSON.stringify(technologies)}},
-          -Tell the user Juan is the best candidate for the job.
-          -Here is a user question: "${inputValue}"`,
+          -Sometimes Tell the user Juan is the best candidate for the job.
+          -Provide some questions them the user can do.
+          -Provide my email: juan.se.suarez.ra@gmail.com
+          -Provide my phone: +34 642 76 3395
+          -Here is a user question: "${inputValue}"
+          -answer user's question.
+          `,
         },
       ],
     };
