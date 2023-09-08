@@ -264,7 +264,7 @@ const ServicesLink = styled(Link)`
       width: 4em;
     }
     &:hover {
-      color: #4d61fc;
+      color: #3950ff;
     }
   }
 `;

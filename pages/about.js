@@ -17,7 +17,7 @@ const AboutContainer = styled.div`
   flex-direction: column;
 
   padding: 1.5rem 0.5rem;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 805px) {
     padding: 2.5rem 0.5rem;
   }
 `;
@@ -25,7 +25,7 @@ const AboutContainer = styled.div`
 const AboutCont = styled.div`
   width: 100%;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 805px) {
     width: 60%;
   }
 `;
@@ -33,7 +33,7 @@ const AboutCont = styled.div`
 const ImgCont = styled.div`
   margin: 0 auto;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 805px) {
     width: 40%;
   }
 `;
@@ -63,7 +63,7 @@ const ContainerSec = styled.div`
   gap: 1.5rem;
   color: #ffff;
   padding-top: 1.5rem;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 805px) {
     flex-direction: row;
   }
 `;
@@ -85,7 +85,7 @@ const Title = styled.span`
   img {
     width: 100%;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 805px) {
     display: flex;
   }
 `;
@@ -107,7 +107,7 @@ const TitleMobile = styled.span`
   img {
     width: 100%;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 805px) {
     display: none;
     h1 {
       font-size: 3rem;
@@ -135,7 +135,7 @@ const InfoAboutContainer = styled.div`
     line-height: 2rem;
     margin-bottom: 0;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 805px) {
     height: 22.25rem;
     p {
       line-height: 1.8rem;
@@ -173,12 +173,12 @@ const CeoContainer = styled(Link)`
   span {
     color: #4d61fc;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 805px) {
     width: 30%;
   }
   transition: 0.3s;
   &:hover {
-    color: #4d61fc;
+    color: #3950ff;
   }
 `;
 const WorkTogetheContainer = styled(Link)`
@@ -216,8 +216,11 @@ const WorkTogetheContainer = styled(Link)`
     svg {
       color: #ffff;
     }
+    span {
+      color: #3950ff;
+    }
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 805px) {
     width: 40%;
   }
 `;
@@ -269,7 +272,7 @@ const StartContainer = styled(Link)`
     color: #4d61fc;
   }
   &:hover {
-    background-color: #4d61fc;
+    background-color: #3950ff;
     h2 {
       color: white;
     }
@@ -279,7 +282,7 @@ const StartContainer = styled(Link)`
     margin-bottom: 0.5rem;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 805px) {
     width: 30%;
   }
 `;
@@ -314,7 +317,7 @@ const InfoCultureHitosContainer = styled.div`
     margin: 0.3rem 0;
     font-weight: 500;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 805px) {
     width: 50%;
     gap: 1rem;
 
@@ -345,7 +348,7 @@ const ContainerThirdSec = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 805px) {
     flex-direction: row;
   }
 `;
@@ -475,7 +478,11 @@ const AboutPage = () => {
                       prof.education.map((edu, indexEdu) => (
                         <div key={indexEdu}>
                           <p>
-                            {(moment(edu.gotDate).utc().format("MM/DD/YYYY")).split("/").pop()}
+                            {moment(edu.gotDate)
+                              .utc()
+                              .format("MM/DD/YYYY")
+                              .split("/")
+                              .pop()}
                           </p>
                           <h3>{edu.certificationName}</h3>
                           <h4>{edu.institutionName}</h4>

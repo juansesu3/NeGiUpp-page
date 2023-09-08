@@ -7,7 +7,7 @@ const StyledButton = styled(Link)`
   padding: 0.5rem 1rem;
   color: #4d61fc;
   text-decoration: none;
-  border-color: #bcbcbc;
+
   border-radius: 0.5rem;
   cursor: pointer;
 
@@ -37,7 +37,7 @@ const StyledButton = styled(Link)`
       border: 1px solid #4d61fc;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
       &:hover {
-        background-color: #4d61fc;
+        background-color: #3950ff;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
       }
     `}
@@ -47,7 +47,7 @@ const StyledButton = styled(Link)`
       background-color: #4d61fc;
       color: white;
       &:hover {
-        background-color: #4d41fc;
+        background-color: #3950ff;
       }
     `}
   ${(props) =>
