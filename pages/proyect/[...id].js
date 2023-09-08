@@ -123,6 +123,7 @@ const MoreDetail = styled.div`
   width: 100%;
   border-radius: 1rem;
   color: #ffff;
+  text-align: center;
   background: linear-gradient(
     100deg,
     rgb(189 189 189 / 7%),
@@ -133,8 +134,8 @@ const MoreDetail = styled.div`
   }
 
   p {
-    color: #bcbcbc;
-    opacity: 0.6;
+    color: #4d61fc;
+
     text-transform: capitalize;
     margin: 0 0 10px 0;
     font-size: 1.1rem;

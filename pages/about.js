@@ -454,11 +454,15 @@ const AboutPage = () => {
                           <p>
                             {`${moment(exp.startDateExp)
                               .utc()
-                              .format("MM/DD/YYYY")} - 
+                              .format("MM/DD/YYYY")
+                              .split("/")
+                              .pop()} - 
 
                               ${moment(exp.endDateExp)
                                 .utc()
-                                .format("MM/DD/YYYY")}`}
+                                .format("MM/DD/YYYY")
+                                .split("/")
+                                .pop()}`}
                           </p>
                           <h3>{exp.position}</h3>
                           <h4 className="company">{exp.company}</h4>
@@ -471,7 +475,7 @@ const AboutPage = () => {
                       prof.education.map((edu, indexEdu) => (
                         <div key={indexEdu}>
                           <p>
-                            {moment(edu.gotDate).utc().format("MM/DD/YYYY")}
+                            {(moment(edu.gotDate).utc().format("MM/DD/YYYY")).split("/").pop()}
                           </p>
                           <h3>{edu.certificationName}</h3>
                           <h4>{edu.institutionName}</h4>
