@@ -290,7 +290,7 @@ const Home = () => {
                   Read More
                 </Button>
                 <Button
-                  href={"/notfound"}
+                  href={"/start"}
                   outline="true"
                   read="true"
                   primary="true"
@@ -326,7 +326,7 @@ const Home = () => {
                   <InfiniteScrollAmimation />
                   <ProyectTech>
                     <SecondSection2 href={"/proyects"}>
-                      <SubTitle pro={true}>Proyects</SubTitle>
+                      <SubTitle pro={true}>Projects</SubTitle>
                     </SecondSection2>
                   </ProyectTech>
                 </SectionNewsFlex>

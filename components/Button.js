@@ -50,6 +50,15 @@ const StyledButton = styled(Link)`
         background-color: #3950ff;
       }
     `}
+    ${(props) =>
+    props.next &&
+    css`
+      background-color: #4d61fc;
+      color: white;
+      &:hover {
+        background-color: #3950ff;
+      }
+    `}
   ${(props) =>
     props.size === "l" &&
     css`
