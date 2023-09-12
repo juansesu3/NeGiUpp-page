@@ -112,6 +112,13 @@ const SecondSectionLink = styled(Link)`
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  transition: 0.3s;
+  &:hover {
+    background-color: #4d61fc;
+    span {
+      color: white;
+    }
+  }
 `;
 
 const SubTitle = styled.h2`
@@ -148,12 +155,19 @@ const SecondSection1 = styled(Link)`
   cursor: pointer;
   border-radius: 1rem;
   background-color: #121212;
+  transition: 0.3s;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   @media screen and (min-width: 768px) {
     width: 67.5%;
+  }
+  &:hover {
+    background-color: #4d61fc;
+    span {
+      color: white;
+    }
   }
 `;
 const SecondSection2 = styled(Link)`
@@ -173,6 +187,14 @@ const SecondSection2 = styled(Link)`
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  background-color: #121212;
+  transition: 0.3s;
+  &:hover {
+    background-color: #4d61fc;
+    span {
+      color: white;
+    }
+  }
 `;
 const SectionNewsFlex = styled.div`
   display: flex;

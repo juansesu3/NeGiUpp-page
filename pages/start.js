@@ -6,6 +6,8 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { keyframes } from "styled-components";
 import MyThreeComponent from "@/components/MyThreeComponent";
 import { useRouter } from "next/router";
+import TypingMessage from "@/components/TypingMessage";
+import WavingEmoji from "@/components/icons/WavingEmoji";
 
 const falling = keyframes`
   0% {
@@ -85,12 +87,12 @@ const PrincipalContainer = styled.div`
 
 const Message = styled.div`
   position: relative;
-  max-width: 26rem;
+  width: 26rem;
   margin: 0 0.5rem;
   color: #bcbcbc;
   letter-spacing: 0.3px;
   font-size: 18px;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   text-align: center;
   border-radius: 1rem;
   background-color: #121212;
@@ -171,7 +173,8 @@ const InputContainer = styled.div`
       /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   }
   label {
-    color: #4d61fc;
+    color: white;
+    opacity: 0.7;
     font-weight: 500;
   }
 `;
@@ -230,25 +233,6 @@ const Counter = styled.p`
   color: #4d61fc;
   padding: 1;
 `;
-
-const TypingMessage = ({ message, onDone, color }) => {
-  const [displayMessage, setDisplayMessage] = useState("");
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    if (index < message.length) {
-      const timer = setTimeout(() => {
-        setDisplayMessage((prev) => prev + message[index]);
-        setIndex((prev) => prev + 1);
-      }, 50);
-      return () => clearTimeout(timer);
-    } else if (onDone) {
-      onDone();
-    }
-  }, [index, message, onDone]);
-
-  return <p style={{ color }}>{displayMessage}</p>;
-};
 
 const Start = () => {
   const [showConfetti, setShowConfetti] = useState(false);
@@ -327,7 +311,10 @@ const Start = () => {
             />
             {firstMessageDone && (
               <>
-                <TypingMessage message="¡I need to know you're the one!" />
+                <TypingMessage
+                  color="#4d61fc"
+                  message="¡I need to know you're the one!"
+                />
                 <FormMission firstMessageDone={firstMessageDone}>
                   <InputContainer>
                     <label>What is your name?</label>
@@ -366,6 +353,7 @@ const Start = () => {
               <TypingMessage
                 message="¡You're the one!"
                 color="#4d61fc"
+                size="28px"
                 onDone={handleSecondMessageDone}
               />
             )}
@@ -412,8 +400,8 @@ const Start = () => {
             <MessageEnd>This message will self-destruct in...</MessageEnd>
             <Counter>{contador}</Counter>
             <MessageEnd>
-              I&apos;m going to redirect you to Juan&apos;s projects but feel free to
-              explore my entire app.
+              I&apos;m going to redirect you to Juan&apos;s projects but feel
+              free to explore my entire app.
             </MessageEnd>
           </Message>
         </PrincipalContainer>

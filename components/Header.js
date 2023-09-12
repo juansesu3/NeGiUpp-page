@@ -6,6 +6,7 @@ import { useEffect, useState, useRef } from "react";
 import DowloadIcon from "./icons/DowloadIcon";
 import Image from "next/image";
 import axios from "axios";
+import BackArrow from "./icons/BackArrow";
 
 const StyledHeader = styled.header`
   background-color: ${(props) => (props.isVisible ? "#181819" : "transparent")};
@@ -109,7 +110,7 @@ const LetsTalk = styled(Link)`
   text-decoration: none;
   align-items: center;
   background-color: #323232;
-  padding: 10px 36px;
+  padding: 0.2rem 1.2rem;
   border-radius: 0.6rem;
   font-weight: 500;
   display: none;
@@ -187,13 +188,12 @@ const Dowload = styled.a`
   font-weight: 500;
   font-size: 13px;
   letter-spacing: 0.5px;
-  width: 40%;
   border: none;
-  border-radius: 0.9rem;
-  padding: 0.3rem 0rem;
+  border-radius: 0.5rem;
+  padding: 0.4rem 1.2rem;
   color: white;
   cursor: pointer;
-  &:hover{
+  &:hover {
     background-color: #3950ff;
   }
   @media screen and (min-width: 768px) {
@@ -341,13 +341,15 @@ const Header = ({ route }) => {
       <Curriculum mobileNavActive={mobileNavActive}>
         <CurriculumMax>
           <TitleCur>
-            <h2>Curriculum</h2>
+           
+             <BackArrow/>
+           
           </TitleCur>
           <Dowload
             target="_blank"
             href="https://my-page-negiupp.s3.amazonaws.com/1693565995611.pdf"
           >
-            Download CV
+            Curriculum
             <DowloadIcon />
           </Dowload>
         </CurriculumMax>
