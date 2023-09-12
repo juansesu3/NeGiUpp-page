@@ -8,6 +8,7 @@ import MyThreeComponent from "@/components/MyThreeComponent";
 import { useRouter } from "next/router";
 import TypingMessage from "@/components/TypingMessage";
 import WavingEmoji from "@/components/icons/WavingEmoji";
+import axios from "axios";
 
 const falling = keyframes`
   0% {
@@ -236,9 +237,10 @@ const Counter = styled.p`
 
 const Start = () => {
   const [showConfetti, setShowConfetti] = useState(false);
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [messageUser, setMessageUser] = useState("");
+  const [message, setMessage] = useState("");
 
   const [firstMessageDone, setFirstMessageDone] = useState(false);
   const [isHuman, setIsHuman] = useState(false);
@@ -268,6 +270,9 @@ const Start = () => {
   const handleClickDos = (ev) => {
     ev.preventDefault();
     setThird(false);
+    const data = { name, email, message };
+    console.log("data >>", data );
+    axios.post("/api/start", data);
 
     const intervalo = setInterval(() => {
       setContador((prevContador) => prevContador - 1);
@@ -379,8 +384,8 @@ const Start = () => {
                   <InputContainer>
                     <label> Message for Juan</label>(optional)
                     <textarea
-                      value={messageUser}
-                      onChange={(ev) => setMessageUser(ev.target.value)}
+                      value={message}
+                      onChange={(ev) => setMessage(ev.target.value)}
                       placeholder="MESSAGE"
                     />
                   </InputContainer>
