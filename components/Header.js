@@ -341,9 +341,7 @@ const Header = ({ route }) => {
       <Curriculum mobileNavActive={mobileNavActive}>
         <CurriculumMax>
           <TitleCur>
-           
-             <BackArrow/>
-           
+            <BackArrow />
           </TitleCur>
           <Dowload
             target="_blank"
