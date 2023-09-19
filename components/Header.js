@@ -347,7 +347,7 @@ const Header = ({ route }) => {
           </TitleCur>
           <Dowload
             target="_blank"
-            href="https://my-page-negiupp.s3.amazonaws.com/1693565995611.pdf"
+            href="https://my-page-negiupp.s3.amazonaws.com/1695136477036.pdf"
           >
             Curriculum
             <DowloadIcon />
