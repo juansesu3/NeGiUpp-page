@@ -150,7 +150,7 @@ const LogoMobile = styled.div`
   align-items: center;
   position: absolute;
   top: 50%;
-  left: 7.2%;
+  left: 27.5px;
   transform: translate(-50%, -50%);
   color: #f5f5f7;
   padding: 0;
@@ -191,7 +191,7 @@ const LogoSearch = styled.svg`
   padding: 0;
 `;
 const Curriculum = styled.div`
-  position: relative;
+  
   z-index: 10;
   width: 100%;
   padding: 0;
@@ -204,6 +204,7 @@ const Curriculum = styled.div`
     `}
 `;
 const CurriculumMax = styled.div`
+position: relative;
   max-width: 980px;
   margin: 0 auto;
   display: flex;

@@ -5,8 +5,8 @@ const Icon = styled.div`
   color: white;
   width: 22px;
   position: absolute;
-  bottom: 17.5%;
-  left: 1.8%;
+  bottom: 10px;
+  left: 7.5px;
   cursor: pointer;
   &:hover {
     color: #4d61fc;
