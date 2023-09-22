@@ -88,7 +88,7 @@ const NavLink = styled(Link)`
   display: block;
   color: #c1c1c3;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.8rem;
   transition: 0.3s;
   padding: 5px 0;
   @media screen and (min-width: 768px) {
@@ -149,14 +149,20 @@ const LogoMobile = styled.div`
   display: flex;
   align-items: center;
   position: absolute;
-  top: 48%;
-  left: 16%;
+  top: 50%;
+  left: 6%;
   transform: translate(-50%, -50%);
   color: #f5f5f7;
   padding: 0;
   font-size: 15px;
   @media screen and (min-width: 768px) {
     display: none;
+  }
+  width: 30px;
+  img {
+    width: 100%;
+    position: relative;
+    z-index: 20;
   }
 `;
 const LogoStore = styled.svg`
@@ -375,7 +381,15 @@ const Header = ({ route }) => {
             </svg>
           </NavButton>
 
-          <LogoMobile>negiupp.com</LogoMobile>
+          <LogoMobile>
+            {" "}
+            <Image
+              src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
+              alt="Logo"
+              width={400}
+              height={200}
+            />
+          </LogoMobile>
           <LogoStore>
             <svg
               xmlns="http://www.w3.org/2000/svg"
