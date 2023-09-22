@@ -12,7 +12,7 @@ const CardContainer = styled.div`
   align-items: center;
   padding: 1.5rem;
   justify-content: space-between;
-  width: 20.3rem;
+ 
 
   border-radius: 1rem;
 
@@ -20,9 +20,7 @@ const CardContainer = styled.div`
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-  @media screen and (min-width: 768px) {
-    margin-top: 2rem;
-  }
+
 `;
 
 const ImageCOntainer = styled.div`

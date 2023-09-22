@@ -51,7 +51,8 @@ const Title = styled.h1`
   line-height: 40px;
   color: #fff;
   font-weight: 500;
-  margin-bottom: 12px;
+  margin: 0px;
+
   span {
     color: #4d61fc;
   }

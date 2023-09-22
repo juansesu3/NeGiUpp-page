@@ -175,6 +175,7 @@ const LogoStore = styled.svg`
   transform: translate(-50%, -50%);
   color: #f5f5f7;
   padding: 0;
+  cursor: pointer;
   @media screen and (min-width: 768px) {
     display: none;
   }
@@ -191,7 +192,6 @@ const LogoSearch = styled.svg`
   padding: 0;
 `;
 const Curriculum = styled.div`
-  
   z-index: 10;
   width: 100%;
   padding: 0;
@@ -204,7 +204,7 @@ const Curriculum = styled.div`
     `}
 `;
 const CurriculumMax = styled.div`
-position: relative;
+  position: relative;
   max-width: 980px;
   margin: 0 auto;
   display: flex;
@@ -290,6 +290,10 @@ const Header = ({ route }) => {
   const toggleCross = () => {
     setMobileNavActive((prev) => !prev);
     setIsCross((prevIsCross) => !prevIsCross);
+  };
+
+  const goToStore = () => {
+    router.push("/notfound");
   };
 
   return (
@@ -393,7 +397,7 @@ const Header = ({ route }) => {
               height={200}
             />
           </LogoMobile>
-          <LogoStore>
+          <LogoStore onClick={goToStore}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
