@@ -4,14 +4,16 @@ import styled from "styled-components";
 const Icon = styled.div`
   color: white;
   width: 22px;
-  text-align: center;
+  position: absolute;
+  bottom: 17.5%;
+  left: 1.8%;
   cursor: pointer;
   &:hover {
     color: #4d61fc;
   }
 `;
 
-const BackArrow = ({ className = "w-6 h-6 text-red-500" }) => {
+const BackArrow = ({ className = "w-6 h-6" }) => {
   const router = useRouter();
 
   const goBack = () => {
