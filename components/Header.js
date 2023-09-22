@@ -21,7 +21,7 @@ const LogoLink = styled(Link)`
   text-decoration: none;
   display: none;
   align-items: center;
-  width: 50px;
+  width: 30px;
   img {
     width: 100%;
     position: relative;
@@ -47,6 +47,7 @@ const WrapperMax = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  flex-direction: row-reverse;
   padding: 0rem 0.5rem;
 
   @media screen and (min-width: 768px) {
@@ -133,6 +134,7 @@ const NavButton = styled.button`
   border: 0;
   color: #f5f5f7;
   padding: 5px 0px;
+
   cursor: pointer;
   svg {
     stroke: ${(props) => (props.isCross ? "#4d61fc" : "currentColor")};
@@ -147,8 +149,37 @@ const LogoMobile = styled.div`
   display: flex;
   align-items: center;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 48%;
+  left: 16%;
+  transform: translate(-50%, -50%);
+  color: #f5f5f7;
+  padding: 0;
+  font-size: 15px;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+`;
+const LogoStore = styled.svg`
+  width: 18px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 45%;
+  left: 82%;
+  transform: translate(-50%, -50%);
+  color: #f5f5f7;
+  padding: 0;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+`;
+const LogoSearch = styled.svg`
+  width: 18px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 45%;
+  left: 70%;
   transform: translate(-50%, -50%);
   color: #f5f5f7;
   padding: 0;
@@ -256,14 +287,7 @@ const Header = ({ route }) => {
     <StyledHeader>
       <WrapperFull route={route} isVisible={scrollDirection === "up"}>
         <WrapperMax>
-          <LogoLink route={route} href={"/"}>
-            <Image
-              src="https://my-page-negiupp.s3.amazonaws.com/1690838289355.png"
-              alt="logo-image"
-              width={100}
-              height={100}
-            />
-          </LogoLink>
+          <LetsTalk href={"/contact"}> Let&apos;s Talk</LetsTalk>
           <StyledNav route={route} mobileNavActive={mobileNavActive}>
             <NavButton route={route} onClick={toggleCross} isCross={isCross}>
               <svg
@@ -302,6 +326,13 @@ const Header = ({ route }) => {
             >
               Projects
             </NavLink>
+            <NavLink
+              route={route}
+              active={pathname === "/notfound" ? true : false}
+              href={"/notfound"}
+            >
+              Store
+            </NavLink>
             {/*
           <NavLink
             route={route}
@@ -318,7 +349,15 @@ const Header = ({ route }) => {
               Contact
             </NavLink>
           </StyledNav>
-          <LetsTalk href={"/contact"}> Let&apos;s Talk</LetsTalk>
+          <LogoLink route={route} href={"/"}>
+            <Image
+              src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
+              alt="Logo"
+              width={400}
+              height={200}
+            />
+          </LogoLink>
+
           <NavButton route={route} onClick={toggleCross} isCross={isCross}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -335,9 +374,40 @@ const Header = ({ route }) => {
               )}
             </svg>
           </NavButton>
+
           <LogoMobile>negiupp.com</LogoMobile>
+          <LogoStore>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                fillRule="evenodd"
+                d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 004.25 22.5h15.5a1.875 1.875 0 001.865-2.071l-1.263-12a1.875 1.875 0 00-1.865-1.679H16.5V6a4.5 4.5 0 10-9 0zM12 3a3 3 0 00-3 3v.75h6V6a3 3 0 00-3-3zm-3 8.25a3 3 0 106 0v-.75a.75.75 0 011.5 0v.75a4.5 4.5 0 11-9 0v-.75a.75.75 0 011.5 0v.75z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </LogoStore>
+          <LogoSearch>
+            {" "}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </LogoSearch>
         </WrapperMax>
       </WrapperFull>
+
       <Curriculum mobileNavActive={mobileNavActive}>
         <CurriculumMax>
           <TitleCur>

@@ -21,10 +21,25 @@ const ContainerAllProyects = styled.div`
   }
 `;
 
-const ContainerProyectL = styled(Link)`
+const ProyectLink = styled(Link)`
+  width: 8.5rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4d61fc;
   text-decoration: none;
-  color: #ffff;
-  width: 100%;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.4rem 1.2rem;
+  color: white;
+  cursor: pointer;
+  &:hover {
+    background-color: #3950ff;
+  }
 `;
 
 const FirstProyectsContainer = styled.div`
@@ -54,9 +69,18 @@ const SecondProyectsContainer = styled.div`
 `;
 
 const ContainerPro = styled.div`
+  position: relative;
   border-radius: 1rem;
   padding: 1rem;
-  width: auto;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+
+  &:hover {
+    transform: rotateY(180deg);
+  }
 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
@@ -129,6 +153,40 @@ const TitleBoxMobile = styled.div`
 const SeconConatiner = styled.div`
   width: 100%;
 `;
+const FlipContainer = styled.div`
+  perspective: 1000px;
+  width: 100%;
+  height: 100%;
+`;
+
+const CardFace = styled.div`
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  color: white;
+`;
+
+const CardBack = styled(CardFace)`
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 5%;
+  right: 0%;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  h1 {
+    color: #4d61fc;
+    margin: 0;
+  }
+`;
+const BackInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  p {
+    opacity: 0.5;
+  }
+`;
 
 const ProyectsPage = () => {
   const [proyects, setProyects] = useState([]);
@@ -175,26 +233,38 @@ const ProyectsPage = () => {
             </span>
           </TitleBoxMobile>
           <FirstProyectsContainer>
-            {FirstProyects.length > 0 &&
-              FirstProyects.map((proyect, index) => (
-                <RevealWrapper key={proyect._id} delay={index * 50}>
+            {FirstProyects.map((proyect, index) => (
+              <RevealWrapper key={proyect._id} delay={index * 50}>
+                <FlipContainer>
                   <ContainerPro>
-                    <ContainerProyectL href={"/proyect/" + proyect._id}>
+                    <CardFace>
+                      {/* Aquí iría el frente de tu tarjeta */}
                       <ImageContainer>
                         <Image
                           src={proyect.images[0]}
                           alt="Trello logo"
                           width={500}
-                          height={40}
+                          height={400} // Ajusta el tamaño según necesites
                         />
                       </ImageContainer>
                       <div>
                         <h1>{proyect.title}</h1>
                       </div>
-                    </ContainerProyectL>
+                    </CardFace>
+                    <CardBack>
+                      {/* Aquí iría la parte trasera de tu tarjeta */}
+                      <BackInfo>
+                        <h1>{proyect.title}</h1>
+                        <p>{proyect.about}</p>
+                        <ProyectLink href={"/proyect/" + proyect._id}>
+                          View
+                        </ProyectLink>
+                      </BackInfo>
+                    </CardBack>
                   </ContainerPro>
-                </RevealWrapper>
-              ))}
+                </FlipContainer>
+              </RevealWrapper>
+            ))}
           </FirstProyectsContainer>
           <SeconConatiner>
             <TitleBox>
@@ -226,19 +296,30 @@ const ProyectsPage = () => {
                 SecondProyects.map((proyect, index) => (
                   <RevealWrapper key={proyect._id} delay={index * 50}>
                     <ContainerPro>
-                      <ContainerProyectL href={"/proyect/" + proyect._id}>
+                      <CardFace>
+                        {/* Aquí iría el frente de tu tarjeta */}
                         <ImageContainer>
                           <Image
                             src={proyect.images[0]}
                             alt="Trello logo"
                             width={500}
-                            height={40}
+                            height={400} // Ajusta el tamaño según necesites
                           />
                         </ImageContainer>
                         <div>
-                          <h1>{proyect.title}</h1>
+                          <h1>{proyect?.title}</h1>
                         </div>
-                      </ContainerProyectL>
+                      </CardFace>
+                      <CardBack>
+                        {/* Aquí iría la parte trasera de tu tarjeta */}
+                        <BackInfo>
+                          <h1>{proyect?.title}</h1>
+                          <p>{proyect?.about}</p>
+                          <ProyectLink href={"/proyect/" + proyect._id}>
+                            View
+                          </ProyectLink>
+                        </BackInfo>
+                      </CardBack>
                     </ContainerPro>
                   </RevealWrapper>
                 ))}
