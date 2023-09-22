@@ -407,6 +407,7 @@ const Header = ({ route }) => {
               />
             </svg>
           </LogoStore>
+          {/*
           <LogoSearch>
             {" "}
             <svg
@@ -422,6 +423,7 @@ const Header = ({ route }) => {
               />
             </svg>
           </LogoSearch>
+           */}
         </WrapperMax>
       </WrapperFull>
 
