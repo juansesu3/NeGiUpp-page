@@ -27,7 +27,7 @@ const ConatinerNotFound = styled.div`
     text-align: center;
   }
   h3 {
-    color: white;
+    color: #4d61fc;
     text-align: center;
   }
 
@@ -54,6 +54,13 @@ const Title = styled.div`
     color: white;
   }
 `;
+const LogoContainer = styled.div`
+  width: 5rem;
+  margin-top: 1rem;
+  img {
+    width: 100%;
+  }
+`;
 
 const NegiuppPage = () => {
   return (
@@ -66,13 +73,16 @@ const NegiuppPage = () => {
         <ConatinerNotFound>
           <Title>
             <p>SelfBranding</p>
+
+            <LogoContainer>
+              <Image
+                src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
+                alt="Logo"
+                width={400}
+                height={200}
+              />
+            </LogoContainer>
             <h1>NeGiupp</h1>
-            <Image
-              src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
-              alt="Logo"
-              width={400}
-              height={200}
-            />
           </Title>
           <h2>
             ¡If you can imagine it, you can program it. Just never stop trying,
