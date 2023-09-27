@@ -73,7 +73,7 @@ const StyledNav = styled.nav`
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 40px 25px 25px;
+  padding: 30px 25px 25px;
   background-color: #1d1d1f;
   z-index: 10;
   gap: 4rem;
@@ -88,7 +88,7 @@ const NavLink = styled(Link)`
   display: block;
   color: #c1c1c3;
   text-decoration: none;
-  font-size: 0.8rem;
+  font-size: 1rem;
   transition: 0.3s;
   padding: 5px 0;
   @media screen and (min-width: 768px) {
@@ -103,6 +103,9 @@ const NavLink = styled(Link)`
     `}
   &:hover {
     color: #ffffff;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 0.8rem;
   }
 `;
 
