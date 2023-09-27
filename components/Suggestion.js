@@ -223,11 +223,6 @@ const Suggestion = () => {
       setTecnologies(response.data);
     });
   }, []);
-  console.log("Data orivided to OpenAI >>", {
-    profile,
-    technologies,
-    proyects,
-  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -318,7 +313,7 @@ const Suggestion = () => {
           ))}
         </StyledChatContainer>
 
-        <StyledForm>
+        <StyledForm onSubmit={handleSubmit}>
           <InfoAi isLoading={isLoading}>
             {isLoading
               ? "Give me a moment..."
@@ -340,7 +335,7 @@ const Suggestion = () => {
               value={inputValue}
               onChange={(ev) => setInputValue(ev.target.value)}
             />
-            <StyledButton onClick={handleSubmit} type="button">
+            <StyledButton type="submit">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
