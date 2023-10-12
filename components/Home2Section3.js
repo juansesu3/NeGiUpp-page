@@ -44,6 +44,17 @@ const Experinces = styled.div`
   border-radius: 2rem;
   padding: 1.5rem;
   text-align: center;
+  width: 10rem;
+  h4 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  p {
+    opacity: 0.5;
+
+    text-transform: uppercase;
+  }
 `;
 
 const Clients = styled.div`
@@ -56,6 +67,17 @@ const Clients = styled.div`
   border-radius: 2rem;
   padding: 1.5rem;
   text-align: center;
+  width: 10rem;
+  h4 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  p {
+    opacity: 0.5;
+
+    text-transform: uppercase;
+  }
 `;
 const Proj = styled.div`
   background-image: linear-gradient(to bottom right, #212121, #131313);
@@ -67,6 +89,16 @@ const Proj = styled.div`
   border-radius: 2rem;
   padding: 1.5rem;
   text-align: center;
+  width: 10rem;
+  h4 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  p {
+    opacity: 0.5;
+    text-transform: uppercase;
+  }
 `;
 
 const WorkTogether = styled.div`
@@ -101,7 +133,8 @@ const WorkTogether = styled.div`
 const WorkTitle = styled.div`
   font-size: 2.5rem;
   font-weight: 600;
-  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
   span {
     color: #4d61fc;
   }
@@ -165,16 +198,24 @@ const Home2Section3 = () => {
     <Section3>
       <InfoPlus>
         <Experinces>
-          <h4>+2</h4>
-          <p>Yers Experince</p>
+          <h4>03</h4>
+          <p>
+            Years <br />
+            Experince
+          </p>
         </Experinces>
         <Clients>
           <h4>+10</h4>
-          <p>Clienst WorldWide</p>
+          <p>
+            Clients <br /> Worldwide
+          </p>
         </Clients>
         <Proj>
           <h4>+15</h4>
-          <p>Total Proyects</p>
+          <p>
+            Total <br />
+            Projects
+          </p>
         </Proj>
       </InfoPlus>
 

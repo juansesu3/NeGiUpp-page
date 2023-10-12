@@ -12,7 +12,9 @@ const Section1 = styled.div`
   }
 `;
 
-const Summary = styled.div`
+const Summary = styled(Link)`
+  text-decoration: none;
+  color: inherit;
   background-image: linear-gradient(to bottom right, #212121, #131313);
   border: 1px solid #212121;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
@@ -156,7 +158,9 @@ const CredentAndProj = styled.div`
   }
 `;
 
-const Projects = styled.div`
+const Projects = styled(Link)`
+  text-decoration: none;
+  color: inherit;
   width: 100%;
   background-image: linear-gradient(to bottom right, #212121, #131313);
   border: 1px solid #212121;
@@ -210,7 +214,9 @@ const ImageContProject = styled.div`
   }
 `;
 
-const Credentials = styled.div`
+const Credentials = styled(Link)`
+  text-decoration: none;
+  color: inherit;
   width: 100%;
   background-image: linear-gradient(to bottom right, #212121, #131313);
   border: 1px solid #212121;
@@ -277,7 +283,7 @@ const LogoLink = styled(Link)`
 const Home2Section1 = () => {
   return (
     <Section1>
-      <Summary>
+      <Summary href={"/about"}>
         <ContSummary>
           <ImageCont>
             <img src="https://my-page-negiupp.s3.amazonaws.com/1696629533343.png" />
@@ -309,10 +315,10 @@ const Home2Section1 = () => {
       </Summary>
 
       <NextToSummary>
-        <LastNews>last news here- more last news here</LastNews>
+        <LastNews>This area is being developed.</LastNews>
 
         <CredentAndProj>
-          <Credentials>
+          <Credentials href={"/founders"}>
             <ImageContCredent>
               <Image
                 src={
@@ -330,7 +336,7 @@ const Home2Section1 = () => {
             </Infos>
             <IconDetail>
               {" "}
-              <LogoLink className="animation" href={"/"}>
+              <LogoLink className="animation" href={"/founders"}>
                 <Image
                   src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
                   alt="Logo"
@@ -341,7 +347,7 @@ const Home2Section1 = () => {
             </IconDetail>
           </Credentials>
 
-          <Projects>
+          <Projects href={"/proyects"}>
             <ImageContProject>
               <Image
                 src={
@@ -359,7 +365,7 @@ const Home2Section1 = () => {
             </Infos>
             <IconDetail>
               {" "}
-              <LogoLink className="animation" href={"/"}>
+              <LogoLink className="animation" href={"/proyects"}>
                 <Image
                   src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
                   alt="Logo"

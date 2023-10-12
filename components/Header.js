@@ -33,7 +33,7 @@ const LogoLink = styled(Link)`
 `;
 
 const WrapperFull = styled.div`
-  background-color: ${(props) => (props.isVisible ? "#1d1d1f" : "transparent")};
+  background-image: linear-gradient(to bottom right, #212121, #131313);
   margin: 0 auto;
   position: relative;
   /* Estilos para tu componente */
@@ -74,13 +74,24 @@ const StyledNav = styled.nav`
   left: 0;
   right: 0;
   padding: 30px 25px 25px;
-  background-color: #1d1d1f;
+  background-image: ${(props) =>
+    props.isVisible
+      ? "none"
+      : "linear-gradient(to bottom right, #212121, #131313)"};
+  background-color: ${(props) => (props.isVisible ? "transparent" : "inherit")};
+
   z-index: 10;
   gap: 4rem;
   @media screen and (min-width: 768px) {
     display: flex;
     position: static;
     padding: 0;
+    background-image: ${(props) =>
+      props.isVisible
+        ? "linear-gradient(to bottom right, #212121, #131313)"
+        : "none"};
+    background-color: ${(props) =>
+      props.isVisible ? "inherit" : "transparent"};
   }
 `;
 
@@ -198,7 +209,11 @@ const Curriculum = styled.div`
   z-index: 10;
   width: 100%;
   padding: 0;
-  background-color: #121212f5;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(33, 33, 33, 0.7),
+    rgba(19, 19, 19, 0.7)
+  );
   color: white;
   ${(props) =>
     props.mobileNavActive === true &&
@@ -206,6 +221,7 @@ const Curriculum = styled.div`
       top: 0px;
     `}
 `;
+
 const CurriculumMax = styled.div`
   position: relative;
   max-width: 980px;

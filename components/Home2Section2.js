@@ -14,7 +14,9 @@ const Section2 = styled.div`
   }
 `;
 
-const IoT = styled.div`
+const IoT = styled(Link)`
+  text-decoration: none;
+  color: inherit;
   background-image: linear-gradient(to bottom right, #212121, #131313);
   border: 1px solid #212121;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
@@ -79,7 +81,7 @@ const Services = styled.div`
   padding: 1.5rem;
   border-radius: 2rem;
   position: relative;
-  cursor: pointer;
+
   .animation {
     opacity: 0.5;
   }
@@ -97,6 +99,15 @@ const Services = styled.div`
 `;
 
 const ContServices = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+  padding: 1rem;
+`;
+const ServicesLink = styled(Link)`
   background-image: linear-gradient(to bottom right, #212121, #131313);
   border: 1px solid #212121;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
@@ -108,16 +119,11 @@ const ContServices = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
+
   gap: 1.5rem;
-  padding: 2.5rem;
-`;
-const ServicesLink = styled(Link)`
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  color: white;
+  padding: 1.5rem;
   svg {
+    color: white;
     width: 2em;
     margin: 0.5rem auto;
     transition: 0.3s;
@@ -140,7 +146,7 @@ const ProfilesDesktop = styled.div`
   border-radius: 2rem;
   position: relative;
   width: 100%;
-  cursor: pointer;
+
   @media screen and (min-width: 920px) {
     width: 30%;
   }
@@ -166,7 +172,7 @@ const ProfilesMobile = styled.div`
   padding: 1.5rem;
   border-radius: 2rem;
   position: relative;
-  cursor: pointer;
+
   @media screen and (min-width: 920px) {
     display: none;
   }
@@ -183,39 +189,43 @@ const ProfilesMobile = styled.div`
 `;
 
 const RrSs = styled.div`
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-  border-radius: 1.5rem;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
-  width: 11rem;
+  padding-top: 0rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 16rem;
   height: 11rem;
   margin: 0 auto;
   margin-bottom: 1rem;
 `;
 
 const LinkRRSS = styled.a`
-  height: 2.5rem;
-  width: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
+  border-radius: 1rem;
   cursor: pointer;
   svg {
     color: #ffff;
-    width: 100%;
+    height: 2.5rem;
+    width: 2.5rem;
   }
   div img {
-    width: 100%;
+    height: 2.5rem;
+    width: 2.5rem;
   }
+  background-image: linear-gradient(to bottom right, #212121, #131313);
+  border: 1px solid #212121;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
 `;
 const Mobile = styled.div`
   display: flex;
@@ -312,7 +322,7 @@ const Home2Section2 = () => {
   return (
     <Section2>
       <Mobile>
-        <IoT>
+        <IoT href={"notfound"}>
           <ImageContIoT>
             {" "}
             <Image
@@ -352,6 +362,7 @@ const Home2Section2 = () => {
                   <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" />
                 </svg>
               </LinkRRSS>
+
               <LinkRRSS>
                 <svg
                   width="800px"
