@@ -27,7 +27,12 @@ const ProyectLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #4d61fc;
+  background-image: linear-gradient(to bottom right, #212121, #131313);
+  border: 1px solid #212121;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   text-decoration: none;
   font-weight: 500;
   font-size: 15px;
@@ -82,6 +87,8 @@ const ContainerPro = styled.div`
     transform: rotateY(180deg);
   }
 
+  background-image: linear-gradient(to bottom right, #212121, #131313);
+  border: 1px solid #212121;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -188,6 +195,28 @@ const BackInfo = styled.div`
   }
 `;
 
+const IconDetail = styled.div`
+  position: absolute;
+  right: 8%;
+  bottom: 10%;
+  backface-visibility: hidden;
+`;
+
+const LogoLink = styled(Link)`
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 1.6rem;
+  img {
+    width: 100%;
+    position: relative;
+  }
+
+  @media screen and (min-width: 768px) {
+  }
+`;
+
 const ProyectsPage = () => {
   const [proyects, setProyects] = useState([]);
 
@@ -248,9 +277,20 @@ const ProyectsPage = () => {
                         />
                       </ImageContainer>
                       <div>
+                        <p>{proyect.service}</p>
                         <h1>{proyect.title}</h1>
                       </div>
                     </CardFace>
+                    <IconDetail>
+                      <LogoLink className="animation" href={"/proyects"}>
+                        <Image
+                          src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
+                          alt="Logo"
+                          width={400}
+                          height={200}
+                        />
+                      </LogoLink>
+                    </IconDetail>
                     <CardBack>
                       {/* Aquí iría la parte trasera de tu tarjeta */}
                       <BackInfo>
@@ -307,9 +347,20 @@ const ProyectsPage = () => {
                           />
                         </ImageContainer>
                         <div>
+                          <p>{proyect.service}</p>
                           <h1>{proyect?.title}</h1>
                         </div>
                       </CardFace>
+                      <IconDetail>
+                        <LogoLink className="animation" href={"/proyects"}>
+                          <Image
+                            src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
+                            alt="Logo"
+                            width={400}
+                            height={200}
+                          />
+                        </LogoLink>
+                      </IconDetail>
                       <CardBack>
                         {/* Aquí iría la parte trasera de tu tarjeta */}
                         <BackInfo>

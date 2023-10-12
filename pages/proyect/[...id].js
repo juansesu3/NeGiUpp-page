@@ -43,7 +43,8 @@ const ContainerSect = styled.div`
   gap: 1.5rem;
   flex-direction: column;
   border-radius: 1rem;
-
+  background-image: linear-gradient(to bottom right, #212121, #131313);
+  border: 1px solid #212121;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -82,11 +83,12 @@ const AboutInfo = styled.div`
     letter-spacing: 0.5px;
     line-height: 1.56;
   }
-  background: linear-gradient(
-    100deg,
-    rgb(189 189 189 / 7%),
-    rgba(255, 255, 255, 0)
-  );
+  background-image: linear-gradient(to bottom right, #212121, #131313);
+  border: 1px solid #212121;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   @media screen and (min-width: 768px) {
     width: 50%;
   }
@@ -124,11 +126,12 @@ const MoreDetail = styled.div`
   border-radius: 1rem;
   color: #ffff;
   text-align: center;
-  background: linear-gradient(
-    100deg,
-    rgb(189 189 189 / 7%),
-    rgba(255, 255, 255, 0)
-  );
+  background-image: linear-gradient(to bottom right, #212121, #131313);
+  border: 1px solid #212121;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   div {
     padding: 1rem 0;
   }
@@ -163,16 +166,14 @@ const ContainerButton = styled.div`
     padding: 0.5rem 1rem;
     border-radius: 5px;
     cursor: pointer;
-    background: linear-gradient(
-      120deg,
-      rgba(255, 255, 255, 0.3),
-      rgba(255, 255, 255, 0.05)
-    );
+
     color: #ffff;
     opacity: 0.9;
     font-size: 0.8rem;
     font-weight: 500;
     transition: 0.4s;
+    background-image: linear-gradient(to bottom right, #212121, #131313);
+    border: 1px solid #212121;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
       /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
       /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -201,11 +202,12 @@ const ContainerTech = styled.div`
   color: #ffff;
   padding: 1.5rem;
   width: 100%;
-  background: linear-gradient(
-    100deg,
-    rgb(189 189 189 / 7%),
-    rgba(255, 255, 255, 0)
-  );
+  background-image: linear-gradient(to bottom right, #212121, #131313);
+  border: 1px solid #212121;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   h3 {
     opacity: 0.5;
     margin: 0;

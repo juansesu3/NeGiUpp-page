@@ -46,7 +46,8 @@ const ImageContainer = styled.div`
   margin: 0 auto;
   padding: 1.5rem;
   border-radius: 1rem;
-  background-color: #121212;
+  background-image: linear-gradient(to bottom right, #212121, #131313);
+  border: 1px solid #212121;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -121,7 +122,8 @@ const InfoAboutContainer = styled.div`
   padding: 1.5rem;
   border-radius: 1rem;
   margin: auto 0;
-  background-color: #121212;
+  background-image: linear-gradient(to bottom right, #212121, #131313);
+  border: 1px solid #212121;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -158,12 +160,12 @@ const CeoContainer = styled(Link)`
   align-items: center;
   padding: 2rem;
   border-radius: 1rem;
-  background-color: #121212;
+  background-image: linear-gradient(to bottom right, #212121, #131313);
+  border: 1px solid #212121;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-
   p {
     color: #ffff;
     opacity: 0.8;
@@ -192,7 +194,8 @@ const WorkTogetheContainer = styled(Link)`
 
   padding: 2rem;
   border-radius: 1rem;
-  background-color: #121212;
+  background-image: linear-gradient(to bottom right, #212121, #131313);
+  border: 1px solid #212121;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -252,7 +255,12 @@ const StartContainer = styled(Link)`
   align-items: center;
   color: #ffff;
   padding: 2rem;
-  background-color: #121212;
+  background-image: linear-gradient(to bottom right, #212121, #131313);
+  border: 1px solid #212121;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   border-radius: 1rem;
   animation: ${pulseAnimation} 2.5s infinite;
   transform-origin: center;
@@ -292,7 +300,8 @@ const InfoCultureHitosContainer = styled.div`
   gap: 1rem;
   padding: 1.5rem;
   border-radius: 1rem;
-  background-color: #121212;
+  background-image: linear-gradient(to bottom right, #212121, #131313);
+  border: 1px solid #212121;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
