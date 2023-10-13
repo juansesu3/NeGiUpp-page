@@ -23,7 +23,7 @@ const IoT = styled(Link)`
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-
+width: 100%;
   padding: 1.5rem;
   border-radius: 2rem;
   position: relative;
@@ -31,9 +31,7 @@ const IoT = styled(Link)`
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  @media screen and (min-width: 920px) {
-    width: 100%;
-  }
+  
   .animation {
     opacity: 0.5;
   }
@@ -60,9 +58,11 @@ const ImageContIoT = styled.div`
   margin: 0 auto;
   margin-bottom: 1.5rem;
   gap: 1.5rem;
-  height: 10rem;
+ width: 100%;
+  height: 11rem;
+ 
   @media screen and (min-width: 500px) {
-    width: 12rem;
+ 
   }
   img {
     width: 100%;
@@ -96,6 +96,7 @@ const Services = styled.div`
   }
 
   @media screen and (min-width: 920px) {
+     width: 50%;
   }
 `;
 
@@ -328,7 +329,7 @@ const Home2Section2 = () => {
           <ImageContIoT>
             {" "}
             <Image
-              src={"https://my-page-negiupp.s3.amazonaws.com/1696690106566.png"}
+              src={"https://my-page-negiupp.s3.amazonaws.com/1697188125252.jpg"}
               width={500}
               height={500}
               alt="project-image"
