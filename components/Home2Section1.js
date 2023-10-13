@@ -26,7 +26,9 @@ const Summary = styled(Link)`
   padding: 2.5rem;
   border-radius: 2rem;
   color: white;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   .animation {
     opacity: 0.5;
@@ -109,7 +111,7 @@ const ImageCont = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: space-around;
   transform: scaleX(1);
 
   left: 2%;
@@ -201,7 +203,7 @@ const ImageContProject = styled.div`
   margin: 0 auto;
   margin-bottom: 1rem;
   gap: 1.5rem;
- 
+
   height: 11rem;
   @media screen and (min-width: 500px) {
   }

@@ -15,7 +15,6 @@ import Head from "next/head";
 const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
-
   padding: 1.5rem 0.5rem;
   @media screen and (min-width: 805px) {
     padding: 2.5rem 0.5rem;
@@ -23,23 +22,12 @@ const AboutContainer = styled.div`
 `;
 
 const AboutCont = styled.div`
-  width: 100%;
-
   @media screen and (min-width: 805px) {
-    width: 60%;
-  }
-`;
-
-const ImgCont = styled.div`
-  margin: 0 auto;
-
-  @media screen and (min-width: 805px) {
-    width: 40%;
+    width: 80%;
   }
 `;
 
 const ImageContainer = styled.div`
-  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -52,9 +40,15 @@ const ImageContainer = styled.div`
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  transform: scaleX(-1);
   img {
     width: 100%;
     border-radius: 1rem;
+  }
+  margin: 0 auto;
+
+  @media screen and (min-width: 805px) {
+    width: 19rem;
   }
 `;
 
@@ -96,7 +90,7 @@ const TitleMobile = styled.span`
   gap: 1rem;
   justify-content: center;
   white-space: nowrap;
-
+  position: relative;
   h1 {
     margin: 0;
     text-transform: uppercase;
@@ -119,15 +113,9 @@ const TitleMobile = styled.span`
 const InfoAboutContainer = styled.div`
   display: flex;
   align-items: center;
-  padding: 1.5rem;
   border-radius: 1rem;
   margin: auto 0;
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  gap: 1.5rem;
   h2 {
     margin: 0;
   }
@@ -138,7 +126,6 @@ const InfoAboutContainer = styled.div`
     margin-bottom: 0;
   }
   @media screen and (min-width: 805px) {
-    height: 22.25rem;
     p {
       line-height: 1.8rem;
       letter-spacing: 0.02rem;
@@ -176,7 +163,7 @@ const CeoContainer = styled(Link)`
     color: #4d61fc;
   }
   @media screen and (min-width: 805px) {
-    width: 30%;
+    width: 100%;
   }
   transition: 0.3s;
   &:hover {
@@ -224,7 +211,7 @@ const WorkTogetheContainer = styled(Link)`
     }
   }
   @media screen and (min-width: 805px) {
-    width: 40%;
+    width: 50%;
   }
 `;
 
@@ -291,10 +278,11 @@ const StartContainer = styled(Link)`
   }
 
   @media screen and (min-width: 805px) {
-    width: 30%;
+    width: 50%;
   }
 `;
 const InfoCultureHitosContainer = styled.div`
+  
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -362,6 +350,95 @@ const ContainerThirdSec = styled.div`
   }
 `;
 
+const Detail = styled.div`
+  background-image: linear-gradient(to bottom right, #212121, #131313);
+  border: 1px solid #212121;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+
+  border-radius: 1rem;
+  padding: 2rem;
+
+  @media screen and (min-width: 805px) {
+    padding: 0.8rem 2rem;
+  }
+`;
+const ExpSelBrand = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+`;
+
+const InfoCultureHitosContainerExpe = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-image: linear-gradient(to bottom right, #212121, #131313);
+  border: 1px solid #212121;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  h2 {
+    margin: 0;
+  }
+
+  p {
+    color: #ffff;
+    opacity: 0.6;
+    line-height: 1.8rem;
+    letter-spacing: 0.07rem;
+    margin: 0;
+  }
+  h3 {
+    margin: 0;
+    color: #4d61fc;
+    font-weight: 600;
+  }
+  h4 {
+    margin: 0.3rem 0;
+    font-weight: 500;
+  }
+  @media screen and (min-width: 805px) {
+    gap: 1rem;
+
+    p {
+      color: #ffff;
+      opacity: 0.6;
+      line-height: 1.6rem;
+      letter-spacing: 0.03rem;
+      margin: 0;
+      font-weight: 400;
+      font-size: inherit;
+    }
+    h3 {
+      margin: 0;
+      color: #4d61fc;
+      font-weight: 500;
+    }
+  }
+`;
+const LogoLink = styled(Link)`
+  color: #fff;
+  text-decoration: none;
+
+  align-items: center;
+  width: 8.3rem;
+  img {
+    width: 100%;
+    position: relative;
+    z-index: 20;
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+`;
+
 const AboutPage = () => {
   const router = useRouter();
   const [profile, setProfile] = useState({});
@@ -407,18 +484,18 @@ const AboutPage = () => {
                       />
                     </span>
                   </TitleMobile>
-                  <ImgCont>
-                    <ImageContainer>
-                      <Image
-                        src={
-                          "https://my-page-negiupp.s3.amazonaws.com/1688550234499.jpg"
-                        }
-                        alt="about-image"
-                        width={800}
-                        height={100}
-                      />
-                    </ImageContainer>
-                  </ImgCont>
+
+                  <ImageContainer>
+                    <Image
+                      src={
+                        "https://my-page-negiupp.s3.amazonaws.com/1688550234499.jpg"
+                      }
+                      alt="about-image"
+                      width={800}
+                      height={100}
+                    />
+                  </ImageContainer>
+
                   <AboutCont>
                     <Title>
                       <span>
@@ -447,40 +524,55 @@ const AboutPage = () => {
                     </Title>
 
                     <InfoAboutContainer>
-                      <div>
+                      <Detail>
                         <h2>{prof.greeting}</h2>
                         <p>{prof.shortIntro}</p>
-                      </div>
+                      </Detail>
                     </InfoAboutContainer>
                   </AboutCont>
                 </ContainerSec>
               </RevealWrapper>
+
               {/*Second section */}
               <RevealWrapper delay={200} duration={1000}>
                 <ContainerSec>
-                  <InfoCultureHitosContainer>
-                    <h2>Experiences</h2>
-                    {prof.experinces.length > 0 &&
-                      prof.experinces.map((exp, indexExp) => (
-                        <div key={indexExp}>
-                          <p>
-                            {`${moment(exp.startDateExp)
-                              .utc()
-                              .format("MM/DD/YYYY")
-                              .split("/")
-                              .pop()} - 
+                  <ExpSelBrand>
+                    <CeoContainer href={"/negiupp"}>
+                      <LogoLink href={"/"}>
+                        <Image
+                          src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
+                          alt="Logo"
+                          width={400}
+                          height={200}
+                        />
+                      </LogoLink>
+                      <h1>What is NeGiUpp?</h1>
+                    </CeoContainer>
+                    <InfoCultureHitosContainerExpe>
+                      <h2>Experiences</h2>
+                      {prof.experinces.length > 0 &&
+                        prof.experinces.map((exp, indexExp) => (
+                          <div key={indexExp}>
+                            <p>
+                              {`${moment(exp.startDateExp)
+                                .utc()
+                                .format("MM/DD/YYYY")
+                                .split("/")
+                                .pop()} - 
 
                               ${moment(exp.endDateExp)
                                 .utc()
                                 .format("MM/DD/YYYY")
                                 .split("/")
                                 .pop()}`}
-                          </p>
-                          <h3>{exp.position}</h3>
-                          <h4 className="company">{exp.company}</h4>
-                        </div>
-                      ))}
-                  </InfoCultureHitosContainer>
+                            </p>
+                            <h3>{exp.position}</h3>
+                            <h4 className="company">{exp.company}</h4>
+                          </div>
+                        ))}
+                    </InfoCultureHitosContainerExpe>
+                  </ExpSelBrand>
+
                   <InfoCultureHitosContainer>
                     <h2>Education</h2>
                     {prof.education.length > 0 &&
@@ -500,9 +592,6 @@ const AboutPage = () => {
                   </InfoCultureHitosContainer>
                 </ContainerSec>
                 <ContainerThirdSec>
-                  <CeoContainer href={"/negiupp"}>
-                    <h1>What is NeGiUpp?</h1>
-                  </CeoContainer>
                   <WorkTogetheContainer href={"/contact"}>
                     <h1>
                       Let&apos;s
