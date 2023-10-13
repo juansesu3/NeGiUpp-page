@@ -80,11 +80,13 @@ const ContainerPro = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
+  /*
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  transition: transform 0.5s;
+  transition: transform 0.5s;*/
 
   &:hover {
-    transform: rotateY(180deg);
+   // transform: rotateY(180deg);
   }
 
   background-image: linear-gradient(to bottom right, #212121, #131313);
@@ -172,8 +174,9 @@ const CardFace = styled.div`
   backface-visibility: hidden;
   color: white;
 `;
-
+/*
 const CardBack = styled(CardFace)`
+-webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
   position: absolute;
   top: 5%;
@@ -194,11 +197,11 @@ const BackInfo = styled.div`
     opacity: 0.5;
   }
 `;
-
+*/
 const IconDetail = styled.div`
   position: absolute;
-  right: 8%;
-  bottom: 10%;
+  right: 7%;
+  bottom: 7%;
   backface-visibility: hidden;
 `;
 
@@ -216,6 +219,18 @@ const LogoLink = styled(Link)`
   @media screen and (min-width: 768px) {
   }
 `;
+const Name = styled.div`
+  h1 {
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
+  }
+  p {
+    opacity: 0.5;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+  }
+`;
 
 const ProyectsPage = () => {
   const [proyects, setProyects] = useState([]);
@@ -224,6 +239,14 @@ const ProyectsPage = () => {
     axios.get("/api/proyects").then((response) => {
       setProyects(response.data);
     });
+  }, []);
+
+  useEffect(() => {
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    
+    if (isSafari) {
+      // Añadir una clase para anular animaciones o hacer lo que necesites hacer
+    }
   }, []);
 
   const FirstProyects = proyects.slice(0, 2);
@@ -276,10 +299,10 @@ const ProyectsPage = () => {
                           height={400} // Ajusta el tamaño según necesites
                         />
                       </ImageContainer>
-                      <div>
+                      <Name>
                         <p>{proyect.service}</p>
                         <h1>{proyect.title}</h1>
-                      </div>
+                      </Name>
                     </CardFace>
                     <IconDetail>
                       <LogoLink className="animation" href={"/proyects"}>
@@ -291,8 +314,9 @@ const ProyectsPage = () => {
                         />
                       </LogoLink>
                     </IconDetail>
+                    {/*
                     <CardBack>
-                      {/* Aquí iría la parte trasera de tu tarjeta */}
+                      {/* Aquí iría la parte trasera de tu tarjeta 
                       <BackInfo>
                         <h1>{proyect.title}</h1>
                         <p>{proyect.about}</p>
@@ -301,6 +325,7 @@ const ProyectsPage = () => {
                         </ProyectLink>
                       </BackInfo>
                     </CardBack>
+                  */}
                   </ContainerPro>
                 </FlipContainer>
               </RevealWrapper>
@@ -346,10 +371,10 @@ const ProyectsPage = () => {
                             height={400} // Ajusta el tamaño según necesites
                           />
                         </ImageContainer>
-                        <div>
+                        <Name>
                           <p>{proyect.service}</p>
                           <h1>{proyect?.title}</h1>
-                        </div>
+                        </Name>
                       </CardFace>
                       <IconDetail>
                         <LogoLink className="animation" href={"/proyects"}>
@@ -361,16 +386,18 @@ const ProyectsPage = () => {
                           />
                         </LogoLink>
                       </IconDetail>
-                      <CardBack>
-                        {/* Aquí iría la parte trasera de tu tarjeta */}
-                        <BackInfo>
-                          <h1>{proyect?.title}</h1>
-                          <p>{proyect?.about}</p>
-                          <ProyectLink href={"/proyect/" + proyect._id}>
-                            View
-                          </ProyectLink>
-                        </BackInfo>
-                      </CardBack>
+                       {/*
+                    <CardBack>
+                      {/* Aquí iría la parte trasera de tu tarjeta 
+                      <BackInfo>
+                        <h1>{proyect.title}</h1>
+                        <p>{proyect.about}</p>
+                        <ProyectLink href={"/proyect/" + proyect._id}>
+                          View
+                        </ProyectLink>
+                      </BackInfo>
+                    </CardBack>
+                  */}
                     </ContainerPro>
                   </RevealWrapper>
                 ))}
