@@ -121,13 +121,13 @@ const LinksContainer = styled.div`
 
 
 const ContFotter = styled.div`
-  max-width: 980px;
+  max-width: 1080px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  @media screen and (min-width: 980px) {
-    width: 980px;
+  @media screen and (min-width: 1080px) {
+    width: 1080px;
   }
 `;
 const Footer = () => {

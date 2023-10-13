@@ -201,10 +201,9 @@ const ImageContProject = styled.div`
   margin: 0 auto;
   margin-bottom: 1rem;
   gap: 1.5rem;
-  width: 18rem;
-  height: 10rem;
+ 
+  height: 11rem;
   @media screen and (min-width: 500px) {
-    width: 12rem;
   }
   img {
     width: 100%;
@@ -253,7 +252,7 @@ const ImageContCredent = styled.div`
 
   gap: 1.5rem;
   width: 11rem;
-  height: 11rem;
+  height: 12rem;
   img {
     width: 100%;
     border-radius: 1rem;

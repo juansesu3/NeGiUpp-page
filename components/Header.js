@@ -43,7 +43,7 @@ const WrapperFull = styled.div`
   overflow: hidden; /* Para ocultar el contenido del componente cuando está colapsado */
 `;
 const WrapperMax = styled.div`
-  max-width: 980px;
+  max-width: 1080px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -224,7 +224,7 @@ const Curriculum = styled.div`
 
 const CurriculumMax = styled.div`
   position: relative;
-  max-width: 980px;
+  max-width: 1080px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;

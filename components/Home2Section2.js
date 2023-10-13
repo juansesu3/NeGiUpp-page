@@ -23,10 +23,13 @@ const IoT = styled(Link)`
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-  width: 100%;
+
   padding: 1.5rem;
   border-radius: 2rem;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   cursor: pointer;
   @media screen and (min-width: 920px) {
     width: 100%;
@@ -55,9 +58,8 @@ const ImageContIoT = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   gap: 1.5rem;
-  width: 18rem;
   height: 10rem;
   @media screen and (min-width: 500px) {
     width: 12rem;
@@ -94,7 +96,6 @@ const Services = styled.div`
   }
 
   @media screen and (min-width: 920px) {
-    width: 50%;
   }
 `;
 
@@ -103,11 +104,7 @@ const ContServices = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
   gap: 1rem;
-  padding: 1rem;
-`;
-const ServicesLink = styled(Link)`
   background-image: linear-gradient(to bottom right, #212121, #131313);
   border: 1px solid #212121;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
@@ -115,23 +112,22 @@ const ServicesLink = styled(Link)`
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   border-radius: 2rem;
+  height: 10rem;
+  margin-bottom: 1.5rem;
+`;
+const ServicesLink = styled(Link)`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
-  gap: 1.5rem;
+  width: 7rem;
   padding: 1.5rem;
   svg {
     color: white;
-    width: 2em;
-    margin: 0.5rem auto;
+    width: 100%;
     transition: 0.3s;
-    @media screen and (min-width: 500px) {
-      width: 4em;
-    }
     &:hover {
-      color: #3950ff;
+      color: #4d61fc;
     }
   }
 `;
@@ -189,19 +185,13 @@ const ProfilesMobile = styled.div`
 `;
 
 const RrSs = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-  padding-top: 0rem;
-  padding-bottom: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  width: 16rem;
-  height: 11rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* dos columnas */
+  grid-template-rows: 1fr 1fr; /* dos filas */
+  gap: 0.5rem; /* espacio entre las celdas */
   margin: 0 auto;
-  margin-bottom: 1rem;
+  height: 10rem;
+  margin-bottom: 1.5rem;
 `;
 
 const LinkRRSS = styled.a`
@@ -211,6 +201,18 @@ const LinkRRSS = styled.a`
   padding: 1rem;
   border-radius: 1rem;
   cursor: pointer;
+  background-image: linear-gradient(to bottom right, #212121, #131313);
+  border: 1px solid #212121;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+
+  transition: background-image 0.3s ease-in-out;
+  &:hover {
+    background-image: linear-gradient(to bottom right, #4d61fc, #4d61fc);
+  }
+
   svg {
     color: #ffff;
     height: 2.5rem;
@@ -220,12 +222,12 @@ const LinkRRSS = styled.a`
     height: 2.5rem;
     width: 2.5rem;
   }
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+`;
+
+const Freelancer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 const Mobile = styled.div`
   display: flex;
@@ -421,9 +423,9 @@ const Home2Section2 = () => {
               </LinkRRSS>
               <LinkRRSS>
                 {" "}
-                <div>
+                <Freelancer>
                   <img src="https://my-page-negiupp.s3.amazonaws.com/1696597738262.png" />
-                </div>
+                </Freelancer>
               </LinkRRSS>
             </RrSs>
             <Infos>
