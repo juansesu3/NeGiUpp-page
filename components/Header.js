@@ -312,7 +312,7 @@ const Header = ({ route }) => {
   };
 
   const goToStore = () => {
-    router.push("/notfound");
+    window.open("https://negiupp.myshopify.com/", "_blank");
   };
 
   return (
@@ -360,8 +360,9 @@ const Header = ({ route }) => {
             </NavLink>
             <NavLink
               route={route}
-              active={pathname === "/notfound" ? true : false}
-              href={"/notfound"}
+             
+              href={"/"}
+              onClick={goToStore}
             >
               Store
             </NavLink>

@@ -119,7 +119,7 @@ const CardCEO = () => {
           <Image
             src="https://my-page-negiupp.s3.amazonaws.com/1688550234499.jpg"
             alt="founder profile image"
-            width={300}
+            width={500}
             height={300}
           />
         </ImageCOntainer>
