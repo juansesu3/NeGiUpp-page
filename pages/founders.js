@@ -21,7 +21,7 @@ const ContainerFounders = styled.div`
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
-    height: 41rem;
+    height: 38rem;
     padding: 4.5rem 1rem 0rem 1rem;
   }
 `;

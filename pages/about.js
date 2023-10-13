@@ -28,7 +28,7 @@ const AboutCont = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   margin: 0 auto;
@@ -47,7 +47,7 @@ const ImageContainer = styled.div`
   }
   margin: 0 auto;
 
-  @media screen and (min-width: 805px) {
+  @media screen and (min-width: 400px) {
     width: 19rem;
   }
 `;
@@ -282,7 +282,6 @@ const StartContainer = styled(Link)`
   }
 `;
 const InfoCultureHitosContainer = styled.div`
-  
   display: flex;
   flex-direction: column;
   gap: 1rem;
