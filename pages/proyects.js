@@ -86,7 +86,7 @@ const ContainerPro = styled.div`
   transition: transform 0.5s;*/
 
   &:hover {
-   // transform: rotateY(180deg);
+    // transform: rotateY(180deg);
   }
 
   background-image: linear-gradient(to bottom right, #212121, #131313);
@@ -168,11 +168,12 @@ const FlipContainer = styled.div`
   height: 100%;
 `;
 
-const CardFace = styled.div`
+const CardFace = styled(Link)`
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
+
   color: white;
+  text-decoration: none;
 `;
 /*
 const CardBack = styled(CardFace)`
@@ -205,7 +206,7 @@ const IconDetail = styled.div`
   backface-visibility: hidden;
 `;
 
-const LogoLink = styled(Link)`
+const LogoLink = styled.div`
   color: #fff;
   text-decoration: none;
   display: flex;
@@ -239,14 +240,6 @@ const ProyectsPage = () => {
     axios.get("/api/proyects").then((response) => {
       setProyects(response.data);
     });
-  }, []);
-
-  useEffect(() => {
-    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-    
-    if (isSafari) {
-      // Añadir una clase para anular animaciones o hacer lo que necesites hacer
-    }
   }, []);
 
   const FirstProyects = proyects.slice(0, 2);
@@ -287,34 +280,33 @@ const ProyectsPage = () => {
           <FirstProyectsContainer>
             {FirstProyects.map((proyect, index) => (
               <RevealWrapper key={proyect._id} delay={index * 50}>
-                <FlipContainer>
-                  <ContainerPro>
-                    <CardFace>
-                      {/* Aquí iría el frente de tu tarjeta */}
-                      <ImageContainer>
-                        <Image
-                          src={proyect.images[0]}
-                          alt="Trello logo"
-                          width={500}
-                          height={400} // Ajusta el tamaño según necesites
-                        />
-                      </ImageContainer>
-                      <Name>
-                        <p>{proyect.service}</p>
-                        <h1>{proyect.title}</h1>
-                      </Name>
-                    </CardFace>
-                    <IconDetail>
-                      <LogoLink className="animation" href={"/proyects"}>
-                        <Image
-                          src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
-                          alt="Logo"
-                          width={400}
-                          height={200}
-                        />
-                      </LogoLink>
-                    </IconDetail>
-                    {/*
+                <ContainerPro>
+                  <CardFace href={"/proyect/" + proyect._id}>
+                    {/* Aquí iría el frente de tu tarjeta */}
+                    <ImageContainer>
+                      <Image
+                        src={proyect.images[0]}
+                        alt="Trello logo"
+                        width={500}
+                        height={400} // Ajusta el tamaño según necesites
+                      />
+                    </ImageContainer>
+                    <Name>
+                      <p>{proyect.service}</p>
+                      <h1>{proyect.title}</h1>
+                    </Name>
+                  </CardFace>
+                  <IconDetail>
+                    <LogoLink className="animation" href={"/proyects"}>
+                      <Image
+                        src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
+                        alt="Logo"
+                        width={400}
+                        height={200}
+                      />
+                    </LogoLink>
+                  </IconDetail>
+                  {/*
                     <CardBack>
                       {/* Aquí iría la parte trasera de tu tarjeta 
                       <BackInfo>
@@ -326,8 +318,7 @@ const ProyectsPage = () => {
                       </BackInfo>
                     </CardBack>
                   */}
-                  </ContainerPro>
-                </FlipContainer>
+                </ContainerPro>
               </RevealWrapper>
             ))}
           </FirstProyectsContainer>
@@ -361,7 +352,7 @@ const ProyectsPage = () => {
                 SecondProyects.map((proyect, index) => (
                   <RevealWrapper key={proyect._id} delay={index * 50}>
                     <ContainerPro>
-                      <CardFace>
+                      <CardFace href={"/proyect/" + proyect._id}>
                         {/* Aquí iría el frente de tu tarjeta */}
                         <ImageContainer>
                           <Image
@@ -386,7 +377,7 @@ const ProyectsPage = () => {
                           />
                         </LogoLink>
                       </IconDetail>
-                       {/*
+                      {/*
                     <CardBack>
                       {/* Aquí iría la parte trasera de tu tarjeta 
                       <BackInfo>
