@@ -8,7 +8,7 @@ const Section2 = styled.div`
   flex-direction: column;
   justify-content: space-between;
   color: white;
-  gap: 1.5rem;
+  gap: 1rem;
   @media screen and (min-width: 920px) {
     flex-direction: row;
   }
@@ -233,7 +233,7 @@ const Freelancer = styled.div`
 const Mobile = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   @media screen and (min-width: 500px) {
     flex-direction: row;
   }

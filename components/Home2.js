@@ -9,8 +9,8 @@ import Home2Section3 from "./Home2Section3";
 const PrincipalContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 4rem;
+  gap: 1rem;
+  margin-top: 3.5rem;
   padding: 0 0.5rem;
 `;
 

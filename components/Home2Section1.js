@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const Section1 = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   @media screen and (min-width: 920px) {
     flex-direction: row;
   }
@@ -133,28 +133,44 @@ const NextToSummary = styled.div`
   color: white;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   @media screen and (min-width: 920px) {
     width: 50%;
   }
 `;
+const moveLeftRight = keyframes`
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+`;
+
 const LastNews = styled.div`
   background-image: linear-gradient(to bottom right, #212121, #131313);
   border: 1px solid #212121;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.4),
+    4px 0 4px rgba(0, 0, 0, 0.1), -4px 0 4px rgba(0, 0, 0, 0.1);
   padding: 1rem 2rem;
   border-radius: 2rem;
-  text-align: center;
+  text-align: end;
+  overflow: hidden; /* Esto es importante para ocultar el contenido que se desplaza */
+  white-space: nowrap; /* Para evitar que el texto se rompa en múltiples líneas */
 `;
+
+const MovingText = styled.span`
+  display: inline-block; /* Esto permite que el span ocupe solo el espacio del texto */
+  animation: ${moveLeftRight} 7s linear infinite; /* 5s es la duración de la animación */
+`;
+
+
 
 const CredentAndProj = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
   @media screen and (min-width: 500px) {
     flex-direction: row;
   }
@@ -316,7 +332,9 @@ const Home2Section1 = () => {
       </Summary>
 
       <NextToSummary>
-        <LastNews>This area is being developed.</LastNews>
+        <LastNews>
+          <MovingText>This text moves from right to left.</MovingText>
+        </LastNews>
 
         <CredentAndProj>
           <Credentials href={"/founders"}>

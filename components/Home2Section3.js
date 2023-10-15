@@ -8,7 +8,7 @@ const Section3 = styled.div`
   flex-direction: column;
 
   color: white;
-  gap: 1.5rem;
+  gap: 1rem;
   @media screen and (min-width: 768px) {
     flex-direction: row;
   }
