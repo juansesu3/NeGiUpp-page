@@ -23,7 +23,7 @@ const IoT = styled(Link)`
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-width: 100%;
+  width: 100%;
   padding: 1.5rem;
   border-radius: 2rem;
   position: relative;
@@ -31,7 +31,7 @@ width: 100%;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  
+
   .animation {
     opacity: 0.5;
   }
@@ -58,11 +58,10 @@ const ImageContIoT = styled.div`
   margin: 0 auto;
   margin-bottom: 1.5rem;
   gap: 1.5rem;
- width: 100%;
+  width: 100%;
   height: 11rem;
- 
+
   @media screen and (min-width: 500px) {
- 
   }
   img {
     width: 100%;
@@ -96,7 +95,7 @@ const Services = styled.div`
   }
 
   @media screen and (min-width: 920px) {
-     width: 50%;
+    width: 50%;
   }
 `;
 
@@ -113,7 +112,7 @@ const ContServices = styled.div`
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   border-radius: 2rem;
-  height: 10rem;
+  height: 11rem;
   margin-bottom: 1.5rem;
 `;
 const ServicesLink = styled(Link)`
@@ -191,7 +190,7 @@ const RrSs = styled.div`
   grid-template-rows: 1fr 1fr; /* dos filas */
   gap: 0.5rem; /* espacio entre las celdas */
   margin: 0 auto;
-  height: 10rem;
+  height: 11rem;
   margin-bottom: 1.5rem;
 `;
 

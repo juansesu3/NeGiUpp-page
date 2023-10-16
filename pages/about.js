@@ -16,6 +16,7 @@ const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1.5rem 0.5rem;
+  gap: 1rem;
   @media screen and (min-width: 805px) {
     padding: 2.5rem 0.5rem;
   }
@@ -55,9 +56,9 @@ const ImageContainer = styled.div`
 const ContainerSec = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   color: #ffff;
-  padding-top: 1.5rem;
+
   @media screen and (min-width: 805px) {
     flex-direction: row;
   }
@@ -115,7 +116,7 @@ const InfoAboutContainer = styled.div`
   align-items: center;
   border-radius: 1rem;
   margin: auto 0;
-  gap: 1.5rem;
+  gap: 1rem;
   h2 {
     margin: 0;
   }
@@ -177,7 +178,7 @@ const WorkTogetheContainer = styled(Link)`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
 
   padding: 2rem;
   border-radius: 1rem;
@@ -340,10 +341,10 @@ const Credential = styled.div`
   }
 `;
 const ContainerThirdSec = styled.div`
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   @media screen and (min-width: 805px) {
     flex-direction: row;
   }
@@ -367,11 +368,12 @@ const Detail = styled.div`
 const ExpSelBrand = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 `;
 
 const InfoCultureHitosContainerExpe = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 1rem;

@@ -42,7 +42,7 @@ const Summary = styled(Link)`
   }
 
   @media screen and (min-width: 920px) {
-    width: 50%;
+    width: 47%;
   }
 `;
 
@@ -114,8 +114,7 @@ const ImageCont = styled.div`
   justify-content: space-around;
   transform: scaleX(1);
 
-  left: 2%;
-  bottom: 10%;
+
   @media screen and (min-width: 500px) {
     width: 15rem;
     transform: scaleX(1);
@@ -135,15 +134,15 @@ const NextToSummary = styled.div`
   flex-direction: column;
   gap: 1rem;
   @media screen and (min-width: 920px) {
-    width: 50%;
+    width: 56%;
   }
 `;
 const moveLeftRight = keyframes`
   0% {
-    transform: translateX(0%);
+    transform: translateX(100%);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-105%);
   }
 `;
 
@@ -154,18 +153,18 @@ const LastNews = styled.div`
     4px 0 4px rgba(0, 0, 0, 0.1), -4px 0 4px rgba(0, 0, 0, 0.1);
   padding: 1rem 2rem;
   border-radius: 2rem;
-  text-align: end;
-  overflow: hidden; /* Esto es importante para ocultar el contenido que se desplaza */
-  white-space: nowrap; /* Para evitar que el texto se rompa en múltiples líneas */
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
 `;
 
-const MovingText = styled.span`
-  display: inline-block; /* Esto permite que el span ocupe solo el espacio del texto */
-  animation: ${moveLeftRight} 7s linear infinite; /* 5s es la duración de la animación */
+const MovingText = styled.div`
+  display: inline-block;
+  animation: ${moveLeftRight} 20s linear infinite;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
 `;
-
-
-
 const CredentAndProj = styled.div`
   display: flex;
   flex-direction: column;
@@ -270,7 +269,7 @@ const ImageContCredent = styled.div`
 
   gap: 1.5rem;
   width: 11rem;
-  height: 12rem;
+  height:13rem;
   img {
     width: 100%;
     border-radius: 1rem;
@@ -332,21 +331,28 @@ const Home2Section1 = () => {
       </Summary>
 
       <NextToSummary>
+        {/*
         <LastNews>
-          <MovingText>This text moves from right to left.</MovingText>
+          <MovingText>
+            Texto que se desplaza de derecha a izquierda y reaparece en la
+            derecha. Texto que se desplaza de derecha a izquierda y reaparece en
+            la derecha.
+          </MovingText>
         </LastNews>
-
+ */}
         <CredentAndProj>
           <Credentials href={"/founders"}>
             <ImageContCredent>
-              <Image
-                src={
-                  "https://my-page-negiupp.s3.amazonaws.com/1688631092905.png"
-                }
-                alt="about-image"
-                width={500}
-                height={500}
-              />
+           
+                      <Image
+                        src={
+                          "https://my-page-negiupp.s3.amazonaws.com/1688631092905.png"
+                        }
+                        alt="about-image"
+                        width={500}
+                        height={100}
+                      />
+                    
             </ImageContCredent>
 
             <Infos>
