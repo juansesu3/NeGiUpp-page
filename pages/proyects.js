@@ -50,7 +50,7 @@ const ProyectLink = styled(Link)`
 const FirstProyectsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   gap: 1rem;
   h1 {
     font-size: 1.5rem;
@@ -65,7 +65,7 @@ const FirstProyectsContainer = styled.div`
 const SecondProyectsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1rem;
   justify-content: space-around;
   h1 {
     font-size: 1.5rem;
@@ -96,12 +96,12 @@ const ContainerPro = styled.div`
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   @media screen and (min-width: 768px) {
-    width: 19rem;
   }
 `;
 
 const ImageContainer = styled.div`
-  height: 15rem;
+  width: 19rem;
+  height: 12rem;
   img {
     height: 100%;
     width: 100%;
@@ -122,6 +122,7 @@ const TitleBox = styled.div`
     font-size: 2.2rem;
     color: white;
     text-transform: uppercase;
+   
   }
   svg {
     width: 2.5rem;
