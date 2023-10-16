@@ -130,7 +130,10 @@ const CardCEO = () => {
 
         <RrSsConatiner>
           <RrSs>
-            <LinkRRSS>
+            <LinkRRSS
+              href={"https://www.linkedin.com/in/juan-s-suarez/"}
+              target="_blank"
+            >
               <svg
                 style={{ fill: "#ffff" }}
                 xmlns="http://www.w3.org/2000/svg"
@@ -141,7 +144,7 @@ const CardCEO = () => {
               </svg>
             </LinkRRSS>
 
-            <LinkRRSS>
+            <LinkRRSS href={"https://github.com/juansesu3"} target="_blank">
               <svg
                 width="800px"
                 height="800px"
@@ -168,7 +171,10 @@ const CardCEO = () => {
                 </g>
               </svg>
             </LinkRRSS>
-            <LinkRRSS>
+            <LinkRRSS
+              href={"https://www.instagram.com/juanser___/"}
+              target="_blank"
+            >
               {" "}
               <svg
                 width="24"
@@ -197,7 +203,10 @@ const CardCEO = () => {
                 />
               </svg>
             </LinkRRSS>
-            <LinkRRSS>
+            <LinkRRSS
+              href={"https://www.freelancer.com/u/negiupp"}
+              target="_blank"
+            >
               {" "}
               <Freelancer>
                 <img src="https://my-page-negiupp.s3.amazonaws.com/1696597738262.png" />
