@@ -6,7 +6,7 @@ const Icon = styled.div`
   width: 22px;
   position: absolute;
   bottom: 10px;
-  left: 7.5px;
+  left: 5px;
   cursor: pointer;
   &:hover {
     color: #4d61fc;

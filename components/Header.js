@@ -358,12 +358,7 @@ const Header = ({ route }) => {
             >
               Projects
             </NavLink>
-            <NavLink
-              route={route}
-             
-              href={"/"}
-              onClick={goToStore}
-            >
+            <NavLink route={route} href={"/"} onClick={goToStore}>
               Store
             </NavLink>
             {/*
