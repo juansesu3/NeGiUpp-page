@@ -114,7 +114,6 @@ const ImageCont = styled.div`
   justify-content: space-around;
   transform: scaleX(1);
 
-
   @media screen and (min-width: 500px) {
     width: 15rem;
     transform: scaleX(1);
@@ -268,8 +267,8 @@ const ImageContCredent = styled.div`
   margin: 0 auto;
 
   gap: 1.5rem;
-  width: 11rem;
-  height:13rem;
+
+  height: 13rem;
   img {
     width: 100%;
     border-radius: 1rem;
@@ -343,16 +342,14 @@ const Home2Section1 = () => {
         <CredentAndProj>
           <Credentials href={"/founders"}>
             <ImageContCredent>
-           
-                      <Image
-                        src={
-                          "https://my-page-negiupp.s3.amazonaws.com/1688631092905.png"
-                        }
-                        alt="about-image"
-                        width={500}
-                        height={100}
-                      />
-                    
+              <Image
+                src={
+                  "https://my-page-negiupp.s3.amazonaws.com/1688631092905.png"
+                }
+                alt="about-image"
+                width={500}
+                height={100}
+              />
             </ImageContCredent>
 
             <Infos>
