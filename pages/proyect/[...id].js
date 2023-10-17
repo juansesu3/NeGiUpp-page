@@ -3,6 +3,7 @@ import Center from "@/components/Center";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Layout from "@/components/Layout";
+import ShowMobileDesign from "@/components/ShowMobileDesign";
 import axios from "axios";
 import Head from "next/head";
 import Image from "next/image";
@@ -401,6 +402,8 @@ const ProyectPage = () => {
                   <p>{proyect.about}</p>
                 </AboutInfo>
               </ContainerSect>
+
+              <ShowMobileDesign proyect={proyect} />
 
               <ImageContainer>
                 <a
