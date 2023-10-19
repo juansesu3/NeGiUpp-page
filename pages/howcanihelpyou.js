@@ -52,9 +52,14 @@ const Conent = styled.div`
 const HowcanihelpyouPage = () => {
   return (
     <>
-    <Head>
-        <title>How can I help you?</title>
-        <meta name="description" content="..." />
+      <Head>
+        <title>
+          How Can I Help You? - Full-Stack Development & AI Solutions
+        </title>
+        <meta
+          name="description"
+          content="As a seasoned full-stack developer and AI specialist, discover how I can offer tailor-made solutions for your digital needs."
+        />
       </Head>
       <Layout>
         <CaontainerHowCanIHelYou>
@@ -64,7 +69,12 @@ const HowcanihelpyouPage = () => {
             </h1>
           </Title>
           <ImgContainer>
-            <Image width={300} height={300} alt="help you" src="https://my-page-negiupp.s3.amazonaws.com/1692039346694.png" />
+            <Image
+              width={300}
+              height={300}
+              alt="help you"
+              src="https://my-page-negiupp.s3.amazonaws.com/1692039346694.png"
+            />
           </ImgContainer>
           <Conent>
             <p>

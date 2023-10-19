@@ -1,7 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import Home2Section1 from "./Home2Section1";
 import Home2Section2 from "./Home2Section2";
 import Home2Section3 from "./Home2Section3";

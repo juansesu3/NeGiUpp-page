@@ -452,8 +452,31 @@ const AboutPage = () => {
   return (
     <>
       <Head>
-        <title>About</title>
-        <meta name="description" content="..." />
+        <title>Juan Sebastian Suarez Ramirez - About Me</title>
+        <meta
+          name="description"
+          content="Learn more about Juan Sebastian Suarez Ramirez, a full-stack web developer specialized in AI, deep learning, and machine learning."
+        />
+        <meta
+          name="keywords"
+          content="Juan Sebastian Suarez Ramirez, Full-Stack Developer, Artificial Intelligence, Deep Learning, Machine Learning"
+        />
+        <link rel="canonical" href="https://negiupp.com/about" />
+        <html lang="en" />
+
+        <meta
+          property="og:title"
+          content="Juan Sebastian Suarez Ramirez - About Me"
+        />
+        <meta
+          property="og:description"
+          content="Learn more about Juan Sebastian Suarez Ramirez, a full-stack web developer specialized in AI, deep learning, and machine learning."
+        />
+        <meta
+          property="og:image"
+          content="https://my-page-negiupp.s3.amazonaws.com/1696629533343.png"
+        />
+        <meta property="og:url" content="https://negiupp.com/about" />
       </Head>
       <Layout>
         {profile.length > 0 &&

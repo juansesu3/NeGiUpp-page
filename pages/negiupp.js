@@ -66,9 +66,13 @@ const NegiuppPage = () => {
   return (
     <>
       <Head>
-        <title>Self Branding</title>
-        <meta name="description" content="..." />
+        <title>About NeGiupp - The Philosophy of Never Giving Up</title>
+        <meta
+          name="description"
+          content="Discover the NeGiupp philosophy, a commitment to growth, resilience, and the never-give-up mindset that drives personal and professional success."
+        />
       </Head>
+
       <Layout>
         <ConatinerNotFound>
           <Title>
@@ -76,8 +80,8 @@ const NegiuppPage = () => {
 
             <LogoContainer>
               <Image
-                src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
-                alt="Logo"
+                src="/assets/logofinalpulido-white-3.png"
+                alt="NeGiupp Logo - Philosophy of Never Giving Up"
                 width={400}
                 height={200}
               />
@@ -85,8 +89,8 @@ const NegiuppPage = () => {
             <h1>NeGiupp</h1>
           </Title>
           <h2>
-            ¡If you can imagine it, you can program it. Just never stop trying,
-            and under no circumstances, give up.!
+            If you can imagine it, you can program it. Just never stop trying
+            and, under no circumstances, give up!
           </h2>
           <p>
             NeGiupp is far more than a mere personal brand; it&apos;s a profound

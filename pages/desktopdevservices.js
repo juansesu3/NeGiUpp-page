@@ -21,11 +21,14 @@ const ContainerResponsiveServices = styled.div`
 const DesktopdevservicesPage = () => {
   return (
     <>
-           <Head>
-        <title>Desktop Application Dev</title>
-        <meta name="description" content="..." />
+      <Head>
+        <title>Desktop Application Development Services | Negiupp</title>
+        <meta
+          name="description"
+          content="Custom desktop application development services to enhance your business operations and user experience. Discover how Negiupp can empower your desktop solutions."
+        />
       </Head>
-     <Layout>
+      <Layout>
         <ContainerResponsiveServices>
           <h1>
             Desktop Application Development: Empowering Seamless User
@@ -35,8 +38,8 @@ const DesktopdevservicesPage = () => {
             As a dedicated fullstack developer, I&apos;m committed to building
             digital solutions that transcend the virtual realm and seamlessly
             integrate into the desktop landscape. A pivotal service I offer is
-            &quot;Desktop Application Development,&quot; a realm of expertise that
-            transforms your concepts into powerful applications accessible
+            &quot;Desktop Application Development,&quot; a realm of expertise
+            that transforms your concepts into powerful applications accessible
             directly from users&apos; desktops.
           </p>
           <h2>Unveiling Desktop Application Development</h2>
@@ -105,7 +108,7 @@ const DesktopdevservicesPage = () => {
             functional reality.
           </p>
         </ContainerResponsiveServices>
-        </Layout>
+      </Layout>
     </>
   );
 };

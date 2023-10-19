@@ -10,8 +10,27 @@ const HomePage = ({ latestArticles }) => {
   return (
     <>
       <Head>
-        <title>Home</title>
-        <meta name="description" content="..." />
+        <title>
+          Juan Sebastian Suarez Ramirez | Negiupp - Digital Solutions
+        </title>
+        <meta
+          name="description"
+          content="Juan Sebastian Suarez Ramirez's official website. Welcome to Negiupp, your gateway to innovation in digital solutions, articles, and more."
+        />
+        <meta
+          property="og:title"
+          content="Juan Sebastian Suarez Ramirez | Negiupp - Digital Solutions"
+        />
+        <meta
+          property="og:description"
+          content="Juan Sebastian Suarez Ramirez's official website. Welcome to Negiupp, your gateway to innovation in digital solutions, articles, and more."
+        />
+        <meta
+          property="og:image"
+          content="https://my-page-negiupp.s3.amazonaws.com/1697750024209.png"
+        />
+        <meta property="og:url" content="https://negiupp.com/" />
+        <meta property="og:type" content="website" />
       </Head>
       <Layout>
         <Home2 latestArticles={latestArticles} />

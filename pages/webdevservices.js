@@ -21,9 +21,15 @@ const ContainerResponsiveServices = styled.div`
 const WebdevservicesPage = () => {
   return (
     <>
-    <Head>
-        <title>Web Development Service</title>
-        <meta name="description" content="..." />
+      <Head>
+        <title>
+          Custom Web Development Services by Negiupp - Bring Your Digital Vision
+          to Life
+        </title>
+        <meta
+          name="description"
+          content="Explore Negiupp's expert Web Development Services designed to transform your digital aspirations into dynamic, user-friendly online platforms. Learn how a custom website can elevate your brand, engage your audience, and drive growth."
+        />
       </Head>
       <Layout>
         <ContainerResponsiveServices>

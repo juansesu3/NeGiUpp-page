@@ -11,22 +11,28 @@ const ContainerResponsiveServices = styled.div`
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   color: white;
-  h3{
-    color:#4d61fc;
+  h3 {
+    color: #4d61fc;
   }
-  p{
-    opacity: .5;
+  p {
+    opacity: 0.5;
   }
 `;
 
 const ResponsiveServicePage = () => {
   return (
     <>
-    <Head>
-        <title>Responsive Service</title>
-        <meta name="description" content="..." />
+      <Head>
+        <title>
+          Responsive Design Services by Negiupp - Adapt Your Projects for All
+          Devices
+        </title>
+        <meta
+          name="description"
+          content="Learn about Negiupp's approach to Responsive Design, a service ensuring your digital projects excel on all screen sizes. Discover why it's crucial for user experience, SEO, and reaching a broader audience."
+        />
       </Head>
-     <Layout>
+      <Layout>
         <ContainerResponsiveServices>
           <h1>
             {" "}
@@ -110,7 +116,7 @@ const ResponsiveServicePage = () => {
             creating impactful and accessible digital experiences for everyone.
           </p>
         </ContainerResponsiveServices>
-        </Layout>
+      </Layout>
     </>
   );
 };

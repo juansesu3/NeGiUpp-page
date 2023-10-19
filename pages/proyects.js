@@ -122,7 +122,6 @@ const TitleBox = styled.div`
     font-size: 2.2rem;
     color: white;
     text-transform: uppercase;
-   
   }
   svg {
     width: 2.5rem;
@@ -250,8 +249,14 @@ const ProyectsPage = () => {
   return (
     <>
       <Head>
-        <title>Projects</title>
-        <meta name="description" content="..." />
+        <title>
+          Negiupp Portfolio - Full-Stack Web Development & High-Quality Digital
+          Products
+        </title>
+        <meta
+          name="description"
+          content="Explore Negiupp's portfolio, specializing in Full-Stack Web Development, Digital Products, and Artificial Intelligence solutions. Discover projects that blend innovation and quality."
+        />
       </Head>
       <Layout>
         <ContainerAllProyects>

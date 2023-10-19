@@ -17,7 +17,7 @@ const ContainerFounders = styled.div`
   gap: 1.5rem;
   color: white;
 
-  padding: 4.5rem .7rem 0rem .7rem;
+  padding: 4.5rem 0.7rem 0rem 0.7rem;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
@@ -153,17 +153,19 @@ const FoundersPage = () => {
   return (
     <>
       <Head>
-        <title>Founder</title>
-        <meta name="description" content="..." />
+        <title>Negiupp Founder - Full-Stack Developer & AI Enthusiast</title>
+        <meta
+          name="description"
+          content="Learn more about the founder of Negiupp, specialized in full-stack development, artificial intelligence, and more."
+        />
       </Head>
-    
+
       <Header />
       <Center>
         {profile.length > 0 &&
           profile.map((pro) => (
             <RevealWrapper key={pro._id} delay={200} duration={1000}>
-              <ContainerFounders >
-               
+              <ContainerFounders>
                 <CardCEO />
 
                 <AboutMe>
@@ -257,9 +259,8 @@ const FoundersPage = () => {
                       ))}
                   </ContainerSkills>
                 </AboutMe>
-                
               </ContainerFounders>
-              </RevealWrapper>
+            </RevealWrapper>
           ))}
       </Center>
       <Footer />
