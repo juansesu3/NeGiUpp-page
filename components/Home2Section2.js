@@ -433,7 +433,12 @@ const Home2Section2 = () => {
               >
                 {" "}
                 <Freelancer>
-                  <img src="https://my-page-negiupp.s3.amazonaws.com/1696597738262.png" />
+                  <Image
+                    src="https://my-page-negiupp.s3.amazonaws.com/1696597738262.png"
+                    alt="freelancer"
+                    width={400}
+                    height={200}
+                  />
                 </Freelancer>
               </LinkRRSS>
             </RrSs>
@@ -610,7 +615,12 @@ const Home2Section2 = () => {
             >
               {" "}
               <Freelancer>
-                <img src="https://my-page-negiupp.s3.amazonaws.com/1696597738262.png" />
+                <Image
+                  src="https://my-page-negiupp.s3.amazonaws.com/1696597738262.png"
+                  alt="freelancer logo"
+                  width={400}
+                  height={200}
+                />
               </Freelancer>
             </LinkRRSS>
           </RrSs>

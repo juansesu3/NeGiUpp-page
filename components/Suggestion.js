@@ -1,4 +1,5 @@
 import axios from "axios";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 import { css, keyframes, styled } from "styled-components";
@@ -320,7 +321,12 @@ const Suggestion = () => {
               : "I'm here to help you get to know Juan better!"}
           </InfoAi>
           <StyledLoadingContainer>
-            <img src="https://juan-sesu-ecommerce.s3.amazonaws.com/1693293993081.png" />
+            <Image
+              src="https://juan-sesu-ecommerce.s3.amazonaws.com/1693293993081.png"
+              width={200}
+              height={100}
+              alt="logo chatbot AI"
+            />
           </StyledLoadingContainer>
           <div
             style={{
@@ -374,7 +380,12 @@ const Suggestion = () => {
         ) : (
           <>
             <AIContainer>
-              <img src="https://juan-sesu-ecommerce.s3.amazonaws.com/1693293993081.png" />
+              <Image
+                src="https://juan-sesu-ecommerce.s3.amazonaws.com/1693293993081.png"
+                alt="logo chatbot AI "
+                width={200}
+                height={100}
+              />
               <p>ASSISTANT</p>
             </AIContainer>
           </>

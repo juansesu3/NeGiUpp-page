@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { styled } from "styled-components";
@@ -51,7 +52,8 @@ const Section = styled.section`
 `;
 const LinkFooter = styled(Link)`
   text-decoration: none;
-  color: #525252;
+  color: white;
+  opacity: 0.6;
   transition: 0.3s;
   &:hover {
     color: #4d61fc;
@@ -61,7 +63,7 @@ const LinkFooter = styled(Link)`
 const LangLog = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 `;
 const LogoLink = styled(Link)`
   color: #fff;
@@ -71,11 +73,11 @@ const LogoLink = styled(Link)`
   @media screen and (min-width: 768px) {
     width: 6rem;
   }
+  img {
+    width: 100%;
+  }
 `;
 
-const Logo = styled.img`
-  width: 100%;
-`;
 const Lang = styled.div`
   display: flex;
 
@@ -97,11 +99,7 @@ const LinkRRSS = styled.a`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: linear-gradient(
-    100deg,
-    rgb(189 189 189 / 7%),
-    rgba(255, 255, 255, 0)
-  );
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -115,10 +113,7 @@ const LinkRRSS = styled.a`
 const LinksContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
-  
 `;
-
-
 
 const ContFotter = styled.div`
   max-width: 1080px;
@@ -137,16 +132,18 @@ const Footer = () => {
         <First>
           <Section>
             <h4>About me</h4>
-            <LinkFooter href={"/founders"}>who I am?</LinkFooter>
-            <LinkFooter href={"/negiupp"}>what is NeGiUpp?</LinkFooter>
-            <LinkFooter href={"/contact"}>work together!</LinkFooter>
+            <LinkFooter href={"/founders"}>Who I am?</LinkFooter>
+            <LinkFooter href={"/negiupp"}>What is negiupp?</LinkFooter>
+            <LinkFooter href={"/contact"}>Work together!</LinkFooter>
           </Section>
           <Section>
             <LangLog>
               <LogoLink href={"/"}>
-                <Logo
+                <Image
                   src="https://my-page-negiupp.s3.amazonaws.com/1690838289355.png"
                   alt="logo-image"
+                  width={200}
+                  height={100}
                 />
               </LogoLink>
               <LinksContainer>

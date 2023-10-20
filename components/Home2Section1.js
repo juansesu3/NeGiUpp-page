@@ -301,7 +301,12 @@ const Home2Section1 = () => {
       <Summary href={"/about"}>
         <ContSummary>
           <ImageCont>
-            <img src="https://my-page-negiupp.s3.amazonaws.com/1696629533343.png" />
+            <Image
+              src="https://my-page-negiupp.s3.amazonaws.com/1696629533343.png"
+              width={200}
+              height={100}
+              alt="profile image juan sebastian suarez ramirez"
+            />
             {/**<ContScore>
               <Score1>some here</Score1>
               <Score2>some here</Score2>
@@ -321,9 +326,9 @@ const Home2Section1 = () => {
           <LogoLink className="animation" href={"/"}>
             <Image
               src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
-              alt="Logo"
-              width={400}
-              height={200}
+              alt="Logo negiupp"
+              width={200}
+              height={100}
             />
           </LogoLink>
         </IconDetail>
@@ -347,7 +352,7 @@ const Home2Section1 = () => {
                   "https://my-page-negiupp.s3.amazonaws.com/1688631092905.png"
                 }
                 alt="about-image"
-                width={500}
+                width={200}
                 height={100}
               />
             </ImageContCredent>

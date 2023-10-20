@@ -452,7 +452,7 @@ const AboutPage = () => {
   return (
     <>
       <Head>
-        <title>Juan Sebastian Suarez Ramirez - About Me</title>
+        <title>About</title>
         <meta
           name="description"
           content="Learn more about Juan Sebastian Suarez Ramirez, a full-stack web developer specialized in AI, deep learning, and machine learning."
@@ -562,7 +562,7 @@ const AboutPage = () => {
                 <ContainerSec>
                   <ExpSelBrand>
                     <CeoContainer href={"/negiupp"}>
-                      <LogoLink href={"/"}>
+                      <LogoLink href={"/negiupp"}>
                         <Image
                           src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
                           alt="Logo"

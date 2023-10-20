@@ -11,7 +11,7 @@ const HomePage = ({ latestArticles }) => {
     <>
       <Head>
         <title>
-          Juan Sebastian Suarez Ramirez | Negiupp - Digital Solutions
+          Negiupp - Digital Solutions | Juan Sebastian Suarez Ramirez
         </title>
         <meta
           name="description"
