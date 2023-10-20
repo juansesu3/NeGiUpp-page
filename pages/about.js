@@ -1,10 +1,5 @@
-import Center from "@/components/Center";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import axios from "axios";
-import { RevealWrapper } from "next-reveal";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { styled, keyframes } from "styled-components";
 import moment from "moment";
@@ -15,11 +10,8 @@ import Head from "next/head";
 const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 1.5rem 0.5rem;
+  padding: 3.5rem 0.5rem;
   gap: 1rem;
-  @media screen and (min-width: 805px) {
-    padding: 2.5rem 0.5rem;
-  }
 `;
 
 const AboutCont = styled.div`
@@ -341,7 +333,6 @@ const Credential = styled.div`
   }
 `;
 const ContainerThirdSec = styled.div`
-  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -441,7 +432,6 @@ const LogoLink = styled(Link)`
 `;
 
 const AboutPage = () => {
-  const router = useRouter();
   const [profile, setProfile] = useState({});
   useEffect(() => {
     axios.get("/api/profile").then((response) => {
@@ -483,175 +473,173 @@ const AboutPage = () => {
           profile.map((prof) => (
             <AboutContainer key={prof._id}>
               {/*First section */}
-              <RevealWrapper delay={200} duration={1000}>
-                <ContainerSec>
-                  <TitleMobile>
-                    <span>
-                      <Image
-                        src={
-                          "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
-                        }
-                        alt="about-image"
-                        width={100}
-                        height={100}
-                      />
-                    </span>
-                    <h1>Self summary</h1>
-                    <span>
-                      <Image
-                        src={
-                          "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
-                        }
-                        alt="about-image"
-                        width={100}
-                        height={100}
-                      />
-                    </span>
-                  </TitleMobile>
 
-                  <ImageContainer>
+              <ContainerSec>
+                <TitleMobile>
+                  <span>
                     <Image
                       src={
-                        "https://my-page-negiupp.s3.amazonaws.com/1688550234499.jpg"
+                        "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
                       }
                       alt="about-image"
-                      width={800}
+                      width={200}
                       height={100}
                     />
-                  </ImageContainer>
+                  </span>
+                  <h1>Self summary</h1>
+                  <span>
+                    <Image
+                      src={
+                        "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
+                      }
+                      alt="about-image"
+                      width={200}
+                      height={100}
+                    />
+                  </span>
+                </TitleMobile>
 
-                  <AboutCont>
-                    <Title>
-                      <span>
-                        <Image
-                          src={
-                            "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
-                          }
-                          alt="about-image"
-                          width={100}
-                          height={100}
-                        />
-                      </span>
+                <ImageContainer>
+                  <Image
+                    src={
+                      "https://my-page-negiupp.s3.amazonaws.com/1688550234499.jpg"
+                    }
+                    alt="about-image"
+                    width={200}
+                    height={100}
+                  />
+                </ImageContainer>
 
-                      <h1>Self summary</h1>
+                <AboutCont>
+                  <Title>
+                    <span>
+                      <Image
+                        src={
+                          "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
+                        }
+                        alt="about-image"
+                        width={200}
+                        height={100}
+                      />
+                    </span>
 
-                      <span>
-                        <Image
-                          src={
-                            "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
-                          }
-                          alt="about-image"
-                          width={100}
-                          height={100}
-                        />
-                      </span>
-                    </Title>
+                    <h1>Self summary</h1>
 
-                    <InfoAboutContainer>
-                      <Detail>
-                        <h2>{prof.greeting}</h2>
-                        <p>{prof.shortIntro}</p>
-                      </Detail>
-                    </InfoAboutContainer>
-                  </AboutCont>
-                </ContainerSec>
-              </RevealWrapper>
+                    <span>
+                      <Image
+                        src={
+                          "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
+                        }
+                        alt="about-image"
+                        width={200}
+                        height={100}
+                      />
+                    </span>
+                  </Title>
+
+                  <InfoAboutContainer>
+                    <Detail>
+                      <h2>{prof.greeting}</h2>
+                      <p>{prof.shortIntro}</p>
+                    </Detail>
+                  </InfoAboutContainer>
+                </AboutCont>
+              </ContainerSec>
 
               {/*Second section */}
-              <RevealWrapper delay={200} duration={1000}>
-                <ContainerSec>
-                  <ExpSelBrand>
-                    <CeoContainer href={"/negiupp"}>
-                      <LogoLink href={"/negiupp"}>
-                        <Image
-                          src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
-                          alt="Logo"
-                          width={400}
-                          height={200}
-                        />
-                      </LogoLink>
-                      <h1>What is NeGiUpp?</h1>
-                    </CeoContainer>
-                    <InfoCultureHitosContainerExpe>
-                      <h2>Experiences</h2>
-                      {prof.experinces.length > 0 &&
-                        prof.experinces.map((exp, indexExp) => (
-                          <div key={indexExp}>
-                            <p>
-                              {`${moment(exp.startDateExp)
-                                .utc()
-                                .format("MM/DD/YYYY")
-                                .split("/")
-                                .pop()} - 
+
+              <ContainerSec>
+                <ExpSelBrand>
+                  <CeoContainer href={"/negiupp"}>
+                    <LogoLink href={"/negiupp"}>
+                      <Image
+                        src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
+                        alt="Logo"
+                        width={200}
+                        height={100}
+                      />
+                    </LogoLink>
+                    <h1>What is NeGiUpp?</h1>
+                  </CeoContainer>
+                  <InfoCultureHitosContainerExpe>
+                    <h2>Experiences</h2>
+                    {prof.experinces.length > 0 &&
+                      prof.experinces.map((exp, indexExp) => (
+                        <div key={indexExp}>
+                          <p>
+                            {`${moment(exp.startDateExp)
+                              .utc()
+                              .format("MM/DD/YYYY")
+                              .split("/")
+                              .pop()} - 
 
                               ${moment(exp.endDateExp)
                                 .utc()
                                 .format("MM/DD/YYYY")
                                 .split("/")
                                 .pop()}`}
-                            </p>
-                            <h3>{exp.position}</h3>
-                            <h4 className="company">{exp.company}</h4>
-                          </div>
-                        ))}
-                    </InfoCultureHitosContainerExpe>
-                  </ExpSelBrand>
-
-                  <InfoCultureHitosContainer>
-                    <h2>Education</h2>
-                    {prof.education.length > 0 &&
-                      prof.education.map((edu, indexEdu) => (
-                        <div key={indexEdu}>
-                          <p>
-                            {moment(edu.gotDate)
-                              .utc()
-                              .format("MM/DD/YYYY")
-                              .split("/")
-                              .pop()}
                           </p>
-                          <h3>{edu.certificationName}</h3>
-                          <h4>{edu.institutionName}</h4>
+                          <h3>{exp.position}</h3>
+                          <h4 className="company">{exp.company}</h4>
                         </div>
                       ))}
-                  </InfoCultureHitosContainer>
-                </ContainerSec>
-                <ContainerThirdSec>
-                  <WorkTogetheContainer href={"/contact"}>
-                    <h1>
-                      Let&apos;s
-                      <br /> work <span>together</span>
-                    </h1>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-4 h-4"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
-                      />
-                    </svg>
-                  </WorkTogetheContainer>
-                  <StartContainer href={"/founders"}>
-                    <Credential>
-                      <Image
-                        src={
-                          "https://my-page-negiupp.s3.amazonaws.com/1688631092905.png"
-                        }
-                        alt="about-image"
-                        width={500}
-                        height={100}
-                      />
-                    </Credential>
-                    <p>more about me</p>
-                    <h2>Credentials</h2>
-                  </StartContainer>
-                </ContainerThirdSec>
-              </RevealWrapper>
+                  </InfoCultureHitosContainerExpe>
+                </ExpSelBrand>
+
+                <InfoCultureHitosContainer>
+                  <h2>Education</h2>
+                  {prof.education.length > 0 &&
+                    prof.education.map((edu, indexEdu) => (
+                      <div key={indexEdu}>
+                        <p>
+                          {moment(edu.gotDate)
+                            .utc()
+                            .format("MM/DD/YYYY")
+                            .split("/")
+                            .pop()}
+                        </p>
+                        <h3>{edu.certificationName}</h3>
+                        <h4>{edu.institutionName}</h4>
+                      </div>
+                    ))}
+                </InfoCultureHitosContainer>
+              </ContainerSec>
+              <ContainerThirdSec>
+                <WorkTogetheContainer href={"/contact"}>
+                  <h1>
+                    Let&apos;s
+                    <br /> work <span>together</span>
+                  </h1>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-4 h-4"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
+                    />
+                  </svg>
+                </WorkTogetheContainer>
+                <StartContainer href={"/founders"}>
+                  <Credential>
+                    <Image
+                      src={
+                        "https://my-page-negiupp.s3.amazonaws.com/1688631092905.png"
+                      }
+                      alt="about-image"
+                      width={200}
+                      height={100}
+                    />
+                  </Credential>
+                  <p>more about me</p>
+                  <h2>Credentials</h2>
+                </StartContainer>
+              </ContainerThirdSec>
               {/*Third section */}
             </AboutContainer>
           ))}
