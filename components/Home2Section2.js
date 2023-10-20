@@ -266,26 +266,7 @@ const IconDetail = styled.div`
   right: 8%;
   bottom: 10%;
 `;
-const ImageCont = styled.div`
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  transform: scaleX(1);
 
-  left: 2%;
-  bottom: 10%;
-  @media screen and (min-width: 500px) {
-    width: 15rem;
-    transform: scaleX(1);
-  }
-
-  img {
-    width: 10rem;
-    border-radius: 2rem 0rem;
-  }
-`;
 const LogoLink = styled(Link)`
   color: #fff;
   text-decoration: none;
@@ -369,7 +350,11 @@ const Home2Section2 = () => {
                 </svg>
               </LinkRRSS>
 
-              <LinkRRSS href={"https://github.com/juansesu3"} target="_blank" aria-label="go to GitHub profile ">
+              <LinkRRSS
+                href={"https://github.com/juansesu3"}
+                target="_blank"
+                aria-label="go to GitHub profile "
+              >
                 <svg
                   width="800px"
                   height="800px"

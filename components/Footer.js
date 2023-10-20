@@ -79,23 +79,9 @@ const LogoLink = styled(Link)`
   }
 `;
 
-const Lang = styled.div`
-  display: flex;
-
-  .selelect {
-    width: 100%;
-    margin: 0 auto;
-    border: 0;
-    height: 1.5rem;
-    border-radius: 0.2rem;
-    background-color: #ffff;
-    color: #444444;
-  }
-`;
-
 const LinkRRSS = styled.a`
   height: 2rem;
-  width: 2rem;
+  width: 1.7rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -113,7 +99,7 @@ const LinkRRSS = styled.a`
 
 const LinksContainer = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  gap: 0.5rem;
 `;
 
 const ContFotter = styled.div`
@@ -133,9 +119,15 @@ const Footer = () => {
         <First>
           <Section>
             <h4>About me</h4>
-            <LinkFooter href={"/founders"} passHref>Who I am?</LinkFooter>
-            <LinkFooter href={"/negiupp"} passHref>What is negiupp?</LinkFooter>
-            <LinkFooter href={"/contact"} passHref>Work together!</LinkFooter>
+            <LinkFooter href={"/founders"} passHref>
+              Who I am?
+            </LinkFooter>
+            <LinkFooter href={"/negiupp"} passHref>
+              What is negiupp?
+            </LinkFooter>
+            <LinkFooter href={"/contact"} passHref>
+              Work together!
+            </LinkFooter>
           </Section>
           <Section>
             <LangLog>
@@ -162,7 +154,11 @@ const Footer = () => {
                     <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" />
                   </svg>
                 </LinkRRSS>
-                <LinkRRSS target="_blank" href={"https://github.com/juansesu3"} rel="noopener noreferrer">
+                <LinkRRSS
+                  target="_blank"
+                  href={"https://github.com/juansesu3"}
+                  rel="noopener noreferrer"
+                >
                   <svg
                     width="800px"
                     height="800px"

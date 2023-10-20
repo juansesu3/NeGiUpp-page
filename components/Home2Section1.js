@@ -145,25 +145,6 @@ const moveLeftRight = keyframes`
   }
 `;
 
-const LastNews = styled.div`
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.4),
-    4px 0 4px rgba(0, 0, 0, 0.1), -4px 0 4px rgba(0, 0, 0, 0.1);
-  padding: 1rem 2rem;
-  border-radius: 2rem;
-  text-align: center;
-  overflow: hidden;
-  white-space: nowrap;
-`;
-
-const MovingText = styled.div`
-  display: inline-block;
-  animation: ${moveLeftRight} 20s linear infinite;
-  white-space: nowrap;
-  overflow: hidden;
-  position: relative;
-`;
 const CredentAndProj = styled.div`
   display: flex;
   flex-direction: column;
@@ -307,11 +288,6 @@ const Home2Section1 = () => {
               height={100}
               alt="profile image juan sebastian suarez ramirez"
             />
-            {/**<ContScore>
-              <Score1>some here</Score1>
-              <Score2>some here</Score2>
-              <Score3>some here</Score3>
-              </ContScore>/ */}
           </ImageCont>
 
           <InfoSummary>
@@ -323,7 +299,11 @@ const Home2Section1 = () => {
 
         <IconDetail>
           {" "}
-          <LogoLink className="animation" href={"/"} aria-label="go to home section ">
+          <LogoLink
+            className="animation"
+            href={"/"}
+            aria-label="go to home section "
+          >
             <Image
               src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
               alt="Logo negiupp"
@@ -335,15 +315,6 @@ const Home2Section1 = () => {
       </Summary>
 
       <NextToSummary>
-        {/*
-        <LastNews>
-          <MovingText>
-            Texto que se desplaza de derecha a izquierda y reaparece en la
-            derecha. Texto que se desplaza de derecha a izquierda y reaparece en
-            la derecha.
-          </MovingText>
-        </LastNews>
- */}
         <CredentAndProj>
           <Credentials href={"/founders"} aria-label="go to founders section ">
             <ImageContCredent>
@@ -363,7 +334,11 @@ const Home2Section1 = () => {
             </Infos>
             <IconDetail>
               {" "}
-              <LogoLink className="animation" href={"/founders"} aria-label="go to founders section ">
+              <LogoLink
+                className="animation"
+                href={"/founders"}
+                aria-label="go to founders section "
+              >
                 <Image
                   src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
                   alt="Logo"
@@ -392,7 +367,11 @@ const Home2Section1 = () => {
             </Infos>
             <IconDetail>
               {" "}
-              <LogoLink className="animation" href={"/proyects"} aria-label="go to projects section ">
+              <LogoLink
+                className="animation"
+                href={"/proyects"}
+                aria-label="go to projects section "
+              >
                 <Image
                   src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
                   alt="Logo"

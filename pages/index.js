@@ -1,7 +1,6 @@
 //import Home from "@/components/Home";
 import Home2 from "@/components/Home2";
 import Layout from "@/components/Layout";
-
 import { mongooseConnect } from "@/lib/mongoose";
 import { Article } from "@/models/Article";
 import Head from "next/head";

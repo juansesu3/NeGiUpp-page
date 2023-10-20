@@ -1,4 +1,4 @@
-import { css, styled } from "styled-components";
+import styled  from "styled-components";
 import Center from "./Center";
 import Link from "next/link";
 import InfiniteScrollAmimation from "./InfiniteScrollAmimation";
