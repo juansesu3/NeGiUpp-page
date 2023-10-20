@@ -346,7 +346,7 @@ const ProyectPage = () => {
   return (
     <>
       <Head>
-        <title>Project {proyect?.title}</title>
+        <title>Project - {proyect?.title}</title>
         <meta name="description" content="..." />
       </Head>
       <Layout>

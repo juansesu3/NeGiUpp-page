@@ -442,7 +442,7 @@ const AboutPage = () => {
   return (
     <>
       <Head>
-        <title>About</title>
+        <title>About Me | Juan Sebastian Suarez Ramirez</title>
         <meta
           name="description"
           content="Learn more about Juan Sebastian Suarez Ramirez, a full-stack web developer specialized in AI, deep learning, and machine learning."

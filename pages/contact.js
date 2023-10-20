@@ -14,11 +14,11 @@ const Container = styled.div`
   flex-direction: column-reverse;
   justify-content: space-between;
   gap: 1.5rem;
-  padding: 1.5rem 1rem;
-  margin-top: 2.5rem;
+  padding: 3.5rem 1rem;
+ 
   @media screen and (min-width: 768px) {
     flex-direction: row;
-    padding: 1.5rem 0.5rem;
+    padding: 3.5rem 0.5rem;
   }
 `;
 const ContacInfo = styled.div`

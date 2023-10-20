@@ -361,6 +361,13 @@ const Header = ({ route }) => {
             </NavLink>
             <NavLink
               route={route}
+              active={pathname === "/notfound" ? true : false}
+              href={"/notfound"}
+            >
+              Blog
+            </NavLink>
+            <NavLink
+              route={route}
               active={pathname === "/proyects" ? true : false}
               href={"/proyects"}
             >

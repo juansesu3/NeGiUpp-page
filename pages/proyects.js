@@ -15,7 +15,7 @@ const ContainerAllProyects = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 3rem 0.5rem;
+  padding: 3.5rem 0.5rem;
   @media screen and (min-width: 768px) {
     flex-direction: row;
   }
