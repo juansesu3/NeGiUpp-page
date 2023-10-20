@@ -230,8 +230,8 @@ const Home2Section3 = () => {
             <Image
               src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
               alt="Logo"
-              width={400}
-              height={200}
+              width={200}
+              height={100}
             />
           </LogoLink>
         </IconDetail>

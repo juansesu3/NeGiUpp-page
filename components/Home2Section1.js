@@ -298,7 +298,7 @@ const LogoLink = styled(Link)`
 const Home2Section1 = () => {
   return (
     <Section1>
-      <Summary href={"/about"}>
+      <Summary href={"/about"} aria-label="about">
         <ContSummary>
           <ImageCont>
             <Image
@@ -323,7 +323,7 @@ const Home2Section1 = () => {
 
         <IconDetail>
           {" "}
-          <LogoLink className="animation" href={"/"}>
+          <LogoLink className="animation" href={"/"} aria-label="go to home section ">
             <Image
               src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
               alt="Logo negiupp"
@@ -345,7 +345,7 @@ const Home2Section1 = () => {
         </LastNews>
  */}
         <CredentAndProj>
-          <Credentials href={"/founders"}>
+          <Credentials href={"/founders"} aria-label="go to founders section ">
             <ImageContCredent>
               <Image
                 src={
@@ -363,25 +363,25 @@ const Home2Section1 = () => {
             </Infos>
             <IconDetail>
               {" "}
-              <LogoLink className="animation" href={"/founders"}>
+              <LogoLink className="animation" href={"/founders"} aria-label="go to founders section ">
                 <Image
                   src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
                   alt="Logo"
-                  width={400}
-                  height={200}
+                  width={200}
+                  height={100}
                 />
               </LogoLink>
             </IconDetail>
           </Credentials>
 
-          <Projects href={"/proyects"}>
+          <Projects href={"/proyects"} aria-label="go to projects section ">
             <ImageContProject>
               <Image
                 src={
-                  "https://my-page-negiupp.s3.amazonaws.com/1696690456951.png"
+                  "https://my-page-negiupp.s3.amazonaws.com/1691393721997.png"
                 }
-                width={500}
-                height={500}
+                width={200}
+                height={100}
                 alt="project-image"
               />
             </ImageContProject>
@@ -392,12 +392,12 @@ const Home2Section1 = () => {
             </Infos>
             <IconDetail>
               {" "}
-              <LogoLink className="animation" href={"/proyects"}>
+              <LogoLink className="animation" href={"/proyects"} aria-label="go to projects section ">
                 <Image
                   src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
                   alt="Logo"
-                  width={400}
-                  height={200}
+                  width={200}
+                  height={100}
                 />
               </LogoLink>
             </IconDetail>

@@ -329,8 +329,8 @@ const Home2Section2 = () => {
             {" "}
             <Image
               src={"https://my-page-negiupp.s3.amazonaws.com/1697188125252.jpg"}
-              width={500}
-              height={500}
+              width={200}
+              height={100}
               alt="project-image"
             />
           </ImageContIoT>
@@ -344,8 +344,8 @@ const Home2Section2 = () => {
               <Image
                 src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
                 alt="Logo"
-                width={400}
-                height={200}
+                width={200}
+                height={100}
               />
             </LogoLink>
           </IconDetail>
@@ -357,6 +357,7 @@ const Home2Section2 = () => {
               <LinkRRSS
                 href={"https://www.linkedin.com/in/juan-s-suarez/"}
                 target="_blank"
+                aria-label="go to linkedIn profile "
               >
                 <svg
                   style={{ fill: "#ffff" }}
@@ -368,7 +369,7 @@ const Home2Section2 = () => {
                 </svg>
               </LinkRRSS>
 
-              <LinkRRSS href={"https://github.com/juansesu3"} target="_blank">
+              <LinkRRSS href={"https://github.com/juansesu3"} target="_blank" aria-label="go to GitHub profile ">
                 <svg
                   width="800px"
                   height="800px"
@@ -398,6 +399,7 @@ const Home2Section2 = () => {
               <LinkRRSS
                 href={"https://www.instagram.com/juanser___/"}
                 target="_blank"
+                aria-label="go to Instagram profile "
               >
                 {" "}
                 <svg
@@ -430,14 +432,15 @@ const Home2Section2 = () => {
               <LinkRRSS
                 href={"https://www.freelancer.com/u/negiupp"}
                 target="_blank"
+                aria-label="go to freelancer profile "
               >
                 {" "}
                 <Freelancer>
                   <Image
                     src="https://my-page-negiupp.s3.amazonaws.com/1696597738262.png"
                     alt="freelancer"
-                    width={400}
-                    height={200}
+                    width={200}
+                    height={100}
                   />
                 </Freelancer>
               </LinkRRSS>
@@ -452,8 +455,8 @@ const Home2Section2 = () => {
                 <Image
                   src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
                   alt="Logo"
-                  width={400}
-                  height={200}
+                  width={200}
+                  height={100}
                 />
               </LogoLink>
             </IconDetail>
@@ -525,8 +528,8 @@ const Home2Section2 = () => {
             <Image
               src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
               alt="Logo"
-              width={400}
-              height={200}
+              width={200}
+              height={100}
             />
           </LogoLink>
         </IconDetail>
@@ -618,8 +621,8 @@ const Home2Section2 = () => {
                 <Image
                   src="https://my-page-negiupp.s3.amazonaws.com/1696597738262.png"
                   alt="freelancer logo"
-                  width={400}
-                  height={200}
+                  width={200}
+                  height={100}
                 />
               </Freelancer>
             </LinkRRSS>
@@ -634,8 +637,8 @@ const Home2Section2 = () => {
               <Image
                 src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
                 alt="Logo"
-                width={400}
-                height={200}
+                width={200}
+                height={100}
               />
             </LogoLink>
           </IconDetail>

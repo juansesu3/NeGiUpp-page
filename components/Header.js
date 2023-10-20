@@ -1,11 +1,9 @@
 import Link from "next/link";
 import { css, styled } from "styled-components";
 import { useRouter } from "next/router";
-import Bars from "./icons/Bars";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import DowloadIcon from "./icons/DowloadIcon";
 import Image from "next/image";
-import axios from "axios";
 import BackArrow from "./icons/BackArrow";
 
 const StyledHeader = styled.header`
@@ -321,7 +319,13 @@ const Header = ({ route }) => {
         <WrapperMax>
           <LetsTalk href={"/contact"}> Let&apos;s Talk</LetsTalk>
           <StyledNav route={route} mobileNavActive={mobileNavActive}>
-            <NavButton route={route} onClick={toggleCross} isCross={isCross}>
+            <NavButton
+              route={route}
+              onClick={toggleCross}
+              isCross={isCross}
+              id="hamburguer menu"
+              aria-label={isCross ? "Cerrar" : "Abrir menú"}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -329,7 +333,11 @@ const Header = ({ route }) => {
                 stroke-width="1.5"
                 stroke="currentColor"
                 className="w-6 h-6"
+                aria-labelledby="buttonTitle"
               >
+                <title id="buttonTitle">
+                  {isCross ? "Cerrar menú" : "Abrir menú"}
+                </title>
                 {isCross ? (
                   <path d="M4.75 4.75l14.5 14.5M4.75 19.25l14.5-14.5" />
                 ) : (
