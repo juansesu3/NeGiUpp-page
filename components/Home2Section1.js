@@ -10,6 +10,7 @@ const Section1 = styled.div`
   @media screen and (min-width: 920px) {
     flex-direction: row;
   }
+  
 `;
 
 const Summary = styled(Link)`
@@ -276,9 +277,11 @@ const LogoLink = styled(Link)`
   @media screen and (min-width: 768px) {
   }
 `;
+
 const Home2Section1 = () => {
+
   return (
-    <Section1>
+    <Section1 >
       <Summary href={"/about"} aria-label="about">
         <ContSummary>
           <ImageCont>

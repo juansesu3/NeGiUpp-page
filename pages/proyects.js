@@ -1,8 +1,4 @@
-import Center from "@/components/Center";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import Layout from "@/components/Layout";
-
 import axios from "axios";
 import { RevealWrapper } from "next-reveal";
 import Head from "next/head";
@@ -18,32 +14,6 @@ const ContainerAllProyects = styled.div`
   padding: 3.5rem 0.5rem;
   @media screen and (min-width: 768px) {
     flex-direction: row;
-  }
-`;
-
-const ProyectLink = styled(Link)`
-  width: 8.5rem;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 15px;
-  letter-spacing: 0.5px;
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.4rem 1.2rem;
-  color: white;
-  cursor: pointer;
-  &:hover {
-    background-color: #3950ff;
   }
 `;
 
@@ -80,14 +50,6 @@ const ContainerPro = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
-  /*
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  transition: transform 0.5s;*/
-
-  &:hover {
-    // transform: rotateY(180deg);
-  }
 
   background-image: linear-gradient(to bottom right, #212121, #131313);
   border: 1px solid #212121;
@@ -162,11 +124,6 @@ const TitleBoxMobile = styled.div`
 const SeconConatiner = styled.div`
   width: 100%;
 `;
-const FlipContainer = styled.div`
-  perspective: 1000px;
-  width: 100%;
-  height: 100%;
-`;
 
 const CardFace = styled(Link)`
   width: 100%;
@@ -175,30 +132,7 @@ const CardFace = styled(Link)`
   color: white;
   text-decoration: none;
 `;
-/*
-const CardBack = styled(CardFace)`
--webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-  position: absolute;
-  top: 5%;
-  right: 0%;
-  width: 100%;
-  text-align: center;
-  padding: 1rem;
-  h1 {
-    color: #4d61fc;
-    margin: 0;
-  }
-`;
-const BackInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  p {
-    opacity: 0.5;
-  }
-`;
-*/
+
 const IconDetail = styled.div`
   position: absolute;
   right: 7%;

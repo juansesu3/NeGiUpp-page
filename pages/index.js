@@ -32,7 +32,8 @@ const HomePage = ({ latestArticles }) => {
         <meta property="og:type" content="website" />
       </Head>
       <Layout>
-        <Home2 latestArticles={latestArticles} />
+        <Home2
+         latestArticles={latestArticles} />
       </Layout>
     </>
   );

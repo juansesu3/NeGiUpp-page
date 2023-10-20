@@ -15,7 +15,7 @@ const Container = styled.div`
   justify-content: space-between;
   gap: 1.5rem;
   padding: 3.5rem 1rem;
- 
+
   @media screen and (min-width: 768px) {
     flex-direction: row;
     padding: 3.5rem 0.5rem;
