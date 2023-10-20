@@ -1,14 +1,12 @@
 import CardCEO from "@/components/CardCEO";
-import Center from "@/components/Center";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { styled } from "styled-components";
+import styled from "styled-components";
 import moment from "moment";
 import Link from "next/link";
 import { RevealWrapper } from "next-reveal";
 import Head from "next/head";
+import Layout from "@/components/Layout";
 
 const ContainerFounders = styled.div`
   display: flex;
@@ -159,9 +157,7 @@ const FoundersPage = () => {
           content="Learn more about the founder of Negiupp, specialized in full-stack development, artificial intelligence, and more."
         />
       </Head>
-
-      <Header />
-      <Center>
+      <Layout>
         {profile.length > 0 &&
           profile.map((pro) => (
             <RevealWrapper key={pro._id} delay={200} duration={1000}>
@@ -262,8 +258,7 @@ const FoundersPage = () => {
               </ContainerFounders>
             </RevealWrapper>
           ))}
-      </Center>
-      <Footer />
+      </Layout>
     </>
   );
 };

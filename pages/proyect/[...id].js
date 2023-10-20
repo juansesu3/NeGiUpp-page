@@ -1,16 +1,12 @@
-import Button from "@/components/Button";
-import Center from "@/components/Center";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import Layout from "@/components/Layout";
 import ShowMobileDesign from "@/components/ShowMobileDesign";
 import axios from "axios";
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { styled } from "styled-components";
+import styled from "styled-components";
+import { RevealWrapper } from "next-reveal";
 
 const Intro = styled.div`
   margin-top: 3rem;
@@ -350,136 +346,141 @@ const ProyectPage = () => {
         <meta name="description" content="..." />
       </Head>
       <Layout>
-        {!!proyect && (
-          <>
-            <Intro>
-              <p>Branding - {proyect.title}</p>
-              <h1>
-                AESTHETIC DESIGN FOR <span>{proyect.title}</span> App
-              </h1>
-            </Intro>
-            <ContainerButtons>
-              <LinkCodDep href={proyect.linkCode} target="_blank">
-                Code
-              </LinkCodDep>
-              <LinkCodDep href={proyect.linkDeploy} target="_blank">
-                Deploy
-              </LinkCodDep>
-            </ContainerButtons>
-            <LandindPageConatiner>
-              <ImageContainer>
-                <a
-                  href={proyect?.images[0]}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+        <RevealWrapper>
+          {!!proyect && (
+            <>
+              <Intro>
+                <p>Branding - {proyect.title}</p>
+                <h1>
+                  AESTHETIC DESIGN FOR <span>{proyect.title}</span> App
+                </h1>
+              </Intro>
+              <ContainerButtons>
+                <LinkCodDep href={proyect.linkCode} target="_blank">
+                  Code
+                </LinkCodDep>
+                <LinkCodDep href={proyect.linkDeploy} target="_blank">
+                  Deploy
+                </LinkCodDep>
+              </ContainerButtons>
+              <LandindPageConatiner>
+                <ImageContainer>
+                  <a
+                    href={proyect?.images[0]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src={proyect?.images[0]}
+                      alt="image-proyect"
+                      width={1500}
+                      height={500}
+                    />
+                  </a>
+                </ImageContainer>
+                <ContainerSect>
+                  <ContainerTech>
+                    <h3>Technologies Stack</h3>
+                    <ContainerTechOnce>
+                      <Technologies>
+                        {technologies.length > 0 &&
+                          technologies.map((technology) => (
+                            <IconsTech key={technology?._id}>
+                              <ImageIconTechContainer>
+                                <img
+                                  src={technology?.images}
+                                  alt="image tech"
+                                />
+                              </ImageIconTechContainer>
+                            </IconsTech>
+                          ))}
+                      </Technologies>
+                    </ContainerTechOnce>
+                  </ContainerTech>
+                  <AboutInfo>
+                    <h3>About</h3>
+                    <p>{proyect.about}</p>
+                  </AboutInfo>
+                </ContainerSect>
+
+                <ShowMobileDesign proyect={proyect} />
+
+                <ImageContainer>
+                  <a
+                    href={proyect?.images[1]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src={proyect?.images[1]}
+                      alt="image-proyect"
+                      width={1500}
+                      height={500}
+                    />
+                  </a>
+                </ImageContainer>
+
+                <ImagesProyectsContainer>
+                  {proyect.images.slice(2).map((link) => (
+                    <ContImgPro className="" key={link}>
+                      <a href={link} target="_blank" rel="noopener noreferrer">
+                        <Image
+                          src={link}
+                          alt="image-proyect"
+                          width={1500}
+                          height={500}
+                        />
+                      </a>
+                    </ContImgPro>
+                  ))}
+                </ImagesProyectsContainer>
+                <ContainerSect>
+                  <MoreDetail>
+                    <div>
+                      <p>Realese Date</p>
+                      <h4>{proyect.releaseDate}</h4>
+                    </div>
+                    <div>
+                      <p>Client</p>
+                      <h4>{proyect.client}</h4>
+                    </div>
+                    <div>
+                      <p>Service</p>
+                      <h4>{proyect.service}</h4>
+                    </div>
+                    <div>
+                      <p>Proyect type</p>
+                      <h4>{proyect.proyectType}</h4>
+                    </div>
+                  </MoreDetail>
+                  <DescriptionConatiner>
+                    <h3>Description</h3>
+                    <p>{proyect.description}</p>
+                  </DescriptionConatiner>
+                </ContainerSect>
+                <ImageContainer>
                   <Image
                     src={proyect?.images[0]}
                     alt="image-proyect"
                     width={1500}
                     height={500}
                   />
-                </a>
-              </ImageContainer>
-              <ContainerSect>
-                <ContainerTech>
-                  <h3>Technologies Stack</h3>
-                  <ContainerTechOnce>
-                    <Technologies>
-                      {technologies.length > 0 &&
-                        technologies.map((technology) => (
-                          <IconsTech key={technology?._id}>
-                            <ImageIconTechContainer>
-                              <img src={technology?.images} alt="image tech" />
-                            </ImageIconTechContainer>
-                          </IconsTech>
-                        ))}
-                    </Technologies>
-                  </ContainerTechOnce>
-                </ContainerTech>
-                <AboutInfo>
-                  <h3>About</h3>
-                  <p>{proyect.about}</p>
-                </AboutInfo>
-              </ContainerSect>
-
-              <ShowMobileDesign proyect={proyect} />
-
-              <ImageContainer>
-                <a
-                  href={proyect?.images[1]}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Image
-                    src={proyect?.images[1]}
-                    alt="image-proyect"
-                    width={1500}
-                    height={500}
-                  />
-                </a>
-              </ImageContainer>
-
-              <ImagesProyectsContainer>
-                {proyect.images.slice(2).map((link) => (
-                  <ContImgPro className="" key={link}>
-                    <a href={link} target="_blank" rel="noopener noreferrer">
-                      <Image
-                        src={link}
-                        alt="image-proyect"
-                        width={1500}
-                        height={500}
-                      />
-                    </a>
-                  </ContImgPro>
-                ))}
-              </ImagesProyectsContainer>
-              <ContainerSect>
-                <MoreDetail>
-                  <div>
-                    <p>Realese Date</p>
-                    <h4>{proyect.releaseDate}</h4>
-                  </div>
-                  <div>
-                    <p>Client</p>
-                    <h4>{proyect.client}</h4>
-                  </div>
-                  <div>
-                    <p>Service</p>
-                    <h4>{proyect.service}</h4>
-                  </div>
-                  <div>
-                    <p>Proyect type</p>
-                    <h4>{proyect.proyectType}</h4>
-                  </div>
-                </MoreDetail>
-                <DescriptionConatiner>
-                  <h3>Description</h3>
-                  <p>{proyect.description}</p>
-                </DescriptionConatiner>
-              </ContainerSect>
-              <ImageContainer>
-                <Image
-                  src={proyect?.images[0]}
-                  alt="image-proyect"
-                  width={1500}
-                  height={500}
-                />
-              </ImageContainer>
-              <Pagination>
-                <ContainerButton>
-                  <button onClick={handlePreviousProject}>Prev</button>
-                </ContainerButton>
-                <ContainerButton>
-                  <button onClick={handlehire}>Hire me</button>
-                </ContainerButton>
-                <ContainerButton>
-                  <button onClick={handleNextProject}>Next</button>
-                </ContainerButton>
-              </Pagination>
-            </LandindPageConatiner>
-          </>
-        )}
+                </ImageContainer>
+                <Pagination>
+                  <ContainerButton>
+                    <button onClick={handlePreviousProject}>Prev</button>
+                  </ContainerButton>
+                  <ContainerButton>
+                    <button onClick={handlehire}>Hire me</button>
+                  </ContainerButton>
+                  <ContainerButton>
+                    <button onClick={handleNextProject}>Next</button>
+                  </ContainerButton>
+                </Pagination>
+              </LandindPageConatiner>
+            </>
+          )}
+        </RevealWrapper>
       </Layout>
     </>
   );

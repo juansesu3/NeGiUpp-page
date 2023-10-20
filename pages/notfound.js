@@ -1,10 +1,8 @@
-import Center from "@/components/Center";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { styled } from "styled-components";
+import styled from "styled-components";
+import { RevealWrapper } from "next-reveal";
 
 const ConatinerNotFound = styled.div`
   height: 100vh; /* Altura total de la ventana */
@@ -53,20 +51,22 @@ const NotfoundPage = () => {
   };
   return (
     <>
-    <Head>
+      <Head>
         <title>Not Found! </title>
         <meta name="description" content="..." />
       </Head>
       <Layout>
-        <ConatinerNotFound>
-          <p>This area is being developed.</p>
-          <h1>
-            ¡I&apos;m working on <span>New Feature</span> for you!{" "}
-          </h1>
-          <ContainerButton>
-            <button onClick={handleBack}>Back</button>
-          </ContainerButton>
-        </ConatinerNotFound>
+        <RevealWrapper>
+          <ConatinerNotFound>
+            <p>This area is being developed.</p>
+            <h1>
+              ¡I&apos;m working on <span>New Feature</span> for you!{" "}
+            </h1>
+            <ContainerButton>
+              <button onClick={handleBack}>Back</button>
+            </ContainerButton>
+          </ConatinerNotFound>
+        </RevealWrapper>
       </Layout>
     </>
   );
