@@ -372,7 +372,7 @@ const Header = ({ route }) => {
               active={pathname === "/avatar" ? true : false}
               href={"/avatar"}
             >
-              Blog
+              Avatar
             </NavLink>
 
             <NavLink

@@ -8,7 +8,12 @@ const config = {
   language: "en",
 };
 
-const style = { width: "100%", height: "100vh", border: "none" };
+const style = {
+  width: "100%",
+  height: "100vh",
+  border: "none",
+  marginTop: "3.5rem",
+};
 const AvatarPage = () => {
   const handleOnUserSet = (event) => {
     console.log(`User ID is: ${event.data.id}`);
