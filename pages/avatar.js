@@ -1,3 +1,4 @@
+import Layout from "@/components/Layout";
 import { AvatarCreator } from "@readyplayerme/react-avatar-creator";
 
 const config = {
@@ -17,7 +18,7 @@ const AvatarPage = () => {
     console.log(`Avatar URL is: ${event.data.url}`);
   };
   return (
-    <div>
+    <Layout>
       <AvatarCreator
         subdomain="portfolio-70i4uo.readyplayer.me?frameApi"
         config={config}
@@ -25,7 +26,7 @@ const AvatarPage = () => {
         onUserSet={handleOnUserSet}
         onAvatarExported={handleOnAvatarExported}
       />
-    </div>
+    </Layout>
   );
 };
 
