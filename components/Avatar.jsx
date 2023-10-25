@@ -11,7 +11,7 @@ const Avatar = () => {
   });
   return (
     <group>
-      <primitive object={avatar.scene} scale={3} position-y={-2} />
+      <primitive object={avatar.scene} scale={2.5} position-y={-2} />
     </group>
   );
 };
