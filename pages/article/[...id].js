@@ -81,7 +81,7 @@ const AuthorContainerMobile = styled.div`
 
 const Content = styled.div`
   color: #ffff;
-  opacity: 0.7;
+  
   font-size: 1.2rem;
   letter-spacing: 0.5px;
   pre {
@@ -94,6 +94,17 @@ const Content = styled.div`
       /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
       /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
       /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  }
+  h2{
+    color: #4d61fc;
+   
+  }
+  h3{
+    margin: 0;
+  }
+  p{
+    opacity: .7;
+    font-weight: 300;
   }
 `;
 const Mobile = styled.div`
