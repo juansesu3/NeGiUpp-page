@@ -1,16 +1,24 @@
 import Center from "@/components/Center";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Layout from "@/components/Layout";
 import axios from "axios";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
 
+
+const ArticleContainer = styled.div`
+margin-top: 3.5rem;
+padding: 0 .5rem;
+`
+
+
 const Title = styled.h1`
   color: #ffff;
-  opacity: 0.9;
-  font-size: 3.5rem;
-  font-weight: bold;
+
+  
+  
   margin: 0;
 `;
 const SectionOne = styled.div`
@@ -143,10 +151,9 @@ const ArticlePage = () => {
   };
 
   return (
-    <Center>
-      <Header />
+   <Layout>
       {article && (
-        <div>
+        <ArticleContainer>
           <SectionOne>
             <DeskDes>
               <div>
@@ -188,11 +195,10 @@ const ArticlePage = () => {
               <ArticleContent htmlContent={article.content} />
             </Content>
           </div>
-        </div>
+        </ArticleContainer>
       )}
       
-      <Footer />
-    </Center>
+      </Layout>
   );
 };
 

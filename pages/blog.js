@@ -14,6 +14,7 @@ const BlogContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  margin-top: 3.5rem;
   @media screen and (min-width: 768px) {
     flex-direction: row;
   }
@@ -48,7 +49,8 @@ const ArticleCard = styled.div`
 
   border-radius: 1rem;
   padding: 1rem;
-
+  background-image: linear-gradient(to bottom right, #212121, #131313);
+  border: 1px solid #212121;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
