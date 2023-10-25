@@ -1,3 +1,5 @@
+import { OrbitControls } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
 import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
@@ -13,7 +15,7 @@ const ContainerBlogIntroduction = styled.div`
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   border-radius: 1rem;
   text-align: center;
-  height: 35rem;
+  height: auto;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   padding: 1rem;
@@ -26,6 +28,7 @@ const TitleIntroduction = styled.div`
 
 const IntroduccionContent = styled.div`
   display: flex;
+  justify-content: space-between;
 `;
 
 const TextIntroduction = styled.div`
@@ -42,22 +45,23 @@ const BlogIntroduction = () => {
     <ContainerBlogIntroduction>
       <TitleIntroduction>
         <h1>
-          Inicia tu Viaje con <br/> Negiupp <br/>Descifrando el Mundo del Desarrollo Web,
-          IA y E-Commerce
+          Start Your Journey with Negiupp: Decrypting the World of Web
+          Development, AI, and E-Commerce
         </h1>
       </TitleIntroduction>
 
       <IntroduccionContent>
         <TextIntroduction>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            Discover, learn, and grow with the Negiupp blog. Dive into enriching
+            articles about web development, artificial intelligence, and
+            e-commerce. With each click, unlock a door to new skills and
+            knowledge. Start your journey with us today!
           </p>
+          <p>
+            Don&apos;t miss out! Subscribe now to comment and engage in our articles.
+          </p>
+          <input type="email" placeholder="email "/>
         </TextIntroduction>
         <AvatarConatiner>
           <Image
@@ -66,6 +70,13 @@ const BlogIntroduction = () => {
             height={100}
             alt="profile image juan sebastian suarez ramirez"
           />
+          {/*     <Canvas shadows camera={{ position: [0, 0, 8], fov: 30 }}>
+            <OrbitControls />
+            <mesh>
+              <boxGeometry args={[3, 3, 3]}/>
+              <meshNormalMaterial />
+            </mesh>
+          </Canvas>*/}
         </AvatarConatiner>
       </IntroduccionContent>
     </ContainerBlogIntroduction>

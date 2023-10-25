@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "9.75.0",
+    "@react-three/fiber": "8.13.3",
     "@readyplayerme/react-avatar-creator": "^0.3.0",
     "axios": "^1.4.0",
     "eslint": "8.43.0",
@@ -27,6 +29,6 @@
     "react-sweetalert2": "^0.5.2",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.0.0-rc.5",
-    "three": "^0.155.0"
+    "three": "^0.157.0"
   }
 }

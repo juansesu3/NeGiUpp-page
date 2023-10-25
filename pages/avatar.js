@@ -1,36 +1,22 @@
 import Layout from "@/components/Layout";
-import { AvatarCreator } from "@readyplayerme/react-avatar-creator";
+import { Canvas } from "@react-three/fiber";
+import { Experience } from "@/components/Experience";
+import styled from "styled-components";
 
-const config = {
-  clearCache: true,
-  bodyType: "fullbody",
-  quickStart: false,
-  language: "en",
-};
+const AvatarConatiner = styled.div`
+  height: 50vh;
+  margin-top: 3.5rem;
+`;
 
-const style = {
-  width: "100%",
-  height: "100vh",
-  border: "none",
-  marginTop: "3.5rem",
-};
 const AvatarPage = () => {
-  const handleOnUserSet = (event) => {
-    console.log(`User ID is: ${event.data.id}`);
-  };
-
-  const handleOnAvatarExported = (event) => {
-    console.log(`Avatar URL is: ${event.data.url}`);
-  };
   return (
     <Layout>
-      <AvatarCreator
-        subdomain="portfolio-70i4uo.readyplayer.me?frameApi"
-        config={config}
-        style={style}
-        onUserSet={handleOnUserSet}
-        onAvatarExported={handleOnAvatarExported}
-      />
+      <AvatarConatiner>
+        <Canvas shadows camera={{ position: [0, 0, 8], fov: 42 }}>
+          <color attach="background" args={["#0f0f0f"]} />
+          <Experience />
+        </Canvas>
+      </AvatarConatiner>
     </Layout>
   );
 };
