@@ -9,6 +9,7 @@ import Link from "next/link";
 import { RevealWrapper } from "next-reveal";
 import Layout from "@/components/Layout";
 import Head from "next/head";
+import BlogIntroduction from "@/components/BlogIntroduction";
 
 const BlogContainer = styled.div`
   display: flex;
@@ -195,6 +196,7 @@ const BlogPage = () => {
         <meta name="description" content="..." />
       </Head>
       <Layout>
+        <BlogIntroduction />
         <BlogContainer>
           <TitlePageMobile>
             <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
