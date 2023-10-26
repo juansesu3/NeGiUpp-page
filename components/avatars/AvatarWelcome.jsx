@@ -1,7 +1,7 @@
 import { useAnimations, useGLTF } from "@react-three/drei";
 import { useEffect } from "react";
 import * as THREE from "three";
-const Avatar = () => {
+const AvatarWelcome = () => {
   const avatar = useGLTF("models/my_avatar-brand_animation.glb");
   const { actions, names } = useAnimations(avatar.animations, avatar.scene);
   //console.log(avatar);
@@ -22,11 +22,11 @@ const Avatar = () => {
         object={avatar.scene}
         scale={2.55}
         position-y={-2}
-        position-x={-1}
-        rotation-y={0.25}
+        position-x={0}
+        rotation-y={0.1}
       />
     </group>
   );
 };
 
-export default Avatar;
+export default AvatarWelcome;

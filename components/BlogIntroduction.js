@@ -1,8 +1,8 @@
-import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import Image from "next/image";
-import React from "react";
+import React, { Suspense } from "react";
 import styled from "styled-components";
+import { Environment, OrbitControls } from "@react-three/drei";
+import Avatar from "./Avatar";
 
 const ContainerBlogIntroduction = styled.div`
   margin-top: 3.5rem;
@@ -28,17 +28,56 @@ const TitleIntroduction = styled.div`
 
 const IntroduccionContent = styled.div`
   display: flex;
+  flex-direction: column-reverse;
   justify-content: space-between;
+  @media screen and (min-width: 500px) {
+    flex-direction: row;
+  }
 `;
 
 const TextIntroduction = styled.div`
-  width: 50%;
+  width: 100%;
+  @media screen and (min-width: 500px) {
+    width: 50%;
+  }
 `;
 
 const AvatarConatiner = styled.div`
-  width: 50%;
-  transform: scaleX(-1);
+  width: 100%;
+  @media screen and (min-width: 500px) {
+    width: 50%;
+  }
+  // transform: scaleX(-1);
 `;
+
+import { useEffect } from "react";
+import { ShaderMaterial, PlaneGeometry, Mesh } from "three";
+import MyLoader from "./MyLoader";
+import AvatarBlog from "./avatars/AvatarBlog";
+
+export const GradientBackground = () => {
+  useEffect(() => {
+    const material = new ShaderMaterial({
+      vertexShader: `
+      varying vec2 vUv;
+      void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+      }`,
+      fragmentShader: `
+      varying vec2 vUv;
+      void main() {
+        gl_FragColor = mix(vec4(0.105, 0.105, 0.105, 1.0), vec4(0.075, 0.075, 0.075, 1.0), vUv.y);
+      }`,
+    });
+    const geometry = new PlaneGeometry(10, 10);
+    const mesh = new Mesh(geometry, material);
+    mesh.position.z = -5;
+    // Add mesh to your scene
+  }, []);
+
+  return null;
+};
 
 const BlogIntroduction = () => {
   return (
@@ -59,18 +98,37 @@ const BlogIntroduction = () => {
             knowledge. Start your journey with us today!
           </p>
           <p>
-            Don&apos;t miss out! Subscribe now to comment and engage in our articles.
+            Don&apos;t miss out! Subscribe now to comment and engage in our
+            articles.
           </p>
-          <input type="email" placeholder="email "/>
+          <input type="email" placeholder="email " />
         </TextIntroduction>
         <AvatarConatiner>
+          <Canvas
+            dpr={[0, 2]}
+            gl={{ alpha: true }}
+            shadows
+            camera={{ position: [0, 0, 8], fov: 42 }}
+          >
+            <GradientBackground />
+            <OrbitControls enabled={false} />
+            <Suspense fallback={<MyLoader />}>
+              <AvatarBlog />
+            </Suspense>
+            <Environment background={null} preset="sunset" />
+          </Canvas>
+
+          {/*  
+          
+          
           <Image
             src="https://my-page-negiupp.s3.amazonaws.com/1696629533343.png"
             width={200}
             height={100}
             alt="profile image juan sebastian suarez ramirez"
           />
-          {/*     <Canvas shadows camera={{ position: [0, 0, 8], fov: 30 }}>
+          
+          <Canvas shadows camera={{ position: [0, 0, 8], fov: 30 }}>
             <OrbitControls />
             <mesh>
               <boxGeometry args={[3, 3, 3]}/>

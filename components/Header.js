@@ -366,14 +366,14 @@ const Header = ({ route }) => {
             >
               Blog
             </NavLink>
-
+{/*
             <NavLink
               route={route}
               active={pathname === "/avatar" ? true : false}
               href={"/avatar"}
             >
               Avatar
-            </NavLink>
+            </NavLink> */}
 
             <NavLink
               route={route}

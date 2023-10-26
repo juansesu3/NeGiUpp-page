@@ -1,8 +1,13 @@
+import { Canvas } from "@react-three/fiber";
 import axios from "axios";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 
 import { css, keyframes, styled } from "styled-components";
+import { GradientBackground } from "./BlogIntroduction";
+import { Environment, OrbitControls } from "@react-three/drei";
+import MyLoader from "./MyLoader";
+import AvatarWelcome from "./avatars/AvatarWelcome";
 
 const PrincipalContainer = styled.div`
   position: relative;
@@ -11,7 +16,7 @@ const PrincipalContainer = styled.div`
 const FormConatiner = styled.div`
   position: fixed;
   bottom: 10px;
-  right: 5px;
+  left: 5px;
   width: 16rem;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -138,19 +143,17 @@ transform: rotate(90deg);
 
 const StyledButtonn = styled.button`
   position: fixed;
-  bottom: ${(props) => (props.isOpen ? "-1rem" : ".6rem")};
-  right: ${(props) => (props.isOpen ? "-1rem" : ".2rem")};
-  width: 3.5rem;
-  height: 3.5rem;
+  bottom: ${(props) => (props.isOpen ? "-1rem" : "2rem")};
+  left: ${(props) => (props.isOpen ? "-1rem" : ".5rem")};
+  width: 4rem;
+  height: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 50%;
   background-color: transparent;
   cursor: pointer;
   border: none;
-
   ${({ isOpen }) =>
     isOpen &&
     css`
@@ -164,19 +167,7 @@ const StyledButtonn = styled.button`
     font-weight: 500;
   }
 `;
-const AIContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  img {
-    width: 100%;
-  }
-  p {
-    margin: 0;
-    color: white;
-    opacity: 0.6;
-    font-size: 10px;
-  }
-`;
+const AIContainer = styled.div``;
 
 const ColorAnimation = keyframes`
   0% {
@@ -380,13 +371,19 @@ const Suggestion = () => {
         ) : (
           <>
             <AIContainer>
-              <Image
-                src="https://juan-sesu-ecommerce.s3.amazonaws.com/1693293993081.png"
-                alt="logo chatbot AI "
-                width={200}
-                height={100}
-              />
-              <p>ASSISTANT</p>
+              <Canvas
+                dpr={[0, 2]}
+                gl={{ alpha: true }}
+                shadows
+                camera={{ position: [0, 0, 8], fov: 42 }}
+              >
+                <GradientBackground />
+                <OrbitControls enabled={false} />
+                <Suspense fallback={<MyLoader />}>
+                  <AvatarWelcome />
+                </Suspense>
+                <Environment background={null} preset="sunset" />
+              </Canvas>
             </AIContainer>
           </>
         )}
