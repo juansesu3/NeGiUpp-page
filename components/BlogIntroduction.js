@@ -15,7 +15,7 @@ const ContainerBlogIntroduction = styled.div`
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   border-radius: 1rem;
   text-align: center;
-  height: auto;
+
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   padding: 1rem;
@@ -23,6 +23,10 @@ const ContainerBlogIntroduction = styled.div`
 
 const TitleIntroduction = styled.div`
   h1 {
+    margin-bottom: 2rem;
+  }
+  span {
+    color: #4d61fc;
   }
 `;
 
@@ -30,6 +34,7 @@ const IntroduccionContent = styled.div`
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
+
   @media screen and (min-width: 500px) {
     flex-direction: row;
   }
@@ -40,10 +45,15 @@ const TextIntroduction = styled.div`
   @media screen and (min-width: 500px) {
     width: 50%;
   }
+  p {
+    opacity: 0.65;
+    font-size: 1.2rem;
+  }
 `;
 
 const AvatarConatiner = styled.div`
   width: 100%;
+
   @media screen and (min-width: 500px) {
     width: 50%;
   }
@@ -54,6 +64,7 @@ import { useEffect } from "react";
 import { ShaderMaterial, PlaneGeometry, Mesh } from "three";
 import MyLoader from "./MyLoader";
 import AvatarBlog from "./avatars/AvatarBlog";
+import FormSubscribeBlog from "./FormSubscribeBlog";
 
 export const GradientBackground = () => {
   useEffect(() => {
@@ -84,8 +95,10 @@ const BlogIntroduction = () => {
     <ContainerBlogIntroduction>
       <TitleIntroduction>
         <h1>
-          Start Your Journey with Negiupp: Decrypting the World of Web
-          Development, AI, and E-Commerce
+          Start Your Journey <br />
+          with
+          <br />
+          <span>NeGiupp</span> <br />
         </h1>
       </TitleIntroduction>
 
@@ -101,7 +114,7 @@ const BlogIntroduction = () => {
             Don&apos;t miss out! Subscribe now to comment and engage in our
             articles.
           </p>
-          <input type="email" placeholder="email " />
+          <FormSubscribeBlog />
         </TextIntroduction>
         <AvatarConatiner>
           <Canvas
@@ -117,24 +130,6 @@ const BlogIntroduction = () => {
             </Suspense>
             <Environment background={null} preset="sunset" />
           </Canvas>
-
-          {/*  
-          
-          
-          <Image
-            src="https://my-page-negiupp.s3.amazonaws.com/1696629533343.png"
-            width={200}
-            height={100}
-            alt="profile image juan sebastian suarez ramirez"
-          />
-          
-          <Canvas shadows camera={{ position: [0, 0, 8], fov: 30 }}>
-            <OrbitControls />
-            <mesh>
-              <boxGeometry args={[3, 3, 3]}/>
-              <meshNormalMaterial />
-            </mesh>
-          </Canvas>*/}
         </AvatarConatiner>
       </IntroduccionContent>
     </ContainerBlogIntroduction>
