@@ -42,6 +42,7 @@ const SecondArticles = styled.div`
   flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
+  padding: 0 0.5rem;
   a {
     text-decoration: none;
     color: white;
