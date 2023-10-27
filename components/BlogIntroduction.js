@@ -45,10 +45,16 @@ const TextIntroduction = styled.div`
   @media screen and (min-width: 500px) {
     width: 50%;
   }
-  p {
-    opacity: 0.65;
-    font-size: 1.2rem;
-  }
+`;
+const Discover = styled.p`
+  opacity: 0.65;
+  font-size: 1.2rem;
+`;
+const DontMiss = styled.p`
+  font-size: 1.2rem;
+  margin-top: 3rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 `;
 
 const AvatarConatiner = styled.div`
@@ -104,16 +110,16 @@ const BlogIntroduction = () => {
 
       <IntroduccionContent>
         <TextIntroduction>
-          <p>
+          <Discover>
             Discover, learn, and grow with the Negiupp blog. Dive into enriching
             articles about web development, artificial intelligence, and
             e-commerce. With each click, unlock a door to new skills and
             knowledge. Start your journey with us today!
-          </p>
-          <p>
+          </Discover>
+          <DontMiss>
             Don&apos;t miss out! Subscribe now to comment and engage in our
             articles.
-          </p>
+          </DontMiss>
           <FormSubscribeBlog />
         </TextIntroduction>
         <AvatarConatiner>

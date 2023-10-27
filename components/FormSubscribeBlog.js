@@ -5,9 +5,9 @@ const ContainerForm = styled.div`
   display: flex;
   justify-content: center;
   gap: 0.25rem;
-  margin-top: 3rem;
-  
+  margin: 2rem 1.5rem 3rem 1.5rem;
   input {
+    width: 100%;
     text-align: center;
     font-size: 1.2rem;
     border: 0;
