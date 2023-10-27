@@ -7,8 +7,7 @@ import { css, keyframes, styled } from "styled-components";
 import { GradientBackground } from "./BlogIntroduction";
 import { Environment, OrbitControls } from "@react-three/drei";
 import MyLoader from "./MyLoader";
-import AvatarWelcome from "./avatars/AvatarWelcome";
-
+const AvatarWelcome = React.lazy(() => import("./avatars/AvatarWelcome"));
 const PrincipalContainer = styled.div`
   position: relative;
 `;

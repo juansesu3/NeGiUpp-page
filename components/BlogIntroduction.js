@@ -2,7 +2,6 @@ import { Canvas } from "@react-three/fiber";
 import React, { Suspense } from "react";
 import styled from "styled-components";
 import { Environment, OrbitControls } from "@react-three/drei";
-import Avatar from "./Avatar";
 
 const ContainerBlogIntroduction = styled.div`
   margin-top: 3.5rem;
@@ -69,7 +68,8 @@ const AvatarConatiner = styled.div`
 import { useEffect } from "react";
 import { ShaderMaterial, PlaneGeometry, Mesh } from "three";
 import MyLoader from "./MyLoader";
-import AvatarBlog from "./avatars/AvatarBlog";
+
+const AvatarBlog = React.lazy(() => import("./avatars/AvatarBlog"));
 import FormSubscribeBlog from "./FormSubscribeBlog";
 
 export const GradientBackground = () => {
