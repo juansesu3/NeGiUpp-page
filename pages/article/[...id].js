@@ -2,23 +2,20 @@ import Center from "@/components/Center";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Layout from "@/components/Layout";
+import ReviewArticles from "@/components/ReviewArticles";
 import axios from "axios";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
 
-
 const ArticleContainer = styled.div`
-margin-top: 3.5rem;
-padding: 0 .5rem;
-`
-
+  margin-top: 3.5rem;
+  padding: 0 0.5rem;
+`;
 
 const Title = styled.h1`
   color: #ffff;
 
-  
-  
   margin: 0;
 `;
 const SectionOne = styled.div`
@@ -26,7 +23,7 @@ const SectionOne = styled.div`
   flex-direction: column;
   gap: 1.5rem;
 
-  @media screen and (min-width:768px) {
+  @media screen and (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
     gap: 0rem;
@@ -81,7 +78,7 @@ const AuthorContainerMobile = styled.div`
 
 const Content = styled.div`
   color: #ffff;
-  
+
   font-size: 1.2rem;
   letter-spacing: 0.5px;
   pre {
@@ -95,15 +92,14 @@ const Content = styled.div`
       /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
       /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   }
-  h2{
+  h2 {
     color: #4d61fc;
-   
   }
-  h3{
+  h3 {
     margin: 0;
   }
-  p{
-    opacity: .7;
+  p {
+    opacity: 0.7;
     font-weight: 300;
   }
 `;
@@ -125,7 +121,6 @@ const DeskDes = styled.div`
   width: 100%;
   @media screen and (min-width: 768px) {
     width: 50%;
-    
   }
 `;
 const ImgArticleContainer = styled.div`
@@ -139,7 +134,6 @@ const ImgArticleContainer = styled.div`
   @media screen and (min-width: 768px) {
     width: 500px;
     justify-content: flex-end;
-   
   }
 `;
 
@@ -162,54 +156,56 @@ const ArticlePage = () => {
   };
 
   return (
-   <Layout>
+    <Layout>
       {article && (
-        <ArticleContainer>
-          <SectionOne>
-            <DeskDes>
-              <div>
-                <Title>{article.title}</Title>
-              </div>
-              <DesktopDesign>
-                <Summary>{article.summary}</Summary>
-              </DesktopDesign>
-              <AuthorContainerDesktop>
+        <>
+          <ArticleContainer>
+            <SectionOne>
+              <DeskDes>
                 <div>
-                  <img src={article?.imgAuthor} alt="author-image" />
+                  <Title>{article.title}</Title>
                 </div>
-                <div>
-                  <h2>{article.author}</h2>
-                </div>
-              </AuthorContainerDesktop>
-            </DeskDes>
+                <DesktopDesign>
+                  <Summary>{article.summary}</Summary>
+                </DesktopDesign>
+                <AuthorContainerDesktop>
+                  <div>
+                    <img src={article?.imgAuthor} alt="author-image" />
+                  </div>
+                  <div>
+                    <h2>{article.author}</h2>
+                  </div>
+                </AuthorContainerDesktop>
+              </DeskDes>
 
-            <ImgArticleContainer>
-              <img src={article?.images} alt="article-image" />
-            </ImgArticleContainer>
+              <ImgArticleContainer>
+                <img src={article?.images} alt="article-image" />
+              </ImgArticleContainer>
+              <div>
+                <AuthorContainerMobile>
+                  <div>
+                    <img src={article?.imgAuthor} alt="author-image" />
+                  </div>
+                  <div>
+                    <h2>{article.author}</h2>
+                  </div>
+                </AuthorContainerMobile>
+                <Mobile>
+                  <Summary>{article.summary}</Summary>
+                </Mobile>
+              </div>
+            </SectionOne>
+
             <div>
-            <AuthorContainerMobile>
-              <div>
-                <img src={article?.imgAuthor} alt="author-image" />
-              </div>
-              <div>
-                <h2>{article.author}</h2>
-              </div>
-            </AuthorContainerMobile>
-            <Mobile>
-              <Summary>{article.summary}</Summary>
-            </Mobile>
+              <Content>
+                <ArticleContent htmlContent={article.content} />
+              </Content>
             </div>
-          </SectionOne>
-
-          <div>
-            <Content>
-              <ArticleContent htmlContent={article.content} />
-            </Content>
-          </div>
-        </ArticleContainer>
+          </ArticleContainer>
+          <ReviewArticles />
+        </>
       )}
-      
-      </Layout>
+    </Layout>
   );
 };
 
