@@ -1,25 +1,39 @@
 import { useAnimations, useGLTF } from "@react-three/drei";
-import { useEffect } from "react";
-import * as THREE from "three";
-const AvatarWelcome = () => {
-  const avatar = useGLTF("models/my_avatar_waiting.glb");
-  const { actions, names } = useAnimations(avatar.animations, avatar.scene);
-  //console.log(avatar);
-  console.log(actions);
-  useEffect(() => {
-    //actions.shaking.setLoop(THREE.LoopOnce); // Desactivar el loop
-    //actions.shaking.clampWhenFinished = true; // Detener la animación al finalizar
-    actions.standby.play(); // Iniciar la animación
+import { useEffect, useState } from "react";
 
-    // Opcional: Detener la animación cuando el componente se desmonte
-    //return () => {
-    // actions.standby.stop();
+const AvatarWaiting = () => {
+  const [hasError, setHasError] = useState(false);
+
+  const { scene, animations } = useGLTF(
+    "/models/my_avatar_waiting.glb",
+    undefined,
+    () => setHasError(true)
+  );
+
+  const { actions } = useAnimations(animations, scene);
+
+  useEffect(() => {
+    if (hasError) {
+      console.error("Error al cargar el modelo.");
+      return;
+    }
+
+    actions.standby.play();
+
+    // Descomenta las siguientes líneas si deseas detener la animación cuando el componente se desmonte
+    // return () => {
+    //   actions.standby.stop();
     // };
-  }, []);
+  }, [hasError, actions]);
+
+  if (hasError) {
+    return <div>Error al cargar el modelo</div>;
+  }
+
   return (
     <group>
       <primitive
-        object={avatar.scene}
+        object={scene}
         scale={2.92}
         position-y={-2.5}
         position-x={0}
@@ -29,4 +43,4 @@ const AvatarWelcome = () => {
   );
 };
 
-export default AvatarWelcome;
+export default AvatarWaiting;

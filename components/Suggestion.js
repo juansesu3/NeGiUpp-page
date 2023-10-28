@@ -1,13 +1,13 @@
+"use client";
 import { Canvas } from "@react-three/fiber";
 import axios from "axios";
 import Image from "next/image";
 import React, { Suspense, useEffect, useState } from "react";
-
 import { css, keyframes, styled } from "styled-components";
 import { GradientBackground } from "./BlogIntroduction";
 import { Environment, OrbitControls } from "@react-three/drei";
 import MyLoader from "./MyLoader";
-const AvatarWelcome = React.lazy(() => import("./avatars/AvatarWaiting"));
+const AvatarWaiting = React.lazy(() => import("./avatars/AvatarWaiting"));
 const PrincipalContainer = styled.div`
   position: relative;
 `;
@@ -288,7 +288,7 @@ const Suggestion = () => {
       });
   };
   const containerWidth = 150; // Define el ancho del contenedor según tus necesidades
-  const containerHeight =250; // Define la altura del contenedor según tus necesidades
+  const containerHeight = 250; // Define la altura del contenedor según tus necesidades
 
   return (
     <PrincipalContainer>
@@ -383,7 +383,7 @@ const Suggestion = () => {
                 <GradientBackground />
                 <OrbitControls enabled={false} />
                 <Suspense fallback={<MyLoader />}>
-                  <AvatarWelcome />
+                  <AvatarWaiting />
                 </Suspense>
                 <Environment background={null} preset="sunset" />
               </Canvas>
