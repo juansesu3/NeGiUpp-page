@@ -7,7 +7,7 @@ import { css, keyframes, styled } from "styled-components";
 import { GradientBackground } from "./BlogIntroduction";
 import { Environment, OrbitControls } from "@react-three/drei";
 import MyLoader from "./MyLoader";
-const AvatarWelcome = React.lazy(() => import("./avatars/AvatarWelcome"));
+const AvatarWelcome = React.lazy(() => import("./avatars/AvatarWaiting"));
 const PrincipalContainer = styled.div`
   position: relative;
 `;
@@ -142,10 +142,10 @@ transform: rotate(90deg);
 
 const StyledButtonn = styled.button`
   position: fixed;
-  bottom: ${(props) => (props.isOpen ? "-1rem" : "2rem")};
-  left: ${(props) => (props.isOpen ? "-1rem" : ".5rem")};
-  width: 4rem;
-  height: 4rem;
+  bottom: ${(props) => (props.isOpen ? "-1rem" : "5rem")};
+  left: ${(props) => (props.isOpen ? "-1rem" : "1rem")};
+  width: 5rem;
+  height: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -287,8 +287,8 @@ const Suggestion = () => {
         console.log(error);
       });
   };
-  const containerWidth = 80; // Define el ancho del contenedor según tus necesidades
-  const containerHeight = 80; // Define la altura del contenedor según tus necesidades
+  const containerWidth = 150; // Define el ancho del contenedor según tus necesidades
+  const containerHeight =250; // Define la altura del contenedor según tus necesidades
 
   return (
     <PrincipalContainer>
@@ -371,6 +371,10 @@ const Suggestion = () => {
           <>
             <AIContainer>
               <Canvas
+                style={{
+                  width: `${containerWidth}px`,
+                  height: `${containerHeight}px`,
+                }}
                 dpr={[0, 2]}
                 gl={{ alpha: true }}
                 shadows
