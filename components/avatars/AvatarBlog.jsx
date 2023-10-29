@@ -21,8 +21,8 @@ const AvatarBlog = () => {
     <group>
       <primitive
         object={avatar.scene}
-        scale={3}
-        position-y={-2.2}
+        scale={3.2}
+        position-y={-2.3}
         position-x={0.5}
         rotation-y={-0.5}
       />

@@ -59,12 +59,14 @@ const DontMiss = styled.p`
 const AvatarConatiner = styled.div`
   width: 100%;
   transform: scaleX(-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media screen and (min-width: 768px) {
     width: 50%;
     transform: scaleX(1);
   }
-  
 `;
 
 import { useEffect } from "react";
@@ -97,6 +99,8 @@ export const GradientBackground = () => {
 
   return null;
 };
+const containerWidth = 350; // Define el ancho del contenedor según tus necesidades
+const containerHeight = 300; // Define la altura del contenedor según tus necesidades
 
 const BlogIntroduction = () => {
   return (
@@ -126,6 +130,11 @@ const BlogIntroduction = () => {
         </TextIntroduction>
         <AvatarConatiner>
           <Canvas
+            style={{
+              width: `${containerWidth}px`,
+              height: `${containerHeight}px`,
+              margin: "0 auto",
+            }}
             dpr={[0, 2]}
             gl={{ alpha: true }}
             shadows

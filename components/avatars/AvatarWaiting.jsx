@@ -34,7 +34,7 @@ const AvatarWaiting = () => {
     <group>
       <primitive
         object={scene}
-        scale={2.92}
+        scale={2.5}
         position-y={-2.5}
         position-x={0}
         rotation-y={0.4}
