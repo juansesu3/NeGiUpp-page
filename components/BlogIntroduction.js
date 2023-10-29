@@ -22,7 +22,7 @@ const ContainerBlogIntroduction = styled.div`
 
 const TitleIntroduction = styled.div`
   h1 {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
   span {
     color: #4d61fc;
@@ -34,14 +34,14 @@ const IntroduccionContent = styled.div`
   flex-direction: column-reverse;
   justify-content: space-between;
 
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 768px) {
     flex-direction: row;
   }
 `;
 
 const TextIntroduction = styled.div`
   width: 100%;
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 768px) {
     width: 50%;
   }
 `;
@@ -58,11 +58,13 @@ const DontMiss = styled.p`
 
 const AvatarConatiner = styled.div`
   width: 100%;
+  transform: scaleX(-1);
 
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 768px) {
     width: 50%;
+    transform: scaleX(1);
   }
-  // transform: scaleX(-1);
+  
 `;
 
 import { useEffect } from "react";

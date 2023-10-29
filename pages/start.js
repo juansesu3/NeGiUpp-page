@@ -4,10 +4,8 @@ import React, { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 import ReCAPTCHA from "react-google-recaptcha";
 import { keyframes } from "styled-components";
-import MyThreeComponent from "@/components/MyThreeComponent";
 import { useRouter } from "next/router";
 import TypingMessage from "@/components/TypingMessage";
-import WavingEmoji from "@/components/icons/WavingEmoji";
 import axios from "axios";
 
 const falling = keyframes`
@@ -243,7 +241,12 @@ const Start = () => {
   const [message, setMessage] = useState("");
 
   const [firstMessageDone, setFirstMessageDone] = useState(false);
+
+  
   const [isHuman, setIsHuman] = useState(false);
+
+
+
   const [secondMessageDone, setSecondMessageDone] = useState(false);
   const [thridMessageDone, setThirdMessageDone] = useState(false);
 
