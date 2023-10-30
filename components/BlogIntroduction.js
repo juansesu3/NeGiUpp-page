@@ -31,7 +31,7 @@ const TitleIntroduction = styled.div`
 
 const IntroduccionContent = styled.div`
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: space-between;
 
   @media screen and (min-width: 768px) {
@@ -41,6 +41,9 @@ const IntroduccionContent = styled.div`
 
 const TextIntroduction = styled.div`
   width: 100%;
+  display: flex;
+  flex-direction: column;
+
   @media screen and (min-width: 768px) {
     width: 50%;
   }
@@ -50,23 +53,30 @@ const Discover = styled.p`
   font-size: 1.2rem;
 `;
 const DontMiss = styled.p`
-  font-size: 1.2rem;
-  margin-top: 3rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  font-size: 1rem;
+
+  margin: 1rem 2rem;
 `;
 
 const AvatarConatiner = styled.div`
   width: 100%;
-  transform: scaleX(-1);
+
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
   @media screen and (min-width: 768px) {
     width: 50%;
-    transform: scaleX(1);
   }
+`;
+
+const SpecialPhrase = styled.div`
+  font-size: 1.2rem;
+  margin-top: 3rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  color: #4d61fc;
 `;
 
 import { useEffect } from "react";
@@ -117,36 +127,21 @@ const BlogIntroduction = () => {
       <IntroduccionContent>
         <TextIntroduction>
           <Discover>
-            Discover, learn, and grow with the Negiupp blog. Dive into enriching
-            articles about web development, artificial intelligence, and
-            e-commerce. With each click, unlock a door to new skills and
-            knowledge. Start your journey with us today!
+            Looking to elevate your skills in web development, artificial
+            intelligence, or e-commerce? Welcome to the NeGiupp blog. Dive into
+            enriching articles that will take you from foundational knowledge to
+            advanced mastery in these exciting fields.
           </Discover>
-          <DontMiss>
-            Don&apos;t miss out! Subscribe now to comment and engage in our
-            articles.
-          </DontMiss>
-          <FormSubscribeBlog />
+          <SpecialPhrase>
+            <i>
+              &quot;The man who can move mountains started by moving small
+              stones. The only difference is that he never stopped trying.&quot;
+            </i>
+          </SpecialPhrase>
         </TextIntroduction>
         <AvatarConatiner>
-          <Canvas
-            style={{
-              width: `${containerWidth}px`,
-              height: `${containerHeight}px`,
-              margin: "0 auto",
-            }}
-            dpr={[0, 2]}
-            gl={{ alpha: true }}
-            shadows
-            camera={{ position: [0, 0, 8], fov: 42 }}
-          >
-            <GradientBackground />
-            <OrbitControls enabled={false} />
-            <Suspense fallback={<MyLoader />}>
-              <AvatarBlog />
-            </Suspense>
-            <Environment background={null} preset="sunset" />
-          </Canvas>
+        
+          <FormSubscribeBlog />
         </AvatarConatiner>
       </IntroduccionContent>
     </ContainerBlogIntroduction>

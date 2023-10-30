@@ -7,7 +7,6 @@ const ContainerForm = styled.form`
   flex-direction: column;
   justify-content: center;
   gap: 0.5rem;
-  margin: 2rem 1.5rem 3rem 1.5rem;
 
   input,
   button {
@@ -56,6 +55,11 @@ const ReCaptchaWrapper = styled.div`
     transform-origin: 0 0;
   }
 `;
+
+const DontMiss = styled.p`
+  font-size: 1rem;
+  width: 19rem;
+`;
 const FormSubscribeBlog = () => {
   const [isHuman, setIsHuman] = useState(false);
 
@@ -66,6 +70,13 @@ const FormSubscribeBlog = () => {
 
   return (
     <ContainerForm onSubmit={handleSubmit}>
+      <DontMiss>
+        🎉 Special Bonus 🎉
+        <br />
+        Subscribe today and gain exclusive access to our free eBook:
+        <br />
+        <i>&quot;Top 5 Tips to Succeed in Web Development and AI.&quot;</i>
+      </DontMiss>
       <input type="text" placeholder="name" />
       <input type="email" placeholder="email" />
       <ReCaptchaWrapper>
