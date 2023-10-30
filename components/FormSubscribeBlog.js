@@ -15,7 +15,7 @@ const ContainerForm = styled.form`
     text-align: center;
     font-size: 1.2rem;
     border: 0;
-    border-radius: 0.5rem;
+    border-radius: 0.2rem;
     padding: 1rem;
     color: #fff;
   }

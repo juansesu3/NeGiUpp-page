@@ -179,7 +179,9 @@ const ArticlePage = () => {
               </DeskDes>
 
               <ImgArticleContainer>
-                <img src={article?.images} alt="article-image" />
+                {article?.images && (
+                  <img src={article?.images[0][0]} alt="article-image" />
+                )}
               </ImgArticleContainer>
               <div>
                 <AuthorContainerMobile>

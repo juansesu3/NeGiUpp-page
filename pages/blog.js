@@ -211,9 +211,10 @@ const BlogPage = () => {
                   <Link href={"/article/" + firstArticle._id}>
                     <ArticleCard>
                       <ImageContainer>
-                        <img src={firstArticle.images} alt="article image" />
+                        <img src={firstArticle.images[0][0]} alt="article image" />
                       </ImageContainer>
                       <ArticleName>
+                      {console.log(firstArticle.images[0][0])}
                         <h1>{firstArticle.title}</h1>
                       </ArticleName>
                       <InfoDetails>
@@ -284,8 +285,8 @@ const BlogPage = () => {
                     <Link href={"/article/" + secondArticle._id}>
                       <ArticleCard>
                         <ImageContainer>
-                          <img src={secondArticle.images} alt="article image" />
-                        </ImageContainer>
+                          <img src={secondArticle.images[0][0]} alt="article image" />
+                        </ImageContainer> 
                         <ArticleName>
                           <h1>{secondArticle.title}</h1>
                         </ArticleName>
