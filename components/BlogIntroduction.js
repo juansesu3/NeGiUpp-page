@@ -52,11 +52,7 @@ const Discover = styled.p`
   opacity: 0.65;
   font-size: 1.2rem;
 `;
-const DontMiss = styled.p`
-  font-size: 1rem;
 
-  margin: 1rem 2rem;
-`;
 
 const AvatarConatiner = styled.div`
   width: 100%;
