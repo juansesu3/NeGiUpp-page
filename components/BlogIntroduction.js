@@ -6,18 +6,10 @@ import { Environment, OrbitControls } from "@react-three/drei";
 const ContainerBlogIntroduction = styled.div`
   margin-top: 3.5rem;
   color: white;
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-  border-radius: 1rem;
   text-align: center;
-
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-  padding: 1rem;
+ 
 `;
 
 const TitleIntroduction = styled.div`
@@ -33,9 +25,12 @@ const IntroduccionContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 1rem;
+ 
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
+    
   }
 `;
 
@@ -43,16 +38,28 @@ const TextIntroduction = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+   gap: 1rem;
 
   @media screen and (min-width: 768px) {
     width: 50%;
   }
 `;
-const Discover = styled.p`
+const Discover = styled.div`
+  padding: 1rem;
   opacity: 0.65;
   font-size: 1.2rem;
+  background-image: linear-gradient(to bottom right, #212121, #131313);
+  border: 1px solid #212121;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  border-radius: 1rem;
+  min-height: 15rem;
+    display: flex;
+   align-items: center;
+   justify-content: center;
 `;
-
 
 const AvatarConatiner = styled.div`
   width: 100%;
@@ -61,6 +68,7 @@ const AvatarConatiner = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+ 
 
   @media screen and (min-width: 768px) {
     width: 50%;
@@ -69,10 +77,19 @@ const AvatarConatiner = styled.div`
 
 const SpecialPhrase = styled.div`
   font-size: 1.2rem;
-  margin-top: 3rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  padding: 1rem;
   color: #4d61fc;
+  background-image: linear-gradient(to bottom right, #212121, #131313);
+  border: 1px solid #212121;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  border-radius: 1rem;
+   min-height: 11.5rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 `;
 
 import { useEffect } from "react";
@@ -136,7 +153,6 @@ const BlogIntroduction = () => {
           </SpecialPhrase>
         </TextIntroduction>
         <AvatarConatiner>
-        
           <FormSubscribeBlog />
         </AvatarConatiner>
       </IntroduccionContent>

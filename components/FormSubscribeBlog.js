@@ -7,7 +7,16 @@ const ContainerForm = styled.form`
   flex-direction: column;
   justify-content: center;
   gap: 0.5rem;
-
+  background-image: linear-gradient(to bottom right, #212121, #131313);
+  border: 1px solid #212121;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
   input,
   button {
     margin: 0 auto;
@@ -59,6 +68,7 @@ const ReCaptchaWrapper = styled.div`
 const DontMiss = styled.p`
   font-size: 1rem;
   width: 19rem;
+  margin: 0 auto;
 `;
 const FormSubscribeBlog = () => {
   const [isHuman, setIsHuman] = useState(false);
