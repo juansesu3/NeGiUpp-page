@@ -45,6 +45,7 @@ const Section = styled.section`
   flex-direction: column;
   gap: 1rem;
   padding: 0;
+  z-index: 0;
 
   h4 {
     margin: 0;
