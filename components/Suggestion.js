@@ -10,12 +10,13 @@ import MyLoader from "./MyLoader";
 const AvatarWaiting = React.lazy(() => import("./avatars/AvatarWaiting"));
 const PrincipalContainer = styled.div`
   position: relative;
+  z-index: 10;
 `;
 
 const FormConatiner = styled.div`
   position: fixed;
   bottom: 10px;
-  left: 5px;
+  left: 85px;
   width: 16rem;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -23,7 +24,13 @@ const FormConatiner = styled.div`
   gap: 0.5rem;
   padding: 0.8rem;
   border-radius: 0.375rem;
-  background-color: #1d1d1f;
+  background-image: linear-gradient(to bottom right, #212121, #131313);
+  border: 1px solid #212121;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+
   margin-bottom: 20px;
   opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
   transform: translateY(${({ isOpen }) => (isOpen ? "0" : "100%")});
@@ -142,8 +149,8 @@ transform: rotate(90deg);
 
 const StyledButtonn = styled.button`
   position: fixed;
-  bottom: ${(props) => (props.isOpen ? "-1rem" : "5rem")};
-  left: ${(props) => (props.isOpen ? "-1rem" : "1rem")};
+  bottom: ${(props) => (props.isOpen ? "5rem" : "5rem")};
+  left: ${(props) => (props.isOpen ? "1rem" : "1rem")};
   width: 5rem;
   height: 5rem;
   display: flex;
@@ -153,11 +160,7 @@ const StyledButtonn = styled.button`
   background-color: transparent;
   cursor: pointer;
   border: none;
-  ${({ isOpen }) =>
-    isOpen &&
-    css`
-      animation: ${rotateAnimation} 0.3s ease;
-    `}
+  ${({ isOpen }) => isOpen && css``}
 
   svg {
     width: 1.5rem;
@@ -193,6 +196,18 @@ const InfoAi = styled.div`
     css`
       animation: ${ColorAnimation} 2s ease-out infinite; /* Cambia el valor de '2s' para ajustar la velocidad */
     `}
+`;
+const CloseButton = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+  }
 `;
 const Suggestion = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -297,7 +312,9 @@ const Suggestion = () => {
           {chatLog.map((message, index) => (
             <StyledMessageContainer key={index} messageType={message.type}>
               <div className="message-type">
-                {message.type.replace("bot", "Geniuss: ").replace("user", `me`)}
+                {message.type
+                  .replace("bot", "Assistent: ")
+                  .replace("user", `me`)}
               </div>
               <div className="message">{message.message}</div>
             </StyledMessageContainer>
@@ -310,14 +327,7 @@ const Suggestion = () => {
               ? "Give me a moment..."
               : "I'm here to help you get to know Juan better!"}
           </InfoAi>
-          <StyledLoadingContainer>
-            <Image
-              src="https://juan-sesu-ecommerce.s3.amazonaws.com/1693293993081.png"
-              width={200}
-              height={100}
-              alt="logo chatbot AI"
-            />
-          </StyledLoadingContainer>
+          <div>{/*Question */}</div>
           <div
             style={{
               display: "flex",
@@ -348,13 +358,9 @@ const Suggestion = () => {
             </StyledButton>
           </div>
         </StyledForm>
-      </FormConatiner>
-      <StyledButtonn
-        isOpen={isOpen}
-        onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
-      >
-        {isOpen ? (
+        <CloseButton>
           <svg
+            style={{ color: "red" }}
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -367,29 +373,32 @@ const Suggestion = () => {
               d="M6 18L18 6M6 6l12 12"
             />
           </svg>
-        ) : (
-          <>
-            <AIContainer>
-              <Canvas
-                style={{
-                  width: `${containerWidth}px`,
-                  height: `${containerHeight}px`,
-                }}
-                dpr={[0, 2]}
-                gl={{ alpha: true }}
-                shadows
-                camera={{ position: [0, 0, 8], fov: 42 }}
-              >
-                <GradientBackground />
-                <OrbitControls enabled={false} />
-                <Suspense fallback={<MyLoader />}>
-                  <AvatarWaiting />
-                </Suspense>
-                <Environment background={null} preset="sunset" />
-              </Canvas>
-            </AIContainer>
-          </>
-        )}
+        </CloseButton>
+      </FormConatiner>
+
+      <StyledButtonn
+        isOpen={isOpen}
+        onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
+      >
+        <AIContainer>
+          <Canvas
+            style={{
+              width: `${containerWidth}px`,
+              height: `${containerHeight}px`,
+            }}
+            dpr={[0, 2]}
+            gl={{ alpha: true }}
+            shadows
+            camera={{ position: [0, 0, 8], fov: 42 }}
+          >
+            <GradientBackground />
+            <OrbitControls enabled={false} />
+            <Suspense fallback={<MyLoader />}>
+              <AvatarWaiting />
+            </Suspense>
+            <Environment background={null} preset="sunset" />
+          </Canvas>
+        </AIContainer>
       </StyledButtonn>
     </PrincipalContainer>
   );
