@@ -220,8 +220,8 @@ const shakeAnimation = keyframes`
 const ButtonShow = styled.button`
   position: fixed;
   z-index: 50;
-  bottom: 0rem;
-  left: 0.2rem;
+  bottom: 0.5rem;
+  left: 0.5rem;
   border: none;
   padding: 0.3rem;
   animation: ${shakeAnimation} 3s ease-in-out infinite;
@@ -232,13 +232,15 @@ const ButtonShow = styled.button`
   border-radius: 100%;
   height: 3rem;
   width: 3rem;
+  transition: 1s ease-in-out;
   svg{
      opacity: 0.5;
+     transition: opacity 0.5s ease;
   }
   &:hover{
-    opacity: 1;
+    
       svg{
-     opacity: 0.5;
+     opacity: inherit;
   }
   }
 `;

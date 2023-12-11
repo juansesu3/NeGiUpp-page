@@ -208,7 +208,7 @@ const LinkRRSS = styled.a`
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
 
-  transition: background-image 0.3s ease-in-out;
+  transition: background-image 0.5s ease-in-out;
   &:hover {
     background-image: linear-gradient(to bottom right, #4d61fc, #4d61fc);
   }
@@ -305,7 +305,7 @@ const Home2Section2 = () => {
   return (
     <Section2>
       <Mobile>
-        <IoT href={"notfound"}>
+        <IoT href={"/notfound"}>
           <ImageContIoT>
             {" "}
             <Image
