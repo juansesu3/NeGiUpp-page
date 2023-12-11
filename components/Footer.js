@@ -21,6 +21,7 @@ const First = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  z-index: 0;
   gap: 5rem;
   padding: 0 1rem;
   @media screen and (min-width: 768px) {
@@ -45,7 +46,7 @@ const Section = styled.section`
   flex-direction: column;
   gap: 1rem;
   padding: 0;
-  z-index: 0;
+  z-index: -1;
 
   h4 {
     margin: 0;

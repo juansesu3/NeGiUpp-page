@@ -1,17 +1,15 @@
 "use client";
 import { Canvas } from "@react-three/fiber";
 import axios from "axios";
-import Image from "next/image";
 import React, { Suspense, useEffect, useState } from "react";
 import { css, keyframes, styled } from "styled-components";
 import { GradientBackground } from "./BlogIntroduction";
 import { Environment, OrbitControls } from "@react-three/drei";
-import MyLoader from "./MyLoader";
 import { CircleLoader } from "react-spinners";
 const AvatarWaiting = React.lazy(() => import("./avatars/AvatarWaiting"));
 const PrincipalContainer = styled.div`
   position: relative;
-  z-index: 10;
+  z-index: 100;
 `;
 
 const FormConatiner = styled.div`
@@ -25,8 +23,8 @@ const FormConatiner = styled.div`
   gap: 0.5rem;
   padding: 0.8rem;
   border-radius: 0.375rem;
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
+  background-image: linear-gradient(to bottom right, #000000, #131313);
+  border: 1px solid #2b2b2b0f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -36,6 +34,7 @@ const FormConatiner = styled.div`
   opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
   transform: translateY(${({ isOpen }) => (isOpen ? "0" : "100%")});
   transition: opacity 0.3s ease, transform 0.3s ease;
+  
 `;
 
 const StyledChatContainer = styled.div`
@@ -326,6 +325,13 @@ const Suggestion = () => {
   const hideAvatar = () => {
     setShowAvatar(false);
   };
+
+  const showChatBot = ()=>{
+    setShowAvatar((prevShowAvatar) => !prevShowAvatar)
+    setIsOpen(true)
+
+
+  }
   const containerWidth = 150; // Define el ancho del contenedor según tus necesidades
   const containerHeight = 250; // Define la altura del contenedor según tus necesidades
 
@@ -402,7 +408,7 @@ const Suggestion = () => {
 
       {!showAvatar && (
         <ButtonShow
-          onClick={() => setShowAvatar((prevShowAvatar) => !prevShowAvatar)}
+          onClick={showChatBot}
         >
           Asistente
         </ButtonShow>
