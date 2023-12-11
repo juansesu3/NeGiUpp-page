@@ -13,6 +13,7 @@
     "@react-three/fiber": "8.13.3",
     "@readyplayerme/react-avatar-creator": "^0.3.0",
     "axios": "^1.4.0",
+    "date-fns": "^2.30.0",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.7",
     "html-to-text": "^9.0.5",

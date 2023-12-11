@@ -211,11 +211,11 @@ const CloseButton = styled.div`
 `;
 
 const shakeAnimation = keyframes`
-0%, 20%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  30% { transform: translateX(5px); }
-  35% { transform: translateX(-5px); }
-  40% { transform: translateX(0); }
+0%, 20%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-10px); }
+  30% { transform: translateY(0px); }
+  35% { transform: translateY(-5px); }
+  40% { transform: translateY(0); }
 `;
 const ButtonShow = styled.button`
   position: fixed;
@@ -223,11 +223,24 @@ const ButtonShow = styled.button`
   bottom: 0rem;
   left: 0.2rem;
   border: none;
-  padding: 1rem;
+  padding: 0.3rem;
   animation: ${shakeAnimation} 3s ease-in-out infinite;
   color: white;
-  background-color: #000000;
+ cursor: pointer;
+  background-image: linear-gradient(to bottom right, #000000, #131313);
   border: 1px solid #ffffff6a;
+  border-radius: 100%;
+  height: 3rem;
+  width: 3rem;
+  svg{
+     opacity: 0.5;
+  }
+  &:hover{
+    opacity: 1;
+      svg{
+     opacity: 0.5;
+  }
+  }
 `;
 const Suggestion = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -326,7 +339,7 @@ const Suggestion = () => {
     setShowAvatar(false);
   };
 
-  const showChatBot = ()=>{
+  const showChatBot = () => {
     setShowAvatar((prevShowAvatar) => !prevShowAvatar)
     setIsOpen(true)
 
@@ -410,12 +423,16 @@ const Suggestion = () => {
         <ButtonShow
           onClick={showChatBot}
         >
-          Asistente
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+          </svg>
+
+
         </ButtonShow>
       )}
       {showAvatar && (
         <>
-          
+
           <StyledButtonn isOpen={isOpen} onClick={() => setIsOpen(false)}>
             <AIContainer>
               <Suspense fallback={<CircleLoader color="#fff" />}>

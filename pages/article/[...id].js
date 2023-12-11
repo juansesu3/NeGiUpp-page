@@ -155,6 +155,8 @@ const ArticlePage = () => {
     return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
   };
 
+
+
   return (
     <Layout>
       {article && (
@@ -204,7 +206,7 @@ const ArticlePage = () => {
               </Content>
             </div>
           </ArticleContainer>
-          <ReviewArticles />
+          <ReviewArticles articleId={id} />
         </>
       )}
     </Layout>
