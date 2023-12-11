@@ -48,8 +48,8 @@ const Discover = styled.div`
   padding: 1rem;
   opacity: 0.65;
   font-size: 1.2rem;
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
+  background-image: linear-gradient(to bottom right, #000000, #131313);
+  border: 1px solid #2b2b2b0f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -79,8 +79,8 @@ const SpecialPhrase = styled.div`
   font-size: 1.2rem;
   padding: 1rem;
   color: #4d61fc;
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
+  background-image: linear-gradient(to bottom right, #000000, #131313);
+  border: 1px solid #2b2b2b0f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),

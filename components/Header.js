@@ -31,7 +31,7 @@ const LogoLink = styled(Link)`
 `;
 
 const WrapperFull = styled.div`
-  background-image: linear-gradient(to bottom right, #212121, #131313);
+    background-image: linear-gradient(to bottom right, #000000, #131313);
   margin: 0 auto;
   position: relative;
   /* Estilos para tu componente */
@@ -75,7 +75,7 @@ const StyledNav = styled.nav`
   background-image: ${(props) =>
     props.isVisible
       ? "none"
-      : "linear-gradient(to bottom right, #212121, #131313)"};
+      : "linear-gradient(to bottom right, #000000, #131313)"};
   background-color: ${(props) => (props.isVisible ? "transparent" : "inherit")};
 
   z-index: 10;
@@ -209,8 +209,8 @@ const Curriculum = styled.div`
   padding: 0;
   background-image: linear-gradient(
     to bottom right,
-    rgba(33, 33, 33, 0.7),
-    rgba(19, 19, 19, 0.7)
+    rgba(0, 0, 0, 0.7),
+    rgba(15, 15, 15, 0.7)
   );
   color: white;
   ${(props) =>

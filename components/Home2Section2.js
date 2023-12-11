@@ -17,8 +17,8 @@ const Section2 = styled.div`
 const IoT = styled(Link)`
   text-decoration: none;
   color: inherit;
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
+  background-image: linear-gradient(to bottom right, #000000, #131313);
+  border: 1px solid #2b2b2b0f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -44,8 +44,8 @@ const IoT = styled(Link)`
   }
 `;
 const ImageContIoT = styled.div`
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
+    background-image: linear-gradient(to bottom right, #000000, #131313);
+    border: 1px solid #2b2b2b0f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -72,8 +72,8 @@ const ImageContIoT = styled.div`
 `;
 
 const Services = styled.div`
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
+   background-image: linear-gradient(to bottom right, #000000, #131313);
+   border: 1px solid #2b2b2b0f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -105,8 +105,8 @@ const ContServices = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
+  background-image: linear-gradient(to bottom right, #000000, #131313);
+  border: 1px solid #2b2b2b0f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -132,8 +132,8 @@ const ServicesLink = styled(Link)`
   }
 `;
 const ProfilesDesktop = styled.div`
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
+    background-image: linear-gradient(to bottom right, #000000, #131313);
+    border: 1px solid #2b2b2b0f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -158,8 +158,8 @@ const ProfilesDesktop = styled.div`
   }
 `;
 const ProfilesMobile = styled.div`
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
+   background-image: linear-gradient(to bottom right, #000000, #131313);
+   border: 1px solid #2b2b2b0f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -201,8 +201,8 @@ const LinkRRSS = styled.a`
   padding: 1rem;
   border-radius: 1rem;
   cursor: pointer;
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
+  background-image: linear-gradient(to bottom right, #000000, #131313);
+  border: 1px solid #2b2b2b0f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),

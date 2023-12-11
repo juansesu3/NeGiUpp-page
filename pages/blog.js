@@ -54,8 +54,8 @@ const ArticleCard = styled.div`
   min-height: 29rem;
   border-radius: 1rem;
   padding: 1rem;
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
+ background-image: linear-gradient(to bottom right, #000000, #131313);
+  border: 1px solid #2b2b2b0f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),

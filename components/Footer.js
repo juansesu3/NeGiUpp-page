@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const BckGro = styled.div`
   width: 100%;
-  background-color: #0f0f0f;
+  background-image: linear-gradient(to bottom right, #000000, #131313);
   color: #fff;
   display: flex;
   flex-direction: column;

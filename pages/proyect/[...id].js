@@ -40,8 +40,8 @@ const ContainerSect = styled.div`
   gap: 1.5rem;
   flex-direction: column;
   border-radius: 1rem;
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
+  background-image: linear-gradient(to bottom right, #000000, #131313);
+  border: 1px solid #2b2b2b0f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -80,8 +80,8 @@ const AboutInfo = styled.div`
     letter-spacing: 0.5px;
     line-height: 1.56;
   }
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
+  background-image: linear-gradient(to bottom right, #000000, #131313);
+  border: 1px solid #2b2b2b0f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -123,8 +123,8 @@ const MoreDetail = styled.div`
   border-radius: 1rem;
   color: #ffff;
   text-align: center;
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
+  background-image: linear-gradient(to bottom right, #000000, #131313);
+  border: 1px solid #2b2b2b0f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -169,8 +169,8 @@ const ContainerButton = styled.div`
     font-size: 0.8rem;
     font-weight: 500;
     transition: 0.4s;
-    background-image: linear-gradient(to bottom right, #212121, #131313);
-    border: 1px solid #212121;
+    background-image: linear-gradient(to bottom right, #000000, #131313);
+  border: 1px solid #2b2b2b0f;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
       /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
       /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -199,8 +199,8 @@ const ContainerTech = styled.div`
   color: #ffff;
   padding: 1.5rem;
   width: 100%;
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
+  background-image: linear-gradient(to bottom right, #000000, #131313);
+  border: 1px solid #2b2b2b0f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),

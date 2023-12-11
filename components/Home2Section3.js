@@ -15,8 +15,8 @@ const Section3 = styled.div`
 `;
 
 const InfoPlus = styled.div`
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
+    background-image: linear-gradient(to bottom right, #000000, #131313);
+    border: 1px solid #2b2b2b0f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -35,8 +35,8 @@ const InfoPlus = styled.div`
   }
 `;
 const Experinces = styled.div`
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
+   background-image: linear-gradient(to bottom right, #000000, #131313);
+   border: 1px solid #2b2b2b0f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -58,8 +58,8 @@ const Experinces = styled.div`
 `;
 
 const Clients = styled.div`
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
+    background-image: linear-gradient(to bottom right, #000000, #131313);
+    border: 1px solid #2b2b2b0f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -80,8 +80,8 @@ const Clients = styled.div`
   }
 `;
 const Proj = styled.div`
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
+    background-image: linear-gradient(to bottom right, #000000, #131313);
+    border: 1px solid #2b2b2b0f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -102,8 +102,8 @@ const Proj = styled.div`
 `;
 
 const WorkTogether = styled.div`
-  background-image: linear-gradient(to bottom right, #212121, #131313);
-  border: 1px solid #212121;
+    background-image: linear-gradient(to bottom right, #000000, #131313);
+    border: 1px solid #2b2b2b0f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
