@@ -1,7 +1,7 @@
 import { useAnimations, useGLTF } from "@react-three/drei";
 import { useEffect, useState } from "react";
 
-const AvatarWaiting = () => {
+const AvatarWaiting = ({ onClick }) => {
   const [hasError, setHasError] = useState(false);
 
   const { scene, animations } = useGLTF(
@@ -31,7 +31,7 @@ const AvatarWaiting = () => {
   }
 
   return (
-    <group>
+    <group onClick={onClick}>
       <primitive
         object={scene}
         scale={2.5}

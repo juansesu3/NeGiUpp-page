@@ -7,6 +7,7 @@ import { css, keyframes, styled } from "styled-components";
 import { GradientBackground } from "./BlogIntroduction";
 import { Environment, OrbitControls } from "@react-three/drei";
 import MyLoader from "./MyLoader";
+import { CircleLoader } from "react-spinners";
 const AvatarWaiting = React.lazy(() => import("./avatars/AvatarWaiting"));
 const PrincipalContainer = styled.div`
   position: relative;
@@ -209,6 +210,26 @@ const CloseButton = styled.div`
     font-weight: 500;
   }
 `;
+
+const shakeAnimation = keyframes`
+0%, 20%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  30% { transform: translateX(5px); }
+  35% { transform: translateX(-5px); }
+  40% { transform: translateX(0); }
+`;
+const ButtonShow = styled.button`
+  position: fixed;
+  z-index: 50;
+  bottom: 0rem;
+  left: 0.2rem;
+  border: none;
+  padding: 1rem;
+  animation: ${shakeAnimation} 3s ease-in-out infinite;
+  color: white;
+  background-color: #000000;
+  border: 1px solid #ffffff6a;
+`;
 const Suggestion = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
@@ -217,7 +238,7 @@ const Suggestion = () => {
   const [proyects, setProyects] = useState([]);
   const [profile, setProfile] = useState({});
   const [technologies, setTecnologies] = useState([]);
-
+  const [showAvatar, setShowAvatar] = useState(false);
   useEffect(() => {
     axios.get("/api/proyects").then((response) => {
       setProyects(response.data);
@@ -302,6 +323,9 @@ const Suggestion = () => {
         console.log(error);
       });
   };
+  const hideAvatar = () => {
+    setShowAvatar(false);
+  };
   const containerWidth = 150; // Define el ancho del contenedor según tus necesidades
   const containerHeight = 250; // Define la altura del contenedor según tus necesidades
 
@@ -376,30 +400,41 @@ const Suggestion = () => {
         </CloseButton>
       </FormConatiner>
 
-      <StyledButtonn
-        isOpen={isOpen}
-        onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
-      >
-        <AIContainer>
-          <Canvas
-            style={{
-              width: `${containerWidth}px`,
-              height: `${containerHeight}px`,
-            }}
-            dpr={[0, 2]}
-            gl={{ alpha: true }}
-            shadows
-            camera={{ position: [0, 0, 8], fov: 42 }}
-          >
-            <GradientBackground />
-            <OrbitControls enabled={false} />
-            <Suspense fallback={<MyLoader />}>
-              <AvatarWaiting />
-            </Suspense>
-            <Environment background={null} preset="sunset" />
-          </Canvas>
-        </AIContainer>
-      </StyledButtonn>
+      {!showAvatar && (
+        <ButtonShow
+          onClick={() => setShowAvatar((prevShowAvatar) => !prevShowAvatar)}
+        >
+          Asistente
+        </ButtonShow>
+      )}
+      {showAvatar && (
+        <>
+          
+          <StyledButtonn isOpen={isOpen} onClick={() => setIsOpen(false)}>
+            <AIContainer>
+              <Suspense fallback={<CircleLoader color="#fff" />}>
+                <Canvas
+                  style={{
+                    width: `${containerWidth}px`,
+                    height: `${containerHeight}px`,
+                  }}
+                  dpr={[0, 2]}
+                  gl={{ alpha: true }}
+                  shadows
+                  camera={{ position: [0, 0, 8], fov: 42 }}
+                >
+                  <GradientBackground />
+                  <OrbitControls enabled={false} />
+
+                  <AvatarWaiting onClick={hideAvatar} />
+
+                  <Environment background={false} preset="sunset" />
+                </Canvas>
+              </Suspense>
+            </AIContainer>
+          </StyledButtonn>
+        </>
+      )}
     </PrincipalContainer>
   );
 };

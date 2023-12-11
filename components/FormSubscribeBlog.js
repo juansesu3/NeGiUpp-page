@@ -20,7 +20,7 @@ const ContainerForm = styled.form`
   input,
   button {
     margin: 0 auto;
-    width: 100%;
+  width: 100%;
     text-align: center;
     font-size: 1.2rem;
     border: 0;
@@ -42,7 +42,7 @@ const ContainerForm = styled.form`
   @media screen and (min-width: 768px) {
     input,
     button {
-      width: 19rem;
+      width: 20rem;
       padding: 1rem;
     }
   }
