@@ -1,9 +1,6 @@
-import Center from "@/components/Center";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+
 import { useEffect, useState } from "react";
 import axios from "axios";
-import BlogArticleCard from "@/components/BlogArticleCard";
 import { styled } from "styled-components";
 import Link from "next/link";
 import { RevealWrapper } from "next-reveal";
@@ -16,7 +13,6 @@ const BlogContainer = styled.div`
   flex-direction: column;
   gap: 1.5rem;
   margin-top: 1rem;
-
   @media screen and (min-width: 768px) {
     flex-direction: row;
   }
@@ -68,11 +64,9 @@ const ArticleCard = styled.div`
 const ImageContainer = styled.div`
   width: 100%;
   height: 15rem;
-
   img {
     width: 100%;
     height: 100%;
-
     border-radius: 1rem;
     object-fit: cover;
   }
