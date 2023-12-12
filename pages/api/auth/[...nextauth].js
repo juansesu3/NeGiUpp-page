@@ -44,7 +44,7 @@ export const authOptions = {
     strategy: "jwt",
   },
   pages: {
-    signIn: "/",
+    signIn: "/blog",
   },
   adapter: MongoDBAdapter(clientPromise),
  
