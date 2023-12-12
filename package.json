@@ -14,6 +14,7 @@
     "@react-three/fiber": "8.13.3",
     "@readyplayerme/react-avatar-creator": "^0.3.0",
     "axios": "^1.4.0",
+    "bcryptjs": "^2.4.3",
     "date-fns": "^2.30.0",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.7",

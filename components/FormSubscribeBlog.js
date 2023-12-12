@@ -82,6 +82,7 @@ const SignButtonsToSubscribe = styled.button`
     border-radius: 0.2rem;
     padding: 0.5rem;
     color: gray;
+    font-weight: 600;
     svg{
       width: 2rem;
       height: 2rem;
@@ -175,17 +176,35 @@ const NextBack = styled.div`
 display: flex;
 justify-content: space-between;
 
+`;
+
+const Invalid = styled.p`
+padding: 0.5rem;
+color: white;
+background-color: red;
+border-radius: 0.2rem;
+
+`;
+
+const Question = styled.p`
+ color: white;
+ cursor: default;
+ font-weight: 600;
+span{
+color: #4d61fc;
+opacity: 1;
+cursor: pointer;
+  
+}
 `
 
 
 const FormSubscribeBlog = () => {
   const [isHuman, setIsHuman] = useState(false);
   const [step, setStep] = useState(1);
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-
+  const [error, setError] = useState(false);
   const login = async (provider) => {
     await signIn(provider)
   }
@@ -195,22 +214,37 @@ const FormSubscribeBlog = () => {
   const handleBackClick = () => {
     setStep((prevStep) => (prevStep > 1 ? prevStep - 1 : prevStep));
   };
-  const handleSubmit = (ev) => {
+  const handleSubmit = async (ev) => {
     ev.preventDefault();
-    login('credentials')
-    alert("Congratulations, you are part of the future");
-    console.log('Data to login with Credentials >>>', {email, password})
-
+    console.log('Data to login with Credentials >>>', { email, password })
+    try {
+      const result = await signIn("credentials", {
+        redirect: false,
+        email,
+        password,
+      });
+      if (result.error) {
+        setError(true);
+        console.log(error);
+        return;
+      }
+      router.replace("/");
+    } catch (error) {
+      console.log(error);
+    }
   };
+
   return (
     <ContainerForm onSubmit={handleSubmit}>
+      {/*
       <DontMiss>
         🎉 Special Bonus 🎉
         <br />
         Subscribe today and gain exclusive access to our free eBook:
         <br />
         <i>&quot;Top 5 Tips to Succeed in Web Development and AI.&quot;</i>
-      </DontMiss>
+      </DontMiss> */}
+      <Question>Haven&apos;t you subscribed?<span> Subscribe</span></Question>
       <ButtonsInputs>
         <SignButtonsToSubscribe type="button" onClick={() => login("google")} ><ColorGoogleIcon /> Google</SignButtonsToSubscribe>
         <SignButtonsToSubscribe type="button" onClick={() => login("github")} ><GithubIcon /> GitHub</SignButtonsToSubscribe>
@@ -236,6 +270,11 @@ const FormSubscribeBlog = () => {
             <LoginEmailPassaword type="submit" disabled={!isHuman}>
               Sign In
             </LoginEmailPassaword>
+            {error && (
+              <Invalid className="px-2 bg-red-500 text-white rounded-md">
+                Invalid Credentials{" "}
+              </Invalid>
+            )}
           </>
         )}
         <NextBack>
