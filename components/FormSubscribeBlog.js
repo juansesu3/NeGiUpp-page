@@ -333,7 +333,7 @@ const FormSubscribeBlog = () => {
 
 
   return (
-    <ContainerForm onSubmit={handleSubmit}>
+    <ContainerForm >
       {/*
       <DontMiss>
         🎉 Special Bonus 🎉
@@ -366,7 +366,7 @@ const FormSubscribeBlog = () => {
                 hl="en" 
               />
             </ReCaptchaWrapper>
-            <LoginEmailPassaword type="submit" disabled={!isHuman}>
+            <LoginEmailPassaword type="button" disabled={!isHuman} onClick={handleSubmit}>
               Sign In
             </LoginEmailPassaword>
             {error && (
