@@ -39,7 +39,7 @@ const ContainerForm = styled.form`
   }
 `;
 const ReCaptchaWrapper = styled.div`
-  margin: 0 auto;
+  
   display: flex;
   justify-content: start;
 
@@ -100,17 +100,35 @@ justify-content: center;
 align-items: center;
 cursor: pointer;
 color: white;
-background-color: #646464;
+
 border-radius: 0.2rem;
 border: none;
+background-color: #646464;
 transition:  0.3s ease-in-out;
     &:hover{
       background-color: #4d61fc;
       color: white;
     }
-
-
 `;
+
+const BackToSubscribe = styled.button`
+width: 5rem;
+padding: 0.5rem 1rem;
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+color: white;
+
+border-radius: 0.2rem;
+border: none;
+transition:  0.3s ease-in-out;
+background-color: red;
+    &:hover{
+      background-color: #4d61fc;
+      color: white;
+    }
+`
 
 const ButtonsInputs = styled.div`
 display: flex;
@@ -124,22 +142,66 @@ margin: 0;
  
 
 
+`;
+
+const LoginEmailPassaword = styled.button`
+background-color: #4d61fc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.4),
+      4px 0 4px rgba(0, 0, 0, 0.1), -4px 0 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+    color: white;
+    svg{
+      width: 2rem;
+      height: 2rem;
+    }
+    transition:  0.3s ease-in-out;
+    &:hover{
+      background-color: white;
+      color: #000000;
+    }
+
+`;
+
+const NextBack = styled.div`
+
+display: flex;
+justify-content: space-between;
+
 `
 
 
 const FormSubscribeBlog = () => {
   const [isHuman, setIsHuman] = useState(false);
+  const [step, setStep] = useState(1);
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
 
   const login = async (provider) => {
     await signIn(provider)
   }
-
-
+  const handleNextClick = () => {
+    setStep((prevStep) => prevStep + 1); // Avanzar al siguiente paso si hay servicios
+  };
+  const handleBackClick = () => {
+    setStep((prevStep) => (prevStep > 1 ? prevStep - 1 : prevStep));
+  };
   const handleSubmit = (ev) => {
     ev.preventDefault();
+    login('credentials')
     alert("Congratulations, you are part of the future");
-  };
+    console.log('Data to login with Credentials >>>', {email, password})
 
+  };
   return (
     <ContainerForm onSubmit={handleSubmit}>
       <DontMiss>
@@ -150,27 +212,46 @@ const FormSubscribeBlog = () => {
         <i>&quot;Top 5 Tips to Succeed in Web Development and AI.&quot;</i>
       </DontMiss>
       <ButtonsInputs>
-
-      
-      <SignButtonsToSubscribe type="button" onClick={() => login("google")} ><ColorGoogleIcon /> Google</SignButtonsToSubscribe>
-      <SignButtonsToSubscribe type="button" onClick={() => login("github")} ><GithubIcon /> GitHub</SignButtonsToSubscribe>
-      <Separator>
-        <Line /> Or with email and password <Line />
-      </Separator>
-
-      <input type="email" placeholder="email address" />
-      {/*<input type="email" placeholder="email" />
-      <ReCaptchaWrapper>
-        <ReCAPTCHA
-          sitekey="6LdkUhQoAAAAACk0K9Ex4pnMbkxQOiWiHzCI3Tpy"
-          onChange={(value) => {
-            setIsHuman(value !== null);
-          }}
-        />
-      </ReCaptchaWrapper>*/}
-      <NextToSubscribe type="submit" disabled={!isHuman}>
-        Next
-      </NextToSubscribe>
+        <SignButtonsToSubscribe type="button" onClick={() => login("google")} ><ColorGoogleIcon /> Google</SignButtonsToSubscribe>
+        <SignButtonsToSubscribe type="button" onClick={() => login("github")} ><GithubIcon /> GitHub</SignButtonsToSubscribe>
+        <Separator>
+          <Line /> Or with email and password <Line />
+        </Separator>
+        {step === 1 && (
+          <input value={email} onChange={(ev) => setEmail(ev.target.value)} type="email" placeholder="email address" />
+        )}
+        {step === 2 && (
+          <input value={password} onChange={(ev) => setPassword(ev.target.value)} type="password" placeholder="password" />
+        )}
+        {step === 3 && (
+          <>
+            <ReCaptchaWrapper>
+              <ReCAPTCHA
+                sitekey="6LdkUhQoAAAAACk0K9Ex4pnMbkxQOiWiHzCI3Tpy"
+                onChange={(value) => {
+                  setIsHuman(value !== null);
+                }}
+              />
+            </ReCaptchaWrapper>
+            <LoginEmailPassaword type="submit" disabled={!isHuman}>
+              Sign In
+            </LoginEmailPassaword>
+          </>
+        )}
+        <NextBack>
+          {step !== 3 && (
+            <NextToSubscribe type="button" onClick={handleNextClick} >
+              Next
+            </NextToSubscribe>
+          )
+          }
+          {step !== 1 && (
+            <BackToSubscribe type="button" onClick={handleBackClick} >
+              Back
+            </BackToSubscribe>
+          )
+          }
+        </NextBack>
       </ButtonsInputs>
     </ContainerForm>
   );
