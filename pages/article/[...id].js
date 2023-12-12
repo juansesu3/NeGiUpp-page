@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Layout from "@/components/Layout";
 import ReviewArticles from "@/components/ReviewArticles";
 import axios from "axios";
+import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
@@ -141,6 +142,8 @@ const ArticlePage = () => {
   const [article, setArticle] = useState([]);
   const router = useRouter();
   const { id } = router.query;
+  const { data: session, status } = useSession();
+  console.log("Data session after sign >>>>", session)
 
   useEffect(() => {
     if (!id) {

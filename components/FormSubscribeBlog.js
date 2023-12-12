@@ -200,7 +200,27 @@ opacity: 1;
 cursor: pointer;
   
 }
-`
+`;
+
+const LogOut = styled.button`
+width: 7rem;
+border: none;
+padding: 0.2rem 0rem;
+margin: 0 auto;
+margin-top: 1rem;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 0.5rem;
+background-color: red;
+color: white;
+font-weight: 600;
+svg{
+  width: 2rem;
+  height: 2rem;
+}
+
+`;
 
 
 const FormSubscribeBlog = () => {
@@ -209,6 +229,8 @@ const FormSubscribeBlog = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
+  const { data: session, status } = useSession();
+  console.log("Data session after sign >>>>", session)
   const login = async (provider) => {
     await signIn(provider)
   }
@@ -300,19 +322,19 @@ const FormSubscribeBlog = () => {
       }
     });
     const recaptchaContainer = document.getElementById('recaptcha-container');
-  if (recaptchaContainer) {
-    // eslint-disable-next-line react/no-deprecated
-    ReactDOM.render(
-      <ReCAPTCHA
-        sitekey={process.env.NEXT_PUBLIC_RECAPCHA_GOOGLE }
-        onChange={(value) => {
-          setIsHuman(value !== null);
-        }}
-        hl="en" 
-      />,
-      recaptchaContainer
-    );
-  }
+    if (recaptchaContainer) {
+      // eslint-disable-next-line react/no-deprecated
+      ReactDOM.render(
+        <ReCAPTCHA
+          sitekey={process.env.NEXT_PUBLIC_RECAPCHA_GOOGLE}
+          onChange={(value) => {
+            setIsHuman(value !== null);
+          }}
+          hl="en"
+        />,
+        recaptchaContainer
+      );
+    }
 
     // Configurar los eventos para los botones de inicio de sesión con Google y GitHub
     const googleSignInBtn = document.getElementById('google-sign-in-btn');
@@ -331,66 +353,85 @@ const FormSubscribeBlog = () => {
     });
   };
 
+  const logout = async () => {
+    
+    await signOut();
+  };
 
   return (
     <ContainerForm >
-      {/*
-      <DontMiss>
-        🎉 Special Bonus 🎉
-        <br />
-        Subscribe today and gain exclusive access to our free eBook:
-        <br />
-        <i>&quot;Top 5 Tips to Succeed in Web Development and AI.&quot;</i>
-      </DontMiss> */}
-      <Question>Haven&apos;t you subscribed?<span onClick={showSubscriptionPopup}> Subscribe</span></Question>
-      <ButtonsInputs>
-        <SignButtonsToSubscribe type="button" onClick={() => login("google")} ><ColorGoogleIcon /> Google</SignButtonsToSubscribe>
-        <SignButtonsToSubscribe type="button" onClick={() => login("github")} ><GithubIcon /> GitHub</SignButtonsToSubscribe>
-        <Separator>
-          <Line /> Or with email and password <Line />
-        </Separator>
-        {step === 1 && (
-          <input value={email} onChange={(ev) => setEmail(ev.target.value)} type="email" placeholder="email address" />
-        )}
-        {step === 2 && (
-          <input value={password} onChange={(ev) => setPassword(ev.target.value)} type="password" placeholder="password" />
-        )}
-        {step === 3 && (
-          <>
-            <ReCaptchaWrapper>
-              <ReCAPTCHA
-                sitekey={process.env.NEXT_PUBLIC_RECAPCHA_GOOGLE }
-                onChange={(value) => {
-                  setIsHuman(value !== null);
-                }}
-                hl="en" 
-              />
-            </ReCaptchaWrapper>
-            <LoginEmailPassaword type="button" disabled={!isHuman} onClick={handleSubmit}>
-              Sign In
-            </LoginEmailPassaword>
-            {error && (
-              <Invalid className="px-2 bg-red-500 text-white rounded-md">
-                Invalid Credentials{" "}
-              </Invalid>
+
+      {session ? (
+        <>
+ 
+          <h1>Welcome <br/>to the <br/>NeGiupp blog</h1>
+          <h2>{session.user.name}</h2>
+          <DontMiss>
+            🎉 Congratulations 🎉
+            <br />
+            for Subscribe today you gain exclusive access to our free eBook:
+            <br />
+            <i>&quot;Top 5 Tips to Succeed in Web Development and AI.&quot;</i>
+          </DontMiss>
+          <LogOut type="button" onClick={logout}> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+          </svg>
+            Log Out</LogOut>
+        </>
+      ) : (
+        <>
+          <Question>Haven&apos;t you subscribed?<span onClick={showSubscriptionPopup}> Subscribe</span></Question>
+          <ButtonsInputs>
+            <SignButtonsToSubscribe type="button" onClick={() => login("google")} ><ColorGoogleIcon /> Google</SignButtonsToSubscribe>
+            <SignButtonsToSubscribe type="button" onClick={() => login("github")} ><GithubIcon /> GitHub</SignButtonsToSubscribe>
+            <Separator>
+              <Line /> Or with email and password <Line />
+            </Separator>
+            {step === 1 && (
+              <input value={email} onChange={(ev) => setEmail(ev.target.value)} type="email" placeholder="email address" />
             )}
-          </>
-        )}
-        <NextBack>
-          {step !== 3 && (
-            <NextToSubscribe type="button" onClick={handleNextClick} >
-              Next
-            </NextToSubscribe>
-          )
-          }
-          {step !== 1 && (
-            <BackToSubscribe type="button" onClick={handleBackClick} >
-              Back
-            </BackToSubscribe>
-          )
-          }
-        </NextBack>
-      </ButtonsInputs>
+            {step === 2 && (
+              <input value={password} onChange={(ev) => setPassword(ev.target.value)} type="password" placeholder="password" />
+            )}
+            {step === 3 && (
+              <>
+                <ReCaptchaWrapper>
+                  <ReCAPTCHA
+                    sitekey={process.env.NEXT_PUBLIC_RECAPCHA_GOOGLE}
+                    onChange={(value) => {
+                      setIsHuman(value !== null);
+                    }}
+                    hl="en"
+                  />
+                </ReCaptchaWrapper>
+                <LoginEmailPassaword type="button" disabled={!isHuman} onClick={handleSubmit}>
+                  Sign In
+                </LoginEmailPassaword>
+                {error && (
+                  <Invalid className="px-2 bg-red-500 text-white rounded-md">
+                    Invalid Credentials{" "}
+                  </Invalid>
+                )}
+              </>
+            )}
+            <NextBack>
+              {step !== 3 && (
+                <NextToSubscribe type="button" onClick={handleNextClick} >
+                  Next
+                </NextToSubscribe>
+              )
+              }
+              {step !== 1 && (
+                <BackToSubscribe type="button" onClick={handleBackClick} >
+                  Back
+                </BackToSubscribe>
+              )
+              }
+            </NextBack>
+          </ButtonsInputs>
+        </>
+      )}
+
     </ContainerForm>
   );
 };

@@ -4,7 +4,7 @@ import NextAuth , { getServerSession } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
-import { User } from "@/models/user";
+import { Users } from "@/models/user";
 
 
 
@@ -14,7 +14,8 @@ export const authOptions = {
     // OAuth authentication providers...
     GoogleProvider({
       clientId: process.env.GOOGLE_FRONT_ID,
-      clientSecret: process.env.GOOGLE_FRONT_SECRET
+      clientSecret: process.env.GOOGLE_FRONT_SECRET,
+      
     }),
     CredentialsProvider({
       name: "credentials",
@@ -23,7 +24,8 @@ export const authOptions = {
         const { email, password } = credentials;
         try {
           await mongooseConnect();
-          const user = await User.findOne({ email });
+          const user = await Users.findOne({ email });
+          console.log(user);
           if (!user) {
             return null;
           }
@@ -44,7 +46,7 @@ export const authOptions = {
     strategy: "jwt",
   },
   pages: {
-    signIn: "/blog",
+    signIn: "/",
   },
   adapter: MongoDBAdapter(clientPromise),
  
