@@ -159,3 +159,39 @@ width: 15%;
     width: 100%;
   }
 }
+
+
+
+
+/* Agrega estilos personalizados para los botones de SweetAlert2 */
+.swal2-popup .swal2-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.swal2-popup .swal2-actions button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+/* Estilos específicos para cada botón */
+.swal2-popup .swal2-confirm {
+  background-color: white; /* Verde para el botón de confirmar (Facebook) */
+  color: gray;
+  
+}
+
+.swal2-popup .swal2-deny {
+  background-color: white; /* Verde para el botón de confirmar (Facebook) */
+  color: gray;
+}
+
+.swal2-popup .swal2-cancel {
+  background-color: white; /* Verde para el botón de confirmar (Facebook) */
+  color: gray;
+}
+
+/* ... Agrega estilos adicionales según sea necesario ... */
