@@ -7,8 +7,8 @@ const handle = async (req, res) => {
 
   if (req.method === "GET") {
     const { article } = req.query;
-    console.log(req.query)
-    console.log(article)
+    //console.log(req.query)
+    //console.log(article)
     try {
       const reviews = await Review.find({ article }, null, { sort: { createdAt: -1 } });
       res.json(reviews);

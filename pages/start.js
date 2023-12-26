@@ -274,7 +274,7 @@ const Start = () => {
     ev.preventDefault();
     setThird(false);
     const data = { name, email, message };
-    console.log("data >>", data );
+    //console.log("data >>", data );
     axios.post("/api/start", data);
 
     const intervalo = setInterval(() => {

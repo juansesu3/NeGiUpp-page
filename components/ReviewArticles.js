@@ -6,6 +6,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Spinner from "./icons/Spinner";
 import { format } from 'date-fns';
+import { useSession } from "next-auth/react";
+import Image from "next/image";
+import { useRouter } from "next/router";
 
 const PrincipalContainerReviews = styled.div`
   border-radius: 1rem;
@@ -208,7 +211,24 @@ const NoReviews = styled.p`
 color: white;
 padding: 0 1rem;
 opacity: 0.5;
-`
+`;
+
+const ProfileCreator = styled.div`
+color: white;
+display: flex;
+flex-direction: row;
+gap: 0.5rem;
+img{
+border-radius: 50%;
+opacity: inherit;
+width: 3rem;
+height: 3rem;
+}
+p{
+  opacity: 0.3;
+}
+
+`;
 
 const ReviewArticles = ({ articleId }) => {
   const [stars, setStars] = useState(0);
@@ -216,10 +236,28 @@ const ReviewArticles = ({ articleId }) => {
   const [reviewsLoading, setRiviewsLoading] = useState(false);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const { data: session } = useSession();
+  const [creatorId, setCreatorId] = useState({});
+  const [reviewCreator, setReviewCreator] = useState({})
+  const filterEmail = session?.user?.email;
+  const router = useRouter();
+  const { id } = router.query;
+  console.log("Review problema",id)
 
+  const getUserByEmail = async () => {
+    await axios.get("/api/users?email=" + filterEmail).then((response) => {
+      //console.log(response.data);
+      setCreatorId(response.data)
+    })
+  }
+
+  useEffect(() => {
+    getUserByEmail();
+    getUserById();
+  }, [])
 
   const data = {
-    user: "64edb06a08a18c89800075cd",
+    user: creatorId?._id,
     article: articleId,
     stars,
     title,
@@ -239,15 +277,27 @@ const ReviewArticles = ({ articleId }) => {
     loadReviews();
   }, []);
 
-  const loadReviews = async  () => {
-    console.log("Data id  from client side >>>",articleId)
+  const loadReviews = async () => {
+    console.log("Data id  from client side >>>", articleId)
     setRiviewsLoading(true);
-    await axios.get("/api/review?article=" + articleId).then((res) => {
+    await axios.get("/api/review?article=" + id).then((res) => {
       setReviews(res.data);
-      console.log("Data from cliente side >>>> ",res);
+      //console.log("Data from cliente side >>>> ", res);
       setRiviewsLoading(false);
     });
   };
+
+  const getUserById = async () => {
+    //console.log(reviews)
+    for (const review of reviews) {
+      //console.log(review)
+      await axios.get("/api/users?id=" + review.user).then((response) => {
+        //console.log("Data for review >>>", response.data);
+        setReviewCreator(response.data)
+
+      });
+    }
+  }
 
   const formatDate = (dat) => {
     const fechaHora = new Date(dat);
@@ -287,6 +337,8 @@ const ReviewArticles = ({ articleId }) => {
           {reviews.length === 0 && <NoReviews>No reviews :( </NoReviews>}
           {reviews.length > 0 && reviews.map((review) => (
             <ReviewCont key={review._id}>
+
+
               <DetailsReview>
                 <ShowStars>
                   <StarsRatting
@@ -303,9 +355,19 @@ const ReviewArticles = ({ articleId }) => {
               <ReviewText>
                 <h4>{review.title}!</h4>
                 <p>
-                  {review.content}.
+                  {review.content}
                 </p>
               </ReviewText>
+              {reviewCreator && (
+                <ProfileCreator>
+                  <div>
+                    <Image src={reviewCreator.image} alt="review creator profile" width={100} height={100} />
+                  </div>
+                  <div>
+                    <p>{reviewCreator.name}</p>
+                  </div>
+                </ProfileCreator>
+              )}
             </ReviewCont>
           ))}
         </AllReviews>

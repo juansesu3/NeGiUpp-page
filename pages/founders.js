@@ -146,7 +146,7 @@ const FoundersPage = () => {
       setProfile(response.data);
     });
   }, []);
-  console.log(profile);
+  //console.log(profile);
 
   return (
     <>

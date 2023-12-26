@@ -58,7 +58,7 @@ const SectionTitle = styled.h1`
 `;
 
 const ShowMobileDesign = ({ proyect }) => {
-  console.log("DEbug >> ", proyect.imagesMobile);
+  //console.log("DEbug >> ", proyect.imagesMobile);
   return (
     <Principal>
       <SectionTitle>

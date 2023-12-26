@@ -292,7 +292,7 @@ const shareOnSocialMedia = (shareUrl) => {
                         <img src={firstArticle.images[0][0]} alt="article image" />
                       </ImageContainer>
                       <ArticleName>
-                      {console.log(firstArticle.images[0][0])}
+                      
                         <h1>{firstArticle.title}</h1>
                       </ArticleName>
                       <InfoDetails>

@@ -6,7 +6,7 @@ const AvatarWelcome = () => {
   const avatar = useGLTF("models/my_avatar-brand_animation.glb");
   const { actions, names } = useAnimations(avatar.animations, avatar.scene);
   //console.log(avatar);
-  console.log(actions);
+  //console.log(actions);
   useEffect(() => {
     actions.shaking.setLoop(THREE.LoopOnce); // Desactivar el loop
     actions.shaking.clampWhenFinished = true; // Detener la animación al finalizar

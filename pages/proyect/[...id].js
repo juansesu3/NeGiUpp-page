@@ -338,7 +338,7 @@ const ProyectPage = () => {
   const handlehire = () => {
     router.push("/contact");
   };
-  console.log(proyect);
+  //console.log(proyect);
   return (
     <>
       <Head>

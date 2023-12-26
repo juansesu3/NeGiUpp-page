@@ -143,7 +143,7 @@ const ArticlePage = () => {
   const router = useRouter();
   const { id } = router.query;
   const { data: session, status } = useSession();
-  console.log("Data session after sign >>>>", session)
+  //console.log("Data session after sign >>>>", session)
 
   useEffect(() => {
     if (!id) {

@@ -25,7 +25,7 @@ export const authOptions = {
         try {
           await mongooseConnect();
           const user = await Users.findOne({ email });
-          console.log(user);
+          //console.log(user);
           if (!user) {
             return null;
           }
@@ -46,7 +46,7 @@ export const authOptions = {
     strategy: "jwt",
   },
   pages: {
-    signIn: "/",
+    signIn: "/blog",
   },
   adapter: MongoDBAdapter(clientPromise),
  

@@ -230,7 +230,7 @@ const FormSubscribeBlog = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const { data: session, status } = useSession();
-  console.log("Data session after sign >>>>", session)
+  //console.log("Data session after sign >>>>", session)
   const login = async (provider) => {
     await signIn(provider)
   }
@@ -242,7 +242,7 @@ const FormSubscribeBlog = () => {
   };
   const handleSubmit = async (ev) => {
     ev.preventDefault();
-    console.log('Data to login with Credentials >>>', { email, password })
+    //console.log('Data to login with Credentials >>>', { email, password })
     try {
       const result = await signIn("credentials", {
         redirect: false,
@@ -317,8 +317,8 @@ const FormSubscribeBlog = () => {
         const password = Swal.getPopup().querySelector('#swal-input2').value;
 
         // Realizar la suscripción o el manejo de los datos según tus necesidades
-        console.log('Email:', email);
-        console.log('Password:', password);
+        //console.log('Email:', email);
+        //console.log('Password:', password);
       }
     });
     const recaptchaContainer = document.getElementById('recaptcha-container');
