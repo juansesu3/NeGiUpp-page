@@ -25,7 +25,7 @@ const Summary = styled(Link)`
   position: relative;
   width: 100%;
   padding: 2.5rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   color: white;
   display: flex;
   justify-content: center;
@@ -167,7 +167,7 @@ const Projects = styled(Link)`
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   padding: 1.5rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   position: relative;
   cursor: pointer;
   @media screen and (min-width: 500px) {
@@ -191,13 +191,13 @@ const ImageContProject = styled.div`
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-  border-radius: 2rem;
+  border-radius: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   gap: 1.5rem;
 
   height: 11rem;
@@ -207,7 +207,7 @@ const ImageContProject = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 2rem;
+    border-radius: 1rem;
   }
 `;
 
@@ -222,7 +222,7 @@ const Credentials = styled(Link)`
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   padding: 1.5rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   position: relative;
   cursor: pointer;
   @media screen and (min-width: 500px) {

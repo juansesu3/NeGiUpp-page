@@ -12,6 +12,7 @@ const StyledHeader = styled.header`
   top: 0;
   z-index: 10;
   height: 48px;
+
 `;
 
 const LogoLink = styled(Link)`
@@ -39,6 +40,7 @@ const WrapperFull = styled.div`
   height: ${(props) => (props.isVisible ? "auto" : "0")};
   transition: opacity 0.3s ease, height 0.3s ease; /* Agregar transiciones para opacidad y altura */
   overflow: hidden; /* Para ocultar el contenido del componente cuando está colapsado */
+
 `;
 const WrapperMax = styled.div`
   max-width: 1080px;
@@ -453,7 +455,7 @@ const Header = ({ route }) => {
         </WrapperMax>
       </WrapperFull>
 
-      <Curriculum mobileNavActive={mobileNavActive}>
+    <Curriculum mobileNavActive={mobileNavActive}>
         <CurriculumMax>
           <TitleCur>
             <BackArrow />
@@ -467,6 +469,9 @@ const Header = ({ route }) => {
           </Dowload>
         </CurriculumMax>
       </Curriculum>
+
+
+  
     </StyledHeader>
   );
 };

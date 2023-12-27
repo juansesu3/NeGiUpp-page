@@ -27,7 +27,7 @@ const InfoPlus = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   padding: 1.5rem;
   @media screen and (min-width: 920px) {
     width: 50%;
@@ -41,7 +41,7 @@ const Experinces = styled.div`
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-  border-radius: 2rem;
+  border-radius: 1rem;
   padding: 1.5rem;
   text-align: center;
   width: 10rem;
@@ -64,7 +64,7 @@ const Clients = styled.div`
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-  border-radius: 2rem;
+  border-radius: 1rem;
   padding: 1.5rem;
   text-align: center;
   width: 10rem;
@@ -86,7 +86,7 @@ const Proj = styled.div`
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-  border-radius: 2rem;
+  border-radius: 1rem;
   padding: 1.5rem;
   text-align: center;
   width: 10rem;
@@ -110,7 +110,7 @@ const WorkTogether = styled.div`
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   width: 100%;
   position: relative;
-  border-radius: 2rem;
+  border-radius: 1rem;
   padding: 1.5rem;
   display: flex;
   justify-content: start;

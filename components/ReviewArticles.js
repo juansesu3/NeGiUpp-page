@@ -238,11 +238,11 @@ const ReviewArticles = ({ articleId }) => {
   const [content, setContent] = useState("");
   const { data: session } = useSession();
   const [creatorId, setCreatorId] = useState({});
-  const [reviewCreator, setReviewCreator] = useState({})
+  const [reviewCreator, setReviewCreator] = useState(null)
   const filterEmail = session?.user?.email;
   const router = useRouter();
   const { id } = router.query;
-  console.log("Review problema",id)
+  console.log("Review problema",id[0])
 
   const getUserByEmail = async () => {
     await axios.get("/api/users?email=" + filterEmail).then((response) => {
@@ -274,17 +274,20 @@ const ReviewArticles = ({ articleId }) => {
   }
 
   useEffect(() => {
-    loadReviews();
-  }, []);
+    loadReviews(id);
+  }, [id]);
 
-  const loadReviews = async () => {
+  const loadReviews = async (id) => {
     console.log("Data id  from client side >>>", articleId)
     setRiviewsLoading(true);
-    await axios.get("/api/review?article=" + id).then((res) => {
-      setReviews(res.data);
-      //console.log("Data from cliente side >>>> ", res);
-      setRiviewsLoading(false);
-    });
+    if(id[0]){
+      await axios.get("/api/review?article=" + id[0]).then((res) => {
+        setReviews(res.data);
+        //console.log("Data from cliente side >>>> ", res);
+        setRiviewsLoading(false);
+      });
+    }
+   
   };
 
   const getUserById = async () => {
@@ -292,7 +295,7 @@ const ReviewArticles = ({ articleId }) => {
     for (const review of reviews) {
       //console.log(review)
       await axios.get("/api/users?id=" + review.user).then((response) => {
-        //console.log("Data for review >>>", response.data);
+        console.log("Data for review >>>", response.data);
         setReviewCreator(response.data)
 
       });
@@ -353,7 +356,7 @@ const ReviewArticles = ({ articleId }) => {
               </DetailsReview>
 
               <ReviewText>
-                <h4>{review.title}!</h4>
+                <h4>{review.title}</h4>
                 <p>
                   {review.content}
                 </p>
@@ -361,10 +364,10 @@ const ReviewArticles = ({ articleId }) => {
               {reviewCreator && (
                 <ProfileCreator>
                   <div>
-                    <Image src={reviewCreator.image} alt="review creator profile" width={100} height={100} />
+                    <Image src={reviewCreator?.image} alt="review creator profile" width={100} height={100} />
                   </div>
                   <div>
-                    <p>{reviewCreator.name}</p>
+                    <p>{reviewCreator?.name}</p>
                   </div>
                 </ProfileCreator>
               )}

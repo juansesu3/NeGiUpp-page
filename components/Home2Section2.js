@@ -25,7 +25,7 @@ const IoT = styled(Link)`
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   width: 100%;
   padding: 1.5rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -50,7 +50,7 @@ const ImageContIoT = styled.div`
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-  border-radius: 2rem;
+  border-radius: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -67,7 +67,7 @@ const ImageContIoT = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 2rem;
+    border-radius: 1rem;
   }
 `;
 
@@ -80,7 +80,7 @@ const Services = styled.div`
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   width: 100%;
   padding: 1.5rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   position: relative;
 
   .animation {
@@ -102,7 +102,7 @@ const Services = styled.div`
 const ContServices = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   gap: 1rem;
   background-image: linear-gradient(to bottom right, #000000, #131313);
@@ -111,17 +111,22 @@ const ContServices = styled.div`
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-  border-radius: 2rem;
+  border-radius: 1rem;
   height: 11rem;
   margin-bottom: 1.5rem;
 `;
 const ServicesLink = styled(Link)`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  gap: 1rem;
   justify-content: center;
   align-items: center;
-  width: 7rem;
+  width: 5rem;
+   @media screen and (min-width: 768px) {
+    width: 7rem
+  }
   padding: 1.5rem;
+  text-decoration: none;
   svg {
     color: white;
     width: 100%;
@@ -129,6 +134,10 @@ const ServicesLink = styled(Link)`
     &:hover {
       color: #4d61fc;
     }
+  }
+  span{
+    color: white;
+    opacity: .5;
   }
 `;
 const ProfilesDesktop = styled.div`
@@ -139,7 +148,7 @@ const ProfilesDesktop = styled.div`
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   padding: 1.5rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   position: relative;
   width: 100%;
 
@@ -166,7 +175,7 @@ const ProfilesMobile = styled.div`
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   width: 100%;
   padding: 1.5rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   position: relative;
 
   @media screen and (min-width: 920px) {
@@ -199,7 +208,7 @@ const LinkRRSS = styled.a`
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  border-radius: 1rem;
+  border-radius: 0.8rem;
   cursor: pointer;
   background-image: linear-gradient(to bottom right, #000000, #131313);
   border: 1px solid #2b2b2b0f;
@@ -468,6 +477,7 @@ const Home2Section2 = () => {
                 d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"
               />
             </svg>
+            <span>desktop</span>
           </ServicesLink>
           <ServicesLink href={"/responsiveServices"}>
             <svg
@@ -484,6 +494,7 @@ const Home2Section2 = () => {
                 d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
               />
             </svg>
+            <span>mobile</span>
           </ServicesLink>
           <ServicesLink href={"/webdevservices"}>
             <svg
@@ -500,6 +511,7 @@ const Home2Section2 = () => {
                 d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"
               />
             </svg>
+            <span>web</span>
           </ServicesLink>
         </ContServices>
 
