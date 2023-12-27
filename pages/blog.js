@@ -61,6 +61,32 @@ const ArticleCard = styled.div`
   @media screen and (min-width: 450px) {
     width: 20rem;
   }
+    transition: 0.3s;
+    position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  &:hover {
+    transform: translateY(-5px);
+    opacity: 0.5; 
+  }
+
+  &::before {
+    content: 'Read'; // Texto que se mostrará
+    position: absolute;
+    top: 35%; // Cambiado a 100%
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) rotateX(180deg); // Añadido rotateX
+    font-size: 1.5rem; // Tamaño del texto
+    font-weight: bold; // Puedes ajustar según tu preferencia
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease; // Añadida la transición de transform
+  }
+  &:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-100%) rotateX(0deg); // Restaurar la posición original
+  }
+  
 `;
 
 const ImageContainer = styled.div`
@@ -71,7 +97,9 @@ const ImageContainer = styled.div`
     height: 100%;
     border-radius: 1rem;
     object-fit: cover;
+    
   }
+  
 `;
 
 const ArticleName = styled.div`
