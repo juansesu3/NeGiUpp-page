@@ -160,7 +160,8 @@ const CeoContainer = styled(Link)`
     width: 100%;
   }
   transition: 0.3s;
-  &:hover {
+    &:hover {
+    transform: translateY(-5px);
     color: #3950ff;
   }
 `;
@@ -196,7 +197,8 @@ const WorkTogetheContainer = styled(Link)`
     color: gray;
   }
   transition: 0.3s;
-  &:hover {
+    &:hover {
+    transform: translateY(-5px);
     svg {
       color: #ffff;
     }
@@ -245,7 +247,7 @@ const StartContainer = styled(Link)`
   border-radius: 1rem;
   animation: ${pulseAnimation} 2.5s infinite;
   transform-origin: center;
-  transition: 0.3s;
+  
   p {
     color: #ffff;
     opacity: 0.8;
@@ -260,7 +262,9 @@ const StartContainer = styled(Link)`
     font-size: 2rem;
     color: #4d61fc;
   }
-  &:hover {
+   transition: 0.3s;
+    &:hover {
+    transform: translateY(-5px);
     background-color: #3950ff;
     h2 {
       color: white;

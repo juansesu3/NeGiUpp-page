@@ -101,7 +101,9 @@ const Proj = styled.div`
   }
 `;
 
-const WorkTogether = styled.div`
+const WorkTogether = styled(Link)`
+color: inherit;
+text-decoration: none;
     background-image: linear-gradient(to bottom right, #000000, #131313);
     border: 1px solid #2b2b2b0f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
@@ -122,7 +124,9 @@ const WorkTogether = styled.div`
   .animation {
     opacity: 0.5;
   }
+  transition: transform 0.3s ease-in-out;
   &:hover {
+    transform: translateY(-5px);
     .animation {
       transform: rotate(90deg);
       transition: transform 0.5s ease-in-out;
@@ -219,7 +223,7 @@ const Home2Section3 = () => {
         </Proj>
       </InfoPlus>
 
-      <WorkTogether>
+      <WorkTogether href={"/contact"}>
         <WorkTitle>
           Let&apos;s <br />
           <span>Work</span> together.

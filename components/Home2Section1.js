@@ -34,11 +34,15 @@ const Summary = styled(Link)`
   .animation {
     opacity: 0.5;
   }
+  transition: transform 0.3s ease-in-out;
   &:hover {
+    transform: translateY(-5px);
+   
     .animation {
       transform: rotate(90deg);
       transition: transform 0.5s ease-in-out;
       opacity: 1;
+      
     }
   }
 
@@ -176,7 +180,9 @@ const Projects = styled(Link)`
   .animation {
     opacity: 0.5;
   }
+  transition: transform 0.3s ease-in-out;
   &:hover {
+    transform: translateY(-5px);
     .animation {
       transform: rotate(90deg);
       transition: transform 0.5s ease-in-out;
@@ -231,7 +237,9 @@ const Credentials = styled(Link)`
   .animation {
     opacity: 0.5;
   }
+  transition: transform 0.3s ease-in-out;
   &:hover {
+    transform: translateY(-5px);
     .animation {
       transform: rotate(90deg);
       transition: transform 0.5s ease-in-out;

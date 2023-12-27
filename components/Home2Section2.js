@@ -35,7 +35,9 @@ const IoT = styled(Link)`
   .animation {
     opacity: 0.5;
   }
+  transition: transform 0.3s ease-in-out;
   &:hover {
+    transform: translateY(-5px);
     .animation {
       transform: rotate(90deg);
       transition: transform 0.5s ease-in-out;
@@ -131,7 +133,9 @@ const ServicesLink = styled(Link)`
     color: white;
     width: 100%;
     transition: 0.3s;
-    &:hover {
+    transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: translateY(-5px);
       color: #4d61fc;
     }
   }
@@ -158,7 +162,9 @@ const ProfilesDesktop = styled.div`
   .animation {
     opacity: 0.5;
   }
+
   &:hover {
+    
     .animation {
       transform: rotate(90deg);
       transition: transform 0.5s ease-in-out;
@@ -184,7 +190,9 @@ const ProfilesMobile = styled.div`
   .animation {
     opacity: 0.5;
   }
+
   &:hover {
+    
     .animation {
       transform: rotate(90deg);
       transition: transform 0.5s ease-in-out;
@@ -218,7 +226,9 @@ const LinkRRSS = styled.a`
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
 
   transition: background-image 0.5s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   &:hover {
+    transform: translateY(-5px);
     background-image: linear-gradient(to bottom right, #4d61fc, #4d61fc);
   }
 
