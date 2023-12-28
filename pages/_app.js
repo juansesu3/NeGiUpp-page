@@ -3,8 +3,23 @@ import { SessionProvider } from "next-auth/react";
 import "../styles/fonts.css";
 import Head from "next/head";
 
+import LoadingScreen from "@/components/LoadingOverlay";
+
 export default function App({ Component, pageProps: { session, ...pageProps }, }) {
   const [isMounted, setIsMounted] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Suponiendo que quieres hacer una comprobación o simplemente esperar a que todo se cargue
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000); // Espera 3 segundos antes de establecer la carga a false
+
+    return () => clearTimeout(timer); // Limpia el temporizador si el componente se desmonta
+  }, []);
+
+
+
 
   useEffect(() => {
     setIsMounted(true);
@@ -12,6 +27,13 @@ export default function App({ Component, pageProps: { session, ...pageProps }, }
   if (!isMounted) {
     return null;
   }
+
+
+  if (loading) {
+    return <LoadingScreen />;
+  }
+
+
   return (
     <>  
     <SessionProvider session={session}>

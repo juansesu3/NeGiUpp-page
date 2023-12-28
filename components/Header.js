@@ -65,11 +65,11 @@ const StyledNav = styled.nav`
       : `
       display: none;
 `}
-  transition: 1s;
+   transition: height 0.5s ease; 
   align-items: center;
   gap: 40px;
   position: fixed;
-  top: 0px;
+  top: 38px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -321,32 +321,6 @@ const Header = ({ route }) => {
         <WrapperMax>
           <LetsTalk href={"/contact"}> Let&apos;s Talk</LetsTalk>
           <StyledNav route={route} mobileNavActive={mobileNavActive}>
-            <NavButton
-              route={route}
-              onClick={toggleCross}
-              isCross={isCross}
-              id="hamburguer menu"
-              aria-label={isCross ? "Cerrar" : "Abrir menú"}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-6 h-6"
-                aria-labelledby="buttonTitle"
-              >
-                <title id="buttonTitle">
-                  {isCross ? "Cerrar menú" : "Abrir menú"}
-                </title>
-                {isCross ? (
-                  <path d="M4.75 4.75l14.5 14.5M4.75 19.25l14.5-14.5" />
-                ) : (
-                  <path d="M3.75 9h16.5m-16.5 6.75h16.5" />
-                )}
-              </svg>
-            </NavButton>
             <NavLink
               route={route}
               active={pathname === "/" ? true : false}

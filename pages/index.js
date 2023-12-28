@@ -1,11 +1,14 @@
 //import Home from "@/components/Home";
 import Home2 from "@/components/Home2";
 import Layout from "@/components/Layout";
+import LoadingOverlay from "@/components/LoadingOverlay";
 import { mongooseConnect } from "@/lib/mongoose";
 import { Article } from "@/models/Article";
 import Head from "next/head";
 
+
 const HomePage = ({ latestArticles }) => {
+ 
   return (
     <>
       <Head>
@@ -32,8 +35,8 @@ const HomePage = ({ latestArticles }) => {
         <meta property="og:type" content="website" />
       </Head>
       <Layout>
-        <Home2
-         latestArticles={latestArticles} />
+          <Home2
+          latestArticles={latestArticles} />
       </Layout>
     </>
   );
