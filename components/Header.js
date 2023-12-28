@@ -65,7 +65,7 @@ const StyledNav = styled.nav`
       : `
       display: none;
 `}
-   transition: height 0.5s ease; 
+  transition: height 1s ease-in-out;
   align-items: center;
   gap: 40px;
   position: fixed;
@@ -321,6 +321,7 @@ const Header = ({ route }) => {
         <WrapperMax>
           <LetsTalk href={"/contact"}> Let&apos;s Talk</LetsTalk>
           <StyledNav route={route} mobileNavActive={mobileNavActive}>
+           
             <NavLink
               route={route}
               active={pathname === "/" ? true : false}
