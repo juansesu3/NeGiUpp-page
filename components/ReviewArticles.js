@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import StartSolid from "./icons/StarsSolid";
-import StartOutLine from "./icons/StarsOutLine";
 import StarsRatting from "./StarsRatting";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -217,15 +215,20 @@ const ProfileCreator = styled.div`
 color: white;
 display: flex;
 flex-direction: row;
+margin: 0.5rem 0.3rem;
+align-items: center;
 gap: 0.5rem;
 img{
 border-radius: 50%;
 opacity: inherit;
-width: 3rem;
-height: 3rem;
+width: 2.5rem;
+height: 2.5rem;
 }
 p{
   opacity: 0.3;
+  margin: 0;
+  font-size: 0.8rem;
+  
 }
 
 `;
@@ -238,23 +241,20 @@ const ReviewArticles = ({ articleId }) => {
   const [content, setContent] = useState("");
   const { data: session } = useSession();
   const [creatorId, setCreatorId] = useState({});
-  const [reviewCreator, setReviewCreator] = useState(null)
+  const [reviewCreators, setReviewCreators] = useState([]);
+
   const filterEmail = session?.user?.email;
   const router = useRouter();
   const { id } = router.query;
-  console.log("Review problema",id[0])
 
-  const getUserByEmail = async () => {
-    await axios.get("/api/users?email=" + filterEmail).then((response) => {
-      //console.log(response.data);
+  console.log(filterEmail)
+
+  const getUserByEmail = () => {
+    axios.get("/api/users?email=" + filterEmail).then((response) => {
+      console.log(response.data);
       setCreatorId(response.data)
     })
   }
-
-  useEffect(() => {
-    getUserByEmail();
-    getUserById();
-  }, [])
 
   const data = {
     user: creatorId?._id,
@@ -274,39 +274,40 @@ const ReviewArticles = ({ articleId }) => {
   }
 
   useEffect(() => {
-    loadReviews(id);
+    if (id && id.length > 0) {
+      loadReviews(id);
+      getUserById();
+      getUserByEmail();
+    }
   }, [id]);
 
   const loadReviews = async (id) => {
     console.log("Data id  from client side >>>", articleId)
     setRiviewsLoading(true);
-    if(id[0]){
+    if (id[0]) {
       await axios.get("/api/review?article=" + id[0]).then((res) => {
         setReviews(res.data);
         //console.log("Data from cliente side >>>> ", res);
         setRiviewsLoading(false);
       });
     }
-   
   };
 
   const getUserById = async () => {
-    //console.log(reviews)
-    for (const review of reviews) {
-      //console.log(review)
-      await axios.get("/api/users?id=" + review.user).then((response) => {
-        console.log("Data for review >>>", response.data);
-        setReviewCreator(response.data)
+    const creators = await Promise.all(
+      reviews.map(async (review) => {
+        const response = await axios.get("/api/users?id=" + review.user);
+        return response.data;
+      })
+    );
 
-      });
-    }
-  }
+    setReviewCreators(creators);
+  };
 
   const formatDate = (dat) => {
     const fechaHora = new Date(dat);
     const nuevaFechaHora = format(fechaHora, 'MM/dd/yyyy');
     return nuevaFechaHora
-
   }
 
   return (
@@ -333,15 +334,12 @@ const ReviewArticles = ({ articleId }) => {
             <SubmitButton type="button" onClick={createReview}>Submit Your Perspective</SubmitButton>
           </div>
         </FormAddReviews>
-
         <AllReviews>
           <h4>All reviews</h4>
           {reviewsLoading && <Spinner fullWidth={true} />}
           {reviews.length === 0 && <NoReviews>No reviews :( </NoReviews>}
           {reviews.length > 0 && reviews.map((review) => (
             <ReviewCont key={review._id}>
-
-
               <DetailsReview>
                 <ShowStars>
                   <StarsRatting
@@ -354,23 +352,28 @@ const ReviewArticles = ({ articleId }) => {
                   <p>{formatDate(review.createdAt.split(" ").shift())}</p>
                 </DateReview>
               </DetailsReview>
-
               <ReviewText>
                 <h4>{review.title}</h4>
                 <p>
                   {review.content}
                 </p>
               </ReviewText>
-              {reviewCreator && (
-                <ProfileCreator>
-                  <div>
-                    <Image src={reviewCreator?.image} alt="review creator profile" width={100} height={100} />
-                  </div>
-                  <div>
-                    <p>{reviewCreator?.name}</p>
-                  </div>
-                </ProfileCreator>
-              )}
+              {reviewCreators.length > 0 && reviews.map((review, index) => (
+                <ReviewCont key={review._id}>
+                  {/* ... (otras partes del código) */}
+                  {reviewCreators[index] && (
+                    <ProfileCreator>
+                      <div>
+                        <Image src={reviewCreators[index]?.image} alt="review creator profile" width={100} height={100} />
+                      </div>
+                      <div>
+                        <p>{reviewCreators[index]?.name}</p>
+                      </div>
+                    </ProfileCreator>
+                  )}
+                </ReviewCont>
+              ))}
+
             </ReviewCont>
           ))}
         </AllReviews>
