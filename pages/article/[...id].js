@@ -197,6 +197,7 @@ const ArticlePage = () => {
     });
   }, [id]);
 
+
   const FormatDate = (date) => {
     const fechaFormateada = format(new Date(date), 'MMMM d, yyyy');
     return fechaFormateada

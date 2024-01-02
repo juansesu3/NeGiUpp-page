@@ -1,7 +1,8 @@
+import axios from 'axios';
 import Image from 'next/image';
 import React, { useState } from 'react'
 import styled from 'styled-components';
-
+import Swal from 'sweetalert2';
 const ContainerForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -65,6 +66,40 @@ const FormSimpleSubscribe = () => {
 
   const [email, setEmail] = useState("");
 
+  const handleSubscribe = async (ev) => {
+    ev.preventDefault();
+    const data = {
+      email,
+      verified: false,
+    };
+
+    try {
+      await axios.post("/api/userBlog", data);
+      // Muestra la alerta de SweetAlert 2 en caso de éxito
+      Swal.fire({
+        icon: 'success',
+        title: 'Thanks for subscribing!',
+        html: `
+        <p>In a few seconds, you will receive an email from me asking you to confirm your newsletter subscription.</p>
+        <p>Please open your inbox and confirm your email address to finalize your subscription.</p>
+        <p><strong>CHECK YOUR SPAM FOLDER:</strong> If you don't receive any confirmation email, check your spam folder 😅</p>
+        <p>The email will come from <strong>juan@negiupp.com</strong></p>
+      `,
+      });
+            // Limpiar el input después de hacer clic en "OK"
+            setEmail("");
+
+    } catch (error) {
+      console.error('Error during subscription:', error);
+      // Muestra la alerta de SweetAlert 2 en caso de error
+      Swal.fire({
+        icon: 'error',
+        title: 'Subscription Failed',
+        text: 'It seems like you have already subscribed with this email address. Please try again with another email address.',
+      });
+    }
+  };
+
   return (
     <ContainerForm>
       <Image
@@ -83,7 +118,7 @@ const FormSimpleSubscribe = () => {
       </TitleIntroduction>
       <SubsCribeIntBut>
         <input value={email} onChange={(ev) => setEmail(ev.target.value)} type="email" placeholder="email address" />
-        <button>Subscribe Now!</button>
+        <button onClick={handleSubscribe}>Subscribe Now!</button>
       </SubsCribeIntBut>
       <p>Join 552 readers | 1 email per week | 100% free!</p>
     </ContainerForm>
