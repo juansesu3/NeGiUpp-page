@@ -38,7 +38,7 @@ const FirstArticles = styled.div`
 const SecondArticles = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1rem;
   justify-content: center;
   padding: 0 0.5rem;
   a {
@@ -48,7 +48,7 @@ const SecondArticles = styled.div`
 `;
 const ArticleCard = styled.div`
   position: relative;
-  min-width: 20rem;
+  min-width: 21.2rem;
   min-height: 29rem;
   border-radius: 1rem;
   padding: 1rem;
@@ -215,11 +215,11 @@ const BlogPage = () => {
 
   const firstArticles = articles.slice(0, 2);
   const secondArticles = articles.slice(2);
-//'facebook', 'https://www.facebook.com/sharer/sharer.php?u=' +
-const shareOnSocialMedia = (shareUrl) => {
-  Swal.fire({
-    title: 'Share Our Article',
-    html: `
+  //'facebook', 'https://www.facebook.com/sharer/sharer.php?u=' +
+  const shareOnSocialMedia = (shareUrl) => {
+    Swal.fire({
+      title: 'Share Our Article',
+      html: `
       <!-- Aquí puedes colocar tu formulario de suscripción -->
 
       <button type="button" class="swal2-confirm swal2-styled" id="google-sign-in-btn">
@@ -261,41 +261,41 @@ const shareOnSocialMedia = (shareUrl) => {
      
 
     `,
-    showCancelButton: true,
-    
+      showCancelButton: true,
 
 
-  });
-  /*
-  Swal.fire({
-    title: 'Selecciona una red social',
-    showCancelButton: true,
-    confirmButtonText: '<span class="facebook-button">Facebook</span>',
-    cancelButtonText: '<span class="linkedin-button">LinkedIn</span>',
-    showDenyButton: true,
-    denyButtonText: '<span class="instagram-button">Instagram</span>',
-    showCloseButton: true,
-    closeButtonAriaLabel: 'Cerrar',
-    customClass: {
-      confirmButton: 'swal2-confirm',
-      cancelButton: 'swal2-cancel',
-      denyButton: 'swal2-deny',
-    },
-    buttonsStyling: false,
-  }).then((result) => {
-    if (result.isConfirmed) {
-      window.open('https://www.facebook.com/sharer/sharer.php?u=' + shareUrl, '_blank');
-    } else if (result.isDenied) {
-      window.open('https://twitter.com/intent/tweet?url=' + shareUrl, '_blank');
-    } else if (result.dismiss === Swal.DismissReason.close) {
-      // Handle close button click (optional)
-      console.log('Cerrar');
-    } else {
-      window.open('https://www.linkedin.com/shareArticle?url=' + shareUrl, '_blank');
-    }
-  });*/
-};
-  
+
+    });
+    /*
+    Swal.fire({
+      title: 'Selecciona una red social',
+      showCancelButton: true,
+      confirmButtonText: '<span class="facebook-button">Facebook</span>',
+      cancelButtonText: '<span class="linkedin-button">LinkedIn</span>',
+      showDenyButton: true,
+      denyButtonText: '<span class="instagram-button">Instagram</span>',
+      showCloseButton: true,
+      closeButtonAriaLabel: 'Cerrar',
+      customClass: {
+        confirmButton: 'swal2-confirm',
+        cancelButton: 'swal2-cancel',
+        denyButton: 'swal2-deny',
+      },
+      buttonsStyling: false,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.open('https://www.facebook.com/sharer/sharer.php?u=' + shareUrl, '_blank');
+      } else if (result.isDenied) {
+        window.open('https://twitter.com/intent/tweet?url=' + shareUrl, '_blank');
+      } else if (result.dismiss === Swal.DismissReason.close) {
+        // Handle close button click (optional)
+        console.log('Cerrar');
+      } else {
+        window.open('https://www.linkedin.com/shareArticle?url=' + shareUrl, '_blank');
+      }
+    });*/
+  };
+
   return (
     <>
       <Head>
@@ -310,7 +310,7 @@ const shareOnSocialMedia = (shareUrl) => {
             <h1>All articles</h1>
             <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
           </TitlePageMobile>
-          <FirstArticles firstArticles={firstArticles}>
+          {/* <FirstArticles firstArticles={firstArticles}>
             {articles.length > 0 &&
               firstArticles.map((firstArticle, index) => (
                 <RevealWrapper delay={index * 50} key={firstArticle._id}>
@@ -370,7 +370,7 @@ const shareOnSocialMedia = (shareUrl) => {
                 </RevealWrapper>
               ))}
           </FirstArticles>
-
+*/}
           <SeconConatiner>
             <TitlePage>
               <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
@@ -379,20 +379,20 @@ const shareOnSocialMedia = (shareUrl) => {
             </TitlePage>
             <SecondArticles secondArticles={secondArticles}>
               {articles.length > 0 &&
-                secondArticles.map((secondArticle, index) => (
+                articles.map((secondArticle, index) => (
                   <RevealWrapper delay={index * 50} key={secondArticle._id}>
                     <Link href={"/article/" + secondArticle._id}>
                       <ArticleCard>
                         <ImageContainer>
                           <img src={secondArticle.images[0][0]} alt="article image" />
-                        </ImageContainer> 
+                        </ImageContainer>
                         <ArticleName>
                           <h1>{secondArticle.title}</h1>
                         </ArticleName>
                         <InfoDetails>
                           <Like>
                             <span>
-                             <StartSolid/>
+                              <StartSolid />
                             </span>
                             <span>5.0</span>
                           </Like>

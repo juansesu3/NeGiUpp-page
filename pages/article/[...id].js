@@ -158,8 +158,6 @@ const ArticlePage = () => {
     return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
   };
 
-
-
   return (
     <Layout>
       {article && (
@@ -182,7 +180,6 @@ const ArticlePage = () => {
                   </div>
                 </AuthorContainerDesktop>
               </DeskDes>
-
               <ImgArticleContainer>
                 {article?.images && (
                   <img src={article?.images[0][0]} alt="article-image" />
@@ -202,7 +199,6 @@ const ArticlePage = () => {
                 </Mobile>
               </div>
             </SectionOne>
-
             <div>
               <Content>
                 <ArticleContent htmlContent={article.content} />

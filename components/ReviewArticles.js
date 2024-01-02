@@ -300,7 +300,6 @@ const ReviewArticles = ({ articleId }) => {
         return response.data;
       })
     );
-
     setReviewCreators(creators);
   };
 
@@ -310,6 +309,7 @@ const ReviewArticles = ({ articleId }) => {
     return nuevaFechaHora
   }
 
+  
   return (
     <PrincipalContainerReviews>
       <RevTit>Reviews</RevTit>
