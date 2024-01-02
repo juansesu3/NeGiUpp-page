@@ -37,7 +37,7 @@ const Second = styled.div`
   color: gray;
 
   span {
-    color: #4d61fc;
+    color: #00c8ff;
   }
 `;
 
@@ -58,7 +58,7 @@ const LinkFooter = styled(Link)`
   opacity: 0.6;
   transition: 0.3s;
   &:hover {
-    color: #4d61fc;
+    color: #00c8ff;
     opacity: 1;
   }
 `;

@@ -53,7 +53,7 @@ const SectionTitle = styled.h1`
   text-align: center;
   color: white;
   span {
-    color: #4d61fc;
+    color: #00c8ff;
   }
 `;
 

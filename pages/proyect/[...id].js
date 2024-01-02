@@ -23,7 +23,7 @@ const Intro = styled.div`
     margin: 0;
   }
   span {
-    color: #4d61fc;
+    color: #00c8ff;
   }
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -134,7 +134,7 @@ const MoreDetail = styled.div`
   }
 
   p {
-    color: #4d61fc;
+    color: #00c8ff;
 
     text-transform: capitalize;
     margin: 0 0 10px 0;
@@ -268,12 +268,12 @@ const ContainerButtons = styled.div`
 const LinkCodDep = styled.a`
   text-decoration: none;
   color: white;
-  background-color: #4d61fc;
+  background-image: linear-gradient(110deg,#00c8ff,#00b4e6 19%,#00a0cc 27%,#008cb3 34%,#0080a3 41%,#0080a3 47%,#0080a3 53%,#0080a3 59%,#008ca8 66%,#009fad 73%,#00b3a7 81%,#02c097);
   padding: 0.5rem 1rem;
   margin: 1rem;
   border-radius: 0.5rem;
   &:hover {
-    background-color: #2a42ff;
+    background-image: linear-gradient(110deg,#00c8ff,#0080a3);
   }
 `;
 const ProyectPage = () => {

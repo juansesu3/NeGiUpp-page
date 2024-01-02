@@ -134,7 +134,7 @@ const InfoAboutContainer = styled.div`
 const CeoContainer = styled(Link)`
   text-align: center;
   text-decoration: none;
-  color: #ffff;
+  color: #00c8ff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -154,15 +154,16 @@ const CeoContainer = styled(Link)`
     letter-spacing: 0.03rem;
   }
   span {
-    color: #4d61fc;
+    color: #00c8ff;
   }
   @media screen and (min-width: 805px) {
     width: 100%;
   }
   transition: 0.3s;
     &:hover {
+      background-image: linear-gradient(110deg,#00c8ff,#00b4e6 19%,#00a0cc 27%,#008cb3 34%,#0080a3 41%,#0080a3 47%,#0080a3 53%,#0080a3 59%,#008ca8 66%,#009fad 73%,#00b3a7 81%,#02c097);
     transform: translateY(-5px);
-    color: #3950ff;
+    color: white;
   }
 `;
 const WorkTogetheContainer = styled(Link)`
@@ -190,7 +191,7 @@ const WorkTogetheContainer = styled(Link)`
     letter-spacing: 0.03rem;
   }
   span {
-    color: #4d61fc;
+    color: #00c8ff;
   }
   svg {
     width: 3rem;
@@ -203,7 +204,7 @@ const WorkTogetheContainer = styled(Link)`
       color: #ffff;
     }
     span {
-      color: #3950ff;
+      color: #00c8ff;
     }
   }
   @media screen and (min-width: 805px) {
@@ -260,12 +261,12 @@ const StartContainer = styled(Link)`
     margin: 0;
     font-weight: 500;
     font-size: 2rem;
-    color: #4d61fc;
+    color: #00c8ff;
   }
    transition: 0.3s;
     &:hover {
     transform: translateY(-5px);
-    background-color: #3950ff;
+    background-color: #00c8ff;
     h2 {
       color: white;
     }
@@ -304,7 +305,7 @@ const InfoCultureHitosContainer = styled.div`
   }
   h3 {
     margin: 0;
-    color: #4d61fc;
+    color: #00c8ff;
     font-weight: 600;
   }
   h4 {
@@ -326,7 +327,7 @@ const InfoCultureHitosContainer = styled.div`
     }
     h3 {
       margin: 0;
-      color: #4d61fc;
+      color: #00c8ff;
       font-weight: 500;
     }
   }
@@ -394,7 +395,7 @@ const InfoCultureHitosContainerExpe = styled.div`
   }
   h3 {
     margin: 0;
-    color: #4d61fc;
+    color: #00c8ff;
     font-weight: 600;
   }
   h4 {
@@ -415,7 +416,7 @@ const InfoCultureHitosContainerExpe = styled.div`
     }
     h3 {
       margin: 0;
-      color: #4d61fc;
+      color: #00c8ff;
       font-weight: 500;
     }
   }

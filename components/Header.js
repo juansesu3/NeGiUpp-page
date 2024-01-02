@@ -151,7 +151,7 @@ const NavButton = styled.button`
 
   cursor: pointer;
   svg {
-    stroke: ${(props) => (props.isCross ? "#4d61fc" : "currentColor")};
+    stroke: ${(props) => (props.isCross ? "#00c8ff" : "currentColor")};
     transition: stroke 0.3s ease-in-out;
   }
   @media screen and (min-width: 768px) {
@@ -240,7 +240,7 @@ const Dowload = styled.a`
   justify-content: center;
   align-items: center;
   gap: 4px;
-  background-color: #4d61fc;
+ background-image: linear-gradient(110deg,#00c8ff,#00b4e6 19%,#00a0cc 27%,#008cb3 34%,#0080a3 41%,#0080a3 47%,#0080a3 53%,#0080a3 59%,#008ca8 66%,#009fad 73%,#00b3a7 81%,#02c097);
   text-align: center;
   text-decoration: none;
   font-weight: 500;

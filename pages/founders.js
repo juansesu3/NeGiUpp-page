@@ -60,7 +60,7 @@ const ContainerExpEdu = styled.div`
     margin-bottom: 1rem;
   }
   h3 {
-    color: #4d61fc;
+    color: #00c8ff;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     font-weight: 400;

@@ -17,7 +17,7 @@ const Conatiner = styled.div`
       font-size: 3rem;
     }
     span {
-      color: #4d61fc;
+      color: #00c8ff;
     }
   }
   background-image: linear-gradient(to bottom right, #000000, #131313);

@@ -91,7 +91,7 @@ const LinkRRSS = styled.a`
 
   transition: background-image 0.3s ease-in-out;
   &:hover {
-    background-image: linear-gradient(to bottom right, #4d61fc, #4d61fc);
+    background-image: linear-gradient(110deg,#00c8ff,#00b4e6 19%,#00a0cc 27%,#008cb3 34%,#0080a3 41%,#0080a3 47%,#0080a3 53%,#0080a3 59%,#008ca8 66%,#009fad 73%,#00b3a7 81%,#02c097);
   }
 
   svg {

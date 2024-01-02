@@ -303,6 +303,7 @@ const BlogPage = () => {
         <meta name="description" content="..." />
       </Head>
       <Layout>
+        
         <BlogIntroduction />
         <BlogContainer>
           <TitlePageMobile>
@@ -397,7 +398,7 @@ const BlogPage = () => {
                             <span>5.0</span>
                           </Like>
                           <Comments>
-                            <span>
+                            <span> 
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"

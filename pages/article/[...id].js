@@ -1,6 +1,3 @@
-import Center from "@/components/Center";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import Layout from "@/components/Layout";
 import ReviewArticles from "@/components/ReviewArticles";
 import axios from "axios";
@@ -143,8 +140,8 @@ const ArticlePage = () => {
   const router = useRouter();
   const { id } = router.query;
   const { data: session, status } = useSession();
-  //console.log("Data session after sign >>>>", session)
-
+  console.log("Data session after sign >>>>", session)
+ 
   useEffect(() => {
     if (!id) {
       return;
@@ -198,7 +195,7 @@ const ArticlePage = () => {
                   <Summary>{article.summary}</Summary>
                 </Mobile>
               </div>
-            </SectionOne>
+            </SectionOne> 
             <div>
               <Content>
                 <ArticleContent htmlContent={article.content} />

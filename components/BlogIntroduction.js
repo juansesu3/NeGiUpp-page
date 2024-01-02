@@ -12,14 +12,7 @@ const ContainerBlogIntroduction = styled.div`
  
 `;
 
-const TitleIntroduction = styled.div`
-  h1 {
-    margin-bottom: 1.5rem;
-  }
-  span {
-    color: #4d61fc;
-  }
-`;
+
 
 const IntroduccionContent = styled.div`
   display: flex;
@@ -70,9 +63,7 @@ const AvatarConatiner = styled.div`
   align-items: center;
  
 
-  @media screen and (min-width: 768px) {
-    width: 50%;
-  }
+
 `;
 
 const SpecialPhrase = styled.div`
@@ -98,6 +89,7 @@ import MyLoader from "./MyLoader";
 
 const AvatarBlog = React.lazy(() => import("./avatars/AvatarBlog"));
 import FormSubscribeBlog from "./FormSubscribeBlog";
+import FormSimpleSubscribe from "./FormSimpleSubscribe";
 
 export const GradientBackground = () => {
   useEffect(() => {
@@ -128,16 +120,10 @@ const containerHeight = 300; // Define la altura del contenedor según tus neces
 const BlogIntroduction = () => {
   return (
     <ContainerBlogIntroduction>
-      <TitleIntroduction>
-        <h1>
-          Start Your Journey <br />
-          with
-          <br />
-          <span>NeGiupp</span> <br />
-        </h1>
-      </TitleIntroduction>
+    
 
       <IntroduccionContent>
+        {/*
         <TextIntroduction>
           <Discover>
             Looking to elevate your skills in web development, artificial
@@ -152,8 +138,11 @@ const BlogIntroduction = () => {
             </i>
           </SpecialPhrase>
         </TextIntroduction>
+         */}
         <AvatarConatiner>
-          <FormSubscribeBlog />
+          <FormSimpleSubscribe/>
+          {/*
+          <FormSubscribeBlog /> */}
         </AvatarConatiner>
       </IntroduccionContent>
     </ContainerBlogIntroduction>

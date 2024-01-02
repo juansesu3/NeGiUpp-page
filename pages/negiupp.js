@@ -24,12 +24,12 @@ const ConatinerNotFound = styled.div`
     text-align: center;
   }
   h3 {
-    color: #4d61fc;
+    color: #00c8ff;
     text-align: center;
   }
 
   span {
-    color: #4d61fc;
+    color: #00c8ff;
   }
   svg {
     width: 5rem;
@@ -42,7 +42,7 @@ const Title = styled.div`
   align-items: center;
   h1 {
     margin: 0;
-    color: #4d61fc;
+    color: #00c8ff;
   }
   p {
     margin: 0;

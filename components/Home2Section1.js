@@ -10,7 +10,6 @@ const Section1 = styled.div`
   @media screen and (min-width: 920px) {
     flex-direction: row;
   }
-  
 `;
 
 const Summary = styled(Link)`
@@ -27,6 +26,7 @@ const Summary = styled(Link)`
   padding: 2.5rem;
   border-radius: 1rem;
   color: white;
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,10 +34,10 @@ const Summary = styled(Link)`
   .animation {
     opacity: 0.5;
   }
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s  ease-in-out;
   &:hover {
     transform: translateY(-5px);
-   
+    background-image: linear-gradient(110deg,#00c8ff,#00b4e6 19%,#00a0cc 27%,#008cb3 34%,#0080a3 41%,#0080a3 47%,#0080a3 53%,#0080a3 59%,#008ca8 66%,#009fad 73%,#00b3a7 81%,#02c097);
     .animation {
       transform: rotate(90deg);
       transition: transform 0.5s ease-in-out;
@@ -45,7 +45,6 @@ const Summary = styled(Link)`
       
     }
   }
-
   @media screen and (min-width: 920px) {
     width: 47%;
   }
@@ -69,7 +68,7 @@ const InfoSummary = styled.div`
 
   p {
     margin: 0;
-    color: #4d61fc;
+    color: #00c8ff;
   }
   h5 {
     margin: 0;
@@ -91,7 +90,7 @@ const Infos = styled.div`
   justify-content: center;
   p {
     margin: 0;
-    color: #4d61fc;
+    color: #00c8ff;
   }
   h5 {
     margin: 0;
@@ -183,6 +182,7 @@ const Projects = styled(Link)`
   transition: transform 0.3s ease-in-out;
   &:hover {
     transform: translateY(-5px);
+    background-image: linear-gradient(110deg,#00c8ff,#00b4e6 19%,#00a0cc 27%,#008cb3 34%,#0080a3 41%,#0080a3 47%,#0080a3 53%,#0080a3 59%,#008ca8 66%,#009fad 73%,#00b3a7 81%,#02c097);
     .animation {
       transform: rotate(90deg);
       transition: transform 0.5s ease-in-out;
@@ -239,6 +239,7 @@ const Credentials = styled(Link)`
   }
   transition: transform 0.3s ease-in-out;
   &:hover {
+    background-image: linear-gradient(110deg,#00c8ff,#00b4e6 19%,#00a0cc 27%,#008cb3 34%,#0080a3 41%,#0080a3 47%,#0080a3 53%,#0080a3 59%,#008ca8 66%,#009fad 73%,#00b3a7 81%,#02c097);
     transform: translateY(-5px);
     .animation {
       transform: rotate(90deg);
