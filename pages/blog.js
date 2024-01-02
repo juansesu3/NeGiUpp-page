@@ -140,7 +140,7 @@ const Share = styled.div`
   gap: 0.3rem;
   align-items: start;
   svg {
-    color: red;
+    color: #00c8ff;
   }
 `;
 
@@ -397,6 +397,7 @@ const BlogPage = () => {
                             </span>
                             <span>5.0</span>
                           </Like>
+                          {/*
                           <Comments>
                             <span> 
                               <svg
@@ -413,7 +414,7 @@ const BlogPage = () => {
                               </svg>
                             </span>
                             <span>15</span>
-                          </Comments>
+                          </Comments> */}
                           <Share>
                             <span>
                               <svg

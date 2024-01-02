@@ -5,11 +5,8 @@ import styled from 'styled-components';
 const ContainerForm = styled.form`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 0.5rem;
   background-image: linear-gradient(110deg,#00c8ff,#00b4e6 19%,#00a0cc 27%,#008cb3 34%,#0080a3 41%,#0080a3 47%,#0080a3 53%,#0080a3 59%,#008ca8 66%,#009fad 73%,#00b3a7 81%,#02c097);
-  border: 1px solid #2b2b2b0f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -20,6 +17,7 @@ const ContainerForm = styled.form`
   height: 100%;
   img{
     width: 6rem;
+    margin: 0 auto;
   }
 `;
 
@@ -32,6 +30,8 @@ const TitleIntroduction = styled.div`
 const SubsCribeIntBut = styled.div`
 display: flex;
 gap: 1rem;
+flex-direction: column;
+justify-content: center;
 input {
   text-align: start;
   font-size: 1.2rem;
@@ -56,6 +56,9 @@ button{
     font-size: 1.2rem;
     cursor: pointer;
 }
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 const FormSimpleSubscribe = () => {
@@ -80,7 +83,7 @@ const FormSimpleSubscribe = () => {
       </TitleIntroduction>
       <SubsCribeIntBut>
         <input value={email} onChange={(ev) => setEmail(ev.target.value)} type="email" placeholder="email address" />
-        <button>subscribe</button>
+        <button>Subscribe Now!</button>
       </SubsCribeIntBut>
       <p>Join 552 readers | 1 email per week | 100% free!</p>
     </ContainerForm>

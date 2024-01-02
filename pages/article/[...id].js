@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import ReviewArticles from "@/components/ReviewArticles";
+import DontMissIt from "@/components/DontMissIt";
 import axios from "axios";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
@@ -13,14 +14,13 @@ const ArticleContainer = styled.div`
 
 const Title = styled.h1`
   color: #ffff;
-
   margin: 0;
 `;
+
 const SectionOne = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-
   @media screen and (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
@@ -91,7 +91,7 @@ const Content = styled.div`
       /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   }
   h2 {
-    color: #4d61fc;
+    color: #00c8ff;
   }
   h3 {
     margin: 0;
@@ -135,13 +135,27 @@ const ImgArticleContainer = styled.div`
   }
 `;
 
+const ReTweet = styled.div`
+  color: white;
+   margin: 0.5rem;
+  span{
+  color: #00c8ff;
+  font-weight: 600;
+  cursor: pointer;
+ 
+&:hover{
+  text-decoration: underline;
+}
+}
+`;
+
 const ArticlePage = () => {
   const [article, setArticle] = useState([]);
   const router = useRouter();
   const { id } = router.query;
   const { data: session, status } = useSession();
   console.log("Data session after sign >>>>", session)
- 
+
   useEffect(() => {
     if (!id) {
       return;
@@ -195,14 +209,21 @@ const ArticlePage = () => {
                   <Summary>{article.summary}</Summary>
                 </Mobile>
               </div>
-            </SectionOne> 
+            </SectionOne>
             <div>
               <Content>
                 <ArticleContent htmlContent={article.content} />
               </Content>
             </div>
+
           </ArticleContainer>
-          <ReviewArticles articleId={id} />
+          <ReTweet>
+            <p>
+              ❤️️ Did you like this article? <span>Retweet it! </span>🙏
+            </p>
+          </ReTweet>
+          <DontMissIt />
+
         </>
       )}
     </Layout>
