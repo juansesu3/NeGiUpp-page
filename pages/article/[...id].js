@@ -84,8 +84,26 @@ gap: 1rem;
 align-items: center;
 img {
     width: 3rem;
+    height: 3rem;
    border-radius: 100%;
   }
+`;
+const InfoAuthor = styled.div`
+color: white ;
+display: flex;
+flex-direction: column;
+gap: 0.2rem;
+p{
+  margin: 0;
+  opacity: 0.5;
+  font-size: 0.8rem;
+}
+h2{
+  margin: 0;
+  color: #00c8ff;
+  font-weight: 600;
+}
+
 `
 
 const Content = styled.div`
@@ -209,9 +227,10 @@ const ArticlePage = () => {
                   <div>
                     <img src={article?.imgAuthor} alt="author-image" />
                   </div>
-                  <div>
+                  <InfoAuthor>
                     <h2>{article.author}</h2>
-                  </div>
+                    <p>FullStack Developer Expert</p>
+                  </InfoAuthor>
                   </ProfileAutor>
                 </AuthorContainerDesktop>
                 <DesktopDesign>
@@ -235,9 +254,10 @@ const ArticlePage = () => {
                   <div>
                     <img src={article?.imgAuthor} alt="author-image" />
                   </div>
-                  <div>
+                  <InfoAuthor>
                     <h2>{article.author}</h2>
-                  </div>
+                    <p>FullStack Developer Expert</p>
+                  </InfoAuthor>
                   </ProfileAutor>
                 </AuthorContainerMobile>
                 <Mobile>
