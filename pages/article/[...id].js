@@ -6,6 +6,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
+import { format } from "date-fns";
 
 const ArticleContainer = styled.div`
   margin-top: 3.5rem;
@@ -24,7 +25,7 @@ const SectionOne = styled.div`
   @media screen and (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
-    gap: 0rem;
+    gap: 1rem;
   }
 `;
 const Summary = styled.p`
@@ -36,12 +37,18 @@ const Summary = styled.p`
     margin: 0;
   }
 `;
+const DateCreated = styled.div`
+color: white;
+opacity: 0.5;
+
+`;
+
 
 const AuthorContainerDesktop = styled.div`
   display: none;
   gap: 0.5rem;
-  align-items: center;
-
+  margin-top: 1rem;
+  flex-direction: column;
   img {
     width: 3rem;
     border-radius: 1.5rem;
@@ -58,12 +65,10 @@ const AuthorContainerDesktop = styled.div`
 const AuthorContainerMobile = styled.div`
   display: flex;
   gap: 0.5rem;
-  align-items: center;
 
-  img {
-    width: 3rem;
-    border-radius: 1.5rem;
-  }
+  flex-direction: column;
+
+  
   h2 {
     color: #ffff;
     font-weight: 400;
@@ -73,6 +78,15 @@ const AuthorContainerMobile = styled.div`
     display: none;
   }
 `;
+const ProfileAutor = styled.div`
+display: flex;
+gap: 1rem;
+align-items: center;
+img {
+    width: 3rem;
+   border-radius: 100%;
+  }
+`
 
 const Content = styled.div`
   color: #ffff;
@@ -165,6 +179,12 @@ const ArticlePage = () => {
     });
   }, [id]);
 
+  const FormatDate = (date) => {
+    const fechaFormateada = format(new Date(date), 'MMMM d, yyyy');
+    return fechaFormateada
+
+  }
+
   const ArticleContent = ({ htmlContent }) => {
     return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
   };
@@ -179,17 +199,25 @@ const ArticlePage = () => {
                 <div>
                   <Title>{article.title}</Title>
                 </div>
-                <DesktopDesign>
-                  <Summary>{article.summary}</Summary>
-                </DesktopDesign>
                 <AuthorContainerDesktop>
+                  <DateCreated>
+                    {
+                    article.createdAt && 
+                    FormatDate(article.createdAt)}
+                  </DateCreated>
+                  <ProfileAutor>
                   <div>
                     <img src={article?.imgAuthor} alt="author-image" />
                   </div>
                   <div>
                     <h2>{article.author}</h2>
                   </div>
+                  </ProfileAutor>
                 </AuthorContainerDesktop>
+                <DesktopDesign>
+                  <Summary>{article.summary}</Summary>
+                </DesktopDesign>
+               
               </DeskDes>
               <ImgArticleContainer>
                 {article?.images && (
@@ -198,12 +226,19 @@ const ArticlePage = () => {
               </ImgArticleContainer>
               <div>
                 <AuthorContainerMobile>
+                <DateCreated>
+                    {
+                    article.createdAt && 
+                    FormatDate(article.createdAt)}
+                  </DateCreated>
+                  <ProfileAutor>
                   <div>
                     <img src={article?.imgAuthor} alt="author-image" />
                   </div>
                   <div>
                     <h2>{article.author}</h2>
                   </div>
+                  </ProfileAutor>
                 </AuthorContainerMobile>
                 <Mobile>
                   <Summary>{article.summary}</Summary>

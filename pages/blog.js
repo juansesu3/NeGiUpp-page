@@ -46,6 +46,7 @@ const SecondArticles = styled.div`
     color: white;
   }
 `;
+
 const ArticleCard = styled.div`
   position: relative;
   min-width: 21.2rem;
@@ -69,7 +70,6 @@ const ArticleCard = styled.div`
     transform: translateY(-5px);
     opacity: 0.5; 
   }
-
   &::before {
     content: 'Read'; // Texto que se mostrará
     position: absolute;
@@ -86,7 +86,6 @@ const ArticleCard = styled.div`
     opacity: 1;
     transform: translateX(-50%) translateY(-100%) rotateX(0deg); // Restaurar la posición original
   }
-  
 `;
 
 const ImageContainer = styled.div`
