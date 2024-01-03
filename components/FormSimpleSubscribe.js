@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React, { useState } from 'react'
 import styled from 'styled-components';
 import Swal from 'sweetalert2';
+
 const ContainerForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -69,9 +70,10 @@ const FormSimpleSubscribe = () => {
   const [message, setMessage] = useState("");
 
 
-  const handleSendComfirmation = ()=>{
+  const handleSendComfirmation = async ()=>{
+    const data = {email, subject, message}
+    await axios.post("/api/sendComfirmation", data)
 
-    
   }
 
   const handleSubscribe = async (ev) => {
@@ -94,9 +96,10 @@ const FormSimpleSubscribe = () => {
         <p>The email will come from <strong>juan@negiupp.com</strong></p>
       `,
       });
+      handleSendComfirmation()
             // Limpiar el input después de hacer clic en "OK"
             setEmail("");
-
+            
     } catch (error) {
       console.error('Error during subscription:', error);
       // Muestra la alerta de SweetAlert 2 en caso de error
