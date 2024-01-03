@@ -65,6 +65,14 @@ button{
 const FormSimpleSubscribe = () => {
 
   const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+
+  const handleSendComfirmation = ()=>{
+
+    
+  }
 
   const handleSubscribe = async (ev) => {
     ev.preventDefault();
