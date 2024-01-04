@@ -1,3 +1,5 @@
+import Email from "next-auth/providers/email";
+
 const { transporter, mailOptions } = require("@/lib/nodemailer");
 const jwt = require('jsonwebtoken');
 
@@ -5,15 +7,21 @@ const jwt = require('jsonwebtoken');
 const handler = async (req, res) => {
 
     const { method } = req;
+    const emailFrom = process.env.EMAIL;
+    const {email} = req.body
 
-    const handleSendConfirmationEmail = async (email, userId) => {
 
+
+
+    const handleSendConfirmationEmail = async (userId) => {
+        console.log(email)
         console.log(userId)
        // const token = jwt.sign({ userId }, process.env.NEXT_PUBLIC_SECRET , { expiresIn: '1h' }); // Ajusta el secreto y el tiempo de expiración según tus necesidades
 
         try {
             await transporter.sendMail({
-                ...mailOptions,
+                from:emailFrom,
+                to:email,
                 subject: "This Week In Negiupp - Confirm Your Subscription",
                 html: `
                     <div style="background-color: #f0f0f0; padding: 20px; text-align: center;">
@@ -22,7 +30,7 @@ const handler = async (req, res) => {
                         <a href="http://localhost:3000/confirm-subscription/token=${userId}" style="background-color: #00365c; text-decoration:none; color: #fff; padding: 10px; border: none; border-radius: 5px; cursor: pointer;">             
                                 I confirm my subscription!
                         </a>
-                        <p>You can also use this link: ${process.env.BASE_URL}/api/confirm-subscription?token=${userId}</p>
+                        <p>You can also use this link: ${process.env.BASE_URL}/confirm-subscription/token=${userId}</p>
                     </div>
                 `,
             });
@@ -32,8 +40,8 @@ const handler = async (req, res) => {
     };
 
     if (method === "POST") {
-        const { email, subject, message, userId } = req.body;
-        handleSendConfirmationEmail(email, userId);
+        const { userId } = req.body;
+        handleSendConfirmationEmail(userId);
         res.status(200).json({ success: true });
     }
 
