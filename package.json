@@ -19,6 +19,7 @@
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.7",
     "html-to-text": "^9.0.5",
+    "jsonwebtoken": "^9.0.2",
     "moment": "^2.29.4",
     "mongoose": "^7.3.1",
     "next": "13.4.7",
