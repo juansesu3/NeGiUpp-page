@@ -70,8 +70,8 @@ const FormSimpleSubscribe = () => {
   const [message, setMessage] = useState("");
 
 
-  const handleSendComfirmation = async ()=>{
-    const data = {email, subject, message}
+  const handleSendComfirmation = async (userId)=>{
+    const data = {email, subject, message, userId}
     await axios.post("/api/sendComfirmation", data)
 
   }
@@ -84,7 +84,8 @@ const FormSimpleSubscribe = () => {
     };
 
     try {
-      await axios.post("/api/userBlog", data);
+      const response = await axios.post("/api/userBlog", data);
+      const userId = response.data._id;
       // Muestra la alerta de SweetAlert 2 en caso de éxito
       Swal.fire({
         icon: 'success',
@@ -96,7 +97,7 @@ const FormSimpleSubscribe = () => {
         <p>The email will come from <strong>juan@negiupp.com</strong></p>
       `,
       });
-      handleSendComfirmation()
+      handleSendComfirmation(userId)
             // Limpiar el input después de hacer clic en "OK"
             setEmail("");
             

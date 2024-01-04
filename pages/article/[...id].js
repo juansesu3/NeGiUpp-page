@@ -107,12 +107,10 @@ h2{
   color: transparent;
   font-weight: 600;
 }
-
-`
+`;
 
 const Content = styled.div`
   color: #ffff;
-
   font-size: 1.2rem;
   letter-spacing: 0.5px;
   pre {

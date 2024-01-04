@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import Layout from '@/components/Layout';
 import Link from 'next/link';
+import axios from 'axios';
 
 const FirstContainer = styled.div`
 height: 53vh;
@@ -43,14 +44,24 @@ const LinkStC = styled(Link)`
 const ConfirmSubscriptionPage = () => {
   const router = useRouter();
   const { token } = router.query;
+  const cleanedToken = token.split('=').pop();
+  console.log(cleanedToken)
 
   useEffect(() => {
-    // Aquí puedes agregar la lógica para confirmar la suscripción utilizando el token.
-    // Por ejemplo, podrías hacer una solicitud al servidor para actualizar el estado 'verified'.
-
-    // Simplemente como ejemplo, aquí puedes loguear el token:
-    console.log('Token:', token);
-  }, [token]);
+    const verifyTokenAndFetchData = async () => {
+      try {
+        // Realiza la solicitud PUT a tu base de datos con el userId
+        await axios.put("/api/actualizarVerificado", { cleanedToken  });
+        // Agrega aquí la lógica adicional que necesites después de verificar el token
+      } catch (error) {
+        console.error('Error decoding token or updating database:', error);
+        // Agrega aquí la lógica para manejar errores
+      }
+    };
+    if (cleanedToken) {
+      verifyTokenAndFetchData();
+    }
+  }, [cleanedToken]);
 
   return (
     <Layout>
@@ -71,7 +82,7 @@ const ConfirmSubscriptionPage = () => {
                 The latest <LinkStC href={"/blog"}>proyects</LinkStC>
               </li>
               <li>
-                The latest Instagram <LinkStC href={"/blog"}>reels</LinkStC>
+                The latest Instagram <LinkStC target="_blank" href={"https://www.instagram.com/tianking_/reels/"}>reels</LinkStC>
               </li>
             </ul>
           </div>
