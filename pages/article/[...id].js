@@ -14,7 +14,9 @@ const ArticleContainer = styled.div`
 `;
 
 const Title = styled.h1`
-  color: #ffff;
+    background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
+  -webkit-background-clip: text;
+  color: transparent;
   margin: 0;
 `;
 
@@ -100,7 +102,9 @@ p{
 }
 h2{
   margin: 0;
-  color: #00c8ff;
+  background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
+  -webkit-background-clip: text;
+  color: transparent;
   font-weight: 600;
 }
 
@@ -123,7 +127,9 @@ const Content = styled.div`
       /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   }
   h2 {
-    color: #00c8ff;
+    background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
+  -webkit-background-clip: text;
+  color: transparent;
   }
   h3 {
     margin: 0;
@@ -171,7 +177,9 @@ const ReTweet = styled.div`
   color: white;
    margin: 0.5rem;
   span{
-  color: #00c8ff;
+    background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
+  -webkit-background-clip: text;
+  color: transparent;
   font-weight: 600;
   cursor: pointer;
  

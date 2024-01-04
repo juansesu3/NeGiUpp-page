@@ -134,7 +134,13 @@ const InfoAboutContainer = styled.div`
 const CeoContainer = styled(Link)`
   text-align: center;
   text-decoration: none;
-  color: #00c8ff;
+
+  h1{
+    background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
+  -webkit-background-clip: text;
+  color: transparent;
+  }
+ 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -154,7 +160,9 @@ const CeoContainer = styled(Link)`
     letter-spacing: 0.03rem;
   }
   span {
-    color: #00c8ff;
+    background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
+  -webkit-background-clip: text;
+  color: transparent;
   }
   @media screen and (min-width: 805px) {
     width: 100%;
@@ -191,7 +199,9 @@ const WorkTogetheContainer = styled(Link)`
     letter-spacing: 0.03rem;
   }
   span {
-    color: #00c8ff;
+    background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
+  -webkit-background-clip: text;
+  color: transparent;
   }
   svg {
     width: 3rem;
@@ -204,7 +214,9 @@ const WorkTogetheContainer = styled(Link)`
       color: #ffff;
     }
     span {
-      color: #00c8ff;
+      background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
+  -webkit-background-clip: text;
+  color: transparent;
     }
   }
   @media screen and (min-width: 805px) {
@@ -261,7 +273,9 @@ const StartContainer = styled(Link)`
     margin: 0;
     font-weight: 500;
     font-size: 2rem;
-    color: #00c8ff;
+    background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
+  -webkit-background-clip: text;
+  color: transparent;
   }
    transition: 0.3s;
     &:hover {
@@ -305,7 +319,9 @@ const InfoCultureHitosContainer = styled.div`
   }
   h3 {
     margin: 0;
-    color: #00c8ff;
+    background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
+  -webkit-background-clip: text;
+  color: transparent;
     font-weight: 600;
   }
   h4 {
@@ -327,7 +343,9 @@ const InfoCultureHitosContainer = styled.div`
     }
     h3 {
       margin: 0;
-      color: #00c8ff;
+      background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
+  -webkit-background-clip: text;
+  color: transparent;
       font-weight: 500;
     }
   }
@@ -395,7 +413,9 @@ const InfoCultureHitosContainerExpe = styled.div`
   }
   h3 {
     margin: 0;
-    color: #00c8ff;
+    background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
+  -webkit-background-clip: text;
+  color: transparent;
     font-weight: 600;
   }
   h4 {
@@ -416,7 +436,9 @@ const InfoCultureHitosContainerExpe = styled.div`
     }
     h3 {
       margin: 0;
-      color: #00c8ff;
+      background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
+  -webkit-background-clip: text;
+  color: transparent;
       font-weight: 500;
     }
   }

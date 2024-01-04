@@ -141,7 +141,9 @@ const WorkTitle = styled.div`
   margin-bottom: 2rem;
   margin-top: 1rem;
   span {
-    color: #00c8ff;
+    background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
+  -webkit-background-clip: text;
+  color: transparent;
   }
 `;
 const IconDetailDown = styled.div`
