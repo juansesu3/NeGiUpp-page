@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Layout from '@/components/Layout';
 import Link from 'next/link';
 import axios from 'axios';
-import { transporter } from '@/lib/nodemailer';
 
 const FirstContainer = styled.div`
 height: 53vh;
@@ -51,7 +50,7 @@ const ConfirmSubscriptionPage = () => {
 
   useEffect(() => {
     axios.get('/api/actualizarVerificado?_id=' + _id).then((response) => {
-      console.log(response.data?.email)
+      console.log(response.data)
       setEmailTo(response.data?.email)
     })
   }, [_id])
@@ -72,10 +71,10 @@ const ConfirmSubscriptionPage = () => {
         // Agrega aquí la lógica para manejar errores
       }
     };
-    if (_id) {
+    if (emailTo) {
       verifyTokenAndFetchData();
     }
-  }, [_id]);
+  }, [emailTo]);
 
   return (
     <Layout>
