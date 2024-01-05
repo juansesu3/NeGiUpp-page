@@ -1,8 +1,4 @@
-import Email from "next-auth/providers/email";
-
-const { transporter, mailOptions } = require("@/lib/nodemailer");
-const jwt = require('jsonwebtoken');
-
+const { transporter } = require("@/lib/nodemailer");
 
 const handler = async (req, res) => {
 
@@ -10,14 +6,10 @@ const handler = async (req, res) => {
     const emailFrom = process.env.EMAIL;
     const {email} = req.body
 
-
-
-
     const handleSendConfirmationEmail = async (userId) => {
         console.log(email)
         console.log(userId)
-       // const token = jwt.sign({ userId }, process.env.NEXT_PUBLIC_SECRET , { expiresIn: '1h' }); // Ajusta el secreto y el tiempo de expiración según tus necesidades
-
+       //const token = jwt.sign({ userId }, process.env.NEXT_PUBLIC_SECRET , { expiresIn: '1h' }); // Ajusta el secreto y el tiempo de expiración según tus necesidades
         try {
             await transporter.sendMail({
                 from:emailFrom,
@@ -38,15 +30,12 @@ const handler = async (req, res) => {
             console.error('Error sending confirmation email:', error);
         }
     };
-
     if (method === "POST") {
         const { userId } = req.body;
         handleSendConfirmationEmail(userId);
         res.status(200).json({ success: true });
     }
-
     
-
 }
 
 export default handler

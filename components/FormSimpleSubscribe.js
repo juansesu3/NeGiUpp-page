@@ -94,7 +94,7 @@ const FormSimpleSubscribe = () => {
         <p>In a few seconds, you will receive an email from me asking you to confirm your newsletter subscription.</p>
         <p>Please open your inbox and confirm your email address to finalize your subscription.</p>
         <p><strong>CHECK YOUR SPAM FOLDER:</strong> If you don't receive any confirmation email, check your spam folder 😅</p>
-        <p>The email will come from <strong>juan@negiupp.com</strong></p>
+        <p>The email will come from <strong>juan.se.suarez.ra@gmail.com</strong></p>
       `,
       });
       handleSendComfirmation(userId)
