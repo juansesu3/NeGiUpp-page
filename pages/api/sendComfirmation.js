@@ -29,6 +29,7 @@ const handler = async (req, res) => {
             });
         } catch (error) {
             console.error('Error sending confirmation email:', error);
+            res.status(500).json({ success: false, error: 'Error sending confirmation email' });
         }
     };
     handleSendConfirmationEmail(userId);
