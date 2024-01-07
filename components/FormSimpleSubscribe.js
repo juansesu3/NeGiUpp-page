@@ -8,7 +8,8 @@ const ContainerForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  background-image: linear-gradient(110deg,#00c8ff,#00b4e6 19%,#00a0cc 27%,#008cb3 34%,#0080a3 41%,#0080a3 47%,#0080a3 53%,#0080a3 59%,#008ca8 66%,#009fad 73%,#00b3a7 81%,#02c097);
+  background-image: linear-gradient(to bottom right, #000000, #131313);
+  border: 1px solid #212121;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
@@ -24,8 +25,12 @@ const ContainerForm = styled.form`
 `;
 
 const TitleIntroduction = styled.div`
+
   h1 {
     margin-bottom: 1.5rem;
+    background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
+  -webkit-background-clip: text;
+  color: transparent;
   }
 `;
 
@@ -48,7 +53,7 @@ input {
 }
 button{
   border: 0;
-  background-color: #00365c;
+  background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
   border-radius: 0.2rem;
   padding: 1rem;
   color: #fff;
@@ -63,6 +68,13 @@ button{
   }
 `;
 
+const DetailEngagment = styled.p`
+ background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
+  -webkit-background-clip: text;
+  color: transparent;
+
+`
+
 const FormSimpleSubscribe = () => {
 
   const [email, setEmail] = useState("");
@@ -70,8 +82,8 @@ const FormSimpleSubscribe = () => {
   const [message, setMessage] = useState("");
 
 
-  const handleSendComfirmation = async (userId)=>{
-    const data = {email, subject, message, userId}
+  const handleSendComfirmation = async (userId) => {
+    const data = { email, subject, message, userId }
     await axios.post("/api/sendComfirmation", data)
 
   }
@@ -98,9 +110,9 @@ const FormSimpleSubscribe = () => {
       `,
       });
       handleSendComfirmation(userId)
-            // Limpiar el input después de hacer clic en "OK"
-            setEmail("");
-            
+      // Limpiar el input después de hacer clic en "OK"
+      setEmail("");
+
     } catch (error) {
       console.error('Error during subscription:', error);
       // Muestra la alerta de SweetAlert 2 en caso de error
@@ -132,7 +144,7 @@ const FormSimpleSubscribe = () => {
         <input value={email} onChange={(ev) => setEmail(ev.target.value)} type="email" placeholder="email address" />
         <button onClick={handleSubscribe}>Subscribe Now!</button>
       </SubsCribeIntBut>
-      <p>Join 552 readers | 1 email per week | 100% free!</p>
+      <DetailEngagment>Join 552 readers | 1 email per week | 100% free!</DetailEngagment>
     </ContainerForm>
   )
 }
