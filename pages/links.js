@@ -7,8 +7,6 @@ import styled from 'styled-components';
 const ContainerLinks = styled.div`
     background-color: #000000;
     height: 200vh;
-
-
 `;
 
 const Header = styled.div`
@@ -23,12 +21,8 @@ padding: 0.5rem 0.7rem ;
 margin: 0 auto;
 border-radius: 10rem;
 border: ${(props) => (props.isVisible ? 'none' : '1px solid #fff')}; 
-
   transition: background 0.3s ease-in-out,  justify-content 0.3s ease-in-out; /* Agregar transiciones para opacidad y altura */
   overflow: hidden; 
-
-
-
 `;
 const ImageUser = styled.div`
   display: ${(props) => (props.isVisible ? 'none' : 'flex')};
@@ -100,20 +94,24 @@ const ContainerBoxLinks = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    width: 95%;
+    
 
 `;
 
 const BoxLink = styled.div`
-display: flex;
-justify-content: space-between;
-align-items: center;
-background-color: #282828;
-width: 100%;
-color: #ffffff;
-border-radius: 0.5rem;
-padding: 0.5rem;
-gap: 1rem;
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #282828;
+    width: 100%;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: translateY(-5px);}
 `;
 
 const ImageLink = styled.div`
@@ -122,20 +120,19 @@ const ImageLink = styled.div`
     img{
         width: 100%;
     }
-
-`
+`;
 
 const TitleBoxLink = styled.h2`
-font-weight: 400;
-margin: 0;
-`
+    font-weight: 400;
+    margin: 0;
+    font-size: 1rem;
+`;
 const IconBoxLink = styled.div`
-
-color: #ffffff;
+    color: #ffffff;
 svg{
-width: 2rem;
+    width: 2rem;
 }
-`
+`;
 
 
 const LinksPage = () => {
@@ -178,27 +175,51 @@ const LinksPage = () => {
 
                 <ImagePrincipal>
                     <Image src={'https://my-page-negiupp.s3.amazonaws.com/1704731920864.jpeg'} alt='image profile' width={100} height={100} />
-
                 </ImagePrincipal>
                 <InfoSummry>
                     <h1>@tianking_</h1>
                     <p>Full Stack Developer, AI & eCommerce Expert. Founder & CEO negiupp.com <br /> 💻 🛒 🤖</p>
-
                 </InfoSummry>
-
                 <ContainerBoxLinks>
                     <BoxLink>
                         <ImageLink>
-                            <Image src={'https://my-page-negiupp.s3.amazonaws.com/1704801095997.jpeg'} alt='image profile' width={100} height={100} />
+                            <Image src={'https://my-page-negiupp.s3.amazonaws.com/1704832048593.png'} alt='image profile' width={100} height={100} />
                         </ImageLink>
                         <TitleBoxLink>Portfolio - SelfBrand</TitleBoxLink>
                         <IconBoxLink>
                             <Points />
                         </IconBoxLink>
                     </BoxLink>
-
+                    <BoxLink>
+                        <ImageLink>
+                            <Image src={'https://my-page-negiupp.s3.amazonaws.com/1704833278800.png'} alt='image profile' width={100} height={100} />
+                        </ImageLink>
+                        <TitleBoxLink>negiupp - store</TitleBoxLink>
+                        <IconBoxLink>
+                            <Points />
+                        </IconBoxLink>
+                    </BoxLink>
+                    <BoxLink>
+                        <ImageLink>
+                            <Image src={'https://my-page-negiupp.s3.amazonaws.com/1704832925918.png'} alt='image profile' width={100} height={100} />
+                        </ImageLink>
+                        <TitleBoxLink>LinkedIn</TitleBoxLink>
+                        <IconBoxLink>
+                            <Points />
+                        </IconBoxLink>
+                    </BoxLink>
+                    <BoxLink>
+                        <ImageLink>
+                            <Image src={'https://my-page-negiupp.s3.amazonaws.com/1704832866699.png'} alt='image profile' width={100} height={100} />
+                        </ImageLink>
+                        <TitleBoxLink>GitHub</TitleBoxLink>
+                        <IconBoxLink>
+                            <Points />
+                        </IconBoxLink>
+                    </BoxLink>
                 </ContainerBoxLinks>
 
+                <div></div>
             </Body>
         </ContainerLinks>
     )
