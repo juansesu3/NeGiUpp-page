@@ -87,11 +87,11 @@ const StyledNav = styled.nav`
     position: static;
     padding: 0;
     background-image: ${(props) =>
-      props.isVisible
-        ? "linear-gradient(to bottom right, #212121, #131313)"
-        : "none"};
+    props.isVisible
+      ? "linear-gradient(to bottom right, #212121, #131313)"
+      : "none"};
     background-color: ${(props) =>
-      props.isVisible ? "inherit" : "transparent"};
+    props.isVisible ? "inherit" : "transparent"};
   }
 `;
 
@@ -211,9 +211,10 @@ const Curriculum = styled.div`
   padding: 0;
   background-image: linear-gradient(
     to bottom right,
-    rgba(0, 0, 0, 0.7),
-    rgba(15, 15, 15, 0.7)
+    rgba(0, 0, 0, 0.5),
+    rgba(15, 15, 15, 0.5)
   );
+  backdrop-filter: blur(10px);
   color: white;
   ${(props) =>
     props.mobileNavActive === true &&
@@ -321,7 +322,7 @@ const Header = ({ route }) => {
         <WrapperMax>
           <LetsTalk href={"/contact"}> Let&apos;s Talk</LetsTalk>
           <StyledNav route={route} mobileNavActive={mobileNavActive}>
-           
+
             <NavLink
               route={route}
               active={pathname === "/" ? true : false}
@@ -343,7 +344,7 @@ const Header = ({ route }) => {
             >
               Blog
             </NavLink>
-{/*
+            {/*
             <NavLink
               route={route}
               active={pathname === "/avatar" ? true : false}
@@ -429,8 +430,7 @@ const Header = ({ route }) => {
           </LogoStore>
         </WrapperMax>
       </WrapperFull>
-
-    <Curriculum mobileNavActive={mobileNavActive}>
+      <Curriculum mobileNavActive={mobileNavActive}>
         <CurriculumMax>
           <TitleCur>
             <BackArrow />
@@ -444,9 +444,6 @@ const Header = ({ route }) => {
           </Dowload>
         </CurriculumMax>
       </Curriculum>
-
-
-  
     </StyledHeader>
   );
 };
