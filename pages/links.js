@@ -1,9 +1,9 @@
 import Points from '@/components/icons/Points';
 import Swal from 'sweetalert2';
 import Image from 'next/image';
-
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
+
 
 const ContainerLinks = styled.div`
     background-color: #000000;
@@ -91,7 +91,6 @@ const InfoSummry = styled.div`
         opacity: 0.7;
         line-height: 1.5;
     }
-
 `;
 
 const ContainerBoxLinks = styled.div`
@@ -100,9 +99,6 @@ const ContainerBoxLinks = styled.div`
     gap: 1rem;
     width: 95%;
     max-width: 40rem;
-  
-    
-
 `;
 
 const BoxLink = styled.div`
@@ -166,18 +162,14 @@ svg{
     transform: scale(1.08);  // Ajusta el factor de escala según tus necesidades
 }
 }
-`
-
-
+`;
 const LinksPage = () => {
     const [scrollDirection, setScrollDirection] = useState("up");
-
     const links = [
         'https://negiupp.com',
         'https://negiup.com/notfound',
         'https://www.linkedin.com/in/juan-s-suarez/',
         'https://github.com/juansesu3',
-
     ]
     useEffect(() => {
         const handleScroll = () => {
@@ -203,8 +195,8 @@ const LinksPage = () => {
     const handleClickPointLink = (event) => {
         const customContent = `
             <div class="custom-container">
-            <h1>Share this link</h1>
-                <div class="custom-item">
+            <h1 class="custom-title">Share this link</h1>
+                <button class="custom-item" onclick="compartirEnRedSocial('snapchat')">
                     <div class="info">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
                         <linearGradient id="s9~sBE_MLsUutFtX7i6Pra_KrtKMa6Fduil_gr1" x1="20.601" x2="27.399" y1="4.721" y2="43.279" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fede00"></stop><stop offset="1" stop-color="#ffd000"></stop></linearGradient><path fill="url(#s9~sBE_MLsUutFtX7i6Pra_KrtKMa6Fduil_gr1)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path><path d="M14.613,20.505c-0.168,0-0.342,0.039-0.503,0.12c-0.265,0.132-0.463,0.36-0.557,0.641	c-0.151,0.453,0.004,0.95,0.386,1.236l3.676,2.296l-0.143,0.382c-0.066,0.179-1.67,4.403-4.703,6.057	c-0.161,0.088-0.264,0.206-0.274,0.317c-0.011,0.112,0.078,0.213,0.155,0.277c0.656,0.549,1.334,0.939,2.685,1.187l0.409,0.075	l0.001,0.416c0.002,0.608,0.195,1.251,0.375,1.251c0.893,0,2.751,0,4.608,0.928c1.03,0.515,2.472,0.823,3.271,0.823	s2.241-0.308,3.271-0.823c1.856-0.928,3.715-0.928,4.608-0.928c0.181,0,0.374-0.643,0.375-1.251l0.001-0.416l0.409-0.075	c1.351-0.247,2.029-0.637,2.686-1.187c0.077-0.064,0.166-0.165,0.155-0.277c-0.011-0.111-0.114-0.229-0.274-0.317	c-3.032-1.654-4.636-5.878-4.703-6.057l-0.143-0.382l3.71-2.32c0.347-0.263,0.502-0.759,0.351-1.212	c-0.093-0.281-0.291-0.508-0.556-0.641c-0.264-0.133-0.564-0.153-0.846-0.06l-2.546,1.042V18.1c0-3.636-2.914-6.594-6.496-6.594	c-3.586,0-6.5,2.958-6.5,6.594v3.508l-2.576-1.053C14.828,20.522,14.722,20.505,14.613,20.505z" opacity=".07"></path><path fill="none" stroke="#1d1d1b" stroke-width="2" d="M24,37.011c0.868,0,2.387-0.322,3.494-0.875 c1.751-0.875,3.509-0.875,4.384-0.875c0.875,0,0.875-1.751,0.875-1.751c1.391-0.254,2.156-0.658,2.917-1.295 c0.531-0.445,0.407-1.085-0.201-1.416c-2.903-1.583-4.474-5.793-4.474-5.793l3.364-2.104c0.554-0.415,0.779-1.138,0.561-1.795l0,0 c-0.281-0.843-1.193-1.298-2.035-1.016l-1.887,0.771V18.1c0-3.864-3.132-7.094-6.996-7.094h0h-0.004h0 c-3.864,0-6.996,3.23-6.996,7.094v2.763l-1.887-0.771c-0.843-0.282-1.754,0.173-2.035,1.016l0,0 c-0.219,0.656,0.007,1.379,0.561,1.795l3.364,2.104c0,0-1.57,4.209-4.474,5.793c-0.608,0.331-0.732,0.972-0.201,1.416 c0.76,0.637,1.526,1.041,2.917,1.295c0,0,0,1.751,0.875,1.751c0.875,0,2.633,0,4.384,0.875C21.613,36.689,23.132,37.011,24,37.011" opacity=".05"></path><path fill="none" stroke="#000" d="M24,37.011c0.868,0,2.387-0.322,3.494-0.875 c1.751-0.875,3.509-0.875,4.384-0.875c0.875,0,0.875-1.751,0.875-1.751c1.391-0.254,2.156-0.658,2.917-1.295 c0.531-0.445,0.407-1.085-0.201-1.416c-2.903-1.583-4.474-5.793-4.474-5.793l3.364-2.104c0.554-0.415,0.779-1.138,0.561-1.795l0,0 c-0.281-0.843-1.193-1.298-2.035-1.016l-1.887,0.771V18.1c0-3.864-3.132-7.094-6.996-7.094h0h-0.004h0 c-3.864,0-6.996,3.23-6.996,7.094v2.763l-1.887-0.771c-0.843-0.282-1.754,0.173-2.035,1.016l0,0 c-0.219,0.656,0.007,1.379,0.561,1.795l3.364,2.104c0,0-1.57,4.209-4.474,5.793c-0.608,0.331-0.732,0.972-0.201,1.416 c0.76,0.637,1.526,1.041,2.917,1.295c0,0,0,1.751,0.875,1.751c0.875,0,2.633,0,4.384,0.875C21.613,36.689,23.132,37.011,24,37.011" opacity=".07"></path><path fill="#fff" d="M24,37.011c0.868,0,2.387-0.322,3.494-0.875c1.751-0.875,3.509-0.875,4.384-0.875	c0.875,0,0.875-1.751,0.875-1.751c1.391-0.254,2.156-0.658,2.917-1.295c0.531-0.445,0.407-1.085-0.201-1.416	c-2.903-1.583-4.474-5.793-4.474-5.793l3.364-2.104c0.554-0.415,0.779-1.138,0.561-1.795l0,0c-0.281-0.843-1.193-1.298-2.035-1.016	l-1.887,0.771V18.1c0-3.864-3.132-7.094-6.996-7.094h0h-0.004h0c-3.864,0-6.996,3.23-6.996,7.094v2.763l-1.887-0.771	c-0.843-0.282-1.754,0.173-2.035,1.016l0,0c-0.219,0.656,0.007,1.379,0.561,1.795l3.364,2.104c0,0-1.57,4.209-4.474,5.793	c-0.608,0.331-0.732,0.972-0.201,1.416c0.76,0.637,1.526,1.041,2.917,1.295c0,0,0,1.751,0.875,1.751c0.875,0,2.633,0,4.384,0.875	C21.613,36.689,23.132,37.011,24,37.011"></path>
@@ -216,10 +208,11 @@ const LinksPage = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                     </svg>
                     </div>
-                </div>
+                </button>
+                
                 <!-- Repite el mismo formato para los otros 6 contenedores -->
             <!-- ... -->
-            <div class="custom-item">
+            <button class="custom-item" onclick="compartirEnRedSocial('facebook')" >
             <div class="info">
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
             <path fill="#3F51B5" d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"></path><path fill="#FFF" d="M34.368,25H31v13h-5V25h-3v-4h3v-2.41c0.002-3.508,1.459-5.59,5.592-5.59H35v4h-2.287C31.104,17,31,17.6,31,18.723V21h4L34.368,25z"></path>
@@ -231,7 +224,7 @@ const LinksPage = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
             </svg>
             </div>
-        </div>
+        </button>
         <!-- Repite el mismo formato para los otros 6 contenedores -->
             <!-- ... -->
             <div class="custom-item">
@@ -282,8 +275,8 @@ const LinksPage = () => {
         <div class="custom-item">
         <div class="info">
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
-<path fill="#448AFF" d="M24,4C13.5,4,5,12.1,5,22c0,5.2,2.3,9.8,6,13.1V44l7.8-4.7c1.6,0.4,3.4,0.7,5.2,0.7c10.5,0,19-8.1,19-18C43,12.1,34.5,4,24,4z"></path><path fill="#FFF" d="M12 28L22 17 27 22 36 17 26 28 21 23z"></path>
-</svg>
+        <path fill="#448AFF" d="M24,4C13.5,4,5,12.1,5,22c0,5.2,2.3,9.8,6,13.1V44l7.8-4.7c1.6,0.4,3.4,0.7,5.2,0.7c10.5,0,19-8.1,19-18C43,12.1,34.5,4,24,4z"></path><path fill="#FFF" d="M12 28L22 17 27 22 36 17 26 28 21 23z"></path>
+        </svg>
             <p>Share via Messenger</p>
         </div>
         <div class="arow-share">
@@ -291,27 +284,82 @@ const LinksPage = () => {
             <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
         </svg>
         </div>
-    </div>
-    <!-- Repite el mismo formato para los otros 6 contenedores -->
-    <!-- ... -->
-    <div class="custom-item">
-    <div class="info">
-    <svg enable-background="new 0 0 24 24" viewBox="0 0 24 24" class="sc-gKsewC cVBMqs"><title data-testid="svgTitle" id="title_0.8752070784713959">email</title><path d="M18.821,20.5H5.179A3.683,3.683,0,0,1,1.5,16.821V7.179A3.683,3.683,0,0,1,5.179,3.5H18.821A3.683,3.683,0,0,1,22.5,7.179v9.642A3.683,3.683,0,0,1,18.821,20.5ZM5.179,4.5A2.682,2.682,0,0,0,2.5,7.179v9.642A2.682,2.682,0,0,0,5.179,19.5H18.821A2.682,2.682,0,0,0,21.5,16.821V7.179A2.682,2.682,0,0,0,18.821,4.5Z"></path><path d="M12,14.209a.5.5,0,0,1-.346-.138L4.286,7.028a.5.5,0,0,1,.691-.723L12,13.018l7.023-6.713a.5.5,0,1,1,.691.723l-7.368,7.043A.5.5,0,0,1,12,14.209Z"></path><path d="M4.7,17.833a.5.5,0,0,1-.347-.86l5.54-5.31a.5.5,0,0,1,.692.722L5.048,17.694A.5.5,0,0,1,4.7,17.833Z"></path><path d="M19.3,17.832a.5.5,0,0,1-.346-.139l-5.538-5.308a.5.5,0,0,1,.692-.722l5.538,5.308a.5.5,0,0,1-.346.861Z"></path></svg>
+        </div>
+        <!-- Repite el mismo formato para los otros 6 contenedores -->
+        <!-- ... -->
+        <div class="custom-item">
+        <div class="info">
+        <svg enable-background="new 0 0 24 24" viewBox="0 0 24 24" class="sc-gKsewC cVBMqs"><title data-testid="svgTitle" id="title_0.8752070784713959">email</title><path d="M18.821,20.5H5.179A3.683,3.683,0,0,1,1.5,16.821V7.179A3.683,3.683,0,0,1,5.179,3.5H18.821A3.683,3.683,0,0,1,22.5,7.179v9.642A3.683,3.683,0,0,1,18.821,20.5ZM5.179,4.5A2.682,2.682,0,0,0,2.5,7.179v9.642A2.682,2.682,0,0,0,5.179,19.5H18.821A2.682,2.682,0,0,0,21.5,16.821V7.179A2.682,2.682,0,0,0,18.821,4.5Z"></path><path d="M12,14.209a.5.5,0,0,1-.346-.138L4.286,7.028a.5.5,0,0,1,.691-.723L12,13.018l7.023-6.713a.5.5,0,1,1,.691.723l-7.368,7.043A.5.5,0,0,1,12,14.209Z"></path><path d="M4.7,17.833a.5.5,0,0,1-.347-.86l5.54-5.31a.5.5,0,0,1,.692.722L5.048,17.694A.5.5,0,0,1,4.7,17.833Z"></path><path d="M19.3,17.832a.5.5,0,0,1-.346-.139l-5.538-5.308a.5.5,0,0,1,.692-.722l5.538,5.308a.5.5,0,0,1-.346.861Z"></path></svg>
         <p>Share via Email</p>
-    </div>
-    <div class="arow-share">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+        </div>
+        <div class="arow-share">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
         <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-    </svg>
-    </div>
-</div>
-            </div>
+        </svg>
+        </div>
+        </div>
+        </div>
         `;
         Swal.fire({
             html: customContent,
         });
         event.stopPropagation();
     };
+
+    const compartirEnRedSocial = (redSocial) => {
+        switch (redSocial) {
+            case 'facebook':
+                compartirEnFacebook(link);
+                break;
+            case 'twitter':
+                compartirEnTwitter(link);
+                break;
+            case 'linkedin':
+                compartirEnLinkedIn(link);
+                break;
+            case 'whatsapp':
+                compartirEnWhatsApp(link);
+                break;
+            case 'messenger':
+                compartirEnMessenger(link);
+                break;
+            default:
+                console.log('Red social no soportada');
+        }
+    };
+
+    const compartirEnFacebook = () => {
+        const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}`;
+        abrirVentanaNueva(url);
+    };
+
+    const compartirEnTwitter = () => {
+        const url = `https://twitter.com/intent/tweet?url=${encodeURIComponent(link)}`;
+        abrirVentanaNueva(url);
+    };
+
+    const compartirEnLinkedIn = () => {
+        const url = `https://www.linkedin.com/shareArticle?url=${encodeURIComponent(link)}`;
+        abrirVentanaNueva(url);
+    };
+
+    const compartirEnWhatsApp = () => {
+        const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(link)}`;
+        abrirVentanaNueva(url);
+    };
+
+    const compartirEnMessenger = () => {
+        const url = `https://www.facebook.com/dialog/send?link=${encodeURIComponent(link)}&app_id=123456789`;
+        abrirVentanaNueva(url);
+    };
+
+    const abrirVentanaNueva = (url) => {
+        window.open(url, '_blank');
+    };
+
+
+
+
     const handleClickLink = (event, link) => {
         event.preventDefault();  // Detener el comportamiento predeterminado del enlace
         window.open(link, '_blank');  // Abrir el enlace en una nueva pestaña
@@ -344,6 +392,15 @@ const LinksPage = () => {
                             <Image src={'https://my-page-negiupp.s3.amazonaws.com/1704832048593.png'} alt='image profile' width={100} height={100} />
                         </ImageLink>
                         <TitleBoxLink>Portfolio - SelfBrand</TitleBoxLink>
+                        <IconBoxLink onClick={(event) => handleClickPointLink(event)}>
+                            <Points />
+                        </IconBoxLink>
+                    </BoxLink>
+                    <BoxLink onClick={(ev) => handleClickLink(ev, links[0])} target='_blank' >
+                        <ImageLink>
+                            <Image src={'https://my-page-negiupp.s3.amazonaws.com/1704887313170.png'} alt='image profile' width={100} height={100} />
+                        </ImageLink>
+                        <TitleBoxLink>negiupp - blog</TitleBoxLink>
                         <IconBoxLink onClick={(event) => handleClickPointLink(event)}>
                             <Points />
                         </IconBoxLink>
