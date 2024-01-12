@@ -18,7 +18,8 @@ width: 95%;
 display: flex;
 justify-content: ${(props) => (props.isVisible ? 'end  ' : 'space-between')};
 background: ${(props) => (props.isVisible ? 'transparent' : 'rgba(255, 255, 255, 0.5)')};
-backdrop-filter: ${(props) => (props.isVisible ? 'none' : 'blur(10px)')};
+backdrop-filter:${(props) => (props.isVisible ? 'none' : 'blur(10px)')};
+-webkit-backdrop-filter: ${(props) => (props.isVisible ? 'none' : 'blur(10px)')};
 align-items: center;
 padding: 0.5rem 0.7rem ;
 margin: 0 auto;
@@ -86,11 +87,13 @@ const InfoSummry = styled.div`
     text-align: center;
     width: 70%;
     h1{
-        
+        margin:  0.5rem 0;
+        font-size: 1.7rem;
     }
     p{
         opacity: 0.7;
         line-height: 1.5;
+            margin:  1rem 0;
     }
 `;
 
