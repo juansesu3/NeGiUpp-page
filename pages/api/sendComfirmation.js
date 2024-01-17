@@ -34,7 +34,7 @@ const handler = async (req, res) => {
             res.status(500).json({ success: false, error: 'Error sending confirmation email' });
         }
     };
-    handleSendConfirmationEmail(userId);
+    
     if (method === "POST") {
         handleSendConfirmationEmail(userId);
        
