@@ -12,6 +12,7 @@ const handler = async (req, res) => {
         
        //const token = jwt.sign({ userId }, process.env.NEXT_PUBLIC_SECRET , { expiresIn: '1h' }); // Ajusta el secreto y el tiempo de expiración según tus necesidades
         try {
+            console.log('About to send email...');
             await transporter.sendMail({
                 from:emailFrom,
                 to:email,
@@ -27,6 +28,7 @@ const handler = async (req, res) => {
                     </div>
                 `,
             });
+            console.log('Transporter:', transporter);
         } catch (error) {
             console.error('Error sending confirmation email:', error);
             res.status(500).json({ success: false, error: 'Error sending confirmation email' });
