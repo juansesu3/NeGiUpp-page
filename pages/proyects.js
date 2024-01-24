@@ -37,7 +37,7 @@ const SecondProyectsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  justify-content: space-around;
+  justify-content: center;
   h1 {
     font-size: 1.5rem;
     font-weight: 500;
@@ -63,13 +63,16 @@ const ContainerPro = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  width: 19rem;
-  height: 12rem;
+   width: 20rem;
+  height: 15rem;
   img {
-    height: 100%;
     width: 100%;
+    height: 100%;
     border-radius: 1rem;
+    object-fit: cover;
+    
   }
+  
 `;
 
 const TitleBox = styled.div`
@@ -177,9 +180,7 @@ const ProyectsPage = () => {
     });
   }, []);
 
-  const FirstProyects = proyects.slice(0, 2);
-
-  const SecondProyects = proyects.slice(2);
+  const SecondProyects = proyects;
 
   return (
     <>
@@ -218,51 +219,7 @@ const ProyectsPage = () => {
               />
             </span>
           </TitleBoxMobile>
-          <FirstProyectsContainer>
-            {FirstProyects.map((proyect, index) => (
-              <RevealWrapper key={proyect._id} delay={index * 50}>
-                <ContainerPro>
-                  <CardFace href={"/proyect/" + proyect._id}>
-                    {/* Aquí iría el frente de tu tarjeta */}
-                    <ImageContainer>
-                      <Image
-                        src={proyect.images[0]}
-                        alt="Trello logo"
-                        width={500}
-                        height={400} // Ajusta el tamaño según necesites
-                      />
-                    </ImageContainer>
-                    <Name>
-                      <p>{proyect.service}</p>
-                      <h1>{proyect.title}</h1>
-                    </Name>
-                  </CardFace>
-                  <IconDetail>
-                    <LogoLink className="animation" href={"/proyects"}>
-                      <Image
-                        src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
-                        alt="Logo"
-                        width={400}
-                        height={200}
-                      />
-                    </LogoLink>
-                  </IconDetail>
-                  {/*
-                    <CardBack>
-                      {/* Aquí iría la parte trasera de tu tarjeta 
-                      <BackInfo>
-                        <h1>{proyect.title}</h1>
-                        <p>{proyect.about}</p>
-                        <ProyectLink href={"/proyect/" + proyect._id}>
-                          View
-                        </ProyectLink>
-                      </BackInfo>
-                    </CardBack>
-                  */}
-                </ContainerPro>
-              </RevealWrapper>
-            ))}
-          </FirstProyectsContainer>
+        
           <SeconConatiner>
             <TitleBox>
               <span>
