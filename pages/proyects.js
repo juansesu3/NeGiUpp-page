@@ -45,25 +45,56 @@ const SecondProyectsContainer = styled.div`
 `;
 
 const ContainerPro = styled.div`
-  position: relative;
+   position: relative;
+  min-width: 21.2rem;
+  min-height: 23rem;
   border-radius: 1rem;
   padding: 1rem;
-  width: 100%;
-  height: 100%;
-  position: relative;
-
-  background-image: linear-gradient(to bottom right, #000000, #131313);
+ background-image: linear-gradient(to bottom right, #000000, #131313);
   border: 1px solid #2b2b2b0f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 450px) {
+    width: 20rem;
+  }
+    transition: 0.3s;
+    position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  &:hover {
+    transform: translateY(-5px);
+    
+  }
+  &::before {
+     content: 'View'; // Texto que se mostrará
+    position: absolute;
+    top: 42.5%; // Cambiado a 100%
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) rotateX(180deg); // Añadido rotateX
+    font-size: 1rem; // Tamaño del texto
+    font-weight: bold; // Puedes ajustar según tu preferencia
+    color:#00c8ff;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease; // Añadida la transición de transform
+    border: 1px solid white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+    padding: 0.5rem 1rem;
+    background-color: #ffffff;// Añadida la transición de transform
+  }
+  &:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-100%) rotateX(0deg); // Restaurar la posición original
   }
 `;
 
 const ImageContainer = styled.div`
-   width: 20rem;
+
   height: 15rem;
   img {
     width: 100%;
@@ -72,6 +103,7 @@ const ImageContainer = styled.div`
     object-fit: cover;
     
   }
+ 
   
 `;
 
@@ -129,12 +161,9 @@ const SeconConatiner = styled.div`
   width: 100%;
 `;
 
-const CardFace = styled(Link)`
-  width: 100%;
-  height: 100%;
+const CardFace = styled.div`
+  
 
-  color: white;
-  text-decoration: none;
 `;
 
 const IconDetail = styled.div`
@@ -249,8 +278,8 @@ const ProyectsPage = () => {
               {SecondProyects.length > 0 &&
                 SecondProyects.map((proyect, index) => (
                   <RevealWrapper key={proyect._id} delay={index * 50}>
-                    <ContainerPro>
-                      <CardFace href={"/proyect/" + proyect._id}>
+                    <Link style={{textDecoration:'none',color:'#ffffff'}} href={"/proyect/" + proyect._id}>
+                    <ContainerPro>               
                         {/* Aquí iría el frente de tu tarjeta */}
                         <ImageContainer>
                           <Image
@@ -264,7 +293,6 @@ const ProyectsPage = () => {
                           <p>{proyect.service}</p>
                           <h1>{proyect?.title}</h1>
                         </Name>
-                      </CardFace>
                       <IconDetail>
                         <LogoLink className="animation" href={"/proyects"}>
                           <Image
@@ -275,19 +303,8 @@ const ProyectsPage = () => {
                           />
                         </LogoLink>
                       </IconDetail>
-                      {/*
-                    <CardBack>
-                      {/* Aquí iría la parte trasera de tu tarjeta 
-                      <BackInfo>
-                        <h1>{proyect.title}</h1>
-                        <p>{proyect.about}</p>
-                        <ProyectLink href={"/proyect/" + proyect._id}>
-                          View
-                        </ProyectLink>
-                      </BackInfo>
-                    </CardBack>
-                  */}
                     </ContainerPro>
+                    </Link>
                   </RevealWrapper>
                 ))}
             </SecondProyectsContainer>

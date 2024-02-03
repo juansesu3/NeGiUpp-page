@@ -53,7 +53,7 @@ const ArticleCard = styled.div`
   min-height: 29rem;
   border-radius: 1rem;
   padding: 1rem;
- background-image: linear-gradient(to bottom right, #000000, #131313);
+  background-image: linear-gradient(to bottom right, #000000, #131313);
   border: 1px solid #2b2b2b0f;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
@@ -66,9 +66,10 @@ const ArticleCard = styled.div`
     position: relative;
   overflow: hidden;
   transition: transform 0.3s ease, opacity 0.3s ease;
+
   &:hover {
     transform: translateY(-5px);
-    opacity: 0.5; 
+  
   }
   &::before {
     content: 'Read'; // Texto que se mostrará
@@ -76,16 +77,25 @@ const ArticleCard = styled.div`
     top: 35%; // Cambiado a 100%
     left: 50%;
     transform: translateX(-50%) translateY(-50%) rotateX(180deg); // Añadido rotateX
-    font-size: 1.5rem; // Tamaño del texto
+    font-size: 1rem; // Tamaño del texto
     font-weight: bold; // Puedes ajustar según tu preferencia
-    color: white;
+    color:#00c8ff;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease; // Añadida la transición de transform
+    border: 1px solid white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
+    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
+    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+    padding: 0.5rem 1rem;
+    background-color: #ffffff;
   }
   &:hover::before {
     opacity: 1;
     transform: translateX(-50%) translateY(-100%) rotateX(0deg); // Restaurar la posición original
   }
+ 
 `;
 
 const ImageContainer = styled.div`
@@ -265,7 +275,7 @@ const BlogPage = () => {
 
 
     });
-   
+
   };
 
   return (
@@ -275,7 +285,7 @@ const BlogPage = () => {
         <meta name="description" content="..." />
       </Head>
       <Layout>
-        
+
         <BlogIntroduction />
         <BlogContainer>
           <TitlePageMobile>
@@ -283,7 +293,7 @@ const BlogPage = () => {
             <h1>All articles</h1>
             <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
           </TitlePageMobile>
-         
+
           <SeconConatiner>
             <TitlePage>
               <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
