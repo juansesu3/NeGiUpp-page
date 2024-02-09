@@ -14,8 +14,8 @@ if (process.env.NODE_ENV === 'production') {
     service: 'gmail',
     host:'smtp.gmail.com',
     auth: {
-      user: 'juan.se.suarez.ra@gmail.com',
-      pass: 'vilamkgahckgcefc',
+      user: email,
+      pass: pass,
     },
     port: 465,
     secure: true,

@@ -5,7 +5,7 @@ import nodemailer from 'nodemailer';
 let transporter;
 
 const email = process.env.EMAIL;
-const pass = process.env.EMAIL_PASS;
+const pass = process.env.PASSWORD_HOTMAIL;
 
 if (process.env.NODE_ENV === 'production') {
   // Configuración específica para producción
@@ -14,12 +14,11 @@ if (process.env.NODE_ENV === 'production') {
     service: 'gmail',
     host:'smtp.gmail.com',
     auth: {
-      user: 'juan.se.suarez.ra@gmail.com',
-      pass: 'vilamkgahckgcefc',
+      user: email,
+      pass: pass,
     },
     port: 465,
     secure: true,
-    debug: true,
   });
 } else {
   // Configuración para desarrollo
@@ -33,7 +32,6 @@ if (process.env.NODE_ENV === 'production') {
     },
     port: 587,
     secure: false,
-    debug: true,
   });
 }
 
