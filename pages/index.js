@@ -27,7 +27,7 @@ const HomePage = ({ latestArticles }) => {
         />
         <meta
           property="og:image"s
-          content="https://my-page-negiupp.s3.amazonaws.com/1697750024209.png"
+          content="https://my-page-negiupp.s3.amazonaws.com/1707996017070.png"
         />
         <meta property="og:url" content="https://negiupp.com/" />
         <meta property="og:type" content="website" />
