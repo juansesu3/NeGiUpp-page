@@ -26,7 +26,7 @@ const HomePage = ({ latestArticles }) => {
           content="Juan Sebastian Suarez Ramirez's official website. Welcome to Negiupp, your gateway to innovation in digital solutions, articles, and more."
         />
         <meta
-          property="og:image"
+          property="og:image"s
           content="https://my-page-negiupp.s3.amazonaws.com/1697750024209.png"
         />
         <meta property="og:url" content="https://negiupp.com/" />
