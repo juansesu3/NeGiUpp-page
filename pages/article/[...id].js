@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import { format } from "date-fns";
+import Head from "next/head";
 
 const ArticleContainer = styled.div`
   margin-top: 3.5rem;
@@ -218,6 +219,18 @@ const ArticlePage = () => {
     <Layout>
       {article && (
         <>
+        <Head>
+            <title>{article.title}</title>
+            <meta name="description" content={article.summary} />
+            <meta property="og:title" content={article.title} />
+            <meta property="og:description" content={article.summary} />
+            {article?.images && (
+                    <meta property="og:image" content={article?.images[0][0]} />
+                )}
+            <meta property="og:type" content="article" />
+            <meta name="twitter:card" content="summary_large_image" />
+            {/* Otros meta tags de SEO según tus necesidades */}
+          </Head>
           <ArticleContainer>
             <SectionOne>
               <DeskDes>
