@@ -430,6 +430,7 @@ const Header = ({ route }) => {
           </LogoStore>
         </WrapperMax>
       </WrapperFull>
+  
       <Curriculum mobileNavActive={mobileNavActive}>
         <CurriculumMax>
           <TitleCur>
