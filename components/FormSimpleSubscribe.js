@@ -81,7 +81,7 @@ const FormSimpleSubscribe = () => {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
-
+console.log(message)
   const handleSendComfirmation = async (userId) => {
     const data = { email, subject, message, userId }
     await axios.post("/api/sendComfirmation", data)
