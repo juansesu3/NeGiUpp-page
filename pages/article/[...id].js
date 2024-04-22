@@ -15,9 +15,7 @@ const ArticleContainer = styled.div`
 `;
 
 const Title = styled.h1`
-    background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
-  -webkit-background-clip: text;
-  color: transparent;
+color:  #000;
   margin: 0;
 `;
 
@@ -32,7 +30,7 @@ const SectionOne = styled.div`
   }
 `;
 const Summary = styled.p`
-  color: #ffff;
+  color: #000;
   opacity: 0.7;
   font-size: 1.2rem;
   letter-spacing: 0.5px;
@@ -41,7 +39,7 @@ const Summary = styled.p`
   }
 `;
 const DateCreated = styled.div`
-color: white;
+color: #000;
 opacity: 0.5;
 
 `;
@@ -57,7 +55,7 @@ const AuthorContainerDesktop = styled.div`
     border-radius: 1.5rem;
   }
   h2 {
-    color: #ffff;
+    color: #000;
     font-weight: 400;
     font-size: 1.2rem;
   }
@@ -97,21 +95,20 @@ display: flex;
 flex-direction: column;
 gap: 0.2rem;
 p{
+  color: #000;
   margin: 0;
   opacity: 0.5;
   font-size: 0.8rem;
 }
 h2{
   margin: 0;
-  background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
-  -webkit-background-clip: text;
-  color: transparent;
+ color:  #f96e04;;
   font-weight: 600;
 }
 `;
 
 const Content = styled.div`
-  color: #ffff;
+  color: #000;
   font-size: 1.2rem;
   letter-spacing: 0.5px;
   pre {
@@ -126,9 +123,7 @@ const Content = styled.div`
       /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
   }
   h2 {
-    background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
-  -webkit-background-clip: text;
-  color: transparent;
+color:  #f96e04;;
   }
   h3 {
     margin: 0;
@@ -173,12 +168,10 @@ const ImgArticleContainer = styled.div`
 `;
 
 const ReTweet = styled.div`
-  color: white;
+  color: #000000;
    margin: 0.5rem;
   span{
-    background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
-  -webkit-background-clip: text;
-  color: transparent;
+  color:  #f96e04;
   font-weight: 600;
   cursor: pointer;
  

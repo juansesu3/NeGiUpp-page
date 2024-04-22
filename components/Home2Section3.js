@@ -15,12 +15,9 @@ const Section3 = styled.div`
 `;
 
 const InfoPlus = styled.div`
-    background-image: linear-gradient(to bottom right, #000000, #131313);
-    border: 1px solid #2b2b2b0f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+ background:#ffffff;
+
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -35,12 +32,10 @@ const InfoPlus = styled.div`
   }
 `;
 const Experinces = styled.div`
-   background-image: linear-gradient(to bottom right, #000000, #131313);
-   border: 1px solid #2b2b2b0f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+    background:#ffffff;
+
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+color: #000000;
   border-radius: 1rem;
   padding: 1.5rem;
   text-align: center;
@@ -58,12 +53,10 @@ const Experinces = styled.div`
 `;
 
 const Clients = styled.div`
-    background-image: linear-gradient(to bottom right, #000000, #131313);
-    border: 1px solid #2b2b2b0f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+   background:#ffffff;
+
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+color: #000000;
   border-radius: 1rem;
   padding: 1.5rem;
   text-align: center;
@@ -80,12 +73,10 @@ const Clients = styled.div`
   }
 `;
 const Proj = styled.div`
-    background-image: linear-gradient(to bottom right, #000000, #131313);
-    border: 1px solid #2b2b2b0f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+      background:#ffffff;
+
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+color: #000000;
   border-radius: 1rem;
   padding: 1.5rem;
   text-align: center;
@@ -104,12 +95,10 @@ const Proj = styled.div`
 const WorkTogether = styled(Link)`
 color: inherit;
 text-decoration: none;
-    background-image: linear-gradient(to bottom right, #000000, #131313);
-    border: 1px solid #2b2b2b0f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+background:#ffffff;
+
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+color: #000000;
   width: 100%;
   position: relative;
   border-radius: 1rem;
@@ -124,10 +113,14 @@ text-decoration: none;
   .animation {
     opacity: 0.5;
   }
-  transition: transform 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out, background 0.3s ease-in-out;
   &:hover {
     transform: translateY(-5px);
-    
+    background:#f96e04;
+    color: #ffffff;
+    span{
+      color: #ffffff;
+    }
     .animation {
       transform: rotate(90deg);
       transition: transform 0.5s ease-in-out;
@@ -141,9 +134,10 @@ const WorkTitle = styled.div`
   margin-bottom: 2rem;
   margin-top: 1rem;
   span {
-    background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
-  -webkit-background-clip: text;
-  color: transparent;
+   color:  #f96e04;
+   &:hover {
+    color: #ffffff;
+   }
   }
 `;
 const IconDetailDown = styled.div`
@@ -235,7 +229,7 @@ const Home2Section3 = () => {
           {" "}
           <LogoLink className="animation" href={"/"}>
             <Image
-              src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
+              src="/assets/logofinalpulido-black-3.png" // nota la barra inclinada al inicio
               alt="Logo"
               width={200}
               height={100}

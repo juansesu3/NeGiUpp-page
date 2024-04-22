@@ -8,12 +8,9 @@ const ContainerForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  background-image: linear-gradient(to bottom right, #000000, #131313);
-  border: 1px solid #212121;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  background:#ffffff;
+
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
   padding: 2rem;
   width: 100%;
@@ -28,9 +25,16 @@ const TitleIntroduction = styled.div`
 
   h1 {
     margin-bottom: 1.5rem;
-    background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
-  -webkit-background-clip: text;
-  color: transparent;
+color: #000000;
+  }
+  span{
+    color: #f96e04;
+    
+  }
+  p{
+    color: #000000;
+    opacity: 0.7;
+    font-weight: 300;
   }
 `;
 
@@ -42,26 +46,36 @@ justify-content: center;
 input {
   text-align: start;
   font-size: 1.2rem;
-  border: 0;
-  border-radius: 0.2rem;
+  border: none;
+  border-radius: 0.75rem;
   padding: 1rem;
   color: #000000;
   background-color: white; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.4),
-    4px 0 4px rgba(0, 0, 0, 0.1), -4px 0 4px rgba(0, 0, 0, 0.1);
+ border: 2px solid transparent;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     margin: 0;
+    &:focus-visible {
+ outline:none; /* Cambia el color del borde cuando el input está en focus */
+ border: 2px solid #f96e04;
+}
 }
 button{
   border: 0;
-  background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
-  border-radius: 0.2rem;
+  background: #f96e04;
+  border-radius: 0.75rem;
   padding: 1rem;
   color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.4),
-    4px 0 4px rgba(0, 0, 0, 0.1), -4px 0 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f96e04;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     margin: 0;
     font-size: 1.2rem;
     cursor: pointer;
+    transition: 0.3s ease-in-out;
+     &:hover {
+      background: #ffffff;
+      color: #f96e04;
+      border: 1px solid #f96e04;
+    }
 }
   @media screen and (min-width: 768px) {
     flex-direction: row;
@@ -69,9 +83,7 @@ button{
 `;
 
 const DetailEngagment = styled.p`
- background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
-  -webkit-background-clip: text;
-  color: transparent;
+color: #f96e04;
 
 `
 
@@ -127,7 +139,7 @@ console.log(message)
   return (
     <ContainerForm>
       <Image
-        src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
+        src="/assets/logofinalpulido-black-3.png" // nota la barra inclinada al inicio
         alt="Logo"
         width={200}
         height={100}
@@ -136,7 +148,7 @@ console.log(message)
         <h1>
           This Week
           in
-          <span> Negiupp</span> <br />
+          <span> n    egiupp</span> <br />
         </h1>
         <p>The latest news directly in your inbox!</p>
       </TitleIntroduction>

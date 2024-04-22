@@ -4,13 +4,16 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Swal from 'sweetalert2';
 const PrincipalContainer = styled.div`
-     background-image: linear-gradient(110deg,#00c8ff,#00b4e6 19%,#00a0cc 27%,#008cb3 34%,#0080a3 41%,#0080a3 47%,#0080a3 53%,#0080a3 59%,#008ca8 66%,#009fad 73%,#00b3a7 81%,#02c097);
+  background:#ffffff;
+
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     margin: 0.5rem;
     padding: 1rem 2rem;
-    border-radius: 0.2rem;
+    border-radius: 1rem;
     color: white;
 `;
 const Title = styled.p`
+color: #f96e04;
 font-weight: 600;
 font-size: 1.3rem;
 `;
@@ -23,31 +26,42 @@ input {
   text-align: start;
   font-size: 1.2rem;
   border: 0;
-  border-radius: 0.2rem;
+  border-radius: 0.75rem;
   padding: 1rem;
   color: #000000;
-  background-color: white; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.4),
-    4px 0 4px rgba(0, 0, 0, 0.1), -4px 0 4px rgba(0, 0, 0, 0.1);
+  background:#ffffff;
+
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   margin: 0;
   width: 100%;
-
+   border: 2px solid transparent;
+   transition: color 0.3s ease-in-out, background 0.3s ease-in-out, border 0.3s ease-in-out;
+    &:focus-visible {
+ outline:none; /* Cambia el color del borde cuando el input está en focus */
+ border: 2px solid #f96e04;
+}
   @media screen and (min-width: 600px) {
     width: 60%;
   }
 }
 button{
   border: 0;
-  background-color: #00365c;
-  border-radius: 0.2rem;
+  background: #f96e04;;
+  border-radius: 0.75rem;
   padding: 1rem;
   color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.4),
-    4px 0 4px rgba(0, 0, 0, 0.1), -4px 0 4px rgba(0, 0, 0, 0.1);
+ box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border:1px solid #f96e04;
   margin: 0;
   font-size: 1.2rem;
   cursor: pointer;
   width: 100%;
+transition: color 0.3s ease-in-out, background 0.3s ease-in-out, border 0.3s ease-in-out;
+  &:hover{
+    background: #ffffff;
+    color: #f96e04;
+    border:1px solid #f96e04;
+  }
   @media screen and (min-width: 600px) {
     width: 40%;
   }
@@ -74,9 +88,13 @@ display: flex;
 flex-direction: column;
 gap: 0.5rem;
 p{
+  opacity: 0.5;
+  color: #000000;
   margin: 0 ;
+  font-weight: 300;
 }
 .name{
+  opacity: 1;
   font-weight: 700;
   font-size: 1.2rem;
 }
@@ -87,8 +105,9 @@ text-align: center;
 display: flex;
 align-items: center;
 justify-content: center;
+color: #000;
 span{
-    color: #f1efe6;
+    color: #f96e04;
     font-family: cursive;
     font-size: 4rem;
     height: 3rem;
@@ -137,7 +156,7 @@ const DontMissIt = () => {
   };
   return (
     <PrincipalContainer>
-        <Title>Don&apos;t miss the next eamil!</Title>
+        <Title>Don&apos;t miss the next email!</Title>
       <InpBut>
       <input value={email} onChange={(ev) => setEmail(ev.target.value)} type="email" placeholder="email address" />
         <button onClick={handleSubscribe}>Subscribe Now!</button>
@@ -145,7 +164,7 @@ const DontMissIt = () => {
       <div>
 
 
-        <Engament><span>“</span> If you are not signed-up, you are missing out <span>”</span></Engament>
+        <Engament><span>“</span>The impossible happenss when someone tries <span>”</span></Engament>
         <ProfileRecom>
           <Image src='https://my-page-negiupp.s3.amazonaws.com/1693303076439.jpg' alt='recomendation profile image' width={100} height={100}/>
           <ProfileInfo>

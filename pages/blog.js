@@ -52,23 +52,22 @@ const ArticleCard = styled.div`
   min-width: 21.2rem;
   min-height: 29rem;
   border-radius: 1rem;
+  border: 2px solid transparent;
   padding: 1rem;
-  background-image: linear-gradient(to bottom right, #000000, #131313);
-  border: 1px solid #2b2b2b0f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  background:#ffffff;
+color: #000000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   @media screen and (min-width: 450px) {
     width: 20rem;
   }
     transition: 0.3s;
     position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, border 0.3s ease-in-out;
 
   &:hover {
     transform: translateY(-5px);
+     border: 2px solid #f96e04;
   
   }
   &::before {
@@ -79,17 +78,21 @@ const ArticleCard = styled.div`
     transform: translateX(-50%) translateY(-50%) rotateX(180deg); // Añadido rotateX
     font-size: 1rem; // Tamaño del texto
     font-weight: bold; // Puedes ajustar según tu preferencia
-    color:#00c8ff;
+    color:#f96e04;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease; // Añadida la transición de transform
-    border: 1px solid white;
-    border-radius: 0.5rem;
+    border: 1px solid #f96e04;
+    border-radius: 0.75rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
     /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
     /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
     /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
     padding: 0.5rem 1rem;
     background-color: #ffffff;
+      &:hover {
+    background-color: #f96e04;
+cursor: pointer;
+  }
   }
   &:hover::before {
     opacity: 1;
@@ -131,6 +134,7 @@ const InfoDetails = styled.div`
 const Like = styled.div`
   display: flex;
   gap: 0.3rem;
+  align-items: center;
  
   svg {
     color: gold;
@@ -149,7 +153,7 @@ const Share = styled.div`
   gap: 0.3rem;
   align-items: start;
   svg {
-    color: #00c8ff;
+    color: #f96e04;
   }
 `;
 
@@ -174,8 +178,8 @@ const TitlePage = styled.div`
   margin: 0 auto;
 
   h1 {
-    font-size: 2.95rem;
-    color: white;
+    font-size: 2.5rem;
+    color: #000000;
     text-transform: uppercase;
   }
 `;
@@ -190,11 +194,11 @@ const TitlePageMobile = styled.div`
 
   h1 {
     font-size: 1.6rem;
-    color: white;
+    color: #000000;
     text-transform: uppercase;
   }
   svg {
-    width: 1rem;
+    width: 2rem;
     color: white;
   }
   @media screen and (min-width: 768px) {
@@ -289,16 +293,34 @@ const BlogPage = () => {
         <BlogIntroduction />
         <BlogContainer>
           <TitlePageMobile>
-            <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+            <span>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="34" height="26" viewBox="0 0 24 24">
+                        <path d="M0 0 C0.66 0 1.32 0 2 0 C2.66 4.62 3.32 9.24 4 14 C6.64 10.37 9.28 6.74 12 3 C12.66 3.33 13.32 3.66 14 4 C12.02 8.29 10.04 12.58 8 17 C12.29 15.02 16.58 13.04 21 11 C21 11.99 21 12.98 21 14 C17.85162825 16.62551716 14.42318195 18.73214196 11 21 C15.62 21.66 20.24 22.32 25 23 C25 23.66 25 24.32 25 25 C20.38 25.66 15.76 26.32 11 27 C14.63 29.64 18.26 32.28 22 35 C21.505 35.99 21.505 35.99 21 37 C16.71 35.02 12.42 33.04 8 31 C9.98 35.29 11.96 39.58 14 44 C13.01 44 12.02 44 11 44 C8.37448284 40.85162825 6.26785804 37.42318195 4 34 C3.34 38.62 2.68 43.24 2 48 C1.34 48 0.68 48 0 48 C-0.66 43.38 -1.32 38.76 -2 34 C-4.64 37.63 -7.28 41.26 -10 45 C-10.66 44.67 -11.32 44.34 -12 44 C-10.02 39.71 -8.04 35.42 -6 31 C-10.29 32.98 -14.58 34.96 -19 37 C-19 36.01 -19 35.02 -19 34 C-15.85162825 31.37448284 -12.42318195 29.26785804 -9 27 C-13.62 26.34 -18.24 25.68 -23 25 C-23 24.34 -23 23.68 -23 23 C-16.07 22.01 -16.07 22.01 -9 21 C-12.63 18.36 -16.26 15.72 -20 13 C-19.67 12.34 -19.34 11.68 -19 11 C-12.565 13.97 -12.565 13.97 -6 17 C-7.98 12.71 -9.96 8.42 -12 4 C-11.01 4 -10.02 4 -9 4 C-6.37448284 7.14837175 -4.26785804 10.57681805 -2 14 C-1.34 9.38 -0.68 4.76 0 0 Z" fill="#6cdb00" transform="translate(12,12) scale(0.6)" />
+                      </svg>
+            </span>
+
             <h1>All articles</h1>
-            <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+            <span>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="34" height="26" viewBox="0 0 24 24">
+                        <path d="M0 0 C0.66 0 1.32 0 2 0 C2.66 4.62 3.32 9.24 4 14 C6.64 10.37 9.28 6.74 12 3 C12.66 3.33 13.32 3.66 14 4 C12.02 8.29 10.04 12.58 8 17 C12.29 15.02 16.58 13.04 21 11 C21 11.99 21 12.98 21 14 C17.85162825 16.62551716 14.42318195 18.73214196 11 21 C15.62 21.66 20.24 22.32 25 23 C25 23.66 25 24.32 25 25 C20.38 25.66 15.76 26.32 11 27 C14.63 29.64 18.26 32.28 22 35 C21.505 35.99 21.505 35.99 21 37 C16.71 35.02 12.42 33.04 8 31 C9.98 35.29 11.96 39.58 14 44 C13.01 44 12.02 44 11 44 C8.37448284 40.85162825 6.26785804 37.42318195 4 34 C3.34 38.62 2.68 43.24 2 48 C1.34 48 0.68 48 0 48 C-0.66 43.38 -1.32 38.76 -2 34 C-4.64 37.63 -7.28 41.26 -10 45 C-10.66 44.67 -11.32 44.34 -12 44 C-10.02 39.71 -8.04 35.42 -6 31 C-10.29 32.98 -14.58 34.96 -19 37 C-19 36.01 -19 35.02 -19 34 C-15.85162825 31.37448284 -12.42318195 29.26785804 -9 27 C-13.62 26.34 -18.24 25.68 -23 25 C-23 24.34 -23 23.68 -23 23 C-16.07 22.01 -16.07 22.01 -9 21 C-12.63 18.36 -16.26 15.72 -20 13 C-19.67 12.34 -19.34 11.68 -19 11 C-12.565 13.97 -12.565 13.97 -6 17 C-7.98 12.71 -9.96 8.42 -12 4 C-11.01 4 -10.02 4 -9 4 C-6.37448284 7.14837175 -4.26785804 10.57681805 -2 14 C-1.34 9.38 -0.68 4.76 0 0 Z" fill="#6cdb00" transform="translate(12,12) scale(0.6)" />
+                      </svg>
+            </span>
+
           </TitlePageMobile>
 
           <SeconConatiner>
             <TitlePage>
-              <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+            <span>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="34" height="26" viewBox="0 0 24 24">
+                        <path d="M0 0 C0.66 0 1.32 0 2 0 C2.66 4.62 3.32 9.24 4 14 C6.64 10.37 9.28 6.74 12 3 C12.66 3.33 13.32 3.66 14 4 C12.02 8.29 10.04 12.58 8 17 C12.29 15.02 16.58 13.04 21 11 C21 11.99 21 12.98 21 14 C17.85162825 16.62551716 14.42318195 18.73214196 11 21 C15.62 21.66 20.24 22.32 25 23 C25 23.66 25 24.32 25 25 C20.38 25.66 15.76 26.32 11 27 C14.63 29.64 18.26 32.28 22 35 C21.505 35.99 21.505 35.99 21 37 C16.71 35.02 12.42 33.04 8 31 C9.98 35.29 11.96 39.58 14 44 C13.01 44 12.02 44 11 44 C8.37448284 40.85162825 6.26785804 37.42318195 4 34 C3.34 38.62 2.68 43.24 2 48 C1.34 48 0.68 48 0 48 C-0.66 43.38 -1.32 38.76 -2 34 C-4.64 37.63 -7.28 41.26 -10 45 C-10.66 44.67 -11.32 44.34 -12 44 C-10.02 39.71 -8.04 35.42 -6 31 C-10.29 32.98 -14.58 34.96 -19 37 C-19 36.01 -19 35.02 -19 34 C-15.85162825 31.37448284 -12.42318195 29.26785804 -9 27 C-13.62 26.34 -18.24 25.68 -23 25 C-23 24.34 -23 23.68 -23 23 C-16.07 22.01 -16.07 22.01 -9 21 C-12.63 18.36 -16.26 15.72 -20 13 C-19.67 12.34 -19.34 11.68 -19 11 C-12.565 13.97 -12.565 13.97 -6 17 C-7.98 12.71 -9.96 8.42 -12 4 C-11.01 4 -10.02 4 -9 4 C-6.37448284 7.14837175 -4.26785804 10.57681805 -2 14 C-1.34 9.38 -0.68 4.76 0 0 Z" fill="#6cdb00" transform="translate(12,12) scale(0.6)" />
+                      </svg>
+            </span>
               <h1>All articles</h1>
-              <img src="https://my-page-negiupp.s3.amazonaws.com/1688122773024.png" />
+              <span>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="34" height="26" viewBox="0 0 24 24">
+                        <path d="M0 0 C0.66 0 1.32 0 2 0 C2.66 4.62 3.32 9.24 4 14 C6.64 10.37 9.28 6.74 12 3 C12.66 3.33 13.32 3.66 14 4 C12.02 8.29 10.04 12.58 8 17 C12.29 15.02 16.58 13.04 21 11 C21 11.99 21 12.98 21 14 C17.85162825 16.62551716 14.42318195 18.73214196 11 21 C15.62 21.66 20.24 22.32 25 23 C25 23.66 25 24.32 25 25 C20.38 25.66 15.76 26.32 11 27 C14.63 29.64 18.26 32.28 22 35 C21.505 35.99 21.505 35.99 21 37 C16.71 35.02 12.42 33.04 8 31 C9.98 35.29 11.96 39.58 14 44 C13.01 44 12.02 44 11 44 C8.37448284 40.85162825 6.26785804 37.42318195 4 34 C3.34 38.62 2.68 43.24 2 48 C1.34 48 0.68 48 0 48 C-0.66 43.38 -1.32 38.76 -2 34 C-4.64 37.63 -7.28 41.26 -10 45 C-10.66 44.67 -11.32 44.34 -12 44 C-10.02 39.71 -8.04 35.42 -6 31 C-10.29 32.98 -14.58 34.96 -19 37 C-19 36.01 -19 35.02 -19 34 C-15.85162825 31.37448284 -12.42318195 29.26785804 -9 27 C-13.62 26.34 -18.24 25.68 -23 25 C-23 24.34 -23 23.68 -23 23 C-16.07 22.01 -16.07 22.01 -9 21 C-12.63 18.36 -16.26 15.72 -20 13 C-19.67 12.34 -19.34 11.68 -19 11 C-12.565 13.97 -12.565 13.97 -6 17 C-7.98 12.71 -9.96 8.42 -12 4 C-11.01 4 -10.02 4 -9 4 C-6.37448284 7.14837175 -4.26785804 10.57681805 -2 14 C-1.34 9.38 -0.68 4.76 0 0 Z" fill="#6cdb00" transform="translate(12,12) scale(0.6)" />
+                      </svg>
+            </span>
             </TitlePage>
             <SecondArticles secondArticles={secondArticles}>
               {articles.length > 0 &&

@@ -32,7 +32,7 @@ const LogoLink = styled(Link)`
 `;
 
 const WrapperFull = styled.div`
-    background-image: linear-gradient(to bottom right, #000000, #131313);
+    background:#ffff;
   margin: 0 auto;
   position: relative;
   /* Estilos para tu componente */
@@ -40,6 +40,15 @@ const WrapperFull = styled.div`
   height: ${(props) => (props.isVisible ? "auto" : "0")};
   transition: opacity 0.3s ease, height 0.3s ease; /* Agregar transiciones para opacidad y altura */
   overflow: hidden; /* Para ocultar el contenido del componente cuando está colapsado */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius:0.75rem ;
+  padding: 1rem;
+  margin: 0.5rem;
+  margin-bottom: 0;
+    @media screen and (min-width: 768px) {
+    padding: 0.5rem;
+  }
+
 
 `;
 const WrapperMax = styled.div`
@@ -49,7 +58,7 @@ const WrapperMax = styled.div`
   justify-content: space-between;
   flex-direction: row-reverse;
   padding: 0rem 0.5rem;
-
+ 
   @media screen and (min-width: 768px) {
     padding: 0.3rem 0.5rem;
   }
@@ -77,8 +86,8 @@ const StyledNav = styled.nav`
   background-image: ${(props) =>
     props.isVisible
       ? "none"
-      : "linear-gradient(to bottom right, #000000, #131313)"};
-  background-color: ${(props) => (props.isVisible ? "transparent" : "inherit")};
+      : "linear-gradient(to bottom right, #ffffff, #ffffff)"};
+  background-color: ${(props) => (props.isVisible ? "#fff" : "#fff")};
 
   z-index: 10;
   gap: 4rem;
@@ -97,24 +106,25 @@ const StyledNav = styled.nav`
 
 const NavLink = styled(Link)`
   display: block;
-  color: #c1c1c3;
+  color: #000000;
   text-decoration: none;
   font-size: 1rem;
   transition: 0.3s;
   padding: 5px 0;
+  &:hover {
+    color: #f96e04;
+  }
   @media screen and (min-width: 768px) {
     padding: 0;
   }
   ${(props) =>
     props.active === true &&
     css`
-      color: #ffff;
+      color: #f96e04;
       text-decoration: underline;
       text-decoration-thickness: 0.15rem;
     `}
-  &:hover {
-    color: #ffffff;
-  }
+
   @media screen and (min-width: 768px) {
     font-size: 0.8rem;
   }
@@ -124,19 +134,19 @@ const LetsTalk = styled(Link)`
   color: #ffffff;
   text-decoration: none;
   align-items: center;
-  background-color: #323232;
-  padding: 0.2rem 1.2rem;
-  border-radius: 0.6rem;
+  background-color: #f96e04;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.75rem;
   font-weight: 500;
   display: none;
-  transition: 0.3s;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  transition: 0.3s ease-in-out;
+   border: 1px solid #f96e04;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   &:hover {
     background-color: #ffffff;
-    color: #0f0f0f;
+    color: #f96e04;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      border: 1px solid #f96e04;
   }
   @media screen and (min-width: 768px) {
     display: flex;
@@ -146,7 +156,7 @@ const NavButton = styled.button`
   width: 25px;
   background-color: transparent;
   border: 0;
-  color: #f5f5f7;
+  color: #000000;
   padding: 5px 0px;
 
   cursor: pointer;
@@ -187,7 +197,7 @@ const LogoStore = styled.svg`
   top: 45%;
   left: 82%;
   transform: translate(-50%, -50%);
-  color: #f5f5f7;
+  color: #000000;
   padding: 0;
   cursor: pointer;
   @media screen and (min-width: 768px) {
@@ -381,7 +391,7 @@ const Header = ({ route }) => {
           </StyledNav>
           <LogoLink route={route} href={"/"}>
             <Image
-              src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
+              src="/assets/logofinalpulido-black-3.png" // nota la barra inclinada al inicio
               alt="Logo"
               width={400}
               height={200}
@@ -408,7 +418,7 @@ const Header = ({ route }) => {
           <LogoMobile>
             {" "}
             <Image
-              src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
+              src="/assets/logofinalpulido-black-3.png" // nota la barra inclinada al inicio
               alt="Logo"
               width={400}
               height={200}
@@ -430,7 +440,7 @@ const Header = ({ route }) => {
           </LogoStore>
         </WrapperMax>
       </WrapperFull>
-  
+  {/*
       <Curriculum mobileNavActive={mobileNavActive}>
         <CurriculumMax>
           <TitleCur>
@@ -445,6 +455,7 @@ const Header = ({ route }) => {
           </Dowload>
         </CurriculumMax>
       </Curriculum>
+       */}
     </StyledHeader>
   );
 };

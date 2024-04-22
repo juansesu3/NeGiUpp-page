@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Environment, OrbitControls } from "@react-three/drei";
 
 const ContainerBlogIntroduction = styled.div`
-  margin-top: 3.5rem;
+  margin-top: 3rem;
   color: white;
   text-align: center;
   margin-left: 0.5rem;
@@ -41,12 +41,9 @@ const Discover = styled.div`
   padding: 1rem;
   opacity: 0.65;
   font-size: 1.2rem;
-  background-image: linear-gradient(to bottom right, #000000, #131313);
-  border: 1px solid #2b2b2b0f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  background:#ffffff;
+
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
   min-height: 15rem;
     display: flex;

@@ -11,13 +11,18 @@ import { RevealWrapper } from "next-reveal";
 const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 3.5rem 0.5rem;
+  padding: 3rem 0.5rem;
   gap: 1rem;
 `;
 
 const AboutCont = styled.div`
+
   @media screen and (min-width: 805px) {
     width: 80%;
+    display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-end;
   }
 `;
 
@@ -25,24 +30,20 @@ const ImageContainer = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin: 0 auto;
-  padding: 1.5rem;
+ 
   border-radius: 1rem;
-  background-image: linear-gradient(to bottom right, #000000, #131313);
-  border: 1px solid #2b2b2b0f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+
   transform: scaleX(-1);
   img {
-    width: 100%;
+    width: 15rem;
     border-radius: 1rem;
   }
   margin: 0 auto;
 
   @media screen and (min-width: 400px) {
-    width: 19rem;
+    width: 50%;
   }
 `;
 
@@ -67,6 +68,7 @@ const Title = styled.span`
     margin: 0;
     text-transform: uppercase;
     font-size: 3rem;
+    color:   #000000;
   }
   span {
     width: 2rem;
@@ -89,9 +91,15 @@ const TitleMobile = styled.span`
     margin: 0;
     text-transform: uppercase;
     font-size: 2rem;
+    color: #000000;
   }
   span {
-    width: 2rem;
+    
+    color:   #f96e04;
+    svg{
+      color: #f96e04;
+    }
+
   }
   img {
     width: 100%;
@@ -105,30 +113,7 @@ const TitleMobile = styled.span`
 `;
 
 const InfoAboutContainer = styled.div`
-  display: flex;
-  align-items: center;
-  border-radius: 1rem;
-  margin: auto 0;
-  gap: 1rem;
-  h2 {
-    margin: 0;
-  }
-  p {
-    color: #ffff;
-    opacity: 0.8;
-    line-height: 2rem;
-    margin-bottom: 0;
-  }
-  @media screen and (min-width: 805px) {
-    p {
-      line-height: 1.8rem;
-      letter-spacing: 0.02rem;
-      font-size: 1rem;
-    }
-    h2 {
-      margin: 1rem 0;
-    }
-  }
+  
 `;
 
 const CeoContainer = styled(Link)`
@@ -136,9 +121,10 @@ const CeoContainer = styled(Link)`
   text-decoration: none;
 
   h1{
-    background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
-  -webkit-background-clip: text;
-  color: transparent;
+color: #000000;
+span{
+color:#f96e04;
+}
   }
  
   display: flex;
@@ -147,22 +133,17 @@ const CeoContainer = styled(Link)`
   align-items: center;
   padding: 2rem;
   border-radius: 1rem;
-  background-image: linear-gradient(to bottom right, #000000, #131313);
-  border: 1px solid #2b2b2b0f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  background:#ffffff;
+
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   p {
-    color: #ffff;
+    color: #000000;
     opacity: 0.8;
     line-height: 1.6rem;
     letter-spacing: 0.03rem;
   }
   span {
-    background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
-  -webkit-background-clip: text;
-  color: transparent;
+color: #000000;
   }
   @media screen and (min-width: 805px) {
     width: 100%;
@@ -176,7 +157,7 @@ const CeoContainer = styled(Link)`
 `;
 const WorkTogetheContainer = styled(Link)`
   text-decoration: none;
-  color: #ffff;
+  color: #000000;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -185,39 +166,38 @@ const WorkTogetheContainer = styled(Link)`
 
   padding: 2rem;
   border-radius: 1rem;
-  background-image: linear-gradient(to bottom right, #000000, #131313);
-  border: 1px solid #2b2b2b0f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  background:#ffffff;
+
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 
   p {
-    color: #ffff;
+    color: #000000;
     opacity: 0.8;
     line-height: 1.6rem;
     letter-spacing: 0.03rem;
   }
   span {
-    background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
-  -webkit-background-clip: text;
-  color: transparent;
+color: #f96e04;
   }
   svg {
     width: 3rem;
     color: gray;
   }
-  transition: 0.3s;
+  transition: 0.3s ease-in-out;
     &:hover {
+      background-color:#f96e04;
     transform: translateY(-5px);
+    color: #ffffff;
+    span{
+      color: #ffffff;
+    }
+    p{
+      color: #ffffff;
+    }
     svg {
-      color: #ffff;
+      color: #ffffff;
     }
-    span {
-      background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
-  -webkit-background-clip: text;
-  color: transparent;
-    }
+
   }
   @media screen and (min-width: 805px) {
     width: 50%;
@@ -251,12 +231,9 @@ const StartContainer = styled(Link)`
   align-items: center;
   color: #ffff;
   padding: 2rem;
-  background-image: linear-gradient(to bottom right, #000000, #131313);
-  border: 1px solid #2b2b2b0f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+   background:#ffffff;
+
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
   animation: ${pulseAnimation} 2.5s infinite;
   transform-origin: center;
@@ -273,14 +250,12 @@ const StartContainer = styled(Link)`
     margin: 0;
     font-weight: 500;
     font-size: 2rem;
-    background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
-  -webkit-background-clip: text;
-  color: transparent;
+ color: #f96e04;
   }
    transition: 0.3s;
     &:hover {
     transform: translateY(-5px);
-    background-color: #00c8ff;
+    background-color: #f96e04;
     h2 {
       color: white;
     }
@@ -300,18 +275,15 @@ const InfoCultureHitosContainer = styled.div`
   gap: 1rem;
   padding: 1.5rem;
   border-radius: 1rem;
-  background-image: linear-gradient(to bottom right, #000000, #131313);
-  border: 1px solid #2b2b2b0f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  background:#ffffff;
+
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   h2 {
     margin: 0;
   }
 
   p {
-    color: #ffff;
+    color: #000000;
     opacity: 0.6;
     line-height: 1.8rem;
     letter-spacing: 0.07rem;
@@ -319,21 +291,20 @@ const InfoCultureHitosContainer = styled.div`
   }
   h3 {
     margin: 0;
-    background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
-  -webkit-background-clip: text;
-  color: transparent;
+color: #f96e04;
     font-weight: 600;
   }
   h4 {
     margin: 0.3rem 0;
     font-weight: 500;
+    color: #000000;
   }
   @media screen and (min-width: 805px) {
     width: 50%;
     gap: 1rem;
 
     p {
-      color: #ffff;
+      color: #000000;
       opacity: 0.6;
       line-height: 1.6rem;
       letter-spacing: 0.03rem;
@@ -343,9 +314,7 @@ const InfoCultureHitosContainer = styled.div`
     }
     h3 {
       margin: 0;
-      background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
-  -webkit-background-clip: text;
-  color: transparent;
+color: #f96e04;
       font-weight: 500;
     }
   }
@@ -366,16 +335,39 @@ const ContainerThirdSec = styled.div`
 `;
 
 const Detail = styled.div`
-background-image: linear-gradient(to bottom right, #000000, #131313);
-  border: 1px solid #2b2b2b0f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+
+  border-radius: 1rem;
+margin-top: 2rem;
+  gap: 1rem;
+  h2 {
+    margin: 0;
+  }
+  p {
+    color: #000000;
+    opacity: 0.8;
+    line-height: 2rem;
+    margin-bottom: 0;
+  }
+  @media screen and (min-width: 805px) {
+    p {
+      line-height: 1.8rem;
+      letter-spacing: 0.02rem;
+      font-size: 1rem;
+    }
+    h2 {
+      margin: 1rem 0;
+    }
+  }
+background:#ffffff;
+
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 
   border-radius: 1rem;
   padding: 2rem;
-
+color: #000000;
+h2{
+  color: #f96e04;
+}
   @media screen and (min-width: 805px) {
     padding: 0.8rem 2rem;
   }
@@ -394,18 +386,15 @@ const InfoCultureHitosContainerExpe = styled.div`
   gap: 1rem;
   padding: 1.5rem;
   border-radius: 1rem;
-  background-image: linear-gradient(to bottom right, #000000, #131313);
-  border: 1px solid #2b2b2b0f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  background:#ffffff;
+
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   h2 {
     margin: 0;
   }
 
   p {
-    color: #ffff;
+    color: #000000;
     opacity: 0.6;
     line-height: 1.8rem;
     letter-spacing: 0.07rem;
@@ -413,20 +402,19 @@ const InfoCultureHitosContainerExpe = styled.div`
   }
   h3 {
     margin: 0;
-    background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
-  -webkit-background-clip: text;
-  color: transparent;
+color: #f96e04;
     font-weight: 600;
   }
   h4 {
     margin: 0.3rem 0;
     font-weight: 500;
+    color: #000000;
   }
   @media screen and (min-width: 805px) {
     gap: 1rem;
 
     p {
-      color: #ffff;
+      color: #000000;
       opacity: 0.6;
       line-height: 1.6rem;
       letter-spacing: 0.03rem;
@@ -436,9 +424,7 @@ const InfoCultureHitosContainerExpe = styled.div`
     }
     h3 {
       margin: 0;
-      background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
-  -webkit-background-clip: text;
-  color: transparent;
+ color: #f96e04;
       font-weight: 500;
     }
   }
@@ -506,73 +492,54 @@ const AboutPage = () => {
                 <ContainerSec>
                   <TitleMobile>
                     <span>
-                      <Image
-                        src={
-                          "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
-                        }
-                        alt="about-image"
-                        width={200}
-                        height={100}
-                      />
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="34" height="26" viewBox="0 0 24 24">
+                        <path d="M0 0 C0.66 0 1.32 0 2 0 C2.66 4.62 3.32 9.24 4 14 C6.64 10.37 9.28 6.74 12 3 C12.66 3.33 13.32 3.66 14 4 C12.02 8.29 10.04 12.58 8 17 C12.29 15.02 16.58 13.04 21 11 C21 11.99 21 12.98 21 14 C17.85162825 16.62551716 14.42318195 18.73214196 11 21 C15.62 21.66 20.24 22.32 25 23 C25 23.66 25 24.32 25 25 C20.38 25.66 15.76 26.32 11 27 C14.63 29.64 18.26 32.28 22 35 C21.505 35.99 21.505 35.99 21 37 C16.71 35.02 12.42 33.04 8 31 C9.98 35.29 11.96 39.58 14 44 C13.01 44 12.02 44 11 44 C8.37448284 40.85162825 6.26785804 37.42318195 4 34 C3.34 38.62 2.68 43.24 2 48 C1.34 48 0.68 48 0 48 C-0.66 43.38 -1.32 38.76 -2 34 C-4.64 37.63 -7.28 41.26 -10 45 C-10.66 44.67 -11.32 44.34 -12 44 C-10.02 39.71 -8.04 35.42 -6 31 C-10.29 32.98 -14.58 34.96 -19 37 C-19 36.01 -19 35.02 -19 34 C-15.85162825 31.37448284 -12.42318195 29.26785804 -9 27 C-13.62 26.34 -18.24 25.68 -23 25 C-23 24.34 -23 23.68 -23 23 C-16.07 22.01 -16.07 22.01 -9 21 C-12.63 18.36 -16.26 15.72 -20 13 C-19.67 12.34 -19.34 11.68 -19 11 C-12.565 13.97 -12.565 13.97 -6 17 C-7.98 12.71 -9.96 8.42 -12 4 C-11.01 4 -10.02 4 -9 4 C-6.37448284 7.14837175 -4.26785804 10.57681805 -2 14 C-1.34 9.38 -0.68 4.76 0 0 Z" fill="#6cdb00" transform="translate(12,12) scale(0.6)" />
+                      </svg>
                     </span>
                     <h1>Self summary</h1>
                     <span>
-                      <Image
-                        src={
-                          "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
-                        }
-                        alt="about-image"
-                        width={200}
-                        height={100}
-                      />
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+                        <path d="M0 0 C0.66 0 1.32 0 2 0 C2.66 4.62 3.32 9.24 4 14 C6.64 10.37 9.28 6.74 12 3 C12.66 3.33 13.32 3.66 14 4 C12.02 8.29 10.04 12.58 8 17 C12.29 15.02 16.58 13.04 21 11 C21 11.99 21 12.98 21 14 C17.85162825 16.62551716 14.42318195 18.73214196 11 21 C15.62 21.66 20.24 22.32 25 23 C25 23.66 25 24.32 25 25 C20.38 25.66 15.76 26.32 11 27 C14.63 29.64 18.26 32.28 22 35 C21.505 35.99 21.505 35.99 21 37 C16.71 35.02 12.42 33.04 8 31 C9.98 35.29 11.96 39.58 14 44 C13.01 44 12.02 44 11 44 C8.37448284 40.85162825 6.26785804 37.42318195 4 34 C3.34 38.62 2.68 43.24 2 48 C1.34 48 0.68 48 0 48 C-0.66 43.38 -1.32 38.76 -2 34 C-4.64 37.63 -7.28 41.26 -10 45 C-10.66 44.67 -11.32 44.34 -12 44 C-10.02 39.71 -8.04 35.42 -6 31 C-10.29 32.98 -14.58 34.96 -19 37 C-19 36.01 -19 35.02 -19 34 C-15.85162825 31.37448284 -12.42318195 29.26785804 -9 27 C-13.62 26.34 -18.24 25.68 -23 25 C-23 24.34 -23 23.68 -23 23 C-16.07 22.01 -16.07 22.01 -9 21 C-12.63 18.36 -16.26 15.72 -20 13 C-19.67 12.34 -19.34 11.68 -19 11 C-12.565 13.97 -12.565 13.97 -6 17 C-7.98 12.71 -9.96 8.42 -12 4 C-11.01 4 -10.02 4 -9 4 C-6.37448284 7.14837175 -4.26785804 10.57681805 -2 14 C-1.34 9.38 -0.68 4.76 0 0 Z" fill="#6cdb00" transform="translate(12,12) scale(0.6)" />
+                      </svg>
+
                     </span>
                   </TitleMobile>
 
                   <ImageContainer>
                     <Image
                       src={
-                        "https://my-page-negiupp.s3.amazonaws.com/1688550234499.jpg"
+                        "https://my-page-negiupp.s3.amazonaws.com/1713789684234.png"
                       }
                       alt="about-image"
-                      width={200}
-                      height={100}
+                      width={500}
+                      height={500}
                     />
                   </ImageContainer>
 
                   <AboutCont>
                     <Title>
                       <span>
-                        <Image
-                          src={
-                            "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
-                          }
-                          alt="about-image"
-                          width={200}
-                          height={100}
-                        />
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+                          <path d="M0 0 C0.66 0 1.32 0 2 0 C2.66 4.62 3.32 9.24 4 14 C6.64 10.37 9.28 6.74 12 3 C12.66 3.33 13.32 3.66 14 4 C12.02 8.29 10.04 12.58 8 17 C12.29 15.02 16.58 13.04 21 11 C21 11.99 21 12.98 21 14 C17.85162825 16.62551716 14.42318195 18.73214196 11 21 C15.62 21.66 20.24 22.32 25 23 C25 23.66 25 24.32 25 25 C20.38 25.66 15.76 26.32 11 27 C14.63 29.64 18.26 32.28 22 35 C21.505 35.99 21.505 35.99 21 37 C16.71 35.02 12.42 33.04 8 31 C9.98 35.29 11.96 39.58 14 44 C13.01 44 12.02 44 11 44 C8.37448284 40.85162825 6.26785804 37.42318195 4 34 C3.34 38.62 2.68 43.24 2 48 C1.34 48 0.68 48 0 48 C-0.66 43.38 -1.32 38.76 -2 34 C-4.64 37.63 -7.28 41.26 -10 45 C-10.66 44.67 -11.32 44.34 -12 44 C-10.02 39.71 -8.04 35.42 -6 31 C-10.29 32.98 -14.58 34.96 -19 37 C-19 36.01 -19 35.02 -19 34 C-15.85162825 31.37448284 -12.42318195 29.26785804 -9 27 C-13.62 26.34 -18.24 25.68 -23 25 C-23 24.34 -23 23.68 -23 23 C-16.07 22.01 -16.07 22.01 -9 21 C-12.63 18.36 -16.26 15.72 -20 13 C-19.67 12.34 -19.34 11.68 -19 11 C-12.565 13.97 -12.565 13.97 -6 17 C-7.98 12.71 -9.96 8.42 -12 4 C-11.01 4 -10.02 4 -9 4 C-6.37448284 7.14837175 -4.26785804 10.57681805 -2 14 C-1.34 9.38 -0.68 4.76 0 0 Z" fill="#6cdb00" transform="translate(12,12) scale(0.6)" />
+                        </svg>
                       </span>
 
                       <h1>Self summary</h1>
 
                       <span>
-                        <Image
-                          src={
-                            "https://my-page-negiupp.s3.amazonaws.com/1688122773024.png"
-                          }
-                          alt="about-image"
-                          width={200}
-                          height={100}
-                        />
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+                          <path d="M0 0 C0.66 0 1.32 0 2 0 C2.66 4.62 3.32 9.24 4 14 C6.64 10.37 9.28 6.74 12 3 C12.66 3.33 13.32 3.66 14 4 C12.02 8.29 10.04 12.58 8 17 C12.29 15.02 16.58 13.04 21 11 C21 11.99 21 12.98 21 14 C17.85162825 16.62551716 14.42318195 18.73214196 11 21 C15.62 21.66 20.24 22.32 25 23 C25 23.66 25 24.32 25 25 C20.38 25.66 15.76 26.32 11 27 C14.63 29.64 18.26 32.28 22 35 C21.505 35.99 21.505 35.99 21 37 C16.71 35.02 12.42 33.04 8 31 C9.98 35.29 11.96 39.58 14 44 C13.01 44 12.02 44 11 44 C8.37448284 40.85162825 6.26785804 37.42318195 4 34 C3.34 38.62 2.68 43.24 2 48 C1.34 48 0.68 48 0 48 C-0.66 43.38 -1.32 38.76 -2 34 C-4.64 37.63 -7.28 41.26 -10 45 C-10.66 44.67 -11.32 44.34 -12 44 C-10.02 39.71 -8.04 35.42 -6 31 C-10.29 32.98 -14.58 34.96 -19 37 C-19 36.01 -19 35.02 -19 34 C-15.85162825 31.37448284 -12.42318195 29.26785804 -9 27 C-13.62 26.34 -18.24 25.68 -23 25 C-23 24.34 -23 23.68 -23 23 C-16.07 22.01 -16.07 22.01 -9 21 C-12.63 18.36 -16.26 15.72 -20 13 C-19.67 12.34 -19.34 11.68 -19 11 C-12.565 13.97 -12.565 13.97 -6 17 C-7.98 12.71 -9.96 8.42 -12 4 C-11.01 4 -10.02 4 -9 4 C-6.37448284 7.14837175 -4.26785804 10.57681805 -2 14 C-1.34 9.38 -0.68 4.76 0 0 Z" fill="#6cdb00" transform="translate(12,12) scale(0.6)" />
+                        </svg>
                       </span>
                     </Title>
 
-                    <InfoAboutContainer>
+                  
                       <Detail>
                         <h2>{prof.greeting}</h2>
                         <p>{prof.shortIntro}</p>
                       </Detail>
-                    </InfoAboutContainer>
-                  </AboutCont>
+                 
+                  </AboutCont> 
                 </ContainerSec>
 
                 {/*Second section */}
@@ -582,13 +549,13 @@ const AboutPage = () => {
                     <CeoContainer href={"/negiupp"}>
                       <LogoLink href={"/negiupp"}>
                         <Image
-                          src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
+                          src="/assets/logofinalpulido-black-3.png" // nota la barra inclinada al inicio
                           alt="Logo"
                           width={200}
                           height={100}
                         />
                       </LogoLink>
-                      <h1>What is NeGiUpp?</h1>
+                      <h1>What is <span>negiupp?</span></h1>
                     </CeoContainer>
                     <InfoCultureHitosContainerExpe>
                       <h2>Experiences</h2>
@@ -603,10 +570,10 @@ const AboutPage = () => {
                                 .pop()} - 
 
                               ${moment(exp.endDateExp)
-                                .utc()
-                                .format("MM/DD/YYYY")
-                                .split("/")
-                                .pop()}`}
+                                  .utc()
+                                  .format("MM/DD/YYYY")
+                                  .split("/")
+                                  .pop()}`}
                             </p>
                             <h3>{exp.position}</h3>
                             <h4 className="company">{exp.company}</h4>

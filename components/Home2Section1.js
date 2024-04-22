@@ -15,17 +15,14 @@ const Section1 = styled.div`
 const Summary = styled(Link)`
   text-decoration: none;
   color: inherit;
-  background-image: linear-gradient(to bottom right, #000000, #131313);
-  border: 1px solid #2b2b2b0f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  background:#f96e04;
+
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   width: 100%;
   padding: 2.5rem;
   border-radius: 1rem;
-  color: white;
+  color: #000000;
   
   display: flex;
   justify-content: center;
@@ -47,6 +44,7 @@ const Summary = styled(Link)`
   }
   @media screen and (min-width: 920px) {
     width: 47%;
+    justify-content: flex-end;
   }
 `;
 
@@ -55,6 +53,7 @@ const ContSummary = styled.div`
   justify-content: end;
   flex-direction: row;
   gap: 1.5rem;
+
   @media screen and (min-width: 500px) {
     flex-direction: row;
   }
@@ -65,22 +64,28 @@ const InfoSummary = styled.div`
   flex-direction: column;
   gap: 0.5rem;
   justify-content: center;
+  @media screen and (min-width: 1050px) {
+    width: 90%;
+    justify-content: flex-end;
+  }
 
   p {
     margin: 0;
-    background: linear-gradient(110deg, #00c8ff, #00b4e6 19%, #00a0cc 27%, #008cb3 34%, #0080a3 41%, #0080a3 47%, #0080a3 53%, #0080a3 59%, #008ca8 66%, #009fad 73%, #00b3a7 81%, #02c097);
-  -webkit-background-clip: text;
-  color: transparent;
+color:  #ffffff;
+
   }
   h5 {
     margin: 0;
     text-transform: uppercase;
-    opacity: 0.5;
+    opacity: 0.7;
     font-weight: 400;
+    color: #ffffff;
   }
   h4 {
     margin: 0;
     font-size: 1.5rem;
+
+    color: #ffffff;
   }
 `;
 
@@ -113,28 +118,40 @@ const IconDetail = styled.div`
   bottom: 10%;
 `;
 const ImageCont = styled.div`
-  position: relative;
+  position: absolute;
+  bottom: 0px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  transform: scaleX(1);
+  transform: scaleX(-1);
 
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 500px) and (max-width: 920px) {
+    right: 120px;
+  }
+
+  @media screen and (min-width: 921px) {
+    right: 120px;
+  }
+  @media screen and (min-width: 1100px) {
+    right: 164px;
+  }
+  @media screen and (max-width: 460px) {
+    right:142px;
     width: 15rem;
-    transform: scaleX(1);
   }
 
   img {
-    width: 10rem;
+    width: 11rem;
     border-radius: 2rem 0rem;
   }
 `;
 
+
 const NextToSummary = styled.div`
   width: 100%;
   border-radius: 2rem;
-  color: white;
+  color: #000000;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -163,14 +180,11 @@ const CredentAndProj = styled.div`
 
 const Projects = styled(Link)`
   text-decoration: none;
-  color: inherit;
+  color: #000000;
   width: 100%;
-  background-image: linear-gradient(to bottom right, #000000, #131313);
-  border: 1px solid #2b2b2b0f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  background:#ffffff;
+
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   border-radius: 1rem;
   position: relative;
@@ -193,12 +207,9 @@ const Projects = styled(Link)`
   }
 `;
 const ImageContProject = styled.div`
-    background-image: linear-gradient(to bottom right, #000000, #131313);
-  border: 1px solid #212121;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+
+  background:#ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
   display: flex;
   flex-direction: row;
@@ -223,12 +234,9 @@ const Credentials = styled(Link)`
   text-decoration: none;
   color: inherit;
   width: 100%;
-  background-image: linear-gradient(to bottom right, #000000, #131313);
-  border: 1px solid #2b2b2b0f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  background:#ffffff;
+
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   border-radius: 1rem;
   position: relative;
@@ -297,9 +305,9 @@ const Home2Section1 = () => {
         <ContSummary>
           <ImageCont>
             <Image
-              src="https://my-page-negiupp.s3.amazonaws.com/1696629533343.png"
-              width={200}
-              height={100}
+              src="https://my-page-negiupp.s3.amazonaws.com/1713789684234.png"
+              width={500}
+              height={500}
               alt="profile image juan sebastian suarez ramirez"
             />
           </ImageCont>
@@ -319,7 +327,7 @@ const Home2Section1 = () => {
             aria-label="go to home section "
           >
             <Image
-              src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
+              src="/assets/logofinalpulido-black-3.png" // nota la barra inclinada al inicio
               alt="Logo negiupp"
               width={200}
               height={100}
@@ -354,7 +362,7 @@ const Home2Section1 = () => {
                 aria-label="go to founders section "
               >
                 <Image
-                  src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
+                  src="/assets/logofinalpulido-black-3.png" // nota la barra inclinada al inicio
                   alt="Logo"
                   width={200}
                   height={100}
@@ -387,7 +395,7 @@ const Home2Section1 = () => {
                 aria-label="go to projects section "
               >
                 <Image
-                  src="/assets/logofinalpulido-white-3.png" // nota la barra inclinada al inicio
+                  src="/assets/logofinalpulido-black-3.png" // nota la barra inclinada al inicio
                   alt="Logo"
                   width={200}
                   height={100}

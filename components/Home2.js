@@ -8,7 +8,7 @@ const PrincipalContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-top: 3.5rem;
+  margin-top: 2rem;
   padding: 0 0.5rem;
 `;
 
