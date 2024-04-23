@@ -15,21 +15,21 @@ const ConatinerNotFound = styled.div`
     padding: 3.5rem 0;
   }
   p {
-    color: white;
+    color: #000;
     opacity: 0.5;
     text-align: center;
   }
   h2 {
-    color: white;
+    color: #000;
     text-align: center;
   }
   h3 {
-    color: #00c8ff;
+    color: #f96e04;
     text-align: center;
   }
 
   span {
-    color: #00c8ff;
+    color: #f96e04;
   }
   svg {
     width: 5rem;
@@ -42,7 +42,7 @@ const Title = styled.div`
   align-items: center;
   h1 {
     margin: 0;
-    color: #00c8ff;
+    color: #f96e04;
   }
   p {
     margin: 0;
@@ -78,7 +78,7 @@ const NegiuppPage = () => {
 
               <LogoContainer>
                 <Image
-                  src="/assets/logofinalpulido-white-3.png"
+                  src="/assets/logofinalpulido-black-3.png"
                   alt="NeGiupp Logo - Philosophy of Never Giving Up"
                   width={400}
                   height={200}

@@ -26,6 +26,7 @@ const First = styled.div`
   @media screen and (min-width: 768px) {
     flex-direction: row;
     gap: 24.5rem;
+    
   }
 `;
 const Second = styled.div`
@@ -45,16 +46,17 @@ const Section = styled.section`
   flex-direction: column;
   gap: 1rem;
   padding: 0;
-  z-index: -1;
+  z-index: -2;
 
   h4 {
     margin: 0;
+  
   }
 `;
 const LinkFooter = styled(Link)`
   text-decoration: none;
   color: #000000;
- 
+ z-index: -100;
   transition: color 0.3s ease-in-out;
   &:hover {
   color:  #f96e04;
