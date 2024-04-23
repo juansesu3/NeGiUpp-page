@@ -86,13 +86,13 @@ const StyledNav = styled.nav`
   align-items: center;
   gap: 40px;
   position: fixed;
-  top: 48px;
+  top: 75px;
   bottom: 0;
   left: 0;
   right: 0;
-  margin:0.5rem;
+  margin:0 0.5rem;
   padding: 30px 25px 25px;
-  border-radius: 0 0 0;
+  border-radius: 0.75rem;
   background-image: ${(props) =>
     props.isVisible
       ? "none"

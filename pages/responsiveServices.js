@@ -5,15 +5,25 @@ import styled from "styled-components";
 import { RevealWrapper } from "next-reveal";
 
 const ContainerResponsiveServices = styled.div`
-  padding-top: 3rem;
+ padding-top: 2rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   color: white;
-  h3 {
-    color: #4d61fc;
+  h2 {
+    color: #000;
   }
   p {
+    color: #000;
     opacity: 0.5;
+  }
+  h1{
+    color: #f96e04;
+  }
+  h3{
+    color: #f96e04;
+  }
+  h4{
+    color: #000;
   }
 `;
 

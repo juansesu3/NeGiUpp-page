@@ -5,22 +5,22 @@ import styled from "styled-components";
 import { RevealWrapper } from "next-reveal";
 
 const ConatinerNotFound = styled.div`
-  height: 100vh; /* Altura total de la ventana */
+  height: 50vh; /* Altura total de la ventana */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3rem 0.5rem; /* Ajuste de espaciado */
+  padding: 0 0.5rem; /* Ajuste de espaciado */
   p {
-    color: white;
+    color: #000;
     opacity: 0.5;
   }
   h1 {
-    color: white;
+    color: #000;
     text-align: center;
   }
   span {
-    color: #4d61fc;
+    color: #f96e04;
   }
 `;
 const ContainerButton = styled.div`
@@ -31,6 +31,7 @@ const ContainerButton = styled.div`
     height: 2.8rem;
     border-radius: 0.7rem;
     background-color: #323232;
+    border: 1px solid #323232;
     color: white;
     padding: 0.5rem 0;
     font-size: 1.2rem;
@@ -39,7 +40,9 @@ const ContainerButton = styled.div`
     cursor: pointer;
     &:hover {
       background-color: white;
-      color: black;
+      color: #f96e04;
+      border: 1px solid #f96e04;
+
     }
   }
 `;
