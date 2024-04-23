@@ -253,7 +253,13 @@ const Suggestion = () => {
   const [profile, setProfile] = useState({});
   const [technologies, setTecnologies] = useState([]);
   const [showAvatar, setShowAvatar] = useState(false);
+
   useEffect(() => {
+
+  }, []);
+
+  const getDataSet =()=>{
+
     axios.get("/api/proyects").then((response) => {
       setProyects(response.data);
     });
@@ -263,7 +269,9 @@ const Suggestion = () => {
     axios.get("/api/technologies").then((response) => {
       setTecnologies(response.data);
     });
-  }, []);
+
+
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -279,6 +287,7 @@ const Suggestion = () => {
     setInputValue("");
   };
   const sendMessage = (message) => {
+    getDataSet()
     const url = "https://api.openai.com/v1/chat/completions";
     const headers = {
       "Content-Type": "application/json",

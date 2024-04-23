@@ -148,7 +148,7 @@ console.log(message)
         <h1>
           This Week
           in
-          <span> n    egiupp</span> <br />
+          <span> negiupp</span> <br />
         </h1>
         <p>The latest news directly in your inbox!</p>
       </TitleIntroduction>

@@ -1,12 +1,9 @@
 //import Home from "@/components/Home";
 import Home2 from "@/components/Home2";
 import Layout from "@/components/Layout";
-import LoadingOverlay from "@/components/LoadingOverlay";
-import { mongooseConnect } from "@/lib/mongoose";
-import { Article } from "@/models/Article";
 import Head from "next/head";
 
-const HomePage = ({ latestArticles }) => {
+const HomePage = () => {
   return (
     <>
       <Head>
@@ -34,24 +31,10 @@ const HomePage = ({ latestArticles }) => {
       </Head>
       <Layout>
           <Home2
-          latestArticles={latestArticles} />
+           />
       </Layout>
     </>
   );
-};
-
-export const getServerSideProps = async () => {
-  await mongooseConnect();
-  const latestArticles = await Article.find({}, null, {
-    sort: { _id: -1 },
-    limit: 5,
-  });
-
-  return {
-    props: {
-      latestArticles: JSON.parse(JSON.stringify(latestArticles)),
-    },
-  };
 };
 
 export default HomePage;

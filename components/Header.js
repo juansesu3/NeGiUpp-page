@@ -355,14 +355,19 @@ svg{
 
 `
 
-const MenuItemStyled = styled(MenuItem)`
+
+
+const LinkServices = styled(Link)`
 display: flex;
+align-items: center;
 gap:1rem;
+text-decoration: none;
+padding: 0.5rem;
+color: #000;
 svg{
-  width:1rem;
+  width:1.5rem;
   color: #f96e04;
 }
-
 
 `
 
@@ -543,19 +548,29 @@ Services
         open={openPopUp}
         onClose={handleClose}
       >
-        <MenuItemStyled onClick={handleClose} disableRipple>
-        <WebDevelop/> Web Development
-        </MenuItemStyled>
-        <MenuItemStyled onClick={handleClose} disableRipple>
+        <MenuItem onClick={handleClose} disableRipple>
+         <LinkServices  href={'/webdevservices'} >
+         <WebDevelop/>
+        Web Development
+        </LinkServices>
+        </MenuItem>
+        <MenuItem onClick={handleClose} disableRipple>
+
+          <LinkServices href={'/responsiveServices'}  >
           <MobileDevelop/>
      
      Mobile Development
-        </MenuItemStyled>
-        <MenuItemStyled  onClick={handleClose} disableRipple>
+          </LinkServices>
+ 
+        </MenuItem>
+        <MenuItem  onClick={handleClose} disableRipple>
+          <LinkServices href={'/desktopdevservices'} o>
           <DeskTopDevelop/>
         Desktop Development
+          </LinkServices>
+ 
 
-        </MenuItemStyled>
+        </MenuItem>
       </Menu>
 
 
