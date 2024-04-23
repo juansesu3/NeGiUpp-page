@@ -8,24 +8,24 @@ const Conatiner = styled.div`
   width: 100%;
 
   border-radius: 1rem;
-  padding: 1rem 1rem;
+  padding: 1rem;
   color: white;
   h1 {
+    color: #000;
     font-size: 2.5rem;
-    margin-top: 0;
+    text-align: center;
     @media screen and (min-width: 768px) {
       font-size: 3rem;
     }
     span {
-      color: #00c8ff;
+      color:#f96e04;
     }
   }
-  background-image: linear-gradient(to bottom right, #000000, #131313);
-  border: 1px solid #2b2b2b0f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  background: #ffff;
+
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+
   @media screen and (min-width: 768px) {
     padding: 3rem;
   }
@@ -36,51 +36,55 @@ const FormContainer = styled.form`
   flex-direction: column;
   gap: 1.5rem;
   input {
-    font-size: 1.2rem;
+    font-size: 1rem;
     border: 0;
-    border-radius: 0.6rem;
+    border-radius: 0.75rem;
     padding: 1rem;
+    border: 2px solid transparent;
+    transition: border 0.3s ease-in-out;
     @media screen and (min-width: 768px) {
       padding: 1rem;
     }
-    color: #fff;
-    background: linear-gradient(
-      100deg,
-      rgb(189 189 189 / 7%),
-      rgba(255, 255, 255, 0)
-    );
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-      /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-      /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-      /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+
+    &:focus-visible {
+ outline:none; /* Cambia el color del borde cuando el input está en focus */
+ border: 2px solid #f96e04;
+    }
+
+    color: #000;
+    background: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    
   }
   textarea {
-    color: #fff;
+    color: #000;
 
     height: 12rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: "Inter", sans-serif;
     border: 0;
     border-radius: 0.6rem;
     padding: 1rem 0.8rem;
-    background: linear-gradient(
-      100deg,
-      rgb(189 189 189 / 7%),
-      rgba(255, 255, 255, 0)
-    );
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-      /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-      /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-      /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+background: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+    transition: border 0.3s ease-in-out;
+    &:focus-visible {
+ outline:none; /* Cambia el color del borde cuando el input está en focus */
+ border: 2px solid #f96e04;
+    }
   }
   button {
     padding: 0.8rem;
     border: 0;
-    border-radius: 0.5rem;
-    background-color: #323232;
+    border-radius: 0.75rem;
+    background:#f96e04;
     color: #fff;
     font-size: 1.3rem;
     transition: 0.3s;
+    margin-bottom: 1rem;
+    border: 1px solid #f96e04;
+    cursor: pointer;
     @media screen and (min-width: 768px) {
       font-size: 1.5rem;
       padding: 0.8rem;
@@ -88,8 +92,10 @@ const FormContainer = styled.form`
 
     &:hover {
       background-color: #ffffff;
-      color: #0f0f0f;
+      color: #f96e04;
+      
     }
+    
   }
 `;
 

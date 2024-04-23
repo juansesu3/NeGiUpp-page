@@ -14,13 +14,11 @@ const ContainerFounders = styled.div`
   justify-content: center;
   gap: 1.5rem;
   color: white;
-
-  padding: 4.5rem 0.7rem 0rem 0.7rem;
-
+  padding: 3rem 0.7rem 0rem 0.7rem;
   @media screen and (min-width: 768px) {
     flex-direction: row;
     height: 38rem;
-    padding: 4.5rem 1rem 0rem 1rem;
+    padding: 3rem 1rem 0rem 1rem;
   }
 `;
 const AboutMe = styled.div`
@@ -36,11 +34,11 @@ const AboutMe = styled.div`
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #888; /* Color de la barra de desplazamiento */
+    background-color: #f96e04; /* Color de la barra de desplazamiento */
     border-radius: 4px; /* Ajusta el radio de borde según tus preferencias */
   }
   h2 {
-    color: #ffff;
+    color: #f96e04;
     font-size: 1.2rem;
     font-weight: 500;
     text-transform: uppercase;
@@ -48,7 +46,7 @@ const AboutMe = styled.div`
   }
   p {
     font-size: 16px;
-    color: #fff;
+    color: #000;
     opacity: 0.8;
     line-height: 1.56;
   }
@@ -60,24 +58,24 @@ const ContainerExpEdu = styled.div`
     margin-bottom: 1rem;
   }
   h3 {
-    color: #00c8ff;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    color: #f96e04;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
     font-weight: 400;
   }
   h4 {
-    color: #bcbcbc;
+    color: #000;
     opacity: 0.6;
-    font-weight: 500;
-    margin: 0.5rem 0;
+    font-weight: 300;
+    margin: 0.25rem 0;
     letter-spacing: 0.01rem;
   }
   h5 {
-    color: #bcbcbc;
-    opacity: 0.6;
-    font-weight: 400;
+    color: #000;
+    opacity: 0.8;
+    font-weight: 500;
     font-size: 0.95rem;
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
     margin-bottom: 0.8rem;
   }
   p {
@@ -98,21 +96,22 @@ const ContainerSkills = styled.div`
 const ContSkil = styled.div`
   width: 50%;
   span {
-    color: #bcbcbc;
-    opacity: 0.6;
+    color: #000000;
+    opacity: 1;
     font-weight: 500;
     font-size: 0.9rem;
   }
   h3 {
-    color: #ffff;
-    opacity: 0.9;
+    color:#f96e04;
+    opacity: 1;
     font-weight: 500;
     margin-bottom: 0;
-    margin-top: 0.5rem;
+    margin-top: 0rem;
   }
   p {
-    color: #bcbcbc;
-    opacity: 0.6;
+    color: #000000;
+    opacity: 1;
+    font-weight: 300;
     margin: 0;
   }
 `;
@@ -128,12 +127,13 @@ const ContainerLanguge = styled.div`
   margin-top: 0;
   margin-bottom: 0.5rem;
   h3 {
+    color: #000;
     margin: 0;
     font-weight: 500;
   }
   p {
-    color: #bcbcbc;
-    opacity: 0.6;
+    color: #f96e04;
+    opacity: 1;
     font-size: 0.9rem;
     margin: 0;
   }

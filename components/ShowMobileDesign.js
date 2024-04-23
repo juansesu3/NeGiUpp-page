@@ -4,13 +4,10 @@ import styled from "styled-components";
 
 const Principal = styled.div`
   border-radius: 1rem;
-  padding: 1rem;
-  background-image: linear-gradient(to bottom right, #000000, #131313);
-  border: 1px solid #2b2b2b0f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  padding: 2rem;
+ background:#f96e04;
+  
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 `;
 
 const ContainerMobileDesignes = styled.div`
@@ -23,7 +20,7 @@ const ContainerMobileDesignes = styled.div`
 const ImageContainer = styled.div`
   position: relative;
   z-index: 2;
-  max-width: 300px;
+  max-width: 310px;
   width: 100%;
   height: 650px;
   aspect-ratio: 2 / 3;
@@ -37,7 +34,7 @@ const ImageContainer = styled.div`
 const ContImg = styled.div`
   z-index: -1;
   position: absolute;
-  top: 3.3%;
+  top: 2%;
   left: 4%;
   width: 91%;
   height: 95%;
@@ -51,10 +48,9 @@ const ContImg = styled.div`
 
 const SectionTitle = styled.h1`
   text-align: center;
-  color: white;
-  span {
-    color: #00c8ff;
-  }
+  color: #fff;
+  margin-top: 0;
+ 
 `;
 
 const ShowMobileDesign = ({ proyect }) => {

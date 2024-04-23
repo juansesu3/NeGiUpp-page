@@ -27,7 +27,7 @@ const LoadingContainer = styled.div`
 const LoadingScreen = () => (
   <LoadingContainer>
     <Image
-      src="/assets/logofinalpulido-white-3.png"
+      src="/assets/logofinalpulido-black-3.png"
       alt="logo"
       width={250}
       height={250}

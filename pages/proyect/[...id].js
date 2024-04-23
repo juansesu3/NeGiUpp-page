@@ -11,19 +11,19 @@ import { RevealWrapper } from "next-reveal";
 const Intro = styled.div`
   margin-top: 3rem;
   p {
-    color: #bcbcbc;
+    color: #000;
     text-transform: uppercase;
     opacity: 0.7;
   }
   h1 {
-    color: white;
+   
     text-transform: uppercase;
     font-size: 2rem;
     font-weight: 600;
     margin: 0;
   }
   span {
-    color: #00c8ff;
+    color:  #f96e04;
   }
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -40,12 +40,9 @@ const ContainerSect = styled.div`
   gap: 1.5rem;
   flex-direction: column;
   border-radius: 1rem;
-  background-image: linear-gradient(to bottom right, #000000, #131313);
-  border: 1px solid #2b2b2b0f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+  background:#ffffff;
+  
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   @media screen and (min-width: 768px) {
     flex-direction: row;
   }
@@ -70,22 +67,20 @@ const AboutInfo = styled.div`
   color: #ffff;
 
   h3 {
-    opacity: 0.5;
-    margin-top: 0;
-    font-weight: 400;
+    color: #f96e04;
+
+    
+
   }
   p {
-    color: #fff;
+    color: #000;
     opacity: 0.8;
     letter-spacing: 0.5px;
     line-height: 1.56;
   }
-  background-image: linear-gradient(to bottom right, #000000, #131313);
-  border: 1px solid #2b2b2b0f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+ background:#ffffff;
+  
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   @media screen and (min-width: 768px) {
     width: 50%;
   }
@@ -98,21 +93,23 @@ const ImageContainer = styled.div`
     width: 100%;
     max-height: 40rem;
     object-fit: cover;
-
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+border-radius: 1rem;
     padding: 0;
   }
 `;
 const DescriptionConatiner = styled.div`
   width: 90%;
-  color: #bcbcbc;
+      display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
   h3 {
-    opacity: 0.5;
-    margin-top: 0;
-    font-weight: 400;
+  color:  #f96e04;
   }
   p {
-    color: #fff;
-    opacity: 0.8;
+    color: #000;
+  
     letter-spacing: 0.5px;
     line-height: 1.56;
   }
@@ -123,18 +120,15 @@ const MoreDetail = styled.div`
   border-radius: 1rem;
   color: #ffff;
   text-align: center;
-  background-image: linear-gradient(to bottom right, #000000, #131313);
-  border: 1px solid #2b2b2b0f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+ background:#ffffff;
+  
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   div {
     padding: 1rem 0;
   }
 
   p {
-    color: #00c8ff;
+  color:  #f96e04;
 
     text-transform: capitalize;
     margin: 0 0 10px 0;
@@ -142,7 +136,7 @@ const MoreDetail = styled.div`
   }
   h4 {
     margin: 0;
-    color: #ffff;
+    color: #000;
     opacity: 0.9;
     font-size: 1.1rem;
     font-weight: 500;
@@ -159,26 +153,25 @@ const ContainerButton = styled.div`
   align-items: center;
 
   button {
-    border: 0;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-
-    color: #ffff;
-    opacity: 0.9;
-    font-size: 0.8rem;
-    font-weight: 500;
-    transition: 0.4s;
-    background-image: linear-gradient(to bottom right, #000000, #131313);
-  border: 1px solid #2b2b2b0f;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-      /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-      /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-      /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
-    &:hover {
-      background-color: white;
-      color: black;
-    }
+    font-size: 1.2rem;
+ color: #ffffff;
+  text-decoration: none;
+  align-items: center;
+  background-color: #f96e04;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+   border: 1px solid #f96e04;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  &:hover {
+    background-color: #ffffff;
+    color: #f96e04;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      border: 1px solid #f96e04;
+  }
+  
   }
 `;
 const IconsTech = styled.div`
@@ -196,19 +189,16 @@ const ContainerTech = styled.div`
   flex-direction: column;
 
   border-radius: 1rem;
-  color: #ffff;
+  color: #f96e04;
   padding: 1.5rem;
   width: 100%;
-  background-image: linear-gradient(to bottom right, #000000, #131313);
-  border: 1px solid #2b2b2b0f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+ background:#ffffff;
+  
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   h3 {
-    opacity: 0.5;
-    margin: 0;
-    font-weight: 400;
+ text-align: center;
+
+    font-weight: 500;
   }
   @media screen and (min-width: 768px) {
     width: 50%;
@@ -225,6 +215,9 @@ const ImagesProyectsContainer = styled.div`
 `;
 const ContImgPro = styled.div`
   img {
+        object-fit: cover;
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+border-radius: 1rem;
     width: 98.5%;
     @media screen and (min-width: 600px) {
       width: 100%;
@@ -246,7 +239,7 @@ const ContainerTechOnce = styled.div`
   justify-content: center;
   gap: 1rem;
   border-radius: 1rem;
-  color: #ffff;
+  
   padding: 1.5rem;
   width: 100%;
   height: 100%;
@@ -268,12 +261,16 @@ const ContainerButtons = styled.div`
 const LinkCodDep = styled.a`
   text-decoration: none;
   color: white;
-  background-image: linear-gradient(110deg,#00c8ff,#00b4e6 19%,#00a0cc 27%,#008cb3 34%,#0080a3 41%,#0080a3 47%,#0080a3 53%,#0080a3 59%,#008ca8 66%,#009fad 73%,#00b3a7 81%,#02c097);
+  background:#f96e04;
   padding: 0.5rem 1rem;
   margin: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid   #f96e04;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: color .3s ease-in-out, background  .3s ease-in-out;
   &:hover {
-    background-image: linear-gradient(110deg,#00c8ff,#0080a3);
+  background:#fff;
+  color: #f96e04;
   }
 `;
 const ProyectPage = () => {

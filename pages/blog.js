@@ -67,7 +67,7 @@ color: #000000;
 
   &:hover {
     transform: translateY(-5px);
-     border: 2px solid #f96e04;
+ 
   
   }
   &::before {
@@ -78,17 +78,14 @@ color: #000000;
     transform: translateX(-50%) translateY(-50%) rotateX(180deg); // Añadido rotateX
     font-size: 1rem; // Tamaño del texto
     font-weight: bold; // Puedes ajustar según tu preferencia
-    color:#f96e04;
+    color:#fff;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease; // Añadida la transición de transform
-    border: 1px solid #f96e04;
+
     border-radius: 0.75rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-    /* Sombra superior */ 0 8px 16px rgba(0, 0, 0, 0.4),
-    /* Sombra inferior */ 4px 0 4px rgba(0, 0, 0, 0.1),
-    /* Sombra derecha */ -4px 0 4px rgba(0, 0, 0, 0.1); /* Sombra izquierda */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     padding: 0.5rem 1rem;
-    background-color: #ffffff;
+    background-color: #f96e04;
       &:hover {
     background-color: #f96e04;
 cursor: pointer;
@@ -116,7 +113,10 @@ const ImageContainer = styled.div`
 
 const ArticleName = styled.div`
   h1 {
+    color: #000;
+    
     font-size: 1.5rem;
+    font-weight: 400;
   }
 `;
 
@@ -161,9 +161,10 @@ const TimeReading = styled.div`
   position: absolute;
   right: 5%;
   bottom: 3%;
-  opacity: 0.5;
-  font-weight: 200;
+  
+  font-weight: 400;
   font-size: 0.9rem;
+  color: #f96e04;
 `;
 
 const TitlePage = styled.div`

@@ -5,6 +5,14 @@ import { useEffect, useState } from "react";
 import DowloadIcon from "./icons/DowloadIcon";
 import Image from "next/image";
 import BackArrow from "./icons/BackArrow";
+import { Button, Collapse, Divider, List, ListItemButton, ListItemIcon, ListItemText, ListSubheader, MenuItem } from "@mui/material";
+import Menu, { MenuProps } from '@mui/material/Menu';
+import ArrowDown from "./icons/ArrowDown";
+import { ExpandLess, ExpandMore, StarBorder } from "@mui/icons-material";
+import WebDevelop from "./icons/WebDevelop";
+import DeskTopDevelop from "./icons/DeskTopDevelop";
+import MobileDevelop from "./icons/MobileDevelop";
+import ArrowUp from "./icons/ArrowUp";
 
 const StyledHeader = styled.header`
   background-color: ${(props) => (props.isVisible ? "#181819" : "transparent")};
@@ -78,11 +86,13 @@ const StyledNav = styled.nav`
   align-items: center;
   gap: 40px;
   position: fixed;
-  top: 38px;
+  top: 48px;
   bottom: 0;
   left: 0;
   right: 0;
+  margin:0.5rem;
   padding: 30px 25px 25px;
+  border-radius: 0 0 0;
   background-image: ${(props) =>
     props.isVisible
       ? "none"
@@ -104,6 +114,42 @@ const StyledNav = styled.nav`
   }
 `;
 
+const NavLinkOptions = styled.span`
+  display: flex;
+  gap: 0.35rem;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.3s;
+  padding: 5px 0;
+    display: none;
+    cursor: pointer;
+  &:hover {
+    color: #f96e04;
+  }
+  @media screen and (min-width: 768px) {
+display: flex;
+  padding: 0;
+  }
+  ${(props) =>
+    props.active === true &&
+    css`
+      color: #f96e04;
+      text-decoration: underline;
+      text-decoration-thickness: 0.15rem;
+    `}
+
+  @media screen and (min-width: 768px) {
+    font-size: 0.8rem;
+  }
+  
+
+
+
+
+`
 const NavLink = styled(Link)`
   display: block;
   color: #000000;
@@ -161,7 +207,7 @@ const NavButton = styled.button`
 
   cursor: pointer;
   svg {
-    stroke: ${(props) => (props.isCross ? "#00c8ff" : "currentColor")};
+    stroke: ${(props) => (props.isCross ? "#f96e04" : "currentColor")};
     transition: stroke 0.3s ease-in-out;
   }
   @media screen and (min-width: 768px) {
@@ -287,6 +333,40 @@ const TitleCur = styled.div`
   }
 `;
 
+const ListStyled =styled(List)`
+
+@media screen and (min-width: 768px) {
+  display: none;
+  }
+`
+const IconContainer = styled.div`
+svg{
+  width: 1.2rem;
+  color: #f96e04;
+}
+`
+const ArrowIconContainer = styled.div`
+display: flex;
+align-items: center;
+
+svg{
+  width: 1rem;
+}
+
+`
+
+const MenuItemStyled = styled(MenuItem)`
+display: flex;
+gap:1rem;
+svg{
+  width:1rem;
+  color: #f96e04;
+}
+
+
+`
+
+
 const Header = ({ route }) => {
   const [scrollDirection, setScrollDirection] = useState("up");
   const [mobileNavActive, setMobileNavActive] = useState(false);
@@ -325,7 +405,24 @@ const Header = ({ route }) => {
   const goToStore = () => {
     window.open("https://negiupp.myshopify.com/", "_blank");
   };
+  const [anchorEl, setAnchorEl] = useState(null);
+  const openPopUp = Boolean(anchorEl);
 
+
+
+
+  const handleClickPopUp = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   return (
     <StyledHeader>
       <WrapperFull route={route} isVisible={scrollDirection === "up"}>
@@ -370,9 +467,103 @@ const Header = ({ route }) => {
             >
               Projects
             </NavLink>
+
+      
+
+
+            <ListStyled
+      
+
+      aria-labelledby="nested-list-subheader"
+  
+    >    <ListItemButton sx={{display:'flex', justifyContent:'center', padding:'0'}} onClick={handleClick}>
+   
+Services
+    {open ? <ExpandLess /> : <ExpandMore />}
+  </ListItemButton >
+  <Collapse in={open} timeout="auto" unmountOnExit>
+    <List sx={{display:'flex', flexDirection:"column", alignItems:'center'}} component="div" disablePadding>
+    <ListItemButton sx={{width:'270px'}} >
+        <ListItemIcon>
+          <IconContainer>
+          <DeskTopDevelop />
+          </IconContainer>
+       
+        </ListItemIcon>
+        <ListItemText primary="DeskTop Development" />
+      </ListItemButton>
+      <ListItemButton sx={{width:'270px'}}  >
+        <ListItemIcon>
+          <IconContainer>
+          <MobileDevelop />
+          </IconContainer>
+       
+        </ListItemIcon>
+        <ListItemText primary="Mobile Development" />
+      </ListItemButton>
+     
+      <ListItemButton sx={{width:'270px'}}  >
+        <ListItemIcon>
+          <IconContainer>
+          <WebDevelop />
+          </IconContainer>
+       
+        </ListItemIcon>
+        <ListItemText primary="Web Develpment" />
+      </ListItemButton>
+    </List>
+  </Collapse>
+</ListStyled>
+      <NavLinkOptions
+      href={'/'}
+        id="demo-customized-button"
+        aria-controls={openPopUp ? 'demo-customized-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={openPopUp ? 'true' : undefined}
+        variant="contained"
+        disableElevation
+        onClick={handleClickPopUp}
+    
+   
+      >
+        Services
+        
+        <ArrowIconContainer>
+          {!openPopUp ? <ArrowDown /> : <ArrowUp/>}
+   
+        </ArrowIconContainer>
+          
+      </NavLinkOptions>
+      <Menu
+        id="demo-customized-menu"
+        MenuListProps={{
+          'aria-labelledby': 'demo-customized-button',
+        }}
+        anchorEl={anchorEl}
+        open={openPopUp}
+        onClose={handleClose}
+      >
+        <MenuItemStyled onClick={handleClose} disableRipple>
+        <WebDevelop/> Web Development
+        </MenuItemStyled>
+        <MenuItemStyled onClick={handleClose} disableRipple>
+          <MobileDevelop/>
+     
+     Mobile Development
+        </MenuItemStyled>
+        <MenuItemStyled  onClick={handleClose} disableRipple>
+          <DeskTopDevelop/>
+        Desktop Development
+
+        </MenuItemStyled>
+      </Menu>
+
+
+         
+     {/*
             <NavLink route={route} href={"/"} onClick={goToStore}>
               Store
-            </NavLink>
+            </NavLink> */}
             {/*
           <NavLink
             route={route}
