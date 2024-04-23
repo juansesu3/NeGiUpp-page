@@ -38,7 +38,7 @@ export default function App({ Component, pageProps: { session, ...pageProps }, }
     <>  
     <SessionProvider session={session}>
     <Head>
-
+ 
           <meta name="description" content="Full-stack web developer with a strong proficiency in Next.js, React.js, JavaScript, TypeScript, and Node.js. As the creative force behind the Negiupp brand, I specialize in developing digital products with exceptional quality standards. Explore my comprehensive range of services, diverse portfolio of projects, and insightful articles to discover how I can enhance your digital experience." />
           <meta property="og:image" content="https://my-page-negiupp.s3.amazonaws.com/1702394288820.jpeg" />
           <meta property="og:image:width" content="300" />
