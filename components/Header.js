@@ -76,13 +76,18 @@ const StyledNav = styled.nav`
   ${(props) =>
     props.mobileNavActive
       ? `
-      display: block;
+      display: flex;
       text-align: center;
+      flex-direction: column;
+      
 `
       : `
-      display: none;
+          transform: translateX(100%);
+              display: flex;
+      text-align: center;
+      flex-direction: column;
 `}
-  transition: height 1s ease-in-out;
+transition: transform 0.5s ease-in-out;
   align-items: center;
   gap: 40px;
   position: fixed;
@@ -100,9 +105,12 @@ const StyledNav = styled.nav`
   background-color: ${(props) => (props.isVisible ? "#fff" : "#fff")};
 
   z-index: 10;
-  gap: 4rem;
+  gap: 1.5rem;
   @media screen and (min-width: 768px) {
+    transform: translateX(0%);
+    gap: 4rem;
     display: flex;
+flex-direction: row;
     position: static;
     padding: 0;
     background-image: ${(props) =>
@@ -370,6 +378,19 @@ svg{
 }
 
 `
+const LinkMobileServices = styled(Link)`
+display: flex;
+align-items: center;
+
+text-decoration: none;
+
+color: #000;
+svg{
+  width:1.5rem;
+  color: #f96e04;
+}
+
+`
 
 
 const Header = ({ route }) => {
@@ -439,6 +460,7 @@ const Header = ({ route }) => {
               route={route}
               active={pathname === "/" ? true : false}
               href={"/"}
+              onClick={toggleCross}
             >
               Home
             </NavLink>
@@ -446,6 +468,7 @@ const Header = ({ route }) => {
               route={route}
               active={pathname === "/about" ? true : false}
               href={"/about"}
+              onClick={toggleCross}
             >
               About
             </NavLink>
@@ -453,6 +476,7 @@ const Header = ({ route }) => {
               route={route}
               active={pathname === "/blog" ? true : false}
               href={"/blog"}
+              onClick={toggleCross}
             >
               Blog
             </NavLink>
@@ -469,6 +493,7 @@ const Header = ({ route }) => {
               route={route}
               active={pathname === "/proyects" ? true : false}
               href={"/proyects"}
+              onClick={toggleCross}
             >
               Projects
             </NavLink>
@@ -488,7 +513,9 @@ Services
   </ListItemButton >
   <Collapse in={open} timeout="auto" unmountOnExit>
     <List sx={{display:'flex', flexDirection:"column", alignItems:'center'}} component="div" disablePadding>
-    <ListItemButton sx={{width:'270px'}} >
+    <ListItemButton  onClick={toggleCross} sx={{width:'270px'}} >
+      <LinkMobileServices href={'/desktopdevservices'}>
+
         <ListItemIcon>
           <IconContainer>
           <DeskTopDevelop />
@@ -496,8 +523,11 @@ Services
        
         </ListItemIcon>
         <ListItemText primary="DeskTop Development" />
+        </LinkMobileServices>
       </ListItemButton>
-      <ListItemButton sx={{width:'270px'}}  >
+
+      <ListItemButton  onClick={toggleCross} sx={{width:'270px'}}  >
+      <LinkMobileServices href={'/responsiveServices'}>
         <ListItemIcon>
           <IconContainer>
           <MobileDevelop />
@@ -505,9 +535,11 @@ Services
        
         </ListItemIcon>
         <ListItemText primary="Mobile Development" />
+        </LinkMobileServices>
       </ListItemButton>
      
-      <ListItemButton sx={{width:'270px'}}  >
+      <ListItemButton  onClick={toggleCross} sx={{width:'270px'}}  >
+      <LinkMobileServices href={'/webdevservices'}>
         <ListItemIcon>
           <IconContainer>
           <WebDevelop />
@@ -515,6 +547,7 @@ Services
        
         </ListItemIcon>
         <ListItemText primary="Web Develpment" />
+        </LinkMobileServices>
       </ListItemButton>
     </List>
   </Collapse>

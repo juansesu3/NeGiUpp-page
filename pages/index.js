@@ -30,6 +30,7 @@ const HomePage = () => {
         <meta property="og:type" content="website" />
       </Head>
       <Layout>
+        
           <Home2
            />
       </Layout>

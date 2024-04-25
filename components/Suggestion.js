@@ -40,6 +40,11 @@ const StyledChatContainer = styled.div`
 min-height: 20rem;
   max-height: 20rem;
   overflow-y: auto;
+  border: 1px solid red;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 15% 100%,15% 70%, 0% 70%, 0% 25%);
+
+ 
+ 
 `;
 
 const StyledMessageContainer = styled.div`
@@ -80,6 +85,8 @@ const StyledMessageContainer = styled.div`
             padding: 0.4rem;
               border-radius: 0.75rem 0.75rem 0.75rem 0rem;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            
+               clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 15% 100%,15% 70%, 0% 70%, 0% 25%);
           }
         `}
 `;

@@ -7,12 +7,14 @@ import Image from "next/image";
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import { RevealWrapper } from "next-reveal";
+import { Skeleton, Stack } from "@mui/material";
 
 const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 3rem 0.5rem;
   gap: 1rem;
+
 `;
 
 const AboutCont = styled.div`
