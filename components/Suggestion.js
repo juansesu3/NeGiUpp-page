@@ -18,12 +18,12 @@ const FormConatiner = styled.div`
   bottom: 0.5rem;
   right: 0.5rem;
   width: 23.3rem;
-  height: 30rem;
+  height: 35rem;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: 0.8rem;
+
+ 
   border-radius: 0.75rem;
   background:#ffffff;
 
@@ -37,17 +37,18 @@ const FormConatiner = styled.div`
 `;
 
 const StyledChatContainer = styled.div`
-min-height: 20rem;
+min-height: 17.5rem;
   max-height: 20rem;
   overflow-y: auto;
-  border: 1px solid red;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 15% 100%,15% 70%, 0% 70%, 0% 25%);
+  border-bottom: 1px solid  #e2e2e2;
+
 
  
  
 `;
 
 const StyledMessageContainer = styled.div`
+
   ${({ messageType }) =>
     messageType === "user"
       ? css`
@@ -86,7 +87,7 @@ const StyledMessageContainer = styled.div`
               border-radius: 0.75rem 0.75rem 0.75rem 0rem;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
             
-               clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 15% 100%,15% 70%, 0% 70%, 0% 25%);
+              
           }
         `}
 `;
@@ -126,7 +127,7 @@ const StyledLoadingContainer = styled.div`
 
 const StyledInput = styled.input`
   margin: 0;
-  width: 67%;
+  width: 100%;
   padding: 1rem;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   border: none;
@@ -200,8 +201,10 @@ const ColorAnimation = keyframes`
 `;
 const InfoAi = styled.div`
   text-align: center;
-  color: #f96e04;;
+  color: #f96e04;
   margin: 0;
+  width: 19.7rem;
+
 
   ${({ isLoading }) =>
     isLoading &&
@@ -256,6 +259,13 @@ width:3.5rem;
   }
   }
 `;
+
+const HeaderChatBot = styled.div`
+background: #f96e04;
+padding: 1rem;
+border-radius: 0.75rem 0.75rem 0 0;
+
+`
 const Suggestion = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
@@ -374,9 +384,12 @@ const Suggestion = () => {
   return (
     <PrincipalContainer>
       <FormConatiner isOpen={isOpen}>
+        <HeaderChatBot>
+
+
       <CloseButton onClick={()=>setIsOpen(false)}>
           <svg
-            style={{ color: "#000" }}
+            style={{ color: "#fff" }}
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -390,6 +403,7 @@ const Suggestion = () => {
             />
           </svg>
         </CloseButton>
+        </HeaderChatBot>
         <StyledChatContainer>
           {chatLog.map((message, index) => (
             <StyledMessageContainer key={index} messageType={message.type}>
@@ -404,17 +418,33 @@ const Suggestion = () => {
         </StyledChatContainer>
 
         <StyledForm onSubmit={handleSubmit}>
-          <InfoAi isLoading={isLoading}>
-            {isLoading
-              ? "Give me a moment..."
-              : "I'm here to help you get to know Juan better!"}
-          </InfoAi>
+   
           <div>{/*Question */}</div>
           <div
             style={{
               display: "flex",
+              flexDirection:'column',
               justifyContent: "flex-end",
               gap: ".5rem",
+              marginTop:'2rem',
+              marginRight:'0.5rem',
+              alignItems:'flex-end'
+            }}
+          >
+                   <InfoAi isLoading={isLoading}>
+            {isLoading
+              ? "Give me a moment..."
+              : "I'm here to help you get to know Juan better!"}
+          </InfoAi>
+          <div
+            style={{
+              display: "flex",
+              flexDirection:'',
+              justifyContent: "flex-end",
+              gap: ".5rem",
+              marginTop:'1rem',
+              marginRight:'0.5rem',
+              width:'80%'
             }}
           >
             <StyledInput
@@ -438,6 +468,7 @@ const Suggestion = () => {
                 />
               </svg>
             </StyledButton>
+            </div>
           </div>
         </StyledForm>
        
