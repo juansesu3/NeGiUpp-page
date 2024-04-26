@@ -11,6 +11,7 @@ const AvatarWaiting = React.lazy(() => import("./avatars/AvatarWaiting"));
 const PrincipalContainer = styled.div`
   position: relative;
   z-index: 100;
+
 `;
 
 const FormConatiner = styled.div`
@@ -22,7 +23,7 @@ const FormConatiner = styled.div`
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-
+border: 1px solid  #e2e2e2;
  
   border-radius: 0.75rem;
   background:#ffffff;
@@ -37,11 +38,12 @@ const FormConatiner = styled.div`
 `;
 
 const StyledChatContainer = styled.div`
-min-height: 17.5rem;
-  max-height: 20rem;
+
+  height: 18rem;
   overflow-y: auto;
   border-bottom: 1px solid  #e2e2e2;
-
+  border-radius: 0 0 0.75rem 0.75rem;
+padding: 0.5rem;
 
  
  
@@ -443,7 +445,7 @@ const Suggestion = () => {
               justifyContent: "flex-end",
               gap: ".5rem",
               marginTop:'1rem',
-              marginRight:'0.5rem',
+              
               width:'80%'
             }}
           >
